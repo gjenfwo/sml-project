@@ -1,4 +1,4 @@
-ctags
+tags
 cscope.out
 *.o
 build/
