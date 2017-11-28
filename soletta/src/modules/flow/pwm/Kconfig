@@ -1,0 +1,4 @@
+config FLOW_NODE_TYPE_PWM
+	tristate "Node type: pwm"
+	depends on USE_PWM
+	default y

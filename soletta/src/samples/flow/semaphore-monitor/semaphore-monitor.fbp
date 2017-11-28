@@ -1,0 +1,47 @@
+# This file is part of the Soletta (TM) Project
+#
+# Copyright (C) 2015 Intel Corporation. All rights reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# This file will output Soletta's semaphore monitor status.
+#
+# It will check the build status by getting the semaphore SVG and
+# applying a regular expression to see if it failed or passed.
+#
+# It is only the base component, one still need to call its exported
+# input port UPDATE to trigger the action and wait for output packets
+# on the STATUS port. See semaphore-monitor-console.fbp for an example
+# that uses this.
+#
+# It is an example of:
+#
+#  - http-client/string node type (get the SVG as plain text)
+#
+#  - string/regexp-search node type (extract passed/failed string)
+#
+# Diagram:
+#
+#       .------------------------------------------------.
+#       |      .---------.         .--------------.      |
+# UPDATE|-->GET| get_svg |OUT-+->IN| check_status |OUT-->|STATUS
+#       |      `---------'         `--------------'      |
+#       `------------------------------------------------'
+
+
+INPORT=get_svg.GET:UPDATE
+OUTPORT=check_status.OUT:STATUS
+OPTION=get_svg.url:url
+
+get_svg(http-client/string:accept=null)
+get_svg OUT -> IN check_status(string/regexp-search:regexp="(<text [^>]+>(passed|failed)</text>)",index=2)

@@ -1,0 +1,881 @@
+{
+  "$schema": "http://solettaproject.github.io/soletta/schemas/node-type-genspec.schema",
+  "name": "float",
+  "meta": {
+    "author": "Intel Corporation",
+    "license": "Apache-2.0",
+    "version": "1"
+  },
+  "types": [
+    {
+      "category": "arithmetic/float",
+      "description": "Arithmetic addition operation with floats",
+      "in_ports": [
+        {
+          "data_type": "float",
+          "description": "Thirty two ports for addition operation. Indexed from 0 to 31. Results are sent after at least one packet is received on each connected port.",
+          "methods": {
+            "connect": "multiple_operator_connect",
+            "process": "multiple_operator_process"
+          },
+          "name": "OPERAND[32]"
+        }
+      ],
+      "name": "float/addition",
+      "node_type": {
+        "access": [
+          "base"
+        ],
+        "data_type": "struct drange_arithmetic_node_type",
+        "extra_methods": {
+          "func": "sol_drange_add"
+        }
+      },
+      "out_ports": [
+        {
+          "data_type": "float",
+          "description": "Sum of values received on ports OPERAND[0] to OPERAND[31].",
+          "name": "OUT"
+        }
+      ],
+      "private_data_type": "drange_multiple_arithmetic_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/arithmetic/drange/addition.html"
+    },
+    {
+      "category": "arithmetic/float",
+      "description": "Arithmetic division operation with floats",
+      "in_ports": [
+        {
+          "data_type": "float",
+          "description": "Receives dividend value.",
+          "methods": {
+            "process": "operator_process"
+          },
+          "name": "DIVIDEND"
+        },
+        {
+          "data_type": "float",
+          "description": "Receives divisor value.",
+          "methods": {
+            "process": "operator_process"
+          },
+          "name": "DIVISOR"
+        }
+      ],
+      "name": "float/division",
+      "node_type": {
+        "access": [
+          "base"
+        ],
+        "data_type": "struct drange_arithmetic_node_type",
+        "extra_methods": {
+          "func": "sol_drange_div"
+        }
+      },
+      "out_ports": [
+        {
+          "data_type": "float",
+          "description": "Quotient from the division of DIVIDEND by DIVISOR.",
+          "name": "OUT"
+        }
+      ],
+      "private_data_type": "drange_arithmetic_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/arithmetic/drange/division.html"
+    },
+    {
+      "category": "arithmetic/float",
+      "description": "Arithmetic modulo operation with floats",
+      "in_ports": [
+        {
+          "data_type": "float",
+          "description": "First port of modulo operation.",
+          "methods": {
+            "process": "operator_process"
+          },
+          "name": "DIVIDEND"
+        },
+        {
+          "data_type": "float",
+          "description": "Second port of modulo operation.",
+          "methods": {
+            "process": "operator_process"
+          },
+          "name": "DIVISOR"
+        }
+      ],
+      "name": "float/modulo",
+      "node_type": {
+        "access": [
+          "base"
+        ],
+        "data_type": "struct drange_arithmetic_node_type",
+        "extra_methods": {
+          "func": "sol_drange_mod"
+        }
+      },
+      "out_ports": [
+        {
+          "data_type": "float",
+          "description": "Remainder from the division of DIVIDEND by DIVISOR.",
+          "name": "OUT"
+        }
+      ],
+      "private_data_type": "drange_arithmetic_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/arithmetic/drange/modulo.html"
+    },
+    {
+      "category": "arithmetic/float",
+      "description": "Arithmetic multiplication operation with floats",
+      "in_ports": [
+        {
+          "data_type": "float",
+          "description": "Thirty two ports for multiplication operation. Indexed from 0 to 31. Results are sent after at least one packet is received on each connect port.",
+          "methods": {
+            "connect": "multiple_operator_connect",
+            "process": "multiple_operator_process"
+          },
+          "name": "OPERAND[32]"
+        }
+      ],
+      "name": "float/multiplication",
+      "node_type": {
+        "access": [
+          "base"
+        ],
+        "data_type": "struct drange_arithmetic_node_type",
+        "extra_methods": {
+          "func": "sol_drange_mul"
+        }
+      },
+      "out_ports": [
+        {
+          "data_type": "float",
+          "description": "Product of values received on ports OPERAND[0] to OPERAND[31].",
+          "name": "OUT"
+        }
+      ],
+      "private_data_type": "drange_multiple_arithmetic_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/arithmetic/drange/multiplication.html"
+    },
+    {
+      "category": "arithmetic/float",
+      "description": "Arithmetic subtraction operation with floats",
+      "in_ports": [
+        {
+          "data_type": "float",
+          "description": "Receives minuend value.",
+          "methods": {
+            "process": "operator_process"
+          },
+          "name": "MINUEND"
+        },
+        {
+          "data_type": "float",
+          "description": "Receives subtrahend value.",
+          "methods": {
+            "process": "operator_process"
+          },
+          "name": "SUBTRAHEND"
+        }
+      ],
+      "name": "float/subtraction",
+      "node_type": {
+        "access": [
+          "base"
+        ],
+        "data_type": "struct drange_arithmetic_node_type",
+        "extra_methods": {
+          "func": "sol_drange_sub"
+        }
+      },
+      "out_ports": [
+        {
+          "data_type": "float",
+          "description": "Difference of values received on ports MINUEND and SUBTRAHEND.",
+          "name": "OUT"
+        }
+      ],
+      "private_data_type": "drange_arithmetic_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/arithmetic/drange/subtraction.html"
+    },
+    {
+      "category": "math/float",
+      "description": "Calculates absolute value of a number.",
+      "in_ports": [
+        {
+          "data_type": "float",
+          "description": "Input number.",
+          "methods": {
+            "process": "abs_process"
+          },
+          "name": "IN"
+        }
+      ],
+      "name": "float/abs",
+      "out_ports": [
+        {
+          "data_type": "float",
+          "description": "Number's absolute value.",
+          "name": "OUT"
+        }
+      ],
+      "url": "http://solettaproject.org/doc/latest/node_types/math/drange/abs.html"
+    },
+    {
+      "category": "math/float",
+      "description": "Constrain value to it's range",
+      "in_ports": [
+        {
+          "data_type": "float",
+          "description": "Value to be constrained.",
+          "methods": {
+            "process": "constrain_process"
+          },
+          "name": "IN"
+        }
+      ],
+      "methods": {
+        "open": "constrain_open"
+      },
+      "name": "float/constrain",
+      "options": {
+        "members": [
+          {
+            "data_type": "drange-spec",
+            "default": {
+              "max": 1023,
+              "min": 0
+            },
+            "description": "Range values (min, max, step). Used only if use_input_range is disabled.",
+            "name": "range"
+          },
+          {
+            "data_type": "boolean",
+            "default": true,
+            "description": "Use min, max and step values from package instead of options min, max and step. It's useful if you need to convert from many different sources to the same range and all of them inform these values correctly in each package.",
+            "name": "use_input_range"
+          }
+        ],
+        "version": 1
+      },
+      "out_ports": [
+        {
+          "data_type": "float",
+          "description": "Value constrained considering range",
+          "name": "OUT"
+        }
+      ],
+      "private_data_type": "drange_constrain_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/math/drange/constrain.html"
+    },
+    {
+      "category": "math/float",
+      "description": "Calculates the natural logarithm of an input value.",
+      "in_ports": [
+        {
+          "data_type": "float",
+          "description": "Number to have natural logarithm calculated.",
+          "methods": {
+            "process": "ln_process"
+          },
+          "name": "IN"
+        }
+      ],
+      "name": "float/ln",
+      "out_ports": [
+        {
+          "data_type": "float",
+          "description": "The result of the natural logarithm operation.",
+          "name": "OUT"
+        }
+      ],
+      "url": "http://solettaproject.org/doc/latest/node_types/math/drange/ln.html"
+    },
+    {
+      "category": "math/float",
+      "description": "Map values to different range",
+      "in_ports": [
+        {
+          "data_type": "float",
+          "description": "Value to be converted.",
+          "methods": {
+            "process": "map_process"
+          },
+          "name": "IN"
+        }
+      ],
+      "methods": {
+        "open": "map_open"
+      },
+      "name": "float/map",
+      "options": {
+        "members": [
+          {
+            "data_type": "drange-spec",
+            "default": {
+              "max": "DBL_MAX",
+              "min": "-DBL_MAX",
+              "step": "DBL_MIN"
+            },
+            "description": "Input's range. Used only if use_input_range is disabled.",
+            "name": "input_range"
+          },
+          {
+            "data_type": "drange-spec",
+            "description": "Output's range.",
+            "name": "output_range"
+          },
+          {
+            "data_type": "boolean",
+            "default": true,
+            "description": "Use min and max values from input package instead of option input_range. It's useful if you need to convert from many different sources to the same range and all of them inform these values correctly in each package.",
+            "name": "use_input_range"
+          }
+        ],
+        "version": 1
+      },
+      "out_ports": [
+        {
+          "data_type": "float",
+          "description": "Value mapped considering input and output ranges",
+          "name": "OUT"
+        }
+      ],
+      "private_data_type": "drange_map_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/math/drange/map.html"
+    },
+    {
+      "category": "math/float",
+      "description": "Float Max",
+      "in_ports": [
+        {
+          "data_type": "float",
+          "description": "Two ports for max operation. Indexed from 0 to 1.",
+          "methods": {
+            "process": "min_max_process"
+          },
+          "name": "IN[2]"
+        }
+      ],
+      "name": "float/max",
+      "node_type": {
+        "access": [
+          "base"
+        ],
+        "data_type": "struct drange_comparison_node_type",
+        "extra_methods": {
+          "func": "drange_val_greater"
+        }
+      },
+      "out_ports": [
+        {
+          "data_type": "float",
+          "description": "Maximum value between IN[0] and IN[1].",
+          "name": "OUT"
+        }
+      ],
+      "private_data_type": "drange_two_vars_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/math/drange/max.html"
+    },
+    {
+      "category": "math/float",
+      "description": "Float Min",
+      "in_ports": [
+        {
+          "data_type": "float",
+          "description": "Two ports for min operation. Indexed from 0 to 1.",
+          "methods": {
+            "process": "min_max_process"
+          },
+          "name": "IN[2]"
+        }
+      ],
+      "name": "float/min",
+      "node_type": {
+        "access": [
+          "base"
+        ],
+        "data_type": "struct drange_comparison_node_type",
+        "extra_methods": {
+          "func": "drange_val_less"
+        }
+      },
+      "out_ports": [
+        {
+          "data_type": "float",
+          "description": "Minimum value between IN[0] and IN[1].",
+          "name": "OUT"
+        }
+      ],
+      "private_data_type": "drange_two_vars_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/math/drange/min.html"
+    },
+    {
+      "category": "math/float",
+      "description": "Calculates the value of a number raised to a power.",
+      "in_ports": [
+        {
+          "data_type": "float",
+          "description": "Number to be raised.",
+          "methods": {
+            "process": "pow_process"
+          },
+          "name": "BASE"
+        },
+        {
+          "data_type": "float",
+          "description": "The power to which the base is raised.",
+          "methods": {
+            "process": "pow_process"
+          },
+          "name": "EXPONENT"
+        }
+      ],
+      "name": "float/pow",
+      "out_ports": [
+        {
+          "data_type": "float",
+          "description": "The result of the exponentiation.",
+          "name": "OUT"
+        }
+      ],
+      "private_data_type": "drange_two_vars_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/math/drange/pow.html"
+    },
+    {
+      "category": "math/float",
+      "description": "Calculates the square root of a number.",
+      "in_ports": [
+        {
+          "data_type": "float",
+          "description": "Input number.",
+          "methods": {
+            "process": "sqrt_process"
+          },
+          "name": "IN"
+        }
+      ],
+      "name": "float/sqrt",
+      "out_ports": [
+        {
+          "data_type": "float",
+          "description": "Number's square root.",
+          "name": "OUT"
+        }
+      ],
+      "url": "http://solettaproject.org/doc/latest/node_types/math/drange/sqrt.html"
+    },
+    {
+      "category": "comparison/float",
+      "description": "Check if an float is equal to other.",
+      "in_ports": [
+        {
+          "data_type": "float",
+          "description": "Two ports for equal comparison operation. Indexed from 0 to 1.",
+          "methods": {
+            "process": "comparison_process"
+          },
+          "name": "IN[2]"
+        }
+      ],
+      "name": "float/equal",
+      "node_type": {
+        "access": [
+          "base"
+        ],
+        "data_type": "struct drange_comparison_node_type",
+        "extra_methods": {
+          "func": "sol_util_double_eq"
+        }
+      },
+      "out_ports": [
+        {
+          "data_type": "boolean",
+          "description": "True if value received on port IN[0] is equal to value received on port IN[1].",
+          "name": "OUT"
+        }
+      ],
+      "private_data_type": "drange_two_vars_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/comparison/drange/equal.html"
+    },
+    {
+      "category": "comparison/float",
+      "description": "Check if an float is greater than or equal to other.",
+      "in_ports": [
+        {
+          "data_type": "float",
+          "description": "Two ports for greater-or-equal comparison operation. Indexed from 0 to 1, and IN[0] being the left operand.",
+          "methods": {
+            "process": "comparison_process"
+          },
+          "name": "IN[2]"
+        }
+      ],
+      "name": "float/greater-or-equal",
+      "node_type": {
+        "access": [
+          "base"
+        ],
+        "data_type": "struct drange_comparison_node_type",
+        "extra_methods": {
+          "func": "drange_val_greater_or_eq"
+        }
+      },
+      "out_ports": [
+        {
+          "data_type": "boolean",
+          "description": "True if value received on port IN[0] is greater than or equal to value received on port IN[1].",
+          "name": "OUT"
+        }
+      ],
+      "private_data_type": "drange_two_vars_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/comparison/drange/greater_or_equal.html"
+    },
+    {
+      "category": "comparison/float",
+      "description": "Check if an float is greater than other.",
+      "in_ports": [
+        {
+          "data_type": "float",
+          "description": "Two ports for greater comparison operation. Indexed from 0 to 1, and IN[0] being the left operand.",
+          "methods": {
+            "process": "comparison_process"
+          },
+          "name": "IN[2]"
+        }
+      ],
+      "name": "float/greater",
+      "node_type": {
+        "access": [
+          "base"
+        ],
+        "data_type": "struct drange_comparison_node_type",
+        "extra_methods": {
+          "func": "drange_val_greater"
+        }
+      },
+      "out_ports": [
+        {
+          "data_type": "boolean",
+          "description": "True if value received on port IN[0] is greater than value received on port IN[1].",
+          "name": "OUT"
+        }
+      ],
+      "private_data_type": "drange_two_vars_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/comparison/drange/greater.html"
+    },
+    {
+      "category": "comparison/float",
+      "description": "Check if an float is less than or equal to other.",
+      "in_ports": [
+        {
+          "data_type": "float",
+          "description": "Two ports for less-or-equal comparison operation. Indexed from 0 to 1, and IN[0] being the left operand.",
+          "methods": {
+            "process": "comparison_process"
+          },
+          "name": "IN[2]"
+        }
+      ],
+      "name": "float/less-or-equal",
+      "node_type": {
+        "access": [
+          "base"
+        ],
+        "data_type": "struct drange_comparison_node_type",
+        "extra_methods": {
+          "func": "drange_val_less_or_eq"
+        }
+      },
+      "out_ports": [
+        {
+          "data_type": "boolean",
+          "description": "True if value received on port IN[0] is less than or equal to value received on port IN[1].",
+          "name": "OUT"
+        }
+      ],
+      "private_data_type": "drange_two_vars_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/comparison/drange/less_or_equal.html"
+    },
+    {
+      "category": "comparison/float",
+      "description": "Check if an float is less than other.",
+      "in_ports": [
+        {
+          "data_type": "float",
+          "description": "Two ports for less comparison operation. Indexed from 0 to 1, and IN[0] being the left operand.",
+          "methods": {
+            "process": "comparison_process"
+          },
+          "name": "IN[2]"
+        }
+      ],
+      "name": "float/less",
+      "node_type": {
+        "access": [
+          "base"
+        ],
+        "data_type": "struct drange_comparison_node_type",
+        "extra_methods": {
+          "func": "drange_val_less"
+        }
+      },
+      "out_ports": [
+        {
+          "data_type": "boolean",
+          "description": "True if value received on port IN[0] is less than value received on port IN[1].",
+          "name": "OUT"
+        }
+      ],
+      "private_data_type": "drange_two_vars_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/comparison/drange/less.html"
+    },
+    {
+      "category": "comparison/float",
+      "description": "Check if an float is different from other.",
+      "in_ports": [
+        {
+          "data_type": "float",
+          "description": "Two ports for not-equal comparison operation. Indexed from 0 to 1",
+          "methods": {
+            "process": "comparison_process"
+          },
+          "name": "IN[2]"
+        }
+      ],
+      "name": "float/not-equal",
+      "node_type": {
+        "access": [
+          "base"
+        ],
+        "data_type": "struct drange_comparison_node_type",
+        "extra_methods": {
+          "func": "drange_val_not_eq"
+        }
+      },
+      "out_ports": [
+        {
+          "data_type": "boolean",
+          "description": "True if value received on port IN[0] is different from value received on port IN[1].",
+          "name": "OUT"
+        }
+      ],
+      "private_data_type": "drange_two_vars_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/comparison/drange/not_equal.html"
+    },
+    {
+      "category": "float/filter",
+      "description": "Filter floats in range",
+      "name": "float/filter",
+      "in_ports": [
+        {
+          "data_type": "float",
+          "description": "Data input port.",
+          "methods": {
+            "process": "float_filter_process"
+          },
+          "name": "IN"
+        }
+      ],
+      "methods": {
+        "open": "float_filter_open"
+      },
+      "out_ports": [
+        {
+          "data_type": "float",
+          "description": "Outputs the same variable as the input if it's in range, nothing otherwise.",
+          "name": "OUT"
+        }
+      ],
+      "options": {
+        "members": [
+          {
+            "data_type": "float",
+            "description": "Minimum value (inclusive)",
+            "name": "min",
+            "default" : "-DBL_MAX"
+          },
+          {
+            "data_type": "float",
+            "description": "Maximum value (inclusive)",
+            "name": "max",
+            "default" : "DBL_MAX"
+          },
+          {
+            "data_type": "boolean",
+            "description": "if true, the packet irange will have it's min and max changed to the min and max of this node.",
+            "name": "range_override",
+            "default" : false
+          }
+        ],
+        "version": 1
+      },
+
+      "private_data_type": "float_filter_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/float/filter.html"
+    },
+    {
+      "category": "wave-generator",
+      "description": "A waves generator node that, after each input tick, generates the next value of its defined function on its output port. That function is defined by the various options members it's got, and has the form that goes from a minimum to an maximum value. When at those two extreme values, it may hold (for a pulse or more) on them, before resuming the increment/decrement steps. Thus, it is capable of producing trapezoidal/triangular/sawtooth/square waves. This node won't send any initial packets after port connections are made on its output port solely -- it needs an explicit 'pulse' on its input port to produce packets.",
+      "in_ports": [
+        {
+          "data_type": "any",
+          "description": "Iterate to next generator's function value, outputting a packet.",
+          "methods": {
+            "process": "wave_generator_trapezoidal_process"
+          },
+          "name": "TICK"
+        }
+      ],
+      "methods": {
+        "open": "wave_generator_trapezoidal_open"
+      },
+      "name": "float/wave-generator-trapezoidal",
+      "options": {
+        "members": [
+          {
+            "data_type": "int",
+            "default": 1,
+            "description": "In how many function iterations (ticks) it should go from max to min values. The value must be greater than or equal to 1 (which means go from max to min instantly). With this value, the node will calculate the 'increasing step' of the function for you.",
+            "name": "ticks_inc"
+          },
+          {
+            "data_type": "float",
+            "description": "The maximum value of the wave. This must be greater than min.",
+            "name": "max"
+          },
+          {
+            "data_type": "int",
+            "default": 1,
+            "description": "In how many function iterations (ticks) it should go from min to max values. The value must be greater than or equal to 1 (which means go from min to max instantly). With this value, the node will calculate the 'increasing step' of the function for you.",
+            "name": "ticks_dec"
+          },
+          {
+            "data_type": "float",
+            "description": "The minimum value of the wave. This must be less than max.",
+            "name": "min"
+          },
+          {
+            "data_type": "int",
+            "default": 0,
+            "description": "The starting point of the wave, in ticks (must be greater or equal to 0). Zero means to start at min value, when no ticks have happened yet. Use this to shift the starting point and overwrite the default behavior.",
+            "name": "tick_start"
+          },
+          {
+            "data_type": "int",
+            "default": 0,
+            "description": "The number of (extra) input ticks the wave will hold its output at max value when it reaches it. The value must be greater than or equal to 0.",
+            "name": "ticks_at_max"
+          },
+          {
+            "data_type": "int",
+            "default": 0,
+            "description": "The number of (extra) input ticks the wave will hold its output at min value when it reaches it. The value must be greater than or equal to 0.",
+            "name": "ticks_at_min"
+          }
+        ],
+        "version": 1
+      },
+      "out_ports": [
+        {
+          "data_type": "float",
+          "description": "The generator's current function value. This port won't send any initial packets after a connection is made. The node expects an explicit 'pulse' on its input port to produce packets.",
+          "name": "OUT"
+        }
+      ],
+      "private_data_type": "drange_wave_generator_trapezoidal_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/float/wave-generator-trapezoidal.html"
+    },
+    {
+      "category": "wave-generator",
+      "description": "A node that, after each input tick, generates the next value of the sine function on its output port. With fine tuning of it tick_start option, the cosine function can be achieved as well. A multiplier value can be supplied for the original [-1.0, 1.0] range, too. This node won't send any initial packets after port connections are made on its output port solely -- it needs an explicit 'pulse' on its input port to produce packets.",
+      "in_ports": [
+       {
+         "data_type": "any",
+         "description": "Iterate to next generator's function value, outputting a packet.",
+         "methods": {
+          "process": "wave_generator_sinusoidal_process"
+         },
+         "name": "TICK"
+       }
+      ],
+      "methods": {
+        "open": "wave_generator_sinusoidal_open"
+      },
+      "name": "float/wave-generator-sinusoidal",
+      "options": {
+        "members": [
+          {
+            "data_type": "int",
+            "description": "In how many function iterations (ticks) it should go from the starting to the ending value of each function period (AKA function's resolution). The value must be greater than or equal to 1 (which means go from start to end in one step only), but note that waves very small values for this option tend to be useless.",
+            "name": "ticks_per_period"
+          },
+          {
+            "data_type": "float",
+            "default": 1.0,
+            "description": "The sine wave's amplitude. This must be a positive number, which will multiply the values in the pristine [-1.0, 1.0] range.",
+            "name": "amplitude"
+          },
+          {
+            "data_type": "int",
+            "default": 0,
+            "description": "The starting point of the wave, in ticks (must be greater or equal to 0). Zero means to start at the beginning of the sive wave, when no ticks have happened yet. Use this to shift the starting point and overwrite the default behavior.",
+            "name": "tick_start"
+          }
+       ],
+       "version": 1
+      },
+      "out_ports": [
+        {
+          "data_type": "float",
+          "description": "The generator's current function value. This port won't send any initial packets after a connection is made. The node expects an explicit 'pulse' on its input port to produce packets.",
+          "name": "OUT"
+        }
+      ],
+      "private_data_type": "drange_wave_generator_sinusoidal_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/float/wave-generator-sinusoidal.html"
+    },
+    {
+      "category": "float/classify",
+      "description": "Classifies input float according to one of float classifications: Not a Number, Infinite, Zero, Subnormal or Normal. It has OUT ports for each classification and sends input float to its classification OUT port.",
+      "in_ports": [
+        {
+          "data_type": "float",
+          "description": "Float to be classified.",
+          "methods": {
+            "process": "classify_process"
+          },
+          "name": "IN"
+        }
+      ],
+      "name": "float/classify",
+      "out_ports": [
+        {
+          "data_type": "float",
+          "description": "If input is NaN, it will go through this port.",
+          "name": "NAN"
+        },
+        {
+          "data_type": "float",
+          "description": "If input is Infinite (either positive or negative), it will go through this port.",
+          "name": "INFINITE"
+        },
+        {
+          "data_type": "float",
+          "description": "If input is Zero, it will go through this port.",
+          "name": "ZERO"
+        },
+        {
+          "data_type": "float",
+          "description": "If input is Subnormal, it will go through this port.",
+          "name": "SUBNORMAL"
+        },
+        {
+          "data_type": "float",
+          "description": "If input is Normal, it will go through this port.",
+          "name": "NORMAL"
+        }
+      ]
+    }
+  ]
+}

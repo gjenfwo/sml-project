@@ -1,0 +1,440 @@
+config ENV_BOARD_NAME
+	string
+	option env="BOARD_NAME"
+
+config BOARD_NAME
+	string "Board Name"
+	default $ENV_BOARD_NAME
+	help
+            Some parts of Soletta uses a "board name" string from
+            'sol_platform_get_board_name()' to improve board behavior.
+            Namely Pin Multiplexer will load modules based on the board name.
+
+            Usually the board name is detected using either
+            SOL_BOARD_NAME environment variable or board detection
+            infrastructure if DETECT_BOARD_NAME is enabled. Both
+            have precedence over this value.
+
+            This value is good as a fallback or is the only option
+            for systems such as RIOT and Contiki, where the
+            auto-detection is not possible.
+
+config DETECT_BOARD_NAME
+	bool "Automatically detect board name"
+	default y
+	depends on FEATURE_FILESYSTEM
+	help
+            Soletta will use instructions from files located
+            at '$PREFIX/share/soletta/boards' or '/etc/soletta/boards'
+            in order to detect board name.
+
+            If enabled, boards auto-detected will have precedence over
+            the string set at compile time 'BOARD_NAME'. However, the
+            environment variable SOL_BOARD_NAME name has precedence
+            over auto-detection.
+
+config PLATFORM_LINUX
+	bool
+
+config PLATFORM_CONTIKI_QMSI
+	bool
+
+choice
+	prompt "Target platform"
+	default PLATFORM_SYSTEMD if LINUX && HAVE_SYSTEMD
+	default PLATFORM_LINUX_MICRO if LINUX
+	default PLATFORM_RIOTOS if RIOT
+	default PLATFORM_CONTIKI if CONTIKI
+	default PLATFORM_ZEPHYR if ZEPHYR
+	default PLATFORM_DUMMY
+	help
+
+            Soletta abstracts your target platform basics such as
+            state and services. The functionality is exposed via C API
+            in sol-platform.h and allows one to change the state (ie:
+            reboot, poweroff) or start services (ie: network,
+            bluetooth).
+
+            While Soletta tries to provide a common API, the behavior
+            will always change slightly as some behavior does not make
+            sense everywhere.
+
+            Linux, for instance, provides a complete implementation on
+            top of systemd, benefiting from all of its
+            goodness. Alternatively, a linux-micro platform is
+            provided to allow single binary userspace, where the
+            Soletta application handles basic setup.
+
+            Each platform should document what is supported and
+            behavior changes.
+
+
+config PLATFORM_LINUX_MICRO
+	bool "linux-micro"
+	select PLATFORM_LINUX
+	depends on LINUX
+	help
+            This platform allows using a Soletta application as PID1
+            (/init). In this case some extra care needs to be done,
+            such as mounting /dev, /proc, /sys and handling children
+            processes.
+
+            It also offer basic services written in native C code,
+            either builtin libsoletta or as dynamically loadable
+            modules at
+            $PREFIX/lib/soletta/modules/linux-micro/<module>.so. See
+            Linux Micro Platform Modules.
+
+            This platform is only recommended for really small Linux
+            systems. For those with more capabilities we recommend
+            using systemd.
+
+config PLATFORM_SYSTEMD
+	bool "systemd"
+	depends on LINUX && HAVE_SYSTEMD
+	select PLATFORM_LINUX
+	select SOL_BUS
+	help
+            This platform uses systemd.
+
+            Platform state changes are translated to D-Bus calls to
+            systemd in order to isolate the <state>.target. Then all
+            systemd targets are allowed, such as basic, emergency,
+            halt, hibernate, poweroff and so on, see
+            /usr/lib/systemd/system/*.target.
+
+            Services are managed analogously, issuing D-Bus calls to
+            start, stop and monitor <service>.service. Then all
+            systemd services are allowed, such as systemd-sysct,
+            systemd-localed, systemd-journald and son on, see
+            /usr/lib/systemd/system/*.service.
+
+            One can write more than one Soletta application to be used
+            in systemd and they can be sandboxed using SELinux, SMACK
+            or SECCOMP for syscall filtering. A sample is provided at
+            src/samples/flow/systemd/.
+
+config PLATFORM_RIOTOS
+	bool "riotos"
+	depends on RIOT
+	help
+            This platform is to be used with RIOT Small OS.
+
+            RIOT (http://www.riot-os.org/) is an operating system
+            targeted at Internet of Things (IoT) devices. It is
+            resource friendly and can run on microcontrollers. The
+            minimum RAM requirement is around 1.5Kb, with ROM at 5Kb.
+
+            One can compile RIOT using standard GCC under Linux or
+            MacOS. It offers partial POSIX compliance.
+
+            Soletta will do its best to offer the same experience on
+            all platforms, including RIOt.
+
+config PLATFORM_CONTIKI
+	bool "contiki"
+	depends on CONTIKI
+	select PLATFORM_CONTIKI_QMSI if HAVE_QMSI
+	help
+            This platform is to be used with Contiki Small OS.
+
+            Contiki (http://contiki-os.org/) is an open source operating
+            system for the Internet of Things. Contiki connects tiny low-cost,
+            low-power microcontrollers to the Internet.
+
+            Soletta aims to do its best to offer the same experience on
+            all platforms, including Contiki.
+
+config PLATFORM_ZEPHYR
+	bool "zephyr"
+	depends on ZEPHYR
+	help
+            This platform is to be used with Zephyr OS.
+
+            Zephyr (http://zephyr-project.intel.com/) is an open source operating
+            system for the Internet of Things.
+
+            Soletta aims to do its best to offer the same experience on
+            all platforms, including Zephyr.
+
+endchoice
+
+config SOL_BUS
+    bool "Sd-bus support"
+    depends on LINUX && HAVE_SYSTEMD && HAVE_SD_DBUS
+    default n
+    help
+          Systemd's sd-bus support.
+
+source "src/modules/linux-micro/Kconfig"
+
+config MAINLOOP_ZEPHYR_NANO
+	bool
+
+config MAINLOOP_ZEPHYR_MICRO
+	bool
+
+choice
+	prompt "Mainloop"
+	default MAINLOOP_POSIX if LINUX
+	default MAINLOOP_RIOTOS if RIOT
+	default MAINLOOP_CONTIKI if CONTIKI
+	default MAINLOOP_ZEPHYR if ZEPHYR
+	help
+            The main loop is used to provide uniform event delivering
+            across multiple operating systems.
+
+            Some operating systems will deliver events from an
+            userspace handle (ie: Linux does so via file descriptors),
+            while others will call from Interruption Handler
+            (ISR). These two environments are widely different,
+            particularly some primitives are usually forbidden from
+            ISRs, thus the programmer should be very careful.
+
+            Timers also varies a lot from one operating system to
+            another. With Linux one can use both an alarm() or a
+            timerfd(), as well as using timeout for some functions. On
+            the other hand, RIOT will call from a timer interruption.
+
+            Threads may not be supported in some systems and when they
+            do, they differ in behavior. Thus having multiple
+            functions to execute at once is a source of pain.
+
+            Main loop come to rescue as it provides a common interface
+            that works the same way everywhere. It does so by
+            scheduling events, timers and co-routines all in a single
+            thread and in a predictable, non-preemptive way. It will
+            queue events, time outs and idlers to be dispatched one
+            after another.
+
+            On Linux we provide two implementations, one on top of
+            well-known Glib and another on top of poll(2). Other
+            systems provide their specific mainloops, all tied to
+            their platforms (see Core Library > Target Platforms).
+
+config MAINLOOP_GLIB
+	bool "glib"
+	depends on LINUX && HAVE_GLIB
+	help
+            The mainloop is implementated on top of Glib.
+
+            When using this mainloop, other libraries that uses
+            GMainLoop will work even if they are not aware of
+            Soletta. This is recommended for larger systems where the
+            Glib footprint doesn't matter, but integration with other
+            libraries does.
+
+            An alternative main loop for Linux is "posix", that is
+            lightweight and relies only on poll(2) syscall.
+
+config MAINLOOP_POSIX
+	bool "posix"
+	depends on LINUX
+	help
+            The mainloop is implementated on top of poll(2) syscall.
+
+            This mainloop is very lightweight and does not rely on
+            external libraries. However, when integrating with other
+            libraries one must be sure to translate timer/timeout
+            requests to sol_timeout_add(), file descriptor monitoring
+            to sol_fd_add() and so on.
+
+            An alternative main loop for Linux is "glib", that allows
+            libraries interacting to GMainLoop to work with Soletta.
+
+config MAINLOOP_RIOTOS
+	bool "riotos"
+	depends on RIOT
+	help
+            The mainloop to be used in RIOT platform.
+
+config MAINLOOP_CONTIKI
+	bool "contiki"
+	depends on CONTIKI
+	help
+            The mainloop to be used in Contiki platform.
+
+config MAINLOOP_ZEPHYR
+	bool "zephyr"
+	depends on ZEPHYR
+	select MAINLOOP_ZEPHYR_NANO if !FEATURE_ZEPHYR_MICROKERNEL
+	select MAINLOOP_ZEPHYR_MICRO if FEATURE_ZEPHYR_MICROKERNEL
+	help
+            The mainloop to be used in Zephyr platform.
+
+endchoice
+
+config PTHREAD
+	bool
+
+config THREADS
+	bool "Thread safety"
+	depends on (HAVE_PTHREAD_H && LINUX) || RIOT || ZEPHYR
+	select PTHREAD if LINUX
+	default y
+	help
+            Allow usage of threads in Soletta applications.
+
+            While Soletta doesn't use threads extensively, it needs to
+            be aware that threads would be used to make some
+            primitives thread-aware.
+
+            For instance, the main thread will be the one that called
+            sol_init() and sol_log_print() will detect other threads
+            and print their thread-id in the log messages, as well as
+            locking so log messages from different threads are
+            serialized properly.
+
+            Main loop primitives such as sol_fd_add(), sol_idle_add()
+            and sol_timeout_add() (and destructors) can be called from
+            secondary threads and they will behave properly.
+
+            This switch also enables exposing the sol-worker-thread.h
+            primitives to abstract creation and management of
+            secondary, low priority threads.
+
+            The only valid case to disable threads support is when the
+            Soletta application will never use threads, both
+            internally or via external modules or libraries. For
+            generic deployments it is recommended to enable threads.
+
+            If unsure, say Y.
+
+config WORKER_THREAD
+    bool "Worker thread support"
+    depends on FEATURE_WORKER_THREADS && THREADS
+    default y
+    help
+            Enable support for worker threads.
+
+            Worker threads are a mechanism through which developers can
+            run expensive tasks separately from the mainloop. They will
+            use whatever infrastructure the underlying OS provides to do
+            so, allowing the developer to not worry about manually
+            handling threads or locks.
+
+config POWER_SUPPLY
+    bool "Power supply support"
+    default y
+    help
+          Enable support for power supply.
+
+          Power supply is used to get information from battery, UPS,
+          AC or DC power supplies.
+
+config LOG
+	bool "Log"
+	default y
+	help
+            Log (sol-log.h) implements a flexible message logging for
+            applications and modules.
+
+            Logs have a domain name (or "category") and different
+            levels so it's easier to filter and trace problems.
+
+            However, log messages increase binary size and they may be
+            disabled altogether (with this switch) or starting from a
+            specific level (the "Maximum allowed log level" below).
+
+            The only reason to disable log is to save space on product
+            deployment builds.
+
+            If unsure, say Y.
+
+choice
+	prompt "Maximum allowed log level"
+	default MAXIMUM_LOG_LEVEL_UNLIMITED
+	depends on LOG
+	help
+          Maximum log level that will be allowed.
+
+          All log levels higher than the selected one will be
+          disabled in compile time and won't be present in the
+          final library.
+
+          It only affects log levels in the library functions.
+          If an application is using Soletta log system, it
+          needs to be changed using application CFLAGS.
+
+          So to disable all log levels greater than warning on
+          application build:
+          CFLAGS += -DSOL_LOG_LEVEL_MAXIMUM=2
+
+          Log level ordering is:
+          critical < error < warning < info < debug.
+
+          The default is to not limit log levels.
+
+          It's suggested to reduce it at least to warning level
+          when building final products using it, so some space
+          and eventually performance can be saved (debug information
+          should be required at this point).
+
+          It isn't suggested to limit log on distros, general purpose
+          distributions or development phases, since relevant
+          information will be hidden and sol-fbp-runner users may also
+          have a bad experience.
+
+          On Linux, one is able to control some logging parameters by
+          means of environment variables (on others, one can change
+          those by API calls, at least):
+          - SOL_LOG_SHOW_COLORS: boolean telling whether to log with
+            (ANSI terminal) colors (false by default)
+          - SOL_LOG_SHOW_FILE: boolean telling whether to prefix log
+            entries with the originating file name (true by default)
+          - SOL_LOG_SHOW_FUNCTION": boolean telling whether to prefix
+            log entries with the originating function name (true by
+            default)
+          - SOL_LOG_SHOW_LINE: boolean telling whether to prefix log
+            entries with the originating file line (true by default)
+
+          On every system, even if logging is enabled, it's possible
+          to suppress some of those logging strings that go the final
+          binary (file/function names), to save space. Refer to the
+          LOG_FUNCTIONS and LOG_FILES configuration options.
+
+
+config MAXIMUM_LOG_LEVEL_CRITICAL
+	bool "critical"
+
+config MAXIMUM_LOG_LEVEL_ERROR
+	bool "error"
+
+config MAXIMUM_LOG_LEVEL_WARNING
+	bool "warning"
+
+config MAXIMUM_LOG_LEVEL_INFO
+	bool "info"
+
+config MAXIMUM_LOG_LEVEL_DEBUG
+	bool "debug"
+
+config MAXIMUM_LOG_LEVEL_UNLIMITED
+	bool "unlimited"
+endchoice
+
+config LOG_FILES
+	depends on LOG
+	bool "Add file name entries to the logging calls"
+	default y
+	help
+          Add file name entries to the logging calls throughout
+          Soletta. Those file name strings will end up in your final
+          binary/image, if log is enabled. For constrained systems,
+          you might want to suppress that. If unsure, say Y.
+
+config LOG_FUNCTIONS
+	depends on LOG
+	bool "Add function name entries to the logging calls"
+	default y
+	help
+          Add function name entries to the logging calls throughout
+          Soletta. Those function name strings will end up in your final
+          binary/image, if log is enabled. For constrained systems,
+          you might want to suppress that. If unsure, say Y.
+
+menu "Hardware Options"
+source "src/lib/io/Kconfig"
+endmenu
+
+source "src/modules/update/Kconfig"

@@ -1,0 +1,51 @@
+The tests are regular FBP files with comments that describe what is
+expected from them. While they can be executed using regular
+sol-fbp-runner, it's more convenient to use 'tools/run-fbp-tests',
+from the source root directory.
+
+    # Run all the tests inside src/test-fbp.
+    $ tools/run-fbp-tests
+
+    # Run only specific set of tests, accepts directories too.
+    $ tools/run-fbp-tests src/test-fbp/declare.fbp src/test-fbp/parser-errors/
+
+For convenience, 'make check-fbp' and 'make check-fbp-valgrind' will
+call the script with appropriate arguments to run all the tests in
+'src/test-fbp/'.
+
+By default a test is considered to pass if it exits with code equals
+to 0. Test meta-data can be passed by using comments that start with a
+double hash. If an error is expected, this can be specified by adding
+the comment
+
+    ## TEST-EXPECTS-ERROR
+
+to the test. An expected output can be provided by using
+
+    ## TEST-OUTPUT
+    # Output line 1.
+    # Output line 2.
+    # Last output line.
+
+    # Comments after the first blank line will be ignored.
+
+Tests can also be skipped by adding a comment
+
+    ## TEST-SKIP Skipped because reason XYZ.
+
+The reason provided will be part of the execution output but won't
+count as a failure.
+
+It also supports regular expressions variants. Its syntax
+is described at https://docs.python.org/3/library/re.html.
+In order to use regex, just use TEST-OUTPUT-REGEX instead
+of TEST-OUTPUT. So it will look for an expression match.
+
+If output messages from SOL_WRN and friends are expected using
+regular expressions is required, since they contain implementation
+information (line, column, file name in the source) that might
+change as the code evolves.
+
+In all cases it's important that your flow ends at some point, look at
+the 'test' or 'app' modules to ways to do it. Usually TEST_RESULT is
+good enough.

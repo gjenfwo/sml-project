@@ -1,0 +1,150 @@
+config TEST_ARENA
+	bool "arena"
+	default y
+
+config TEST_MEMDESC
+	bool "memdesc"
+	default y
+
+config TEST_BUFFER
+	bool "buffer"
+	default y
+
+config TEST_COAP
+	bool "coap"
+	depends on COAP
+	default y
+
+config TEST_FBP
+	bool "fbp"
+	depends on USE_FLOW
+	default y
+
+config TEST_FBP_SCANNER
+	bool "fbp scanner"
+	depends on USE_FLOW
+	default y
+
+config TEST_FLOW
+	bool "flow"
+	depends on USE_FLOW && FLOW_NODE_TYPE_INT && FLOW_NODE_TYPE_TIMER
+	default y
+
+config TEST_FLOW_BUILDER
+	bool "flow builder"
+	depends on NODE_DESCRIPTION
+	default y
+
+config TEST_FLOW_PARSER
+	bool "flow parser"
+	depends on NODE_DESCRIPTION
+	default y
+
+config TEST_JAVASCRIPT
+	bool "javascript"
+	depends on FLOW_METATYPE_JAVASCRIPT
+	default y
+
+config TEST_MAINLOOP
+	bool "mainloop"
+	default y
+
+config TEST_MAINLOOP_LINUX
+	bool "mainloop linux"
+	depends on PLATFORM_LINUX
+	default y
+
+config TEST_MAINLOOP_IMPLEMENTATION
+	bool "mainloop implementation"
+	default y
+
+config TEST_MAINLOOP_THREADS
+	bool "mainloop threads"
+	depends on PTHREAD && MAINLOOP_POSIX
+	default y
+
+config TEST_MAINLOOP_THREADS_SOL_RUN
+	bool "mainloop threads sol run"
+	depends on PTHREAD && MAINLOOP_POSIX
+	default y
+
+config TEST_MAINLOOP_GLIB_INTEGRATION
+	bool "mainloop glib integration"
+	depends on LINUX && HAVE_GLIB
+	default y
+
+config TEST_MONITORS
+	bool "monitors"
+	default y
+
+config TEST_STR_SLICE
+	bool "str-slice"
+	default y
+
+config TEST_STR_SPLIT
+	bool "str-split"
+	default y
+
+config TEST_STR_TABLE
+	bool "str-table"
+	default y
+
+config TEST_VECTOR
+	bool "vector"
+	default y
+
+config TEST_LIST
+    bool "list"
+    default y
+
+config TEST_JSON
+	bool "json"
+	default y
+
+config TEST_UTIL
+	bool "util"
+	default y
+
+config TEST_UTIL_FILE
+       bool "util-file"
+       depends on FEATURE_FILESYSTEM
+       default y
+
+config TEST_COMPOSED_TYPE
+	bool "composed-type"
+	depends on USE_FLOW
+	default y
+
+config TEST_MESSAGE_DIGEST
+      bool "crypto message-digest"
+      default y
+
+config TEST_PERSISTENCE_MEMMAP
+	bool "Memmap persistence API"
+	depends on USE_MEMMAP
+	default y
+
+config TEST_HTTP
+       bool "http"
+       depends on HTTP
+       default y
+
+config TEST_CERTIFICATE
+    bool "Certificate API"
+    depends on PLATFORM_LINUX
+    default y
+
+config TEST_LWM2M
+       bool "lwm2m"
+       depends on COAP && LWM2M
+       default y
+
+config TEST_NETWORK
+       bool "network"
+       depends on NETWORK && BLUETOOTH
+       default y
+
+config TEST_BLUETOOTH
+       bool "bluetooth"
+       depends on NETWORK && BLUETOOTH
+       default y

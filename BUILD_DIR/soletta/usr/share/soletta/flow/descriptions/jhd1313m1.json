@@ -1,0 +1,252 @@
+{
+ "jhd1313m1": [
+  {
+   "aliases": [
+    "grove/lcd-string"
+   ],
+   "author": "Intel Corporation",
+   "category": "output/hw",
+   "description": "Grove-kit's LCD controller (JHD1313M1 model) for simple string displaying and backlight color setting. It uses two I2C addresses, one to control an HD44780 based display and one for RGB backlight. Display matrix is 16x2.",
+   "header_file": "sol-flow/jhd1313m1.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "Set string to be displayed. If it's bigger than 16 characters, it breaks it to the second line. If it's bigger than 32 (what fits on the two display lines), it'll be cropped to this length.",
+     "name": "IN",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "rgb",
+     "description": "Set display's backlight color.",
+     "name": "COLOR",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "jhd1313m1/string",
+   "options": {
+    "members": [
+     {
+      "data_type": "int",
+      "description": "I2C bus to be used.",
+      "name": "bus",
+      "required": true
+     },
+     {
+      "data_type": "rgb",
+      "default": {
+       "blue": 255,
+       "blue_max": 255,
+       "green": 255,
+       "green_max": 255,
+       "red": 255,
+       "red_max": 255
+      },
+      "description": "Initial background color.",
+      "name": "color",
+      "required": false
+     }
+    ],
+    "required": true,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_jhd1313m1_string_options",
+   "symbol": "SOL_FLOW_NODE_TYPE_JHD1313M1_STRING",
+   "url": "http://solettaproject.org/doc/latest/components/jhd1313m1/string.html",
+   "version": "1"
+  },
+  {
+   "aliases": [
+    "grove/lcd-char"
+   ],
+   "author": "Intel Corporation",
+   "category": "output/hw",
+   "description": "Grove-kit's LCD controller (JHD1313M1 model) for custom character/cursor manipulation and backlight color setting. It uses two I2C addresses, one to control an HD44780 based display and one for RGB backlight. Display matrix is 16x2.",
+   "header_file": "sol-flow/jhd1313m1.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "boolean",
+     "description": "Set whether auto-scrolling is on or off. After it's set to on, the cursor position is held static until one sets it off again (or changes it explicitly).",
+     "name": "AUTO_SCROLL",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "boolean",
+     "description": "Set character entry direction to be left-to-right (true) or right-to-left (false).",
+     "name": "LEFT_TO_RIGHT",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 2,
+     "data_type": "rgb",
+     "description": "Set display's backlight color.",
+     "name": "COLOR",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 3,
+     "data_type": "int",
+     "description": "Set display's current column. Valid range is 0-16 (16 is a virtual position useful when writing on the last column in right-to-left mode).",
+     "name": "COL",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 4,
+     "data_type": "int",
+     "description": "Set display's current row. Valid range is 0-1.",
+     "name": "ROW",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 5,
+     "data_type": "boolean",
+     "description": "Set whether the display's blinking cursor is on (true) or off (false).",
+     "name": "BLINK_CURSOR",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 6,
+     "data_type": "boolean",
+     "description": "Set whether the display's underline cursor is on (true) or off (false).",
+     "name": "UNDERLINE_CURSOR",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 7,
+     "data_type": "boolean",
+     "description": "Set whether the display is on (true) or not (false). Naturally, it starts on by default.",
+     "name": "DISPLAY_ON",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 8,
+     "data_type": "byte",
+     "description": "Write given character at display's current row/column and advance them one position. The column will raise or lower depending on the entry direction, and no wrapping will occur -- if either top-left or bottom-right of the screen is hit, further char writes will update those limit cells until one changes the cursor position explicitly.",
+     "name": "PUT_CHAR",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 9,
+     "data_type": "string",
+     "description": "Write a sequence of characters at display's current row/column and advance the cursor's position. The cursor's position will change differently depending on the entry direction, and, if either top-left or bottom-right of the screen is hit, the string will be cropped at that point.",
+     "name": "PUT_STRING",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 10,
+     "data_type": "any",
+     "description": "Shift/scroll right the whole display by one column, keeping the char cell states (lcd's RAM state) as it was. Thus, a subsequent shift left will bring the display to what it looked like before the first shift.",
+     "name": "SCROLL_RIGHT",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 11,
+     "data_type": "any",
+     "description": "Shift/scroll left the whole display by one column, keeping the char cell states (lcd's RAM state) as it was. Thus, a subsequent shift left will bring the display to what it looked like before the first shift.",
+     "name": "SCROLL_LEFT",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 12,
+     "data_type": "any",
+     "description": "Clear the whole display, also resetting cursor to the top-left position.",
+     "name": "CLEAR",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "jhd1313m1/char",
+   "options": {
+    "members": [
+     {
+      "data_type": "int",
+      "description": "I2C bus to be used.",
+      "name": "bus",
+      "required": true
+     },
+     {
+      "data_type": "int",
+      "default": 0,
+      "description": "Initial column of the cursor.",
+      "name": "init_col",
+      "required": false
+     },
+     {
+      "data_type": "int",
+      "default": 0,
+      "description": "Initial row of the cursor.",
+      "name": "init_row",
+      "required": false
+     },
+     {
+      "data_type": "boolean",
+      "default": true,
+      "description": "Whether to start on left-to-right (true) or right-to-left (false) cursor advancing.",
+      "name": "ltr",
+      "required": false
+     },
+     {
+      "data_type": "boolean",
+      "default": false,
+      "description": "Set whether the display's blinking cursor is on (true) or off (false).",
+      "name": "blink_cursor",
+      "required": false
+     },
+     {
+      "data_type": "boolean",
+      "default": false,
+      "description": "Set whether the display's underline cursor is on (true) or off (false).",
+      "name": "underline_cursor",
+      "required": false
+     },
+     {
+      "data_type": "boolean",
+      "default": false,
+      "description": "Whether to start on auto scroll mode (true) or not (false).",
+      "name": "auto_scroll",
+      "required": false
+     },
+     {
+      "data_type": "rgb",
+      "default": {
+       "blue": 255,
+       "blue_max": 255,
+       "green": 255,
+       "green_max": 255,
+       "red": 255,
+       "red_max": 255
+      },
+      "description": "Initial background color.",
+      "name": "color",
+      "required": false
+     }
+    ],
+    "required": true,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_jhd1313m1_char_options",
+   "symbol": "SOL_FLOW_NODE_TYPE_JHD1313M1_CHAR",
+   "url": "http://solettaproject.org/doc/latest/components/jhd1313m1/char.html",
+   "version": "1"
+  }
+ ]
+}

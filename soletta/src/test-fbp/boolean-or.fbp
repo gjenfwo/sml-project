@@ -1,0 +1,46 @@
+# This file is part of the Soletta (TM) Project
+#
+# Copyright (C) 2015 Intel Corporation. All rights reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+false(constant/boolean:value=false)
+true(constant/boolean:value=true)
+
+false OUT -> IN[0] or_ff(boolean/or)
+false OUT -> IN[1] or_ff
+or_ff OUT -> IN _(boolean/not) OUT -> RESULT false_or_false_is_false(test/result)
+
+false OUT -> IN[0] or_ft(boolean/or)
+true OUT -> IN[1] or_ft
+or_ft OUT -> RESULT false_or_true_is_true(test/result)
+
+true OUT -> IN[0] or_tf(boolean/or)
+false OUT -> IN[1] or_tf
+or_tf OUT -> RESULT true_or_false_is_true(test/result)
+
+true OUT -> IN[0] or_tt(boolean/or)
+true OUT -> IN[1] or_tt
+or_tt OUT -> RESULT true_or_true_is_true(test/result)
+
+or_fft(boolean/or)
+false OUT -> IN[5] or_fft
+true OUT -> IN[31] or_fft
+false OUT -> IN[17] or_fft
+or_fft OUT -> RESULT false_or_false_or_true_is_true(test/result)
+
+or_fff(boolean/or)
+false OUT -> IN[0] or_fff
+false OUT -> IN[8] or_fff
+false OUT -> IN[31] or_fff
+or_fff OUT -> IN _(boolean/not) OUT -> RESULT false_or_false_or_false_is_false(test/result)

@@ -1,0 +1,927 @@
+{
+ "string": [
+  {
+   "author": "Intel Corporation",
+   "category": "string",
+   "description": "Compare two strings",
+   "header_file": "sol-flow/string.h",
+   "in_ports": [
+    {
+     "array_size": 2,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "Two strings to be compared. Indexed from 0 to 1.",
+     "name": "IN",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "string/compare",
+   "options": {
+    "members": [
+     {
+      "data_type": "int",
+      "default": 0,
+      "description": "Amount of chars to be compared between strings. If zero, the whole strings will be compared.",
+      "name": "chars",
+      "required": false
+     },
+     {
+      "data_type": "boolean",
+      "default": false,
+      "description": "Ignore case when comparing strings.",
+      "name": "ignore_case",
+      "required": false
+     }
+    ],
+    "required": false,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_string_compare_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "int",
+     "description": "It returns an integer less than, equal to, or greater than zero if string received on IN[0] is found to be less than, to match, or be greater than string on IN[1].",
+     "name": "OUT",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "boolean",
+     "description": "TRUE if the string received on IN[0] is the same as the string on IN[1].",
+     "name": "EQUAL",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_STRING_COMPARE",
+   "url": "http://solettaproject.org/doc/latest/node_types/string/compare.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "string",
+   "description": "Concatenate strings",
+   "header_file": "sol-flow/string.h",
+   "in_ports": [
+    {
+     "array_size": 32,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "Strings to be concatenated. Indexed from 0 to 31.",
+     "name": "IN",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "string/concatenate",
+   "options": {
+    "members": [
+     {
+      "data_type": "string",
+      "default": null,
+      "description": "Separator string to be used between the concatenated strings. It's set to null by default (no separator).",
+      "name": "separator",
+      "required": false
+     }
+    ],
+    "required": false,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_string_concatenate_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "Strings received on pors IN[0] to IN[31] concatenated.",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_STRING_CONCATENATE",
+   "url": "http://solettaproject.org/doc/latest/node_types/string/concatenate.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "string",
+   "description": "Calculate the length of a string",
+   "header_file": "sol-flow/string.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "String to be measured.",
+     "name": "IN",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "string/length",
+   "options": {
+    "members": [
+     {
+      "data_type": "int",
+      "default": 0,
+      "description": "Maximum length to be checked. If a string is greater than that, maxlen value will be sent. If zero, no limit is applied.",
+      "name": "maxlen",
+      "required": false
+     }
+    ],
+    "required": false,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_string_length_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "int",
+     "description": "Send the string size, the number of bytes excluding terminating null byte. If maxlen is provided, it'll be at most this value.",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_STRING_LENGTH",
+   "url": "http://solettaproject.org/doc/latest/node_types/string/length.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "string",
+   "description": "Extract a slice from a given string",
+   "header_file": "sol-flow/string.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "int",
+     "description": "Start index of the slice (counting starts from 0). Negative values are relative to the end of the input string. If the given indexes are not valid for the input string, an empty string output is produced.",
+     "name": "START",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "int",
+     "description": "End index of the slice (counting starts from 0). Negative values are relative to the end of the input string. If the given indexes are not valid for the input string, an empty string output is produced.",
+     "name": "END",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 2,
+     "data_type": "string",
+     "description": "Input string to be sliced.",
+     "name": "IN",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "string/slice",
+   "options": {
+    "members": [
+     {
+      "data_type": "int",
+      "default": 0,
+      "description": "Start index of the slice (counting starts from 0). Negative values are relative to the end of the input string. If the given indexes are not valid for the input string, an empty string output is produced. It can be overriden by values received on 'START' port.",
+      "name": "start",
+      "required": false
+     },
+     {
+      "data_type": "int",
+      "default": 0,
+      "description": "End index of the slice (counting starts from 0). Negative values are relative to the end of the input string. If the given indexes are not valid for the input string, an empty string output is produced. It can be overriden by values received on 'END' port.",
+      "name": "end",
+      "required": false
+     }
+    ],
+    "required": false,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_string_slice_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "String slice given by the indexes in the IDX port array.",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_STRING_SLICE",
+   "url": "http://solettaproject.org/doc/latest/node_types/string/slice.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "string",
+   "description": "Split a string given a separator.",
+   "header_file": "sol-flow/string.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "String to be split.",
+     "name": "IN",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "string",
+     "description": "String received on 'IN' port will be split using these delimiter chars.",
+     "name": "SEPARATOR",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 2,
+     "data_type": "int",
+     "description": "A string can be split in many substrings. This value defines which substring should be sent. It must be non-negative.",
+     "name": "INDEX",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 3,
+     "data_type": "int",
+     "description": "A string can be split in many substrings. This value defines the maximum number of splits (separated by the separator option) to generate, and must be non-negative. The value of zero means to generate all substrings between the given separator.",
+     "name": "MAX_SPLIT",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "string/split",
+   "options": {
+    "members": [
+     {
+      "data_type": "int",
+      "default": 0,
+      "description": "A string can be split in many substrings. This value defines which substring should be sent. It must be non-negative. It can be overriden by values received on 'INDEX' port.",
+      "name": "index",
+      "required": false
+     },
+     {
+      "data_type": "int",
+      "default": 0,
+      "description": "A string can be split in many substrings. This value defines the maximum number of splits (separated by the separator option) to generate, and must be non-negative. The default value of zero means to generate all substrings between the given separator. This option can be overriden by values received on the 'MAX_SPLIT' port.",
+      "name": "max_split",
+      "required": false
+     },
+     {
+      "data_type": "string",
+      "default": " ",
+      "description": "String received on 'IN' port will be split using these delimiters chars. It can be overriden by values received on 'SEPARATOR' port.",
+      "name": "separator",
+      "required": false
+     }
+    ],
+    "required": false,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_string_split_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "int",
+     "description": "Number of generated substrings.",
+     "name": "LENGTH",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "string",
+     "description": "Substring given a separator and an index.",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_STRING_SPLIT",
+   "url": "http://solettaproject.org/doc/latest/node_types/string/split.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "string",
+   "description": "Given an input string, output a copy with all original characters in lower case.",
+   "header_file": "sol-flow/string.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "String to be output in lowercase",
+     "name": "IN",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "string/lowercase",
+   "options_symbol": "sol_flow_node_type_string_lowercase_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "The original input string now in lowercase characters",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_STRING_LOWERCASE",
+   "url": "http://solettaproject.org/doc/latest/node_types/string/lowercase.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "string",
+   "description": "Given an input string, output a copy with all original characters in upper case.",
+   "header_file": "sol-flow/string.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "String to be output in uppercase",
+     "name": "IN",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "string/uppercase",
+   "options_symbol": "sol_flow_node_type_string_uppercase_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "The original input string now in uppercase characters",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_STRING_UPPERCASE",
+   "url": "http://solettaproject.org/doc/latest/node_types/string/uppercase.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "string",
+   "description": "Output a boolean packet indicating whether a given input string starts with a given prefix or not.",
+   "header_file": "sol-flow/string.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "String to have a prefix searched for.",
+     "name": "IN",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "string",
+     "description": "Prefix string to be searched on the one received on the 'IN' port.",
+     "name": "PREFIX",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 2,
+     "data_type": "int",
+     "description": "Index, on the string received on the 'IN' port, where to start the prefix matching. It must be non-negative. Make sure to use a valid index for the input string.",
+     "name": "START",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 3,
+     "data_type": "int",
+     "description": "Index, on the string received on the 'IN' port, where to end the prefix matching. Any negative value means it's not set, i.e. do the matching until the end of the input string. It must not be less than the value set on the 'START' port.",
+     "name": "END",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "string/starts-with",
+   "options": {
+    "members": [
+     {
+      "data_type": "int",
+      "default": 0,
+      "description": "Index where to start the prefix matching. Any negative value means it's not set, i.e. start the matching from the input's start. It must not be greater than the value set for the end index (if that one is non-negative). This value may be overriden by the string received on the 'START' port.",
+      "name": "start",
+      "required": false
+     },
+     {
+      "data_type": "int",
+      "default": -1,
+      "description": "Index where to end the prefix matching. Any negative value means it's not set, i.e. do the matching until the end of the input string. It must not be less than the value set for the start index. This value may be overriden by the string received on the 'END' port.",
+      "name": "end",
+      "required": false
+     },
+     {
+      "data_type": "string",
+      "description": "Prefix string to be searched on the one received on the 'IN' port. It can be overriden by values received on 'PREFIX' port.",
+      "name": "prefix",
+      "required": true
+     }
+    ],
+    "required": true,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_string_starts_with_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "boolean",
+     "description": "Whether the input string has the indicated prefix or not.",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_STRING_STARTS_WITH",
+   "url": "http://solettaproject.org/doc/latest/node_types/string/starts_with.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "string",
+   "description": "Output a boolean packet indicating whether a given input string ends with a given suffix or not.",
+   "header_file": "sol-flow/string.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "String to have a suffix searched for.",
+     "name": "IN",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "string",
+     "description": "Suffix string to be searched on the one received on the 'IN' port.",
+     "name": "SUFFIX",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 2,
+     "data_type": "int",
+     "description": "Index where to start the suffix matching. Any negative value means it's not set, i.e. start the matching from the input's end minus the size of the suffix. It must not be greater than the value set on the 'END' port (if that one is non-negative).",
+     "name": "START",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 3,
+     "data_type": "int",
+     "description": "Index, on the string received on the 'IN' port, where to end the suffix matching. Any negative value means it's not set, i.e. do the matching until the end of the input string. It must not be less than the value set on the 'START' port (if that one is non-negative).",
+     "name": "END",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "string/ends-with",
+   "options": {
+    "members": [
+     {
+      "data_type": "int",
+      "default": -1,
+      "description": "Index where to start the suffix matching. Any negative value means it's not set, i.e. start the matching from the input's end minus the size of the suffix. It must not be greater than the value set for the end index (if that one is non-negative). This value may be overriden by the string received on the 'START' port.",
+      "name": "start",
+      "required": false
+     },
+     {
+      "data_type": "int",
+      "default": -1,
+      "description": "Index where to end the suffix matching. Any negative value means it's not set, i.e. end the matching at the input's string end. It must not be less than the value set for the start index (if that one is non-negative). This value may be overriden by the string received on the 'END' port.",
+      "name": "end",
+      "required": false
+     },
+     {
+      "data_type": "string",
+      "description": "Suffix string to be searched on the one received on the 'IN' port. It can be overriden by values received on 'SUFFIX' port.",
+      "name": "suffix",
+      "required": true
+     }
+    ],
+    "required": true,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_string_ends_with_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "boolean",
+     "description": "Whether the input string has the indicated suffix or not.",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_STRING_ENDS_WITH",
+   "url": "http://solettaproject.org/doc/latest/node_types/string/ends_with.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "string",
+   "description": "Replace a pattern in a string for another.",
+   "header_file": "sol-flow/string.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "String to be replaced.",
+     "name": "IN",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "string",
+     "description": "The string received on the 'IN' port will have substrings defined by this port replaced by the ones defined in the 'TO' port.",
+     "name": "FROM",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 2,
+     "data_type": "string",
+     "description": "The string received on the 'IN' port will have substrings defined by the 'FROM' port replaced by the ones defined in this port.",
+     "name": "TO",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 3,
+     "data_type": "int",
+     "description": "A string can have a substring replaced in many points. This value defines the maximum number of replacements to attempt, and must be non-negative. The value of zero means to replace all possible substrings.",
+     "name": "MAX_REPLACE",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "string/replace",
+   "options": {
+    "members": [
+     {
+      "data_type": "int",
+      "default": 0,
+      "description": "A string can have a substring replaced in many points. This value defines the maximum number of replacements to attempt, and must be non-negative. The default value of zero means to replace all possible substrings. This option can be overriden by values received on the 'MAX_REPLACE' port.",
+      "name": "max_replace",
+      "required": false
+     },
+     {
+      "data_type": "string",
+      "default": "",
+      "description": "The string received on the 'IN' port will have substrings defined by this option replaced by the ones defined by the 'to_string' one. It can be overriden by values received on 'FROM' port.",
+      "name": "from_string",
+      "required": false
+     },
+     {
+      "data_type": "boolean",
+      "default": true,
+      "description": "Whether to only forward the input string as is to the output port when no matches occur (true) or to generate error packets (false)",
+      "name": "forward_on_no_match",
+      "required": false
+     },
+     {
+      "data_type": "string",
+      "default": "",
+      "description": "The string received on the 'IN' port will have substrings defined by the 'from_string' option replaced by the ones defined by this one. It can be overriden by values received on 'TO' port.",
+      "name": "to_string",
+      "required": false
+     }
+    ],
+    "required": false,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_string_replace_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "The original string coming in the 'IN' port with the due replacements made.",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_STRING_REPLACE",
+   "url": "http://solettaproject.org/doc/latest/node_types/string/replace.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "string",
+   "description": "Generate a new universally unique identifier (UUID). The output UUID is 16 bytes (128 bits) long and conforms to v4 UUIDs (generated from random\u2014or pseudo-random\u2014numbers). The output string packet is sent upon node creation, but new UUIDs can be generated by 'ticks' on the 'GENERATE' input port.",
+   "header_file": "sol-flow/string.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "any",
+     "description": "Generate a new UUID.",
+     "name": "GENERATE",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "string/uuid",
+   "options": {
+    "members": [
+     {
+      "data_type": "boolean",
+      "default": false,
+      "description": "Whether to put UUID hyphens in the resulting string.",
+      "name": "with_hyphens",
+      "required": false
+     },
+     {
+      "data_type": "boolean",
+      "default": false,
+      "description": "Whether to output the UUID string in uppercase",
+      "name": "upcase",
+      "required": false
+     }
+    ],
+    "required": false,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_string_uuid_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "A new v4 UUID string",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_STRING_UUID",
+   "url": "http://solettaproject.org/doc/latest/node_types/string/uuid.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "string",
+   "description": "Tells whether a given input string is empty (\"\") or not.",
+   "header_file": "sol-flow/string.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "Input string to test for emptyness.",
+     "name": "IN",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "string/is-empty",
+   "options_symbol": "sol_flow_node_type_string_is_empty_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "boolean",
+     "description": "True, if the input string is empty, false otherwise.",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_STRING_IS_EMPTY",
+   "url": "http://solettaproject.org/doc/latest/node_types/string/is-empty.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "string",
+   "description": "Encode a string to Base64",
+   "header_file": "sol-flow/string.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "Input string to be encoded to Base64. It will stop at the first null byte (\\0), for binary data use BLOB port.",
+     "name": "STRING",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "blob",
+     "description": "Input blob to be encoded to Base64",
+     "name": "BLOB",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "string/b64encode",
+   "options": {
+    "members": [
+     {
+      "data_type": "string",
+      "default": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
+      "description": "If non-null must be a map with exactly 65 characters, the first 64 are the map for the 6-bits numbers and the last (position 64) is the padding if input string is not multiple of 3 bytes.",
+      "name": "base64_map",
+      "required": false
+     }
+    ],
+    "required": false,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_string_b64encode_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "The Base64 encoded string",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_STRING_B64ENCODE",
+   "url": "http://solettaproject.org/doc/latest/node_types/string/b64encode.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "string",
+   "description": "Decode a string from Base64",
+   "header_file": "sol-flow/string.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "Input Base64 string to be decoded",
+     "name": "IN",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "string/b64decode",
+   "options": {
+    "members": [
+     {
+      "data_type": "string",
+      "default": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
+      "description": "If non-null must be a map with exactly 65 characters, the first 64 are the map for the 6-bits numbers and the last (position 64) is the padding if input string is not multiple of 3 bytes.",
+      "name": "base64_map",
+      "required": false
+     }
+    ],
+    "required": false,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_string_b64decode_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "The decoded Base64 as textual string. It will stop at the first null byte (\\0), for binary data use BLOB port.",
+     "name": "STRING",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "blob",
+     "description": "The decoded Base64 as binary blob.",
+     "name": "BLOB",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_STRING_B64DECODE",
+   "url": "http://solettaproject.org/doc/latest/node_types/string/b64decode.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "string",
+   "description": "Encode a string to Base16",
+   "header_file": "sol-flow/string.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "Input string to be encoded to Base16. It will stop at the first null byte (\\0), for binary data use BLOB port.",
+     "name": "STRING",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "blob",
+     "description": "Input blob to be encoded to Base16",
+     "name": "BLOB",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "string/b16encode",
+   "options": {
+    "members": [
+     {
+      "data_type": "boolean",
+      "default": false,
+      "description": "If the letters (abcdef) should be uppercase.",
+      "name": "uppercase",
+      "required": false
+     }
+    ],
+    "required": false,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_string_b16encode_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "The Base16 encoded string",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_STRING_B16ENCODE",
+   "url": "http://solettaproject.org/doc/latest/node_types/string/b16encode.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "string",
+   "description": "Decode a string from Base16",
+   "header_file": "sol-flow/string.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "Input Base16 string to be decoded",
+     "name": "IN",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "string/b16decode",
+   "options": {
+    "members": [
+     {
+      "data_type": "boolean",
+      "default": false,
+      "description": "If the letters (abcdef) should be uppercase.",
+      "name": "uppercase",
+      "required": false
+     }
+    ],
+    "required": false,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_string_b16decode_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "The decoded Base16 as textual string. It will stop at the first null byte (\\0), for binary data use BLOB port.",
+     "name": "STRING",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "blob",
+     "description": "The decoded Base16 as binary blob.",
+     "name": "BLOB",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_STRING_B16DECODE",
+   "url": "http://solettaproject.org/doc/latest/node_types/string/b16decode.html",
+   "version": "1"
+  }
+ ]
+}

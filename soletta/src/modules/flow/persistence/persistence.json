@@ -1,0 +1,527 @@
+{
+  "$schema": "http://solettaproject.github.io/soletta/schemas/node-type-genspec.schema",
+  "name": "persistence",
+  "meta": {
+    "author": "Intel Corporation",
+    "license": "Apache-2.0",
+    "version": "1"
+  },
+  "types": [
+    {
+      "category": "io/persistence",
+      "description": "Persists the last input packet's data it receives to storage, also repeating that packet on output port. If the value is unchanged, then the packet is not repeated, this allows the use of persistence in feedback loops with setters of data to be persisted. Note that upon a new connection on the unique output port, if a previous stored packet is found, it will already be sent.",
+      "methods": {
+        "close": "persist_close",
+        "open": "persist_boolean_open"
+      },
+      "node_type": {
+        "access": [
+          "base"
+        ],
+        "data_type": "struct persistence_node_type",
+        "extra_methods": {
+          "get_packet_data": "persist_boolean_get_packet_data",
+          "send_packet": "persist_boolean_send_packet",
+          "get_default": "persist_boolean_get_default"
+        }
+      },
+      "name": "persistence/boolean",
+      "options": {
+        "members": [
+          {
+            "data_type": "string",
+            "description": "Name to persist a boolean packet. If 'storage' is 'fs', name can be a fully fledged path to the file where the value will be stored.",
+            "name": "name"
+          },
+          {
+            "data_type": "string",
+            "description": "Storage where data will be persisted. It can be of the following: fs, efivars",
+            "name": "storage"
+          },
+          {
+            "data_type": "boolean",
+            "default": false,
+            "description": "Default value for this node, when there's no previous value persisted",
+            "name": "default_value"
+          }
+        ],
+        "version": 1
+      },
+      "in_ports": [
+        {
+          "data_type": "boolean",
+          "description": "A boolean packet to persist (and repeat on output)",
+          "methods": {
+            "process": "persist_process"
+          },
+          "name": "IN"
+        },
+        {
+          "data_type": "any",
+          "description": "Reset persist value to its default and send to output the new value",
+          "methods": {
+            "process": "reset_process"
+          },
+          "name": "RESET"
+        }
+      ],
+      "out_ports": [
+        {
+          "data_type": "boolean",
+          "description": "A boolean packet with the persisted value of the node",
+          "name": "OUT"
+        }
+      ],
+      "private_data_type": "persist_boolean_data",
+      "url": "http://solettaproject.org/doc/latest/components/persistence.html"
+    },
+    {
+      "category": "io/persistence",
+      "description": "Persists the last input packet's data it receives to storage, also repeating that packet on output port. If the value is unchanged, then the packet is not repeated, this allows the use of persistence in feedback loops with setters of data to be persisted. Note that upon a new connection on the unique output port, if a previous stored packet is found, it will already be sent.",
+      "methods": {
+        "close": "persist_close",
+        "open": "persist_byte_open"
+      },
+      "name": "persistence/byte",
+      "node_type": {
+        "access": [
+          "base"
+        ],
+        "data_type": "struct persistence_node_type",
+        "extra_methods": {
+          "get_packet_data": "persist_byte_get_packet_data",
+          "send_packet": "persist_byte_send_packet",
+          "get_default": "persist_byte_get_default"
+        }
+      },
+      "options": {
+        "members": [
+          {
+            "data_type": "string",
+            "description": "Name to persist a byte packet. If 'storage' is 'fs', name can be a fully fledged path to the file where the value will be stored.",
+            "name": "name"
+          },
+          {
+            "data_type": "string",
+            "description": "Storage where data will be persisted. It can be of the following: fs, efivars",
+            "name": "storage"
+          },
+          {
+            "data_type": "byte",
+            "default": 0,
+            "description": "Default value for this node, when there's no previous value persisted",
+            "name": "default_value"
+          }
+        ],
+        "version": 1
+      },
+      "in_ports": [
+        {
+          "data_type": "byte",
+          "description": "A byte packet to persist (and repeat on output)",
+          "methods": {
+            "process": "persist_process"
+          },
+          "name": "IN"
+        },
+        {
+          "data_type": "any",
+          "description": "Reset persist value to its default and send to output the new value",
+          "methods": {
+            "process": "reset_process"
+          },
+          "name": "RESET"
+        }
+      ],
+      "out_ports": [
+        {
+          "data_type": "byte",
+          "description": "A byte packet with the persisted value of the node",
+          "name": "OUT"
+        }
+      ],
+      "private_data_type": "persist_byte_data",
+      "url": "http://solettaproject.org/doc/latest/components/persistence.html"
+    },
+    {
+      "category": "io/persistence",
+      "description": "Persists the last input packet's data it receives to storage, also repeating that packet on output port. If the value is unchanged, then the packet is not repeated, this allows the use of persistence in feedback loops with setters of data to be persisted. Note that upon a new connection on the unique output port, if a previous stored packet is found, it will already be sent.",
+      "methods": {
+        "close": "persist_close",
+        "open": "persist_drange_open"
+      },
+      "node_type": {
+        "access": [
+          "base"
+        ],
+        "data_type": "struct persistence_node_type",
+        "extra_methods": {
+          "get_packet_data": "persist_drange_get_packet_data",
+          "send_packet": "persist_drange_send_packet",
+          "get_default": "persist_drange_get_default"
+        }
+      },
+      "name": "persistence/float",
+      "options": {
+        "members": [
+          {
+            "data_type": "string",
+            "description": "Name to persist a float packet. If 'storage' is 'fs', name can be a fully fledged path to the file where the value will be stored.",
+            "name": "name"
+          },
+          {
+            "data_type": "string",
+            "description": "Storage where data will be persisted. It can be of the following: fs, efivars",
+            "name": "storage"
+          },
+          {
+            "data_type": "float",
+            "default": 0.0,
+            "description": "Default value for this node, when there's no previous value persisted",
+            "name": "default_value"
+          },
+          {
+            "data_type": "drange-spec",
+            "default": {
+              "min": "-DBL_MAX",
+              "max": "DBL_MAX",
+              "step": "DBL_MIN"
+            },
+            "description": "Default range for this node, when there's no previous value persisted",
+            "name": "default_value_spec"
+          },
+          {
+            "data_type": "boolean",
+            "default": false,
+            "description": "Store only drange val, discarding min, max and step values",
+            "name": "store_only_val"
+          }
+        ],
+        "version": 1
+      },
+      "in_ports": [
+        {
+          "data_type": "float",
+          "description": "An float packet to persist (and repeat on output)",
+          "methods": {
+            "process": "persist_process"
+          },
+          "name": "IN"
+        },
+        {
+          "data_type": "any",
+          "description": "Reset persist value to its default and send to output the new value",
+          "methods": {
+            "process": "reset_process"
+          },
+          "name": "RESET"
+        }
+      ],
+      "out_ports": [
+        {
+          "data_type": "float",
+          "description": "A float packet with the persisted value of the node",
+          "name": "OUT"
+        }
+      ],
+      "private_data_type": "persist_drange_data",
+      "url": "http://solettaproject.org/doc/latest/components/persistence.html"
+    },
+    {
+      "category": "io/persistence",
+      "description": "Persists the last input packet's data it receives to storage, also repeating that packet on output port. If the value is unchanged, then the packet is not repeated, this allows the use of persistence in feedback loops with setters of data to be persisted. Note that upon a new connection on the unique output port, if a previous stored packet is found, it will already be sent.",
+      "methods": {
+        "close": "persist_close",
+        "open": "persist_irange_open"
+      },
+      "node_type": {
+        "access": [
+          "base"
+        ],
+        "data_type": "struct persistence_node_type",
+        "extra_methods": {
+          "get_packet_data": "persist_irange_get_packet_data",
+          "send_packet": "persist_irange_send_packet",
+          "get_default": "persist_irange_get_default"
+        }
+      },
+      "name": "persistence/int",
+      "options": {
+        "members": [
+          {
+            "data_type": "string",
+            "description": "Name to persist an integer packet with. If 'storage' is 'fs', the name must be a fully fledged path to the file where the value will be stored.",
+            "name": "name"
+          },
+          {
+            "data_type": "string",
+            "description": "Storage where data will be persisted. It can be of the following: fs, efivars",
+            "name": "storage"
+          },
+          {
+            "data_type": "int",
+            "default": 0,
+            "description": "Default value for this node, when there's no previous value persisted",
+            "name": "default_value"
+          },
+          {
+            "data_type": "irange-spec",
+            "default": {
+              "min": "INT32_MIN",
+              "max": "INT32_MAX",
+              "step": 1
+            },
+            "description": "Default range for this node, when there's no previous value persisted",
+            "name": "default_value_spec"
+          },
+          {
+            "data_type": "boolean",
+            "default": false,
+            "description": "Store only irange val, discarding min, max and step values",
+            "name": "store_only_val"
+          }
+        ],
+        "version": 1
+      },
+      "in_ports": [
+        {
+          "data_type": "int",
+          "description": "A int packet to persist (and repeat on output)",
+          "methods": {
+            "process": "persist_process"
+          },
+          "name": "IN"
+        },
+        {
+          "data_type": "any",
+          "description": "Reset persist value to its default and send to output the new value",
+          "methods": {
+            "process": "reset_process"
+          },
+          "name": "RESET"
+        }
+      ],
+      "out_ports": [
+        {
+          "data_type": "int",
+          "description": "A int packet with the persisted value of the node",
+          "name": "OUT"
+        }
+      ],
+      "private_data_type": "persist_irange_data",
+      "url": "http://solettaproject.org/doc/latest/components/persistence.html"
+    },
+    {
+      "category": "io/persistence",
+      "description": "Persists the last input packet's data it receives to storage, also repeating that packet on output port. If the value is unchanged, then the packet is not repeated, this allows the use of persistence in feedback loops with setters of data to be persisted. Note that upon a new connection on the unique output port, if a previous stored packet is found, it will already be sent.",
+      "methods": {
+        "close": "persist_string_close",
+        "open": "persist_string_open"
+      },
+      "node_type": {
+        "access": [
+          "base"
+        ],
+        "data_type": "struct persistence_node_type",
+        "extra_methods": {
+          "get_packet_data": "persist_string_get_packet_data",
+          "send_packet": "persist_string_send_packet",
+          "get_default": "persist_string_get_default"
+        }
+      },
+      "name": "persistence/string",
+      "options": {
+        "members": [
+          {
+            "data_type": "string",
+            "description": "Name to persist a string packet. If 'storage' is 'fs', name can be a fully fledged path to the file where the value will be stored.",
+            "name": "name"
+          },
+          {
+            "data_type": "string",
+            "description": "Storage where data will be persisted. It can be of the following: fs, efivars",
+            "name": "storage"
+          },
+          {
+            "data_type": "string",
+            "default": "",
+            "description": "Default value for this node, when there's no previous value persisted",
+            "name": "default_value"
+          }
+        ],
+        "version": 1
+      },
+      "in_ports": [
+        {
+          "data_type": "string",
+          "description": "A string packet to persist (and repeat on output)",
+          "methods": {
+            "process": "persist_process"
+          },
+          "name": "IN"
+        },
+        {
+          "data_type": "any",
+          "description": "Reset persist value to its default and send to output the new value",
+          "methods": {
+            "process": "reset_process"
+          },
+          "name": "RESET"
+        }
+      ],
+      "out_ports": [
+        {
+          "data_type": "string",
+          "description": "A string packet with the persisted value of the node",
+          "name": "OUT"
+        }
+      ],
+      "private_data_type": "persist_string_data",
+      "url": "http://solettaproject.org/doc/latest/components/persistence.html"
+    },
+    {
+      "category": "io/persistence",
+      "description": "Persists the last input packet's data it receives to storage, also repeating that packet on output port. If the value is unchanged, then the packet is not repeated, this allows the use of persistence in feedback loops with setters of data to be persisted. Note that upon a new connection on the unique output port, if a previous stored packet is found, it will already be sent.",
+      "methods": {
+        "close": "persist_close",
+        "open": "persist_rgb_open"
+      },
+      "node_type": {
+        "access": [
+          "base"
+        ],
+        "data_type": "struct persistence_node_type",
+        "extra_methods": {
+          "get_packet_data": "persist_rgb_get_packet_data",
+          "send_packet": "persist_rgb_send_packet",
+          "get_default": "persist_rgb_get_default"
+        }
+      },
+      "name": "persistence/rgb",
+      "options": {
+        "members": [
+          {
+            "data_type": "string",
+            "description": "Name to persist a rgb packet. If 'storage' is 'fs', name can be a fully fledged path to the file where the value will be stored.",
+            "name": "name"
+          },
+          {
+            "data_type": "string",
+            "description": "Storage where data will be persisted. It can be of the following: fs, efivars",
+            "name": "storage"
+          },
+          {
+            "data_type": "rgb",
+            "default": {
+              "red": 0,
+              "green": 0,
+              "blue": 0
+            },
+            "description": "Default value for this node, when there's no previous value persisted",
+            "name": "default_value"
+          }
+        ],
+        "version": 1
+      },
+      "in_ports": [
+        {
+          "data_type": "rgb",
+          "description": "A RGB packet to persist (and repeat on output)",
+          "methods": {
+            "process": "persist_process"
+          },
+          "name": "IN"
+        },
+        {
+          "data_type": "any",
+          "description": "Reset persist value to its default and send to output the new value",
+          "methods": {
+            "process": "reset_process"
+          },
+          "name": "RESET"
+        }
+      ],
+      "out_ports": [
+        {
+          "data_type": "rgb",
+          "description": "A RGB packet with the persisted value of the node",
+          "name": "OUT"
+        }
+      ],
+      "private_data_type": "persist_rgb_data",
+      "url": "http://solettaproject.org/doc/latest/components/persistence.html"
+    },
+    {
+      "category": "io/persistence",
+      "description": "Persists the last input packet's data it receives to storage, also repeating that packet on output port. If the value is unchanged, then the packet is not repeated, this allows the use of persistence in feedback loops with setters of data to be persisted. Note that upon a new connection on the unique output port, if a previous stored packet is found, it will already be sent.",
+      "methods": {
+        "close": "persist_close",
+        "open": "persist_direction_vector_open"
+      },
+      "node_type": {
+        "access": [
+          "base"
+        ],
+        "data_type": "struct persistence_node_type",
+        "extra_methods": {
+          "get_packet_data": "persist_direction_vector_get_packet_data",
+          "send_packet": "persist_direction_vector_send_packet",
+          "get_default": "persist_direction_vector_get_default"
+        }
+      },
+      "name": "persistence/direction-vector",
+      "options": {
+        "members": [
+          {
+            "data_type": "string",
+            "description": "Name to persist a direction-vector packet. If 'storage' is 'fs', name can be a fully fledged path to the file where the value will be stored.",
+            "name": "name"
+          },
+          {
+            "data_type": "string",
+            "description": "Storage where data will be persisted. It can be of the following: fs, efivars",
+            "name": "storage"
+          },
+          {
+            "data_type": "direction-vector",
+            "default": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "description": "Default value for this node, when there's no previous value persisted",
+            "name": "default_value"
+          }
+        ],
+        "version": 1
+      },
+      "in_ports": [
+        {
+          "data_type": "direction-vector",
+          "description": "A RGB packet to persist (and repeat on output)",
+          "methods": {
+            "process": "persist_process"
+          },
+          "name": "IN"
+        },
+        {
+          "data_type": "any",
+          "description": "Reset persist value to its default and send to output the new value",
+          "methods": {
+            "process": "reset_process"
+          },
+          "name": "RESET"
+        }
+      ],
+      "out_ports": [
+        {
+          "data_type": "direction-vector",
+          "description": "A RGB packet with the persisted value of the node",
+          "name": "OUT"
+        }
+      ],
+      "private_data_type": "persist_direction_vector_data",
+      "url": "http://solettaproject.org/doc/latest/components/persistence.html"
+    }
+  ]
+}

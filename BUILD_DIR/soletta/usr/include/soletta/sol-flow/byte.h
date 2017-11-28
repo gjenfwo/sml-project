@@ -1,0 +1,226 @@
+#pragma once
+/* this file was auto-generated from ./src/modules/flow/byte/byte.json */
+#include <stdbool.h>
+#include <stdint.h>
+#include <sol-flow.h>
+
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#define SOL_FLOW_NODE_TYPE_BYTE_BITWISE_AND_DEFINED 1
+extern const struct sol_flow_node_type *SOL_FLOW_NODE_TYPE_BYTE_BITWISE_AND;
+
+/* Input Ports */
+#define SOL_FLOW_NODE_TYPE_BYTE_BITWISE_AND__IN__IN (0)
+#define SOL_FLOW_NODE_TYPE_BYTE_BITWISE_AND__IN__IN_0 (0)
+#define SOL_FLOW_NODE_TYPE_BYTE_BITWISE_AND__IN__IN_1 (1)
+#define SOL_FLOW_NODE_TYPE_BYTE_BITWISE_AND__IN__IN_LAST (1)
+#define SOL_FLOW_NODE_TYPE_BYTE_BITWISE_AND__IN_LAST (1)
+
+/* Output Ports */
+#define SOL_FLOW_NODE_TYPE_BYTE_BITWISE_AND__OUT__OUT (0)
+#define SOL_FLOW_NODE_TYPE_BYTE_BITWISE_AND__OUT_LAST (0)
+
+#define SOL_FLOW_NODE_TYPE_BYTE_BITWISE_NOT_DEFINED 1
+extern const struct sol_flow_node_type *SOL_FLOW_NODE_TYPE_BYTE_BITWISE_NOT;
+
+/* Input Ports */
+#define SOL_FLOW_NODE_TYPE_BYTE_BITWISE_NOT__IN__IN (0)
+#define SOL_FLOW_NODE_TYPE_BYTE_BITWISE_NOT__IN_LAST (0)
+
+/* Output Ports */
+#define SOL_FLOW_NODE_TYPE_BYTE_BITWISE_NOT__OUT__OUT (0)
+#define SOL_FLOW_NODE_TYPE_BYTE_BITWISE_NOT__OUT_LAST (0)
+
+#define SOL_FLOW_NODE_TYPE_BYTE_BITWISE_OR_DEFINED 1
+extern const struct sol_flow_node_type *SOL_FLOW_NODE_TYPE_BYTE_BITWISE_OR;
+
+/* Input Ports */
+#define SOL_FLOW_NODE_TYPE_BYTE_BITWISE_OR__IN__IN (0)
+#define SOL_FLOW_NODE_TYPE_BYTE_BITWISE_OR__IN__IN_0 (0)
+#define SOL_FLOW_NODE_TYPE_BYTE_BITWISE_OR__IN__IN_1 (1)
+#define SOL_FLOW_NODE_TYPE_BYTE_BITWISE_OR__IN__IN_LAST (1)
+#define SOL_FLOW_NODE_TYPE_BYTE_BITWISE_OR__IN_LAST (1)
+
+/* Output Ports */
+#define SOL_FLOW_NODE_TYPE_BYTE_BITWISE_OR__OUT__OUT (0)
+#define SOL_FLOW_NODE_TYPE_BYTE_BITWISE_OR__OUT_LAST (0)
+
+#define SOL_FLOW_NODE_TYPE_BYTE_SHIFT_LEFT_DEFINED 1
+extern const struct sol_flow_node_type *SOL_FLOW_NODE_TYPE_BYTE_SHIFT_LEFT;
+
+/* Input Ports */
+#define SOL_FLOW_NODE_TYPE_BYTE_SHIFT_LEFT__IN__IN (0)
+#define SOL_FLOW_NODE_TYPE_BYTE_SHIFT_LEFT__IN__SHIFT (1)
+#define SOL_FLOW_NODE_TYPE_BYTE_SHIFT_LEFT__IN_LAST (1)
+
+/* Output Ports */
+#define SOL_FLOW_NODE_TYPE_BYTE_SHIFT_LEFT__OUT__OUT (0)
+#define SOL_FLOW_NODE_TYPE_BYTE_SHIFT_LEFT__OUT_LAST (0)
+
+#define SOL_FLOW_NODE_TYPE_BYTE_SHIFT_RIGHT_DEFINED 1
+extern const struct sol_flow_node_type *SOL_FLOW_NODE_TYPE_BYTE_SHIFT_RIGHT;
+
+/* Input Ports */
+#define SOL_FLOW_NODE_TYPE_BYTE_SHIFT_RIGHT__IN__IN (0)
+#define SOL_FLOW_NODE_TYPE_BYTE_SHIFT_RIGHT__IN__SHIFT (1)
+#define SOL_FLOW_NODE_TYPE_BYTE_SHIFT_RIGHT__IN_LAST (1)
+
+/* Output Ports */
+#define SOL_FLOW_NODE_TYPE_BYTE_SHIFT_RIGHT__OUT__OUT (0)
+#define SOL_FLOW_NODE_TYPE_BYTE_SHIFT_RIGHT__OUT_LAST (0)
+
+#define SOL_FLOW_NODE_TYPE_BYTE_BITWISE_XOR_DEFINED 1
+extern const struct sol_flow_node_type *SOL_FLOW_NODE_TYPE_BYTE_BITWISE_XOR;
+
+/* Input Ports */
+#define SOL_FLOW_NODE_TYPE_BYTE_BITWISE_XOR__IN__IN (0)
+#define SOL_FLOW_NODE_TYPE_BYTE_BITWISE_XOR__IN__IN_0 (0)
+#define SOL_FLOW_NODE_TYPE_BYTE_BITWISE_XOR__IN__IN_1 (1)
+#define SOL_FLOW_NODE_TYPE_BYTE_BITWISE_XOR__IN__IN_LAST (1)
+#define SOL_FLOW_NODE_TYPE_BYTE_BITWISE_XOR__IN_LAST (1)
+
+/* Output Ports */
+#define SOL_FLOW_NODE_TYPE_BYTE_BITWISE_XOR__OUT__OUT (0)
+#define SOL_FLOW_NODE_TYPE_BYTE_BITWISE_XOR__OUT_LAST (0)
+
+#define SOL_FLOW_NODE_TYPE_BYTE_FILTER_DEFINED 1
+extern const struct sol_flow_node_type *SOL_FLOW_NODE_TYPE_BYTE_FILTER;
+
+struct sol_flow_node_type_byte_filter_options {
+    struct sol_flow_node_options base;
+#define SOL_FLOW_NODE_TYPE_BYTE_FILTER_OPTIONS_API_VERSION (1)
+    unsigned char min; /**< Minimum value (inclusive) (default: 0) */
+    unsigned char max; /**< Maximum value (inclusive) (default: 255) */
+};
+
+#define SOL_FLOW_NODE_TYPE_BYTE_FILTER_OPTIONS_DEFAULTS(...) { \
+    .base = { \
+        SOL_SET_API_VERSION(.api_version = SOL_FLOW_NODE_OPTIONS_API_VERSION, ) \
+        SOL_SET_API_VERSION(.sub_api = SOL_FLOW_NODE_TYPE_BYTE_FILTER_OPTIONS_API_VERSION) \
+    }, \
+    .min = 0, \
+    .max = 255, \
+    __VA_ARGS__ \
+}
+/* Input Ports */
+#define SOL_FLOW_NODE_TYPE_BYTE_FILTER__IN__IN (0)
+#define SOL_FLOW_NODE_TYPE_BYTE_FILTER__IN_LAST (0)
+
+/* Output Ports */
+#define SOL_FLOW_NODE_TYPE_BYTE_FILTER__OUT__OUT (0)
+#define SOL_FLOW_NODE_TYPE_BYTE_FILTER__OUT_LAST (0)
+
+#define SOL_FLOW_NODE_TYPE_BYTE_EQUAL_DEFINED 1
+extern const struct sol_flow_node_type *SOL_FLOW_NODE_TYPE_BYTE_EQUAL;
+
+/* Input Ports */
+#define SOL_FLOW_NODE_TYPE_BYTE_EQUAL__IN__IN (0)
+#define SOL_FLOW_NODE_TYPE_BYTE_EQUAL__IN__IN_0 (0)
+#define SOL_FLOW_NODE_TYPE_BYTE_EQUAL__IN__IN_1 (1)
+#define SOL_FLOW_NODE_TYPE_BYTE_EQUAL__IN__IN_LAST (1)
+#define SOL_FLOW_NODE_TYPE_BYTE_EQUAL__IN_LAST (1)
+
+/* Output Ports */
+#define SOL_FLOW_NODE_TYPE_BYTE_EQUAL__OUT__OUT (0)
+#define SOL_FLOW_NODE_TYPE_BYTE_EQUAL__OUT_LAST (0)
+
+#define SOL_FLOW_NODE_TYPE_BYTE_GREATER_DEFINED 1
+extern const struct sol_flow_node_type *SOL_FLOW_NODE_TYPE_BYTE_GREATER;
+
+/* Input Ports */
+#define SOL_FLOW_NODE_TYPE_BYTE_GREATER__IN__IN (0)
+#define SOL_FLOW_NODE_TYPE_BYTE_GREATER__IN__IN_0 (0)
+#define SOL_FLOW_NODE_TYPE_BYTE_GREATER__IN__IN_1 (1)
+#define SOL_FLOW_NODE_TYPE_BYTE_GREATER__IN__IN_LAST (1)
+#define SOL_FLOW_NODE_TYPE_BYTE_GREATER__IN_LAST (1)
+
+/* Output Ports */
+#define SOL_FLOW_NODE_TYPE_BYTE_GREATER__OUT__OUT (0)
+#define SOL_FLOW_NODE_TYPE_BYTE_GREATER__OUT_LAST (0)
+
+#define SOL_FLOW_NODE_TYPE_BYTE_GREATER_OR_EQUAL_DEFINED 1
+extern const struct sol_flow_node_type *SOL_FLOW_NODE_TYPE_BYTE_GREATER_OR_EQUAL;
+
+/* Input Ports */
+#define SOL_FLOW_NODE_TYPE_BYTE_GREATER_OR_EQUAL__IN__IN (0)
+#define SOL_FLOW_NODE_TYPE_BYTE_GREATER_OR_EQUAL__IN__IN_0 (0)
+#define SOL_FLOW_NODE_TYPE_BYTE_GREATER_OR_EQUAL__IN__IN_1 (1)
+#define SOL_FLOW_NODE_TYPE_BYTE_GREATER_OR_EQUAL__IN__IN_LAST (1)
+#define SOL_FLOW_NODE_TYPE_BYTE_GREATER_OR_EQUAL__IN_LAST (1)
+
+/* Output Ports */
+#define SOL_FLOW_NODE_TYPE_BYTE_GREATER_OR_EQUAL__OUT__OUT (0)
+#define SOL_FLOW_NODE_TYPE_BYTE_GREATER_OR_EQUAL__OUT_LAST (0)
+
+#define SOL_FLOW_NODE_TYPE_BYTE_LESS_DEFINED 1
+extern const struct sol_flow_node_type *SOL_FLOW_NODE_TYPE_BYTE_LESS;
+
+/* Input Ports */
+#define SOL_FLOW_NODE_TYPE_BYTE_LESS__IN__IN (0)
+#define SOL_FLOW_NODE_TYPE_BYTE_LESS__IN__IN_0 (0)
+#define SOL_FLOW_NODE_TYPE_BYTE_LESS__IN__IN_1 (1)
+#define SOL_FLOW_NODE_TYPE_BYTE_LESS__IN__IN_LAST (1)
+#define SOL_FLOW_NODE_TYPE_BYTE_LESS__IN_LAST (1)
+
+/* Output Ports */
+#define SOL_FLOW_NODE_TYPE_BYTE_LESS__OUT__OUT (0)
+#define SOL_FLOW_NODE_TYPE_BYTE_LESS__OUT_LAST (0)
+
+#define SOL_FLOW_NODE_TYPE_BYTE_LESS_OR_EQUAL_DEFINED 1
+extern const struct sol_flow_node_type *SOL_FLOW_NODE_TYPE_BYTE_LESS_OR_EQUAL;
+
+/* Input Ports */
+#define SOL_FLOW_NODE_TYPE_BYTE_LESS_OR_EQUAL__IN__IN (0)
+#define SOL_FLOW_NODE_TYPE_BYTE_LESS_OR_EQUAL__IN__IN_0 (0)
+#define SOL_FLOW_NODE_TYPE_BYTE_LESS_OR_EQUAL__IN__IN_1 (1)
+#define SOL_FLOW_NODE_TYPE_BYTE_LESS_OR_EQUAL__IN__IN_LAST (1)
+#define SOL_FLOW_NODE_TYPE_BYTE_LESS_OR_EQUAL__IN_LAST (1)
+
+/* Output Ports */
+#define SOL_FLOW_NODE_TYPE_BYTE_LESS_OR_EQUAL__OUT__OUT (0)
+#define SOL_FLOW_NODE_TYPE_BYTE_LESS_OR_EQUAL__OUT_LAST (0)
+
+#define SOL_FLOW_NODE_TYPE_BYTE_NOT_EQUAL_DEFINED 1
+extern const struct sol_flow_node_type *SOL_FLOW_NODE_TYPE_BYTE_NOT_EQUAL;
+
+/* Input Ports */
+#define SOL_FLOW_NODE_TYPE_BYTE_NOT_EQUAL__IN__IN (0)
+#define SOL_FLOW_NODE_TYPE_BYTE_NOT_EQUAL__IN__IN_0 (0)
+#define SOL_FLOW_NODE_TYPE_BYTE_NOT_EQUAL__IN__IN_1 (1)
+#define SOL_FLOW_NODE_TYPE_BYTE_NOT_EQUAL__IN__IN_LAST (1)
+#define SOL_FLOW_NODE_TYPE_BYTE_NOT_EQUAL__IN_LAST (1)
+
+/* Output Ports */
+#define SOL_FLOW_NODE_TYPE_BYTE_NOT_EQUAL__OUT__OUT (0)
+#define SOL_FLOW_NODE_TYPE_BYTE_NOT_EQUAL__OUT_LAST (0)
+
+#ifndef SOL_LOG_DOMAIN
+#define SOL_LOG_DOMAIN &_log_domain
+#include "sol-log.h"
+
+#ifdef SOL_LOG_ENABLED
+#define SOL_LOG_INTERNAL_DECLARE(_var, _name)     SOL_ATTR_UNUSED struct sol_log_domain _var = {         .name = "sol-" _name,         .color = SOL_LOG_COLOR_MAGENTA,         .level = SOL_LOG_LEVEL_WARNING     }
+
+#define SOL_LOG_INTERNAL_DECLARE_STATIC(_var, _name)     static SOL_LOG_INTERNAL_DECLARE(_var, _name)
+
+SOL_LOG_INTERNAL_DECLARE_STATIC(_log_domain, "flow-byte");
+
+#else // #ifdef SOL_LOG_ENABLED
+
+#define SOL_LOG_INTERNAL_DECLARE(_var, _name)
+#define SOL_LOG_INTERNAL_DECLARE_STATIC(_var, _name)
+
+#ifdef SOL_LOG_DOMAIN
+#undef SOL_LOG_DOMAIN
+#define SOL_LOG_DOMAIN NULL
+#endif // #ifdef SOL_LOG_DOMAIN
+
+#endif // #ifdef SOL_LOG_ENABLED
+#endif // ifndef SOL_LOG_DOMAIN
+
+#ifdef __cplusplus
+}
+#endif

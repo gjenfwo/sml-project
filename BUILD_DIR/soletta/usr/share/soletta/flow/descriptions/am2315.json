@@ -1,0 +1,112 @@
+{
+ "am2315": [
+  {
+   "aliases": [
+    "thermometer/am2315"
+   ],
+   "author": "Intel Corporation",
+   "category": "input/hw",
+   "description": "Gets AM2315 sensor temperature in Kelvin. This device also reads humidity, check for its node",
+   "header_file": "sol-flow/am2315.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "any",
+     "description": "Packets sent in here will trigger a temperature reading and produce packets on each of the the output ports. Note that AM2315 needs a 2 seconds interval between readings - any ticks sent before such interval will output data only at the end of the interval.",
+     "name": "TICK",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "am2315/thermometer",
+   "options": {
+    "members": [
+     {
+      "data_type": "int",
+      "description": "I2C bus number",
+      "name": "i2c_bus",
+      "required": true
+     },
+     {
+      "data_type": "int",
+      "default": 92,
+      "description": "I2C bus slave on which the sensor answers.",
+      "name": "i2c_slave",
+      "required": false
+     }
+    ],
+    "required": true,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_am2315_thermometer_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "float",
+     "description": "Measured temperature in Kelvin.",
+     "name": "KELVIN",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_AM2315_THERMOMETER",
+   "url": "http://solettaproject.org/doc/latest/node_types/am2315/thermometer.html",
+   "version": "1"
+  },
+  {
+   "aliases": [
+    "humidity-sensor/am2315"
+   ],
+   "author": "Intel Corporation",
+   "category": "input/hw",
+   "description": "Gets AM2315 sensor relative humidity in percentage. This device also reads temperature, check for its node",
+   "header_file": "sol-flow/am2315.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "any",
+     "description": "Packets sent in here will trigger a humidity reading and produce packets on the output ports. Note that AM2315 needs a 2 seconds interval between readings - any ticks sent before such interval will output data only at the end of the interval.",
+     "name": "TICK",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "am2315/humidity",
+   "options": {
+    "members": [
+     {
+      "data_type": "int",
+      "description": "I2C bus number",
+      "name": "i2c_bus",
+      "required": true
+     },
+     {
+      "data_type": "int",
+      "default": 92,
+      "description": "I2C bus slave on which the sensor answers.",
+      "name": "i2c_slave",
+      "required": false
+     }
+    ],
+    "required": true,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_am2315_humidity_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "float",
+     "description": "Measured relative humidity in percentage.",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_AM2315_HUMIDITY",
+   "url": "http://solettaproject.org/doc/latest/node_types/am2315/humidity.html",
+   "version": "1"
+  }
+ ]
+}

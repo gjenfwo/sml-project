@@ -1,0 +1,352 @@
+{
+  "$schema": "http://solettaproject.github.io/soletta/schemas/node-type-genspec.schema",
+  "name": "grove",
+  "meta": {
+    "author": "Intel Corporation",
+    "license": "Apache-2.0",
+    "version": "1"
+  },
+  "types": [
+    {
+      "category": "internal",
+      "description": "Converts raw sensor temperature readings to Kelvin packets. Conversion to Kelvin is done using: 1/(log(((i-r)*Rc/r)/Rt)/B + 1/T - where i is input range, r is raw sensor value, Rc is potential divider resistor resitance, Rt is thermistor resistance, B is thermistor constant and T is thermistor reference temperature.",
+      "in_ports": [
+          {
+            "data_type": "int",
+            "description": "Input value",
+            "name": "IN",
+            "methods": {
+                "process": "temperature_convert"
+            }
+          }
+      ],
+      "methods": {
+         "open": "temperature_converter_open"
+      },
+      "name": "grove/temperature-converter",
+      "aliases": [
+          "temperature/converter-raw"
+      ],
+      "options": {
+        "members": [
+          {
+            "data_type": "int",
+            "description": "Thermistor constant",
+            "name": "thermistor_constant"
+          },
+          {
+            "data_type": "int",
+            "description": "Input range mask",
+            "name": "input_range_mask"
+          },
+          {
+            "data_type": "int",
+            "description": "Potential divider resistance",
+            "name": "resistance"
+          },
+          {
+            "data_type": "float",
+            "description": "Thermistor reference temperature",
+            "name": "reference_temperature"
+          },
+          {
+            "data_type": "int",
+            "description": "Thermistor reference resistance",
+            "name": "thermistor_resistance"
+          }
+        ],
+        "version": 1
+      },
+      "out_ports": [
+        {
+          "data_type": "float",
+          "description": "Measured temperature in Kelvin.",
+          "name": "KELVIN"
+        },
+        {
+          "data_type": "int",
+          "description": "Raw measured temperature.",
+          "name": "RAW"
+        }
+      ],
+      "private_data_type": "temperature_converter_data"
+    },
+    {
+      "category": "input/hw",
+      "description": "Gets sensor temperature in Kelvin. Conversion to Kelvin is done using: 1/(log(((i-r)*Rc/r)/Rt)/B + 1/T - where i is input range, r is raw sensor value, Rc is potential divider resistor resitance, Rt is thermistor resistance, B is thermistor constant and T is thermistor reference temperature.",
+      "methods": {
+        "init_type": "temperature_init_type"
+      },
+      "name": "grove/thermometer",
+      "aliases": [
+          "thermometer/grove"
+      ],
+      "options": {
+        "members": [
+          {
+            "data_type": "string",
+            "description": "Label of the desired pin on the board. If raw is set to true, this should be \"<device> <pin>\" pair, e.g. \"0 3\".",
+            "name": "pin"
+          },
+          {
+            "data_type": "boolean",
+            "default": false,
+            "description": "Change 'pin' meaning to be the system parameters needed to address the desired pin. Use it if you know what you are doing.",
+            "name": "raw"
+          },
+          {
+            "data_type": "int",
+            "default": 12,
+            "description": "Valid bits mask. This mask is used to filter the valid bits from the data received from hardware (which is manufacturer dependent), therefore should not be used as a way to change the output range because the mask is applied to the least significant bits.",
+            "name": "mask"
+          },
+          {
+            "data_type": "int",
+            "default": 1000,
+            "description": "Polling time in milliseconds. This option will take no effect if hardware interruptions for GPIO is supported by the underlying system. Use it if you know that you don't have those interruptions available.",
+            "name": "poll_timeout"
+          },
+          {
+            "data_type": "int",
+            "default": 3975,
+            "description": "Thermistor constant",
+            "name": "thermistor_constant"
+          },
+          {
+            "data_type": "int",
+            "default": 10000,
+            "description": "Potential divider resistance",
+            "name": "resistance"
+          },
+          {
+            "data_type": "float",
+            "default": 298.15,
+            "description": "Thermistor reference temperature",
+            "name": "reference_temperature"
+          },
+          {
+            "data_type": "int",
+            "default": 10000,
+            "description": "Thermistor reference resistance",
+            "name": "thermistor_resistance"
+          }
+        ],
+        "version": 1
+      },
+      "out_ports": [
+        {
+          "data_type": "float",
+          "description": "Measured temperature in Kelvin.",
+          "name": "KELVIN"
+        },
+        {
+          "data_type": "int",
+          "description": "Raw measured temperature.",
+          "name": "RAW"
+        }
+      ]
+    },
+    {
+      "category": "internal",
+      "description": "Converts light sensor raw readings to Lux.",
+      "in_ports": [
+          {
+            "data_type": "int",
+            "description": "Input value",
+            "name": "IN",
+            "methods": {
+                "process": "light_converter"
+            }
+          }
+      ],
+      "methods": {
+         "open": "light_converter_open"
+      },
+      "name": "grove/light-converter",
+      "options": {
+        "members": [
+          {
+            "data_type": "int",
+            "description": "Input range mask",
+            "name": "input_range_mask"
+          }
+        ],
+        "version": 1
+      },
+      "out_ports": [
+        {
+          "data_type": "float",
+          "description": "Measured illuminance in Lux (approximately).",
+          "name": "LUX"
+        },
+        {
+          "data_type": "int",
+          "description": "Raw measured illuminance.",
+          "name": "RAW"
+        }
+      ],
+      "private_data_type": "light_converter_data"
+    },
+    {
+      "category": "input/hw",
+      "description": "Get light sensor readings in Lux. However, it should be noted that this sensor is not precise, so the Lux readings are a rough estimation based on Grove Starter Kit booklet table, which relates raw sensor readings to Lux.",
+      "methods": {
+         "init_type": "light_sensor_init_type"
+      },
+      "name": "grove/light-sensor",
+      "aliases": [
+          "light-sensor/grove"
+      ],
+      "options": {
+        "members": [
+          {
+            "data_type": "string",
+            "description": "Label of the desired pin on the board. If raw is set to true, this should be \"<device> <pin>\" pair, e.g. \"0 3\".",
+            "name": "pin"
+          },
+          {
+            "data_type": "boolean",
+            "default": false,
+            "description": "Change 'pin' meaning to be the system parameters needed to address the desired pin. Use it if you know what you are doing.",
+            "name": "raw"
+          },
+          {
+            "data_type": "int",
+            "default": 12,
+            "description": "Valid bits mask. This mask is used to filter the valid bits from the data received from hardware (which is manufacturer dependent), therefore should not be used as a way to change the output range because the mask is applied to the least significant bits.",
+            "name": "mask"
+          },
+          {
+            "data_type": "int",
+            "default": 1000,
+            "description": "Polling time in milliseconds. This option will take no effect if hardware interruptions for GPIO is supported by the underlying system. Use it if you know that you don't have those interruptions available.",
+            "name": "poll_timeout"
+          }
+        ],
+        "version": 1
+      },
+      "out_ports": [
+        {
+          "data_type": "float",
+          "description": "Measured illuminance in Lux (approximately).",
+          "name": "LUX"
+        },
+        {
+          "data_type": "int",
+          "description": "Raw measured illuminance.",
+          "name": "RAW"
+        }
+      ]
+    },
+    {
+      "category": "internal",
+      "description": "Converts raw rotary sensor reading to degrees or radians.",
+      "in_ports": [
+          {
+            "data_type": "int",
+            "description": "Input value",
+            "name": "IN",
+            "methods": {
+                "process": "rotary_converter"
+            }
+          }
+      ],
+      "methods": {
+         "open": "rotary_converter_open"
+      },
+      "name": "grove/rotary-converter",
+      "options": {
+        "members": [
+          {
+            "data_type": "int",
+            "description": "Angular range",
+            "name": "angular_range"
+          },
+          {
+            "data_type": "int",
+            "description": "Input range mask",
+            "name": "input_range_mask"
+          }
+        ],
+        "version": 1
+      },
+      "out_ports": [
+        {
+          "data_type": "float",
+          "description": "Measured rotation in degrees.",
+          "name": "DEG"
+        },
+        {
+          "data_type": "float",
+          "description": "Measured rotation in radians.",
+          "name": "RAD"
+        },
+        {
+          "data_type": "int",
+          "description": "Raw measured rotation.",
+          "name": "RAW"
+        }
+      ],
+      "private_data_type": "rotary_converter_data"
+    },
+    {
+      "category": "input/hw",
+      "description": "Get rotary sensor reading in degrees and radians.",
+      "methods": {
+         "init_type": "rotary_sensor_init_type"
+      },
+      "name": "grove/rotary-sensor",
+      "options": {
+        "members": [
+          {
+            "data_type": "string",
+            "description": "Label of the desired pin on the board. If raw is set to true, this should be \"<device> <pin>\" pair, e.g. \"0 3\".",
+            "name": "pin"
+          },
+          {
+            "data_type": "boolean",
+            "default": false,
+            "description": "Change 'pin' meaning to be the system parameters needed to address the desired pin. Use it if you know what you are doing.",
+            "name": "raw"
+          },
+          {
+            "data_type": "int",
+            "default": 12,
+            "description": "Valid bits mask. This mask is used to filter the valid bits from the data received from hardware (which is manufacturer dependent), therefore should not be used as a way to change the output range because the mask is applied to the least significant bits.",
+            "name": "mask"
+          },
+          {
+            "data_type": "int",
+            "default": 1000,
+            "description": "Polling time in milliseconds. This option will take no effect if hardware interruptions for GPIO is supported by the underlying system. Use it if you know that you don't have those interruptions available.",
+            "name": "poll_timeout"
+          },
+          {
+            "data_type": "int",
+            "default": 300,
+            "description": "Angular range",
+            "name": "angular_range"
+          }
+        ],
+        "version": 1
+      },
+      "out_ports": [
+        {
+          "data_type": "float",
+          "description": "Measured rotation in degrees.",
+          "name": "DEG"
+        },
+        {
+          "data_type": "float",
+          "description": "Measured rotation in radians.",
+          "name": "RAD"
+        },
+        {
+          "data_type": "int",
+          "description": "Raw measured rotation.",
+          "name": "RAW"
+        }
+      ]
+    }
+  ]
+}

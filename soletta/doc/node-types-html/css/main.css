@@ -1,0 +1,277 @@
+/*
+ * This file is part of the Soletta™ Project
+ *
+ * Copyright (C) 2015 Intel Corporation. All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+body{
+    margin: 0px;
+    background-color: rgba(45,50,55,1);
+    font-family: sans-serif;
+}
+.transparent{
+    background-color: rgba(255,255,255,0.1);
+}
+#top{
+    background-color: rgba(45,50,55,0.9);
+    height:101px;
+    position: fixed;
+    right: 0px;
+    left:0px;
+    z-index: 10;
+}
+#title-image{
+    position: absolute;
+    left:64px;
+    top:25px;
+}
+#sidebar{
+    position: absolute;
+    top:101px;
+    width:263px;
+}
+#contents{
+    position: absolute;
+    top:101px;
+    right:0px;
+    left:263px;
+    margin-bottom: 50px;
+}
+.category{
+    /*category definitions goes here*/
+}
+.category-label{
+    height: 34px;
+    color: #33b7e9;
+    font-weight: bold;
+    font-size: 0.8em;
+    padding-top: 57px;
+}
+.menu-label{
+    color: #33b7e9;
+    font-weight: bold;
+    font-size: 0.8em;
+    height: 34px;
+    padding-top: 57px;
+    padding-left: 66px;
+}
+.entry{
+    width: 350px;
+    border-radius: 3px;
+    background-color: #cfd2d5;
+    margin-right: 17px;
+    margin-bottom: 17px;
+}
+.entry-header{
+    min-height: 121px;
+    background-color: #33b7e9;
+    padding-top: 30px;
+    padding-left: 24px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+.entry-name{
+    color: white;
+    font-weight: bold;
+    font-size: 1.4em;
+}
+.entry-description{
+    color: white;
+    font-size: 1em;
+}
+.entry-separator{
+    height:20px;
+    background-color:#bfc2c5;
+    color:#222529;
+    font-size: 0.75em;
+    font-weight: bold;
+    padding-left: 24px;
+    padding-top: 5px;
+}
+.entry ul{
+    padding-left: 24px;
+}
+.entry li{
+    color:#222529;
+    list-style: none;
+    margin: 0 0 10px 0;
+    padding: 0;
+    font-size: 0.95em;
+}
+.cover{
+    border-radius:2px;
+    width: 350px;
+    height:351px;
+    background-color: rgba(26,31,35,0.9);
+    position: absolute;
+    top:0px;
+    left:0px;
+    cursor:pointer;
+    cursor:hand;
+    color: white;
+}
+.cover-header{
+    min-height: 121px;
+    padding-top: 30px;
+    padding-left: 24px;
+}
+.cover-name{
+    font-weight: bold;
+    font-size: 1.4em;
+}
+.cover-description{
+    font-size: 1em;
+}
+#example{
+    position: absolute;
+    top:101px;
+    bottom:59px;
+    right:59px;
+    left:263px;
+    overflow: hidden;
+}
+#example-header{
+    height: 91px;
+    border-color: #4c5155;
+    border-bottom-style: dotted;
+    border-bottom-width: 1px;
+}
+#example-info{
+    position: absolute;
+    margin-top: 32px;
+    width: 291px; /*fixed size*/
+    right:0px;
+    top:91px;
+    bottom:0px;
+    padding-right:22px; /*Added padding to prevent overlap of Nodetype title with scroll bar*/ 
+    overflow-y: auto;   /*Added scrollbar*/
+    overflow-x: hidden;  
+}
+/*Scroll bar styling*/
+::-webkit-scrollbar {
+  height: 8px;
+  width: 6px;
+  background-color: #4f5357;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #33b7e9;
+}
+::-webkit-scrollbar-corner{
+  background-color: #4f5357;
+}
+#example-image-container{
+    position: absolute;
+    top:123px;
+    background-color: rgba(255,255,255,0.05);
+    overflow: hidden;
+}
+#example-image-container p{
+    clear: both;
+    color: white;
+    width: auto;
+    height: auto;
+    text-align: center;
+}
+.example-thumb{
+    float: left;
+    margin-bottom: 8px;
+    margin-right: 8px;
+    cursor: pointer;
+    overflow: hidden;
+}
+.example-thumb-active{
+    outline: #33b7e9 solid 5px;
+    outline-offset: -5px;
+}
+#example-get-code{
+    cursor: pointer;
+    margin-top: 51px;
+}
+#example-info-code{   /*Added styling for hidden textarea*/
+    position: inherit;
+    resize:none;
+    z-index:-1;
+    background: #2d3237;
+    border: none;
+    outline: none;
+    overflow: hidden;
+    color: #2d3237;
+}
+#example-info-code::selection { /*Stay hidden while selection*/
+    background-color: #2d3237;
+    background: transparent;
+    color: #2d3237;
+}
+#example-code-copied{
+    margin-top: 51px;
+}
+#example-info h1{
+    color: white;
+    float:left;
+    clear: both;
+    margin: 0;
+}
+#example-info p{
+    float: left;
+    clear: both;
+    color: white;
+    width: 291px;
+    margin-bottom: 50px;
+}
+.button-example{
+    position:absolute;
+    bottom:92px;
+    left:72px;
+}
+.button-back{
+    cursor: pointer;
+    margin-top: 50px;
+}
+nav ul{
+    list-style-type: none;
+    margin:0;
+    margin-left: 39px;
+    margin-right: 39px;
+    padding: 0;
+}
+nav li{
+    margin-left: 27px;
+    height: 23px;
+    padding-top: 5px;
+    border-color: #4c5155;
+    border-top-style: dotted;
+    border-top-width: 1px;
+}
+nav li a{
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 0.9em;
+    color:#afb2b6;
+}
+nav li a:hover{
+    color:white;
+}
+a{
+    text-decoration: none;
+}
+.active{
+    color:white;
+}

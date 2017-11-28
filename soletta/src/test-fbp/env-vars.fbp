@@ -1,0 +1,31 @@
+# This file is part of the Soletta (TM) Project
+#
+# Copyright (C) 2015 Intel Corporation. All rights reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+unsetenv(app/unsetenv:variable_name="SOLETTA_TEST_VAR123")
+varvalue(constant/string:value="Hello World")
+varname(constant/string:value="SOLETTA_TEST_VAR123")
+setenv(app/setenv)
+getenv(app/getenv)
+
+varname OUT -> NAME setenv
+varvalue OUT -> VALUE setenv
+
+varname OUT -> NAME getenv
+
+getenv VALUE -> IN[0] cmp(string/compare)
+varvalue OUT -> IN[1] cmp
+
+cmp EQUAL -> RESULT test_setenv(test/result)

@@ -1,0 +1,95 @@
+#!/usr/bin/env sol-fbp-runner
+
+# This file is part of the Soletta (TM) Project
+#
+# Copyright (C) 2015 Intel Corporation. All rights reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# This test will handle command line arguments (usually referred as
+# argc (the count - number of arguments) and argv (the vector - list
+# of arguments).
+#
+# It is an example of:
+#
+#  - app/argc-argv node type to handle command line arguments.
+#
+#  - anonymous nodes (the '_' character)
+#
+#  - quit the application (app/quit)
+#
+#  - integer manipulation (constant, subtraction, equal comparison)
+#
+#  - looping using the int/accumulator
+#
+#  - converter (boolean to empty)
+#
+# Diagram:
+#
+#                     .-------.                                 .---------.
+#                     |       |OUT--------------------------->IN| Console |
+#           .------>IN| Args  |                                 `---------'
+#           |         |       |                                 .---------.
+#           |         |       |ARGC-+------------------------>IN| Console |
+#           |         `-------'     |                           `---------'
+#           |                       |          .-------------.
+#           |                       `-->MINUEND|             |
+#           |         .------.                 | Subtraction |OUT-.
+#           |         | '1'  |OUT--->SUBTRAHEND|  (ARGC - 1) |    |
+#           |         `------'                 `-------------'    |
+#           |                                                     |
+#           |                       .-----------------------------'
+#           |                       |           .-------.
+#           |                       `----->IN[0]|       |
+#           |                                   | Limit |OUT--+---.
+#           |                       .----->IN[1]|       |     |   |
+#           |                       |           `-------'     |   |
+#           `-----------------------+                         |   |
+#                     .-------.     |                         |   |
+#              .-->INC| Index |OUT--'                         |   |
+#              |      `-------'                               |   |
+#              |                                              |   |
+#              `----------------------------------------.     |   |
+#                             .------------------.      |     |   |
+#            .->PULSE_IF_FALSE| boolean-to-empty |OUT---'     |   |
+#            |                `------------------'            |   |
+#            `------------------------------------------------'   |
+#                                                                 |
+#            .----------------------------------------------------'
+#            |                .------------------.            .----------.
+#            `-->PULSE_IF_TRUE| boolean-to-empty |OUT---->QUIT| app/quit |
+#                             `------------------'            `----------'
+
+# Print out number of arguments
+Args(app/argc-argv)
+Args ARGC -> IN _(console:prefix="number of arguments (includes argv[0]): ")
+
+# Connect Args OUT to console, it will print each element we
+# request into IN port as below.
+Args OUT -> IN _(console:prefix="argument: ")
+
+## Loop from argv[1] to argv[argc], request that value in IN Args.
+# calculates (ARGC - 1)
+Args ARGC -> MINUEND Subtraction(int/subtraction)
+_(constant/int:value=1) OUT -> SUBTRAHEND Subtraction
+
+# Start an accumulator to be our iterator (Index)
+Index(int/accumulator:setup_value=min:0|step:1)
+# Request Args to output the argument at our Index
+Index OUT -> IN Args
+
+# If Index is equal to (ARGC - 1), quit, otherwise increment the accumulator
+Subtraction OUT -> IN[0] Limit(int/equal)
+Index OUT -> IN[1] Limit
+Limit OUT -> PULSE_IF_TRUE _(converter/boolean-to-empty) OUT -> QUIT _(app/quit)
+Limit OUT -> PULSE_IF_FALSE _(converter/boolean-to-empty) OUT -> INC Index

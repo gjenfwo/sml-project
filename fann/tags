@@ -1,0 +1,979 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+-leak-check	examples/Makefile	/^	valgrind --leak-check=yes --show-reachable=yes --leak-resolution=high --db-attach=yes .\/xor_test_debug$/;"	m
+-leak-check	examples/Makefile	/^	valgrind --leak-check=yes --show-reachable=yes --leak-resolution=high --db-attach=yes .\/xor_test_fixed_debug$/;"	m
+-leak-check	examples/Makefile	/^	valgrind --leak-check=yes --show-reachable=yes --leak-resolution=high --db-attach=yes .\/xor_train_debug$/;"	m
+ARCHITECTURE_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	416;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	419;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	422;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	425;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	429;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	431;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	433;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	437;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	440;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	443;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	448;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	451;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	454;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	459;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	462;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	465;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	468;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	401;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	404;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	407;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	410;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	414;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	416;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	418;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	422;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	425;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	428;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	433;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	436;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	439;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	444;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	447;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	450;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	453;"	d	file:
+CMAKE_BINARY_DIR	build/Makefile	/^CMAKE_BINARY_DIR = \/home\/ubuntu\/SOLETTA\/fann\/build$/;"	m
+CMAKE_BINARY_DIR	build/src/Makefile	/^CMAKE_BINARY_DIR = \/home\/ubuntu\/SOLETTA\/fann\/build$/;"	m
+CMAKE_BINARY_DIR	build/src/include/Makefile	/^CMAKE_BINARY_DIR = \/home\/ubuntu\/SOLETTA\/fann\/build$/;"	m
+CMAKE_COMMAND	build/Makefile	/^CMAKE_COMMAND = \/usr\/local\/bin\/cmake$/;"	m
+CMAKE_COMMAND	build/src/Makefile	/^CMAKE_COMMAND = \/usr\/local\/bin\/cmake$/;"	m
+CMAKE_COMMAND	build/src/include/Makefile	/^CMAKE_COMMAND = \/usr\/local\/bin\/cmake$/;"	m
+CMAKE_SOURCE_DIR	build/Makefile	/^CMAKE_SOURCE_DIR = \/home\/ubuntu\/SOLETTA\/fann$/;"	m
+CMAKE_SOURCE_DIR	build/src/Makefile	/^CMAKE_SOURCE_DIR = \/home\/ubuntu\/SOLETTA\/fann$/;"	m
+CMAKE_SOURCE_DIR	build/src/include/Makefile	/^CMAKE_SOURCE_DIR = \/home\/ubuntu\/SOLETTA\/fann$/;"	m
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	101;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	108;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	115;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	122;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	129;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	137;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	142;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	149;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	152;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	155;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	158;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	161;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	176;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	190;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	19;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	200;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	218;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	227;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	236;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	251;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	264;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	282;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	285;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	288;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	42;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	50;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	56;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	62;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	71;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	80;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	94;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	101;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	108;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	115;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	122;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	129;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	137;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	13;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	142;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	149;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	152;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	155;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	170;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	184;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	198;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	19;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	216;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	225;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	234;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	249;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	267;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	270;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	273;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	42;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	50;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	56;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	62;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	71;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	80;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	94;"	d	file:
+COMPILER_VERSION_INTERNAL	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	232;"	d	file:
+COMPILER_VERSION_INTERNAL	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	230;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	103;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	110;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	117;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	124;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	130;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	138;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	144;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	165;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	180;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	191;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	202;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	221;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	229;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	239;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	244;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	24;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	253;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	258;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	267;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	272;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	43;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	51;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	58;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	64;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	73;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	83;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	88;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	96;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	103;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	110;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	117;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	124;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	130;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	138;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	144;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	159;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	15;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	174;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	186;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	188;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	200;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	219;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	227;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	237;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	242;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	24;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	252;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	257;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	43;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	51;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	58;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	64;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	73;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	83;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	88;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	96;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	104;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	111;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	118;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	125;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	131;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	139;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	145;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	166;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	181;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	193;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	203;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	222;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	230;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	240;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	245;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	254;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	259;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	25;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	268;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	273;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	44;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	52;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	59;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	65;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	74;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	84;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	89;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	97;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	104;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	111;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	118;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	125;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	131;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	139;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	145;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	160;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	16;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	175;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	191;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	201;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	220;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	228;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	238;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	243;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	253;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	258;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	25;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	44;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	52;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	59;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	65;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	74;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	84;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	89;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	97;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	105;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	112;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	119;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	126;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	133;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	146;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	167;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	182;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	196;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	207;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	210;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	223;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	231;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	241;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	246;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	255;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	260;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	269;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	274;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	27;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	29;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	46;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	53;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	67;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	76;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	85;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	90;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	98;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	105;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	112;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	119;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	126;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	133;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	146;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	161;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	176;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	194;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	205;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	208;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	221;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	229;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	239;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	244;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	254;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	259;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	27;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	29;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	46;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	53;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	67;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	76;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	85;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	90;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	98;"	d	file:
+COMPILER_VERSION_TWEAK	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	173;"	d	file:
+COMPILER_VERSION_TWEAK	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	214;"	d	file:
+COMPILER_VERSION_TWEAK	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	33;"	d	file:
+COMPILER_VERSION_TWEAK	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	167;"	d	file:
+COMPILER_VERSION_TWEAK	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	212;"	d	file:
+COMPILER_VERSION_TWEAK	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	33;"	d	file:
+COS_SYMMETRIC	src/include/fann_cpp.h	/^	    COS_SYMMETRIC$/;"	e	enum:FANN::activation_function_enum
+CXX_STD	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	534;"	d	file:
+CXX_STD	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	536;"	d	file:
+C_DIALECT	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	550;"	d	file:
+C_DIALECT	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	552;"	d	file:
+C_DIALECT	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	555;"	d	file:
+C_DIALECT	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	557;"	d	file:
+C_DIALECT	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	559;"	d	file:
+DEBUG_TARGETS	examples/Makefile	/^DEBUG_TARGETS = xor_train_debug xor_test_debug xor_test_fixed_debug cascade_train_debug$/;"	m
+DEC	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	472;"	d	file:
+DEC	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	457;"	d	file:
+DOUBLEFANN	src/include/doublefann.h	25;"	d
+DOUBLEFANN	src/include/doublefann.h	26;"	d
+DWORD	src/include/compat_time.h	/^$/;"	t
+ELLIOT	src/include/fann_cpp.h	/^        ELLIOT,$/;"	e	enum:FANN::activation_function_enum
+ELLIOT_SYMMETRIC	src/include/fann_cpp.h	/^        ELLIOT_SYMMETRIC,$/;"	e	enum:FANN::activation_function_enum
+EPOCHFILETIME	src/include/compat_time.h	83;"	d
+EPOCHFILETIME	src/include/compat_time.h	85;"	d
+EQUALS	build/Makefile	/^EQUALS = =$/;"	m
+EQUALS	build/src/Makefile	/^EQUALS = =$/;"	m
+EQUALS	build/src/include/Makefile	/^EQUALS = =$/;"	m
+ERRORFUNC_LINEAR	src/include/fann_cpp.h	/^        ERRORFUNC_LINEAR = FANN_ERRORFUNC_LINEAR,$/;"	e	enum:FANN::error_function_enum
+ERRORFUNC_TANH	src/include/fann_cpp.h	/^        ERRORFUNC_TANH$/;"	e	enum:FANN::error_function_enum
+FANN	src/include/fann_cpp.h	/^namespace FANN$/;"	n
+FANNPRINTF	src/include/doublefann.h	27;"	d
+FANNPRINTF	src/include/fixedfann.h	27;"	d
+FANNPRINTF	src/include/floatfann.h	27;"	d
+FANNSCANF	src/include/doublefann.h	28;"	d
+FANNSCANF	src/include/fixedfann.h	28;"	d
+FANNSCANF	src/include/floatfann.h	28;"	d
+FANN_ACTIVATIONFUNC_NAMES	src/include/fann_data.h	/^static char const *const FANN_ACTIVATIONFUNC_NAMES[] = {$/;"	v
+FANN_API	src/include/fann.h	127;"	d
+FANN_API	src/include/fann.h	130;"	d
+FANN_CONF_VERSION	src/include/fann_internal.h	34;"	d
+FANN_CONF_VERSION	src/include/fann_internal.h	36;"	d
+FANN_COS	src/include/fann_data.h	/^	FANN_COS$/;"	e	enum:fann_activationfunc_enum
+FANN_COS_SYMMETRIC	src/include/fann_data.h	/^	FANN_COS_SYMMETRIC,$/;"	e	enum:fann_activationfunc_enum
+FANN_CPP_H_INCLUDED	src/include/fann_cpp.h	2;"	d
+FANN_ELLIOT	src/include/fann_data.h	/^	FANN_ELLIOT,$/;"	e	enum:fann_activationfunc_enum
+FANN_ELLIOT_SYMMETRIC	src/include/fann_data.h	/^	FANN_ELLIOT_SYMMETRIC,$/;"	e	enum:fann_activationfunc_enum
+FANN_ERRORFUNC_LINEAR	src/include/fann_data.h	/^	FANN_ERRORFUNC_LINEAR = 0,$/;"	e	enum:fann_errorfunc_enum
+FANN_ERRORFUNC_NAMES	src/include/fann_data.h	/^static char const *const FANN_ERRORFUNC_NAMES[] = {$/;"	v
+FANN_ERRORFUNC_TANH	src/include/fann_data.h	/^	FANN_ERRORFUNC_TANH$/;"	e	enum:fann_errorfunc_enum
+FANN_ERRSTR_MAX	src/include/fann_error.h	25;"	d
+FANN_EXTERNAL	src/include/fann.h	123;"	d
+FANN_EXTERNAL	src/include/fann.h	125;"	d
+FANN_EXTERNAL	src/include/fann.h	129;"	d
+FANN_E_CANT_ALLOCATE_MEM	src/include/fann_error.h	/^	FANN_E_CANT_ALLOCATE_MEM,$/;"	e	enum:fann_errno_enum
+FANN_E_CANT_OPEN_CONFIG_R	src/include/fann_error.h	/^	FANN_E_CANT_OPEN_CONFIG_R,$/;"	e	enum:fann_errno_enum
+FANN_E_CANT_OPEN_CONFIG_W	src/include/fann_error.h	/^	FANN_E_CANT_OPEN_CONFIG_W,$/;"	e	enum:fann_errno_enum
+FANN_E_CANT_OPEN_TD_R	src/include/fann_error.h	/^	FANN_E_CANT_OPEN_TD_R,$/;"	e	enum:fann_errno_enum
+FANN_E_CANT_OPEN_TD_W	src/include/fann_error.h	/^	FANN_E_CANT_OPEN_TD_W,$/;"	e	enum:fann_errno_enum
+FANN_E_CANT_READ_CONFIG	src/include/fann_error.h	/^	FANN_E_CANT_READ_CONFIG,$/;"	e	enum:fann_errno_enum
+FANN_E_CANT_READ_CONNECTIONS	src/include/fann_error.h	/^	FANN_E_CANT_READ_CONNECTIONS,$/;"	e	enum:fann_errno_enum
+FANN_E_CANT_READ_NEURON	src/include/fann_error.h	/^	FANN_E_CANT_READ_NEURON,$/;"	e	enum:fann_errno_enum
+FANN_E_CANT_READ_TD	src/include/fann_error.h	/^	FANN_E_CANT_READ_TD,$/;"	e	enum:fann_errno_enum
+FANN_E_CANT_TRAIN_ACTIVATION	src/include/fann_error.h	/^	FANN_E_CANT_TRAIN_ACTIVATION,$/;"	e	enum:fann_errno_enum
+FANN_E_CANT_USE_ACTIVATION	src/include/fann_error.h	/^	FANN_E_CANT_USE_ACTIVATION,$/;"	e	enum:fann_errno_enum
+FANN_E_CANT_USE_TRAIN_ALG	src/include/fann_error.h	/^	FANN_E_CANT_USE_TRAIN_ALG,$/;"	e	enum:fann_errno_enum
+FANN_E_INDEX_OUT_OF_BOUND	src/include/fann_error.h	/^	FANN_E_INDEX_OUT_OF_BOUND,$/;"	e	enum:fann_errno_enum
+FANN_E_INPUT_NO_MATCH	src/include/fann_error.h	/^	FANN_E_INPUT_NO_MATCH,$/;"	e	enum:fann_errno_enum
+FANN_E_NO_ERROR	src/include/fann_error.h	/^	FANN_E_NO_ERROR = 0,$/;"	e	enum:fann_errno_enum
+FANN_E_OUTPUT_NO_MATCH	src/include/fann_error.h	/^	FANN_E_OUTPUT_NO_MATCH$/;"	e	enum:fann_errno_enum
+FANN_E_SCALE_NOT_PRESENT	src/include/fann_error.h	/^	FANN_E_SCALE_NOT_PRESENT,$/;"	e	enum:fann_errno_enum
+FANN_E_TRAIN_DATA_MISMATCH	src/include/fann_error.h	/^	FANN_E_TRAIN_DATA_MISMATCH,$/;"	e	enum:fann_errno_enum
+FANN_E_TRAIN_DATA_SUBSET	src/include/fann_error.h	/^	FANN_E_TRAIN_DATA_SUBSET,$/;"	e	enum:fann_errno_enum
+FANN_E_WRONG_CONFIG_VERSION	src/include/fann_error.h	/^	FANN_E_WRONG_CONFIG_VERSION,$/;"	e	enum:fann_errno_enum
+FANN_E_WRONG_NUM_CONNECTIONS	src/include/fann_error.h	/^	FANN_E_WRONG_NUM_CONNECTIONS,$/;"	e	enum:fann_errno_enum
+FANN_FIX_VERSION	src/include/fann_internal.h	30;"	d
+FANN_FLO_VERSION	src/include/fann_internal.h	31;"	d
+FANN_GAUSSIAN	src/include/fann_data.h	/^	FANN_GAUSSIAN,$/;"	e	enum:fann_activationfunc_enum
+FANN_GAUSSIAN_STEPWISE	src/include/fann_data.h	/^	FANN_GAUSSIAN_STEPWISE,$/;"	e	enum:fann_activationfunc_enum
+FANN_GAUSSIAN_SYMMETRIC	src/include/fann_data.h	/^	FANN_GAUSSIAN_SYMMETRIC,$/;"	e	enum:fann_activationfunc_enum
+FANN_GET	src/include/fann_internal.h	39;"	d
+FANN_GET_SET	src/fann_cascade.c	/^FANN_GET_SET(fann_type, cascade_weight_multiplier)$/;"	f
+FANN_GET_SET	src/include/fann_internal.h	51;"	d
+FANN_INCLUDE	src/include/doublefann.h	30;"	d
+FANN_INCLUDE	src/include/fixedfann.h	30;"	d
+FANN_INCLUDE	src/include/floatfann.h	30;"	d
+FANN_LINEAR	src/include/fann_data.h	/^	FANN_LINEAR = 0,$/;"	e	enum:fann_activationfunc_enum
+FANN_LINEAR_PIECE	src/include/fann_data.h	/^	FANN_LINEAR_PIECE,$/;"	e	enum:fann_activationfunc_enum
+FANN_LINEAR_PIECE_SYMMETRIC	src/include/fann_data.h	/^	FANN_LINEAR_PIECE_SYMMETRIC,$/;"	e	enum:fann_activationfunc_enum
+FANN_NETTYPE_LAYER	src/include/fann_data.h	/^    FANN_NETTYPE_LAYER = 0, \/* Each layer only has connections to the next layer *\/$/;"	e	enum:fann_nettype_enum
+FANN_NETTYPE_NAMES	src/include/fann_data.h	/^static char const *const FANN_NETTYPE_NAMES[] = {$/;"	v
+FANN_NETTYPE_SHORTCUT	src/include/fann_data.h	/^    FANN_NETTYPE_SHORTCUT \/* Each layer has connections to all following layers *\/$/;"	e	enum:fann_nettype_enum
+FANN_SET	src/include/fann_internal.h	45;"	d
+FANN_SIGMOID	src/include/fann_data.h	/^	FANN_SIGMOID,$/;"	e	enum:fann_activationfunc_enum
+FANN_SIGMOID_STEPWISE	src/include/fann_data.h	/^	FANN_SIGMOID_STEPWISE,$/;"	e	enum:fann_activationfunc_enum
+FANN_SIGMOID_SYMMETRIC	src/include/fann_data.h	/^	FANN_SIGMOID_SYMMETRIC,$/;"	e	enum:fann_activationfunc_enum
+FANN_SIGMOID_SYMMETRIC_STEPWISE	src/include/fann_data.h	/^	FANN_SIGMOID_SYMMETRIC_STEPWISE,$/;"	e	enum:fann_activationfunc_enum
+FANN_SIN	src/include/fann_data.h	/^	FANN_SIN,$/;"	e	enum:fann_activationfunc_enum
+FANN_SIN_SYMMETRIC	src/include/fann_data.h	/^	FANN_SIN_SYMMETRIC,$/;"	e	enum:fann_activationfunc_enum
+FANN_STOPFUNC_BIT	src/include/fann_data.h	/^	FANN_STOPFUNC_BIT$/;"	e	enum:fann_stopfunc_enum
+FANN_STOPFUNC_MSE	src/include/fann_data.h	/^	FANN_STOPFUNC_MSE = 0,$/;"	e	enum:fann_stopfunc_enum
+FANN_STOPFUNC_NAMES	src/include/fann_data.h	/^static char const *const FANN_STOPFUNC_NAMES[] = {$/;"	v
+FANN_THRESHOLD	src/include/fann_data.h	/^	FANN_THRESHOLD,$/;"	e	enum:fann_activationfunc_enum
+FANN_THRESHOLD_SYMMETRIC	src/include/fann_data.h	/^	FANN_THRESHOLD_SYMMETRIC,$/;"	e	enum:fann_activationfunc_enum
+FANN_TRAIN_BATCH	src/include/fann_data.h	/^	FANN_TRAIN_BATCH,$/;"	e	enum:fann_train_enum
+FANN_TRAIN_INCREMENTAL	src/include/fann_data.h	/^	FANN_TRAIN_INCREMENTAL = 0,$/;"	e	enum:fann_train_enum
+FANN_TRAIN_NAMES	src/include/fann_data.h	/^static char const *const FANN_TRAIN_NAMES[] = {$/;"	v
+FANN_TRAIN_QUICKPROP	src/include/fann_data.h	/^	FANN_TRAIN_QUICKPROP,$/;"	e	enum:fann_train_enum
+FANN_TRAIN_RPROP	src/include/fann_data.h	/^	FANN_TRAIN_RPROP,$/;"	e	enum:fann_train_enum
+FANN_TRAIN_SARPROP	src/include/fann_data.h	/^	FANN_TRAIN_SARPROP$/;"	e	enum:fann_train_enum
+FANN_USE_DLL	src/include/fann.h	118;"	d
+FILETIME	src/include/compat_time.h	/^$/;"	t	typeref:struct:_FILETIME
+FIXEDFANN	src/include/fixedfann.h	25;"	d
+FIXEDFANN	src/include/fixedfann.h	26;"	d
+FLOATFANN	src/include/floatfann.h	25;"	d
+FLOATFANN	src/include/floatfann.h	26;"	d
+GAUSSIAN	src/include/fann_cpp.h	/^        GAUSSIAN,$/;"	e	enum:FANN::activation_function_enum
+GAUSSIAN_STEPWISE	src/include/fann_cpp.h	/^        GAUSSIAN_STEPWISE,$/;"	e	enum:FANN::activation_function_enum
+GAUSSIAN_SYMMETRIC	src/include/fann_cpp.h	/^        GAUSSIAN_SYMMETRIC,$/;"	e	enum:FANN::activation_function_enum
+GCC	examples/Makefile	/^GCC=gcc$/;"	m
+HEX	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	483;"	d	file:
+HEX	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	468;"	d	file:
+HighPart	src/include/compat_time.h	/^		$/;"	m	struct:_LARGE_INTEGER::__anon1
+ID_VOID_MAIN	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	6;"	d	file:
+LARGE_INTEGER	src/include/compat_time.h	/^ $/;"	t	typeref:union:_LARGE_INTEGER
+LAYER	src/include/fann_cpp.h	/^        LAYER = FANN_NETTYPE_LAYER,$/;"	e	enum:FANN::network_type_enum
+LINEAR	src/include/fann_cpp.h	/^        LINEAR = FANN_LINEAR,$/;"	e	enum:FANN::activation_function_enum
+LINEAR_PIECE	src/include/fann_cpp.h	/^        LINEAR_PIECE,$/;"	e	enum:FANN::activation_function_enum
+LINEAR_PIECE_SYMMETRIC	src/include/fann_cpp.h	/^        LINEAR_PIECE_SYMMETRIC,$/;"	e	enum:FANN::activation_function_enum
+LONG	src/include/compat_time.h	/^$/;"	t
+LONGLONG	src/include/compat_time.h	/^$/;"	t
+LPFILETIME	src/include/compat_time.h	/^$/;"	t	typeref:struct:_FILETIME
+LowPart	src/include/compat_time.h	/^		$/;"	m	struct:_LARGE_INTEGER::__anon1
+NULL	src/include/fann.h	75;"	d
+OUT	src/include/compat_time.h	48;"	d
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	313;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	316;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	319;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	322;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	325;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	328;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	331;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	334;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	337;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	340;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	343;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	346;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	349;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	352;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	355;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	358;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	361;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	364;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	367;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	370;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	373;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	376;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	379;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	382;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	385;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	389;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	392;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	395;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	398;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	401;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	405;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	298;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	301;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	304;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	307;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	310;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	313;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	316;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	319;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	322;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	325;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	328;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	331;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	334;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	337;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	340;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	343;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	346;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	349;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	352;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	355;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	358;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	361;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	364;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	367;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	370;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	374;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	377;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	380;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	383;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	386;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	390;"	d	file:
+QuadPart	src/include/compat_time.h	/^	 $/;"	m	union:_LARGE_INTEGER
+RM	build/Makefile	/^RM = \/usr\/local\/bin\/cmake -E remove -f$/;"	m
+RM	build/src/Makefile	/^RM = \/usr\/local\/bin\/cmake -E remove -f$/;"	m
+RM	build/src/include/Makefile	/^RM = \/usr\/local\/bin\/cmake -E remove -f$/;"	m
+SCALE_ALLOCATE	src/fann.c	1676;"	d	file:
+SCALE_ALLOCATE	src/fann.c	1699;"	d	file:
+SCALE_LOAD	src/fann_io.c	573;"	d	file:
+SCALE_LOAD	src/fann_io.c	598;"	d	file:
+SCALE_RESET	src/fann_train_data.c	1061;"	d	file:
+SCALE_SAVE	src/fann_io.c	248;"	d	file:
+SCALE_SAVE	src/fann_io.c	272;"	d	file:
+SCALE_SET_PARAM	src/fann_train_data.c	1065;"	d	file:
+SHELL	build/Makefile	/^SHELL = \/bin\/sh$/;"	m
+SHELL	build/src/Makefile	/^SHELL = \/bin\/sh$/;"	m
+SHELL	build/src/include/Makefile	/^SHELL = \/bin\/sh$/;"	m
+SHORTCUT	src/include/fann_cpp.h	/^        SHORTCUT$/;"	e	enum:FANN::network_type_enum
+SIGMOID	src/include/fann_cpp.h	/^        SIGMOID,$/;"	e	enum:FANN::activation_function_enum
+SIGMOID_STEPWISE	src/include/fann_cpp.h	/^        SIGMOID_STEPWISE,$/;"	e	enum:FANN::activation_function_enum
+SIGMOID_SYMMETRIC	src/include/fann_cpp.h	/^        SIGMOID_SYMMETRIC,$/;"	e	enum:FANN::activation_function_enum
+SIGMOID_SYMMETRIC_STEPWISE	src/include/fann_cpp.h	/^        SIGMOID_SYMMETRIC_STEPWISE,$/;"	e	enum:FANN::activation_function_enum
+SIMULATE_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	163;"	d	file:
+SIMULATE_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	178;"	d	file:
+SIMULATE_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	21;"	d	file:
+SIMULATE_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	157;"	d	file:
+SIMULATE_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	172;"	d	file:
+SIMULATE_ID	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	21;"	d	file:
+SIMULATE_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	170;"	d	file:
+SIMULATE_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	185;"	d	file:
+SIMULATE_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	37;"	d	file:
+SIMULATE_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	164;"	d	file:
+SIMULATE_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	179;"	d	file:
+SIMULATE_VERSION_MAJOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	37;"	d	file:
+SIMULATE_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	171;"	d	file:
+SIMULATE_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	186;"	d	file:
+SIMULATE_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	38;"	d	file:
+SIMULATE_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	165;"	d	file:
+SIMULATE_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	180;"	d	file:
+SIMULATE_VERSION_MINOR	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	38;"	d	file:
+SIN_SYMMETRIC	src/include/fann_cpp.h	/^	    SIN_SYMMETRIC,$/;"	e	enum:FANN::activation_function_enum
+STOPFUNC_BIT	src/include/fann_cpp.h	/^	    STOPFUNC_BIT$/;"	e	enum:FANN::stop_function_enum
+STOPFUNC_MSE	src/include/fann_cpp.h	/^	    STOPFUNC_MSE = FANN_STOPFUNC_MSE,$/;"	e	enum:FANN::stop_function_enum
+STRINGIFY	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	309;"	d	file:
+STRINGIFY	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	294;"	d	file:
+STRINGIFY_HELPER	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	308;"	d	file:
+STRINGIFY_HELPER	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	293;"	d	file:
+SUFFIXES	build/Makefile	/^SUFFIXES =$/;"	m
+SUFFIXES	build/src/Makefile	/^SUFFIXES =$/;"	m
+SUFFIXES	build/src/include/Makefile	/^SUFFIXES =$/;"	m
+TARGETS	examples/Makefile	/^TARGETS = xor_train xor_test xor_test_fixed simple_train steepness_train simple_test robot mushroom cascade_train scaling_test scaling_train$/;"	m
+THRESHOLD	src/include/fann_cpp.h	/^        THRESHOLD,$/;"	e	enum:FANN::activation_function_enum
+THRESHOLD_SYMMETRIC	src/include/fann_cpp.h	/^        THRESHOLD_SYMMETRIC,$/;"	e	enum:FANN::activation_function_enum
+TRAIN_BATCH	src/include/fann_cpp.h	/^        TRAIN_BATCH,$/;"	e	enum:FANN::training_algorithm_enum
+TRAIN_INCREMENTAL	src/include/fann_cpp.h	/^        TRAIN_INCREMENTAL = FANN_TRAIN_INCREMENTAL,$/;"	e	enum:FANN::training_algorithm_enum
+TRAIN_QUICKPROP	src/include/fann_cpp.h	/^        TRAIN_QUICKPROP,$/;"	e	enum:FANN::training_algorithm_enum
+TRAIN_RPROP	src/include/fann_cpp.h	/^        TRAIN_RPROP,$/;"	e	enum:FANN::training_algorithm_enum
+TRAIN_SARPROP	src/include/fann_cpp.h	/^	TRAIN_SARPROP$/;"	e	enum:FANN::training_algorithm_enum
+VERSION	build/src/include/config.h	5;"	d
+VERSION	src/include/config.h	5;"	d
+VOID	src/include/compat_time.h	46;"	d
+WIN32_LEAN_AND_MEAN	src/include/compat_time.h	42;"	d
+WIN32_LEAN_AND_MEAN	src/include/fann.h	57;"	d
+WINAPI	src/include/compat_time.h	47;"	d
+WINBASEAPI	src/include/compat_time.h	49;"	d
+_FILETIME	src/include/compat_time.h	/^$/;"	s
+_LARGE_INTEGER	src/include/compat_time.h	/^$/;"	u
+_TIMEVAL_H	src/include/compat_time.h	33;"	d
+__doublefann_h__	src/include/doublefann.h	21;"	d
+__fann_activation_h__	src/include/fann_activation.h	21;"	d
+__fann_cascade_h__	src/include/fann_cascade.h	21;"	d
+__fann_data_h__	src/include/fann_data.h	21;"	d
+__fann_error_h__	src/include/fann_error.h	21;"	d
+__fann_h__	src/include/fann.h	63;"	d
+__fann_internal_h__	src/include/fann_internal.h	21;"	d
+__fann_io_h__	src/include/fann_io.h	21;"	d
+__fann_train_h__	src/include/fann_train.h	21;"	d
+__fixedfann_h__	src/include/fixedfann.h	21;"	d
+__floatfann_h__	src/include/floatfann.h	21;"	d
+activation_function	src/include/fann_data.h	/^	enum fann_activationfunc_enum activation_function;$/;"	m	struct:fann_neuron	typeref:enum:fann_neuron::fann_activationfunc_enum
+activation_function_enum	src/include/fann_cpp.h	/^    enum activation_function_enum {$/;"	g	namespace:FANN
+activation_steepness	src/include/fann_data.h	/^	fann_type activation_steepness;$/;"	m	struct:fann_neuron
+ann	src/include/fann_cpp.h	/^        struct fann *ann;$/;"	m	class:FANN::neural_net	typeref:struct:FANN::neural_net::fann
+callback_type	src/include/fann_cpp.h	/^    typedef int (*callback_type) (neural_net &net, training_data &train,$/;"	t	namespace:FANN
+cascadetrain_on_data	src/include/fann_cpp.h	/^        void cascadetrain_on_data(const training_data &data, unsigned int max_neurons,$/;"	f	class:FANN::neural_net
+cascadetrain_on_file	src/include/fann_cpp.h	/^        void cascadetrain_on_file(const std::string &filename, unsigned int max_neurons,$/;"	f	class:FANN::neural_net
+clear_scaling_params	src/include/fann_cpp.h	/^        bool clear_scaling_params()$/;"	f	class:FANN::neural_net
+connection	src/include/fann_cpp.h	/^    typedef struct fann_connection connection;$/;"	t	namespace:FANN	typeref:struct:FANN::fann_connection
+const	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	10;"	d	file:
+copy_from_struct_fann	src/include/fann_cpp.h	/^	void copy_from_struct_fann(struct fann* other)$/;"	f	class:FANN::neural_net
+create_from_file	src/include/fann_cpp.h	/^        bool create_from_file(const std::string &configuration_file)$/;"	f	class:FANN::neural_net
+create_shortcut	src/include/fann_cpp.h	/^        bool create_shortcut(unsigned int num_layers, ...)$/;"	f	class:FANN::neural_net
+create_shortcut_array	src/include/fann_cpp.h	/^        bool create_shortcut_array(unsigned int num_layers,$/;"	f	class:FANN::neural_net
+create_sparse	src/include/fann_cpp.h	/^        bool create_sparse(float connection_rate, unsigned int num_layers, ...)$/;"	f	class:FANN::neural_net
+create_sparse_array	src/include/fann_cpp.h	/^        bool create_sparse_array(float connection_rate,$/;"	f	class:FANN::neural_net
+create_standard	src/include/fann_cpp.h	/^        bool create_standard(unsigned int num_layers, ...)$/;"	f	class:FANN::neural_net
+create_standard_array	src/include/fann_cpp.h	/^        bool create_standard_array(unsigned int num_layers, const unsigned int * layers)$/;"	f	class:FANN::neural_net
+create_train_from_callback	src/include/fann_cpp.h	/^        void create_train_from_callback(unsigned int num_data,$/;"	f	class:FANN::training_data
+descale_input	src/include/fann_cpp.h	/^        void descale_input(fann_type *input_vector)$/;"	f	class:FANN::neural_net
+descale_output	src/include/fann_cpp.h	/^        void descale_output(fann_type *output_vector)$/;"	f	class:FANN::neural_net
+descale_train	src/include/fann_cpp.h	/^        void descale_train(training_data &data)$/;"	f	class:FANN::neural_net
+destroy	src/include/fann_cpp.h	/^        void destroy()$/;"	f	class:FANN::neural_net
+destroy_train	src/include/fann_cpp.h	/^        void destroy_train()$/;"	f	class:FANN::training_data
+dwHighDateTime	src/include/compat_time.h	/^	$/;"	m	struct:_FILETIME
+dwLowDateTime	src/include/compat_time.h	/^	$/;"	m	struct:_FILETIME
+errno_f	src/include/fann_train.h	/^	enum fann_errno_enum errno_f;$/;"	m	struct:fann_train_data	typeref:enum:fann_train_data::fann_errno_enum
+error_function_enum	src/include/fann_cpp.h	/^    enum error_function_enum {$/;"	g	namespace:FANN
+error_log	src/include/fann_train.h	/^	FILE *error_log;$/;"	m	struct:fann_train_data
+errstr	src/include/fann_train.h	/^	char *errstr;$/;"	m	struct:fann_train_data
+fann_abs	src/include/fann_internal.h	134;"	d
+fann_activation	src/fann_train.c	/^fann_type fann_activation(struct fann * ann, unsigned int activation_function, fann_type steepness,$/;"	f
+fann_activation_derived	src/fann_train.c	/^fann_type fann_activation_derived(unsigned int activation_function,$/;"	f
+fann_activation_switch	src/include/fann_activation.h	85;"	d
+fann_activationfunc_enum	src/include/fann_data.h	/^enum fann_activationfunc_enum$/;"	g
+fann_add_candidate_neuron	src/fann_cascade.c	/^void fann_add_candidate_neuron(struct fann *ann, struct fann_layer *layer)$/;"	f
+fann_add_layer	src/fann_cascade.c	/^struct fann_layer *fann_add_layer(struct fann *ann, struct fann_layer *layer)$/;"	f
+fann_allocate_connections	src/fann.c	/^void fann_allocate_connections(struct fann *ann)$/;"	f
+fann_allocate_neurons	src/fann.c	/^void fann_allocate_neurons(struct fann *ann)$/;"	f
+fann_allocate_scale	src/fann.c	/^int fann_allocate_scale(struct fann *ann)$/;"	f
+fann_allocate_structure	src/fann.c	/^struct fann *fann_allocate_structure(unsigned int num_layers)$/;"	f
+fann_backpropagate_MSE	src/fann_train.c	/^void fann_backpropagate_MSE(struct fann *ann)$/;"	f
+fann_callback_type	src/include/fann_data.h	/^FANN_EXTERNAL typedef int (FANN_API * fann_callback_type) (struct fann *ann, struct fann_train_data *train, $/;"	t
+fann_cascadetrain_on_data	src/fann_cascade.c	/^FANN_EXTERNAL void FANN_API fann_cascadetrain_on_data(struct fann *ann, struct fann_train_data *data,$/;"	f
+fann_cascadetrain_on_file	src/fann_cascade.c	/^FANN_EXTERNAL void FANN_API fann_cascadetrain_on_file(struct fann *ann, const char *filename,$/;"	f
+fann_check_input_output_sizes	src/fann_train_data.c	/^int fann_check_input_output_sizes(struct fann *ann, struct fann_train_data *data)$/;"	f
+fann_clear_scaling_params	src/fann_train_data.c	/^FANN_EXTERNAL int FANN_API fann_clear_scaling_params(struct fann *ann)$/;"	f
+fann_clear_train_arrays	src/fann_train.c	/^void fann_clear_train_arrays(struct fann *ann)$/;"	f
+fann_clip	src/include/fann_internal.h	128;"	d
+fann_compute_MSE	src/fann_train.c	/^void fann_compute_MSE(struct fann *ann, fann_type * desired_output)$/;"	f
+fann_copy	src/fann.c	/^FANN_EXTERNAL struct fann* FANN_API fann_copy(struct fann* orig)$/;"	f
+fann_cos_derive	src/include/fann_activation.h	83;"	d
+fann_cos_real	src/include/fann_activation.h	82;"	d
+fann_cos_symmetric_derive	src/include/fann_activation.h	75;"	d
+fann_cos_symmetric_real	src/include/fann_activation.h	74;"	d
+fann_create_from_fd	src/fann_io.c	/^struct fann *fann_create_from_fd(FILE * conf, const char *configuration_file)$/;"	f
+fann_create_from_fd_1_1	src/fann_io.c	/^struct fann *fann_create_from_fd_1_1(FILE * conf, const char *configuration_file)$/;"	f
+fann_create_from_file	src/fann_io.c	/^FANN_EXTERNAL struct fann *FANN_API fann_create_from_file(const char *configuration_file)$/;"	f
+fann_create_shortcut	src/fann.c	/^FANN_EXTERNAL struct fann *FANN_API fann_create_shortcut(unsigned int num_layers, ...)$/;"	f
+fann_create_shortcut_array	src/fann.c	/^FANN_EXTERNAL struct fann *FANN_API fann_create_shortcut_array(unsigned int num_layers,$/;"	f
+fann_create_sparse	src/fann.c	/^FANN_EXTERNAL struct fann *FANN_API fann_create_sparse(float connection_rate, $/;"	f
+fann_create_sparse_array	src/fann.c	/^FANN_EXTERNAL struct fann *FANN_API fann_create_sparse_array(float connection_rate,$/;"	f
+fann_create_standard	src/fann.c	/^FANN_EXTERNAL struct fann *FANN_API fann_create_standard(unsigned int num_layers, ...)$/;"	f
+fann_create_standard_array	src/fann.c	/^FANN_EXTERNAL struct fann *FANN_API fann_create_standard_array(unsigned int num_layers, $/;"	f
+fann_create_train	src/fann_train_data.c	/^FANN_EXTERNAL struct fann_train_data * FANN_API fann_create_train(unsigned int num_data, unsigned int num_input, unsigned int num_output)$/;"	f
+fann_create_train_from_callback	src/fann_train_data.c	/^FANN_EXTERNAL struct fann_train_data * FANN_API fann_create_train_from_callback(unsigned int num_data,$/;"	f
+fann_default_error_log	src/fann_error.c	/^FILE * fann_default_error_log = (FILE *)-1;$/;"	v
+fann_descale_input	src/fann_train_data.c	/^FANN_EXTERNAL void FANN_API fann_descale_input( struct fann *ann, fann_type *input_vector )$/;"	f
+fann_descale_output	src/fann_train_data.c	/^FANN_EXTERNAL void FANN_API fann_descale_output( struct fann *ann, fann_type *output_vector )$/;"	f
+fann_descale_train	src/fann_train_data.c	/^FANN_EXTERNAL void FANN_API fann_descale_train( struct fann *ann, struct fann_train_data *data )$/;"	f
+fann_desired_error_reached	src/fann_train_data.c	/^int fann_desired_error_reached(struct fann *ann, float desired_error)$/;"	f
+fann_destroy	src/fann.c	/^FANN_EXTERNAL void FANN_API fann_destroy(struct fann *ann)$/;"	f
+fann_destroy_train	src/fann_train_data.c	/^FANN_EXTERNAL void FANN_API fann_destroy_train(struct fann_train_data *data)$/;"	f
+fann_div	src/include/fann_internal.h	139;"	d
+fann_div	src/include/fann_internal.h	146;"	d
+fann_duplicate_train_data	src/fann_train_data.c	/^FANN_EXTERNAL struct fann_train_data *FANN_API fann_duplicate_train_data(struct fann_train_data$/;"	f
+fann_elliot_derive	src/include/fann_activation.h	62;"	d
+fann_elliot_real	src/include/fann_activation.h	61;"	d
+fann_elliot_symmetric_derive	src/include/fann_activation.h	67;"	d
+fann_elliot_symmetric_real	src/include/fann_activation.h	66;"	d
+fann_errno_enum	src/include/fann_error.h	/^enum fann_errno_enum$/;"	g
+fann_error	src/fann_error.c	/^void fann_error(struct fann_error *errdat, const enum fann_errno_enum errno_f, ...)$/;"	f
+fann_errorfunc_enum	src/include/fann_data.h	/^enum fann_errorfunc_enum$/;"	g
+fann_exp2	src/include/fann_internal.h	129;"	d
+fann_gaussian_derive	src/include/fann_activation.h	52;"	d
+fann_gaussian_real	src/include/fann_activation.h	51;"	d
+fann_gaussian_symmetric_derive	src/include/fann_activation.h	57;"	d
+fann_gaussian_symmetric_real	src/include/fann_activation.h	56;"	d
+fann_get_MSE	src/fann_train.c	/^FANN_EXTERNAL float FANN_API fann_get_MSE(struct fann *ann)$/;"	f
+fann_get_activation_function	src/fann_train.c	/^    fann_get_activation_function(struct fann *ann, int layer, int neuron)$/;"	f
+fann_get_activation_steepness	src/fann_train.c	/^    fann_get_activation_steepness(struct fann *ann, int layer, int neuron)$/;"	f
+fann_get_bias_array	src/fann.c	/^FANN_EXTERNAL void FANN_API fann_get_bias_array(struct fann *ann, unsigned int *bias)$/;"	f
+fann_get_bit_fail	src/fann_train.c	/^FANN_EXTERNAL unsigned int FANN_API fann_get_bit_fail(struct fann *ann)$/;"	f
+fann_get_cascade_num_candidates	src/fann_cascade.c	/^FANN_EXTERNAL unsigned int FANN_API fann_get_cascade_num_candidates(struct fann *ann)$/;"	f
+fann_get_connection_array	src/fann.c	/^FANN_EXTERNAL void FANN_API fann_get_connection_array(struct fann *ann, struct fann_connection *connections)$/;"	f
+fann_get_connection_rate	src/fann.c	/^FANN_EXTERNAL float FANN_API fann_get_connection_rate(struct fann *ann)$/;"	f
+fann_get_errno	src/fann_error.c	/^FANN_EXTERNAL enum fann_errno_enum FANN_API fann_get_errno(struct fann_error *errdat)$/;"	f
+fann_get_errstr	src/fann_error.c	/^FANN_EXTERNAL char *FANN_API fann_get_errstr(struct fann_error *errdat)$/;"	f
+fann_get_layer	src/fann_train.c	/^FANN_EXTERNAL struct fann_layer* FANN_API fann_get_layer(struct fann *ann, int layer)$/;"	f
+fann_get_layer_array	src/fann.c	/^FANN_EXTERNAL void FANN_API fann_get_layer_array(struct fann *ann, unsigned int *layers)$/;"	f
+fann_get_network_type	src/fann.c	/^FANN_EXTERNAL enum fann_nettype_enum FANN_API fann_get_network_type(struct fann *ann)$/;"	f
+fann_get_neuron	src/fann_train.c	/^FANN_EXTERNAL struct fann_neuron* FANN_API fann_get_neuron(struct fann *ann, unsigned int layer, int neuron)$/;"	f
+fann_get_neuron_layer	src/fann_train.c	/^FANN_EXTERNAL struct fann_neuron* FANN_API fann_get_neuron_layer(struct fann *ann, struct fann_layer* layer, int neuron)$/;"	f
+fann_get_num_layers	src/fann.c	/^FANN_EXTERNAL unsigned int FANN_API fann_get_num_layers(struct fann *ann)$/;"	f
+fann_get_total_neurons	src/fann.c	/^FANN_EXTERNAL unsigned int FANN_API fann_get_total_neurons(struct fann *ann)$/;"	f
+fann_init_error_data	src/fann_error.c	/^void fann_init_error_data(struct fann_error *errdat)$/;"	f
+fann_init_weights	src/fann.c	/^FANN_EXTERNAL void FANN_API fann_init_weights(struct fann *ann, struct fann_train_data *train_data)$/;"	f
+fann_initialize_candidates	src/fann_cascade.c	/^int fann_initialize_candidates(struct fann *ann)$/;"	f
+fann_install_candidate	src/fann_cascade.c	/^void fann_install_candidate(struct fann *ann)$/;"	f
+fann_length_train_data	src/fann_train_data.c	/^FANN_EXTERNAL unsigned int FANN_API fann_length_train_data(struct fann_train_data *data)$/;"	f
+fann_linear_derive	src/include/fann_activation.h	37;"	d
+fann_linear_func	src/include/fann_activation.h	32;"	d
+fann_max	src/include/fann_internal.h	125;"	d
+fann_merge_train_data	src/fann_train_data.c	/^FANN_EXTERNAL struct fann_train_data *FANN_API fann_merge_train_data(struct fann_train_data *data1,$/;"	f
+fann_min	src/include/fann_internal.h	126;"	d
+fann_mult	src/include/fann_internal.h	138;"	d
+fann_mult	src/include/fann_internal.h	145;"	d
+fann_nettype_enum	src/include/fann_data.h	/^enum fann_nettype_enum$/;"	g
+fann_neuron	src/include/fann_data.h	/^struct fann_neuron$/;"	s
+fann_num_input_train_data	src/fann_train_data.c	/^FANN_EXTERNAL unsigned int FANN_API fann_num_input_train_data(struct fann_train_data *data)$/;"	f
+fann_num_output_train_data	src/fann_train_data.c	/^FANN_EXTERNAL unsigned int FANN_API fann_num_output_train_data(struct fann_train_data *data)$/;"	f
+fann_print_connections	src/fann.c	/^FANN_EXTERNAL void FANN_API fann_print_connections(struct fann *ann)$/;"	f
+fann_print_connections_raw	src/fann_cascade.c	/^void fann_print_connections_raw(struct fann *ann)$/;"	f
+fann_print_error	src/fann_error.c	/^FANN_EXTERNAL void FANN_API fann_print_error(struct fann_error *errdat)$/;"	f
+fann_print_parameters	src/fann.c	/^FANN_EXTERNAL void FANN_API fann_print_parameters(struct fann *ann)$/;"	f
+fann_rand	src/include/fann_internal.h	132;"	d
+fann_random_bias_weight	src/include/fann_internal.h	141;"	d
+fann_random_bias_weight	src/include/fann_internal.h	148;"	d
+fann_random_weight	src/include/fann_internal.h	140;"	d
+fann_random_weight	src/include/fann_internal.h	147;"	d
+fann_randomize_weights	src/fann.c	/^FANN_EXTERNAL void FANN_API fann_randomize_weights(struct fann *ann, fann_type min_weight,$/;"	f
+fann_read_train_from_fd	src/fann_train_data.c	/^struct fann_train_data *fann_read_train_from_fd(FILE * file, const char *filename)$/;"	f
+fann_read_train_from_file	src/fann_train_data.c	/^FANN_EXTERNAL struct fann_train_data *FANN_API fann_read_train_from_file(const char *configuration_file)$/;"	f
+fann_reallocate_connections	src/fann_cascade.c	/^int fann_reallocate_connections(struct fann *ann, unsigned int total_connections)$/;"	f
+fann_reallocate_neurons	src/fann_cascade.c	/^int fann_reallocate_neurons(struct fann *ann, unsigned int total_neurons)$/;"	f
+fann_reset_MSE	src/fann_train.c	/^FANN_EXTERNAL void FANN_API fann_reset_MSE(struct fann *ann)$/;"	f
+fann_reset_errno	src/fann_error.c	/^FANN_EXTERNAL void FANN_API fann_reset_errno(struct fann_error *errdat)$/;"	f
+fann_reset_errstr	src/fann_error.c	/^FANN_EXTERNAL void FANN_API fann_reset_errstr(struct fann_error *errdat)$/;"	f
+fann_run	src/fann.c	/^FANN_EXTERNAL fann_type *FANN_API fann_run(struct fann * ann, fann_type * input)$/;"	f
+fann_safe_free	src/include/fann_internal.h	127;"	d
+fann_save	src/fann_io.c	/^FANN_EXTERNAL int FANN_API fann_save(struct fann *ann, const char *configuration_file)$/;"	f
+fann_save_internal	src/fann_io.c	/^int fann_save_internal(struct fann *ann, const char *configuration_file, unsigned int save_as_fixed)$/;"	f
+fann_save_internal_fd	src/fann_io.c	/^int fann_save_internal_fd(struct fann *ann, FILE * conf, const char *configuration_file,$/;"	f
+fann_save_to_fixed	src/fann_io.c	/^FANN_EXTERNAL int FANN_API fann_save_to_fixed(struct fann *ann, const char *configuration_file)$/;"	f
+fann_save_train	src/fann_train_data.c	/^FANN_EXTERNAL int FANN_API fann_save_train(struct fann_train_data *data, const char *filename)$/;"	f
+fann_save_train_internal	src/fann_train_data.c	/^int fann_save_train_internal(struct fann_train_data *data, const char *filename,$/;"	f
+fann_save_train_internal_fd	src/fann_train_data.c	/^int fann_save_train_internal_fd(struct fann_train_data *data, FILE * file, const char *filename,$/;"	f
+fann_save_train_to_fixed	src/fann_train_data.c	/^FANN_EXTERNAL int FANN_API fann_save_train_to_fixed(struct fann_train_data *data, const char *filename,$/;"	f
+fann_scale_data	src/fann_train_data.c	/^void fann_scale_data(fann_type ** data, unsigned int num_data, unsigned int num_elem,$/;"	f
+fann_scale_input	src/fann_train_data.c	/^FANN_EXTERNAL void FANN_API fann_scale_input( struct fann *ann, fann_type *input_vector )$/;"	f
+fann_scale_input_train_data	src/fann_train_data.c	/^FANN_EXTERNAL void FANN_API fann_scale_input_train_data(struct fann_train_data *train_data,$/;"	f
+fann_scale_output	src/fann_train_data.c	/^FANN_EXTERNAL void FANN_API fann_scale_output( struct fann *ann, fann_type *output_vector )$/;"	f
+fann_scale_output_train_data	src/fann_train_data.c	/^FANN_EXTERNAL void FANN_API fann_scale_output_train_data(struct fann_train_data *train_data,$/;"	f
+fann_scale_train	src/fann_train_data.c	/^FANN_EXTERNAL void FANN_API fann_scale_train( struct fann *ann, struct fann_train_data *data )$/;"	f
+fann_scale_train_data	src/fann_train_data.c	/^FANN_EXTERNAL void FANN_API fann_scale_train_data(struct fann_train_data *train_data,$/;"	f
+fann_scanf	src/fann_io.c	344;"	d	file:
+fann_seed_rand	src/fann.c	/^void fann_seed_rand()$/;"	f
+fann_set_activation_function	src/fann_train.c	/^FANN_EXTERNAL void FANN_API fann_set_activation_function(struct fann *ann,$/;"	f
+fann_set_activation_function_hidden	src/fann_train.c	/^FANN_EXTERNAL void FANN_API fann_set_activation_function_hidden(struct fann *ann,$/;"	f
+fann_set_activation_function_layer	src/fann_train.c	/^FANN_EXTERNAL void FANN_API fann_set_activation_function_layer(struct fann *ann,$/;"	f
+fann_set_activation_function_output	src/fann_train.c	/^FANN_EXTERNAL void FANN_API fann_set_activation_function_output(struct fann *ann,$/;"	f
+fann_set_activation_steepness	src/fann_train.c	/^FANN_EXTERNAL void FANN_API fann_set_activation_steepness(struct fann *ann,$/;"	f
+fann_set_activation_steepness_hidden	src/fann_train.c	/^FANN_EXTERNAL void FANN_API fann_set_activation_steepness_hidden(struct fann *ann,$/;"	f
+fann_set_activation_steepness_layer	src/fann_train.c	/^FANN_EXTERNAL void FANN_API fann_set_activation_steepness_layer(struct fann *ann,$/;"	f
+fann_set_activation_steepness_output	src/fann_train.c	/^FANN_EXTERNAL void FANN_API fann_set_activation_steepness_output(struct fann *ann,$/;"	f
+fann_set_cascade_activation_steepnesses	src/fann_cascade.c	/^FANN_EXTERNAL void FANN_API fann_set_cascade_activation_steepnesses(struct fann *ann,$/;"	f
+fann_set_error_log	src/fann_error.c	/^FANN_EXTERNAL void FANN_API fann_set_error_log(struct fann_error *errdat, FILE * log_file)$/;"	f
+fann_set_input_scaling_params	src/fann_train_data.c	/^FANN_EXTERNAL int FANN_API fann_set_input_scaling_params($/;"	f
+fann_set_output_scaling_params	src/fann_train_data.c	/^FANN_EXTERNAL int FANN_API fann_set_output_scaling_params($/;"	f
+fann_set_scaling_params	src/fann_train_data.c	/^FANN_EXTERNAL int FANN_API fann_set_scaling_params($/;"	f
+fann_set_shortcut_connections	src/fann_cascade.c	/^void fann_set_shortcut_connections(struct fann *ann)$/;"	f
+fann_set_weight	src/fann.c	/^FANN_EXTERNAL void FANN_API fann_set_weight(struct fann *ann,$/;"	f
+fann_set_weight_array	src/fann.c	/^FANN_EXTERNAL void FANN_API fann_set_weight_array(struct fann *ann,$/;"	f
+fann_shuffle_train_data	src/fann_train_data.c	/^FANN_EXTERNAL void FANN_API fann_shuffle_train_data(struct fann_train_data *train_data)$/;"	f
+fann_sigmoid_derive	src/include/fann_activation.h	42;"	d
+fann_sigmoid_real	src/include/fann_activation.h	41;"	d
+fann_sigmoid_symmetric_derive	src/include/fann_activation.h	47;"	d
+fann_sigmoid_symmetric_real	src/include/fann_activation.h	46;"	d
+fann_sin_derive	src/include/fann_activation.h	79;"	d
+fann_sin_real	src/include/fann_activation.h	78;"	d
+fann_sin_symmetric_derive	src/include/fann_activation.h	71;"	d
+fann_sin_symmetric_real	src/include/fann_activation.h	70;"	d
+fann_skip	src/fann_io.c	354;"	d	file:
+fann_stepwise	src/include/fann_activation.h	33;"	d
+fann_stopfunc_enum	src/include/fann_data.h	/^enum fann_stopfunc_enum$/;"	g
+fann_subset_train_data	src/fann_train_data.c	/^FANN_EXTERNAL struct fann_train_data *FANN_API fann_subset_train_data(struct fann_train_data$/;"	f
+fann_test	src/fann_train.c	/^FANN_EXTERNAL fann_type *FANN_API fann_test(struct fann *ann, fann_type * input,$/;"	f
+fann_test_data	src/fann_train_data.c	/^FANN_EXTERNAL float FANN_API fann_test_data(struct fann *ann, struct fann_train_data *data)$/;"	f
+fann_train	src/fann_train.c	/^FANN_EXTERNAL void FANN_API fann_train(struct fann *ann, fann_type * input,$/;"	f
+fann_train_candidates	src/fann_cascade.c	/^int fann_train_candidates(struct fann *ann, struct fann_train_data *data)$/;"	f
+fann_train_candidates_epoch	src/fann_cascade.c	/^fann_type fann_train_candidates_epoch(struct fann *ann, struct fann_train_data *data)$/;"	f
+fann_train_data	src/include/fann_train.h	/^struct fann_train_data$/;"	s
+fann_train_enum	src/include/fann_data.h	/^enum fann_train_enum$/;"	g
+fann_train_epoch	src/fann_train_data.c	/^FANN_EXTERNAL float FANN_API fann_train_epoch(struct fann *ann, struct fann_train_data *data)$/;"	f
+fann_train_epoch_batch	src/fann_train_data.c	/^float fann_train_epoch_batch(struct fann *ann, struct fann_train_data *data)$/;"	f
+fann_train_epoch_incremental	src/fann_train_data.c	/^float fann_train_epoch_incremental(struct fann *ann, struct fann_train_data *data)$/;"	f
+fann_train_epoch_irpropm	src/fann_train_data.c	/^float fann_train_epoch_irpropm(struct fann *ann, struct fann_train_data *data)$/;"	f
+fann_train_epoch_quickprop	src/fann_train_data.c	/^float fann_train_epoch_quickprop(struct fann *ann, struct fann_train_data *data)$/;"	f
+fann_train_epoch_sarprop	src/fann_train_data.c	/^float fann_train_epoch_sarprop(struct fann *ann, struct fann_train_data *data)$/;"	f
+fann_train_on_data	src/fann_train_data.c	/^FANN_EXTERNAL void FANN_API fann_train_on_data(struct fann *ann, struct fann_train_data *data,$/;"	f
+fann_train_on_file	src/fann_train_data.c	/^FANN_EXTERNAL void FANN_API fann_train_on_file(struct fann *ann, const char *filename,$/;"	f
+fann_train_outputs	src/fann_cascade.c	/^int fann_train_outputs(struct fann *ann, struct fann_train_data *data, float desired_error)$/;"	f
+fann_train_outputs_epoch	src/fann_cascade.c	/^float fann_train_outputs_epoch(struct fann *ann, struct fann_train_data *data)$/;"	f
+fann_type	src/include/doublefann.h	/^typedef double fann_type;$/;"	t
+fann_type	src/include/fixedfann.h	/^typedef int fann_type;$/;"	t
+fann_type	src/include/floatfann.h	/^typedef float fann_type;$/;"	t
+fann_update_MSE	src/fann_train.c	/^fann_type fann_update_MSE(struct fann *ann, struct fann_neuron* neuron, fann_type neuron_diff)$/;"	f
+fann_update_candidate_slopes	src/fann_cascade.c	/^void fann_update_candidate_slopes(struct fann *ann)$/;"	f
+fann_update_candidate_weights	src/fann_cascade.c	/^void fann_update_candidate_weights(struct fann *ann, unsigned int num_data)$/;"	f
+fann_update_slopes_batch	src/fann_train.c	/^void fann_update_slopes_batch(struct fann *ann, struct fann_layer *layer_begin,$/;"	f
+fann_update_stepwise	src/fann.c	/^void fann_update_stepwise(struct fann *ann)$/;"	f
+fann_update_weights	src/fann_train.c	/^void fann_update_weights(struct fann *ann)$/;"	f
+fann_update_weights_batch	src/fann_train.c	/^void fann_update_weights_batch(struct fann *ann, unsigned int num_data, unsigned int first_weight,$/;"	f
+fann_update_weights_irpropm	src/fann_train.c	/^void fann_update_weights_irpropm(struct fann *ann, unsigned int first_weight, unsigned int past_end)$/;"	f
+fann_update_weights_quickprop	src/fann_train.c	/^void fann_update_weights_quickprop(struct fann *ann, unsigned int num_data,$/;"	f
+fann_update_weights_sarprop	src/fann_train.c	/^void fann_update_weights_sarprop(struct fann *ann, unsigned int epoch, unsigned int first_weight, unsigned int past_end)$/;"	f
+features	build/CMakeFiles/feature_tests.c	/^  const char features[] = {"\\n"$/;"	v
+features	build/CMakeFiles/feature_tests.cxx	/^  const char features[] = {"\\n"$/;"	v
+first_con	src/include/fann_data.h	/^	unsigned int first_con;$/;"	m	struct:fann_neuron
+get_MSE	src/include/fann_cpp.h	/^        float get_MSE()$/;"	f	class:FANN::neural_net
+get_activation_function	src/include/fann_cpp.h	/^        activation_function_enum get_activation_function(int layer, int neuron)$/;"	f	class:FANN::neural_net
+get_activation_steepness	src/include/fann_cpp.h	/^        fann_type get_activation_steepness(int layer, int neuron)$/;"	f	class:FANN::neural_net
+get_bias_array	src/include/fann_cpp.h	/^        void get_bias_array(unsigned int *bias)$/;"	f	class:FANN::neural_net
+get_bit_fail	src/include/fann_cpp.h	/^        unsigned int get_bit_fail()$/;"	f	class:FANN::neural_net
+get_bit_fail_limit	src/include/fann_cpp.h	/^        fann_type get_bit_fail_limit()$/;"	f	class:FANN::neural_net
+get_cascade_activation_functions	src/include/fann_cpp.h	/^        activation_function_enum * get_cascade_activation_functions()$/;"	f	class:FANN::neural_net
+get_cascade_activation_functions_count	src/include/fann_cpp.h	/^        unsigned int get_cascade_activation_functions_count()$/;"	f	class:FANN::neural_net
+get_cascade_activation_steepnesses	src/include/fann_cpp.h	/^        fann_type *get_cascade_activation_steepnesses()$/;"	f	class:FANN::neural_net
+get_cascade_activation_steepnesses_count	src/include/fann_cpp.h	/^        unsigned int get_cascade_activation_steepnesses_count()$/;"	f	class:FANN::neural_net
+get_cascade_candidate_change_fraction	src/include/fann_cpp.h	/^        float get_cascade_candidate_change_fraction()$/;"	f	class:FANN::neural_net
+get_cascade_candidate_limit	src/include/fann_cpp.h	/^        fann_type get_cascade_candidate_limit()$/;"	f	class:FANN::neural_net
+get_cascade_candidate_stagnation_epochs	src/include/fann_cpp.h	/^        unsigned int get_cascade_candidate_stagnation_epochs()$/;"	f	class:FANN::neural_net
+get_cascade_max_cand_epochs	src/include/fann_cpp.h	/^        unsigned int get_cascade_max_cand_epochs()$/;"	f	class:FANN::neural_net
+get_cascade_max_out_epochs	src/include/fann_cpp.h	/^        unsigned int get_cascade_max_out_epochs()$/;"	f	class:FANN::neural_net
+get_cascade_num_candidate_groups	src/include/fann_cpp.h	/^        unsigned int get_cascade_num_candidate_groups()$/;"	f	class:FANN::neural_net
+get_cascade_num_candidates	src/include/fann_cpp.h	/^        unsigned int get_cascade_num_candidates()$/;"	f	class:FANN::neural_net
+get_cascade_output_change_fraction	src/include/fann_cpp.h	/^        float get_cascade_output_change_fraction()$/;"	f	class:FANN::neural_net
+get_cascade_output_stagnation_epochs	src/include/fann_cpp.h	/^        unsigned int get_cascade_output_stagnation_epochs()$/;"	f	class:FANN::neural_net
+get_cascade_weight_multiplier	src/include/fann_cpp.h	/^        fann_type get_cascade_weight_multiplier()$/;"	f	class:FANN::neural_net
+get_connection_array	src/include/fann_cpp.h	/^        void get_connection_array(connection *connections)$/;"	f	class:FANN::neural_net
+get_connection_rate	src/include/fann_cpp.h	/^        float get_connection_rate()$/;"	f	class:FANN::neural_net
+get_decimal_point	src/include/fann_cpp.h	/^        unsigned int get_decimal_point()$/;"	f	class:FANN::neural_net
+get_errno	src/include/fann_cpp.h	/^        unsigned int get_errno()$/;"	f	class:FANN::neural_net
+get_errstr	src/include/fann_cpp.h	/^        std::string get_errstr()$/;"	f	class:FANN::neural_net
+get_input	src/include/fann_cpp.h	/^        fann_type **get_input()$/;"	f	class:FANN::training_data
+get_layer_array	src/include/fann_cpp.h	/^        void get_layer_array(unsigned int *layers)$/;"	f	class:FANN::neural_net
+get_learning_momentum	src/include/fann_cpp.h	/^        float get_learning_momentum()$/;"	f	class:FANN::neural_net
+get_learning_rate	src/include/fann_cpp.h	/^        float get_learning_rate()$/;"	f	class:FANN::neural_net
+get_multiplier	src/include/fann_cpp.h	/^        unsigned int get_multiplier()$/;"	f	class:FANN::neural_net
+get_network_type	src/include/fann_cpp.h	/^        network_type_enum get_network_type()$/;"	f	class:FANN::neural_net
+get_num_input	src/include/fann_cpp.h	/^        unsigned int get_num_input()$/;"	f	class:FANN::neural_net
+get_num_layers	src/include/fann_cpp.h	/^        unsigned int get_num_layers()$/;"	f	class:FANN::neural_net
+get_num_output	src/include/fann_cpp.h	/^        unsigned int get_num_output()$/;"	f	class:FANN::neural_net
+get_output	src/include/fann_cpp.h	/^        fann_type **get_output()$/;"	f	class:FANN::training_data
+get_quickprop_decay	src/include/fann_cpp.h	/^        float get_quickprop_decay()$/;"	f	class:FANN::neural_net
+get_quickprop_mu	src/include/fann_cpp.h	/^        float get_quickprop_mu()$/;"	f	class:FANN::neural_net
+get_rprop_decrease_factor	src/include/fann_cpp.h	/^        float get_rprop_decrease_factor()$/;"	f	class:FANN::neural_net
+get_rprop_delta_max	src/include/fann_cpp.h	/^        float get_rprop_delta_max()$/;"	f	class:FANN::neural_net
+get_rprop_delta_min	src/include/fann_cpp.h	/^        float get_rprop_delta_min()$/;"	f	class:FANN::neural_net
+get_rprop_delta_zero	src/include/fann_cpp.h	/^        float get_rprop_delta_zero()$/;"	f	class:FANN::neural_net
+get_rprop_increase_factor	src/include/fann_cpp.h	/^        float get_rprop_increase_factor()$/;"	f	class:FANN::neural_net
+get_sarprop_step_error_shift	src/include/fann_cpp.h	/^        float get_sarprop_step_error_shift()$/;"	f	class:FANN::neural_net
+get_sarprop_step_error_threshold_factor	src/include/fann_cpp.h	/^        float get_sarprop_step_error_threshold_factor()$/;"	f	class:FANN::neural_net
+get_sarprop_temperature	src/include/fann_cpp.h	/^        float get_sarprop_temperature()$/;"	f	class:FANN::neural_net
+get_sarprop_weight_decay_shift	src/include/fann_cpp.h	/^        float get_sarprop_weight_decay_shift()$/;"	f	class:FANN::neural_net
+get_total_connections	src/include/fann_cpp.h	/^        unsigned int get_total_connections()$/;"	f	class:FANN::neural_net
+get_total_neurons	src/include/fann_cpp.h	/^        unsigned int get_total_neurons()$/;"	f	class:FANN::neural_net
+get_train_error_function	src/include/fann_cpp.h	/^        error_function_enum get_train_error_function()$/;"	f	class:FANN::neural_net
+get_train_stop_function	src/include/fann_cpp.h	/^        stop_function_enum get_train_stop_function()$/;"	f	class:FANN::neural_net
+get_training_algorithm	src/include/fann_cpp.h	/^        training_algorithm_enum get_training_algorithm()$/;"	f	class:FANN::neural_net
+gettimeofday	src/include/compat_time.h	/^$/;"	f
+info_arch	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	/^char const* info_arch = "INFO" ":" "arch[" ARCHITECTURE_ID "]";$/;"	v
+info_arch	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* info_arch = "INFO" ":" "arch[" ARCHITECTURE_ID "]";$/;"	v
+info_compiler	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	/^char const* info_compiler = "INFO" ":" "compiler[" COMPILER_ID "]";$/;"	v
+info_compiler	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* info_compiler = "INFO" ":" "compiler[" COMPILER_ID "]";$/;"	v
+info_cray	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	/^char const *info_cray = "INFO" ":" "compiler_wrapper[CrayPrgEnv]";$/;"	v
+info_cray	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const *info_cray = "INFO" ":" "compiler_wrapper[CrayPrgEnv]";$/;"	v
+info_language_dialect_default	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	/^const char* info_language_dialect_default =$/;"	v
+info_language_dialect_default	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^const char* info_language_dialect_default = "INFO" ":" "dialect_default["$/;"	v
+info_platform	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	/^char const* info_platform = "INFO" ":" "platform[" PLATFORM_ID "]";$/;"	v
+info_platform	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* info_platform = "INFO" ":" "platform[" PLATFORM_ID "]";$/;"	v
+info_simulate	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	/^char const* info_simulate = "INFO" ":" "simulate[" SIMULATE_ID "]";$/;"	v
+info_simulate	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* info_simulate = "INFO" ":" "simulate[" SIMULATE_ID "]";$/;"	v
+info_simulate_version	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	/^char const info_simulate_version[] = {$/;"	v
+info_simulate_version	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const info_simulate_version[] = {$/;"	v
+info_version	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	/^char const info_version[] = {$/;"	v
+info_version	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const info_version[] = {$/;"	v
+info_version_internal	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	/^char const info_version_internal[] = {$/;"	v
+info_version_internal	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const info_version_internal[] = {$/;"	v
+init_weights	src/include/fann_cpp.h	/^        void init_weights(const training_data &data)$/;"	f	class:FANN::neural_net
+initialize_candidate_weights	src/fann_cascade.c	/^void initialize_candidate_weights(struct fann *ann, unsigned int first_con, unsigned int last_con, float scale_factor)$/;"	f
+input	src/include/fann_train.h	/^	fann_type **input;$/;"	m	struct:fann_train_data
+internal_callback	src/include/fann_cpp.h	/^        static int FANN_API internal_callback(struct fann *ann, struct fann_train_data *train, $/;"	f	class:FANN::neural_net
+last_con	src/include/fann_data.h	/^	unsigned int last_con;$/;"	m	struct:fann_neuron
+length_train_data	src/include/fann_cpp.h	/^        unsigned int length_train_data()$/;"	f	class:FANN::training_data
+main	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	/^int main(argc, argv) int argc; char *argv[];$/;"	f
+main	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	/^void main() {}$/;"	f
+main	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^int main(int argc, char* argv[])$/;"	f
+main	build/CMakeFiles/feature_tests.c	/^int main(int argc, char** argv) { (void)argv; return features[argc]; }$/;"	f
+main	build/CMakeFiles/feature_tests.cxx	/^int main(int argc, char** argv) { (void)argv; return features[argc]; }$/;"	f
+main	examples/cascade_train.c	/^int main()$/;"	f
+main	examples/momentums.c	/^int main()$/;"	f
+main	examples/mushroom.c	/^int main()$/;"	f
+main	examples/robot.c	/^int main()$/;"	f
+main	examples/scaling_test.c	/^int main( int argc, char** argv )$/;"	f
+main	examples/scaling_train.c	/^int main( int argc, char** argv )$/;"	f
+main	examples/simple_test.c	/^int main()$/;"	f
+main	examples/simple_train.c	/^int main()$/;"	f
+main	examples/steepness_train.c	/^int main()$/;"	f
+main	examples/xor_sample.cpp	/^int main(int argc, char **argv)$/;"	f
+main	examples/xor_test.c	/^int main()$/;"	f
+main	examples/xor_train.c	/^int main()$/;"	f
+merge_train_data	src/include/fann_cpp.h	/^        void merge_train_data(const training_data &data)$/;"	f	class:FANN::training_data
+net	src/include/fann_cpp.h	/^            neural_net *net; \/\/ This pointer for the neural network$/;"	m	struct:FANN::neural_net::user_context_type
+network_type_enum	src/include/fann_cpp.h	/^    enum network_type_enum$/;"	g	namespace:FANN
+neural_net	src/include/fann_cpp.h	/^	neural_net(const neural_net& other)$/;"	f	class:FANN::neural_net
+neural_net	src/include/fann_cpp.h	/^	neural_net(struct fann* other)$/;"	f	class:FANN::neural_net
+neural_net	src/include/fann_cpp.h	/^        neural_net() : ann(NULL)$/;"	f	class:FANN::neural_net
+neural_net	src/include/fann_cpp.h	/^    class neural_net$/;"	c	namespace:FANN
+num_data	src/include/fann_train.h	/^	unsigned int num_data;$/;"	m	struct:fann_train_data
+num_input	src/include/fann_train.h	/^	unsigned int num_input;$/;"	m	struct:fann_train_data
+num_input_train_data	src/include/fann_cpp.h	/^        unsigned int num_input_train_data()$/;"	f	class:FANN::training_data
+num_output	src/include/fann_train.h	/^	unsigned int num_output;$/;"	m	struct:fann_train_data
+num_output_train_data	src/include/fann_cpp.h	/^        unsigned int num_output_train_data()$/;"	f	class:FANN::training_data
+output	src/include/fann_train.h	/^	fann_type **output;$/;"	m	struct:fann_train_data
+print_callback	examples/xor_sample.cpp	/^int print_callback(FANN::neural_net &net, FANN::training_data &train,$/;"	f
+print_connections	src/include/fann_cpp.h	/^        void print_connections()$/;"	f	class:FANN::neural_net
+print_error	src/include/fann_cpp.h	/^        void print_error()$/;"	f	class:FANN::neural_net
+print_parameters	src/include/fann_cpp.h	/^        void print_parameters()$/;"	f	class:FANN::neural_net
+qnxnto	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	/^char const* qnxnto = "INFO" ":" "qnxnto[]";$/;"	v
+qnxnto	build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* qnxnto = "INFO" ":" "qnxnto[]";$/;"	v
+randomize_weights	src/include/fann_cpp.h	/^        void randomize_weights(fann_type min_weight, fann_type max_weight)$/;"	f	class:FANN::neural_net
+read_train_from_file	src/include/fann_cpp.h	/^        bool read_train_from_file(const std::string &filename)$/;"	f	class:FANN::training_data
+reset_MSE	src/include/fann_cpp.h	/^        void reset_MSE()$/;"	f	class:FANN::neural_net
+reset_errno	src/include/fann_cpp.h	/^        void reset_errno()$/;"	f	class:FANN::neural_net
+reset_errstr	src/include/fann_cpp.h	/^        void reset_errstr()$/;"	f	class:FANN::neural_net
+run	src/include/fann_cpp.h	/^        fann_type* run(fann_type *input)$/;"	f	class:FANN::neural_net
+save	src/include/fann_cpp.h	/^        bool save(const std::string &configuration_file)$/;"	f	class:FANN::neural_net
+save_to_fixed	src/include/fann_cpp.h	/^        int save_to_fixed(const std::string &configuration_file)$/;"	f	class:FANN::neural_net
+save_train	src/include/fann_cpp.h	/^        bool save_train(const std::string &filename)$/;"	f	class:FANN::training_data
+save_train_to_fixed	src/include/fann_cpp.h	/^        bool save_train_to_fixed(const std::string &filename, unsigned int decimal_point)$/;"	f	class:FANN::training_data
+scale_input	src/include/fann_cpp.h	/^        void scale_input(fann_type *input_vector)$/;"	f	class:FANN::neural_net
+scale_input_train_data	src/include/fann_cpp.h	/^        void scale_input_train_data(fann_type new_min, fann_type new_max)$/;"	f	class:FANN::training_data
+scale_output	src/include/fann_cpp.h	/^        void scale_output(fann_type *output_vector)$/;"	f	class:FANN::neural_net
+scale_output_train_data	src/include/fann_cpp.h	/^        void scale_output_train_data(fann_type new_min, fann_type new_max)$/;"	f	class:FANN::training_data
+scale_train	src/include/fann_cpp.h	/^        void scale_train(training_data &data)$/;"	f	class:FANN::neural_net
+scale_train_data	src/include/fann_cpp.h	/^        void scale_train_data(fann_type new_min, fann_type new_max)$/;"	f	class:FANN::training_data
+set_activation_function	src/include/fann_cpp.h	/^        void set_activation_function(activation_function_enum activation_function, int layer, int neuron)$/;"	f	class:FANN::neural_net
+set_activation_function_hidden	src/include/fann_cpp.h	/^        void set_activation_function_hidden(activation_function_enum activation_function)$/;"	f	class:FANN::neural_net
+set_activation_function_layer	src/include/fann_cpp.h	/^        void set_activation_function_layer(activation_function_enum activation_function, int layer)$/;"	f	class:FANN::neural_net
+set_activation_function_output	src/include/fann_cpp.h	/^        void set_activation_function_output(activation_function_enum activation_function)$/;"	f	class:FANN::neural_net
+set_activation_steepness	src/include/fann_cpp.h	/^        void set_activation_steepness(fann_type steepness, int layer, int neuron)$/;"	f	class:FANN::neural_net
+set_activation_steepness_hidden	src/include/fann_cpp.h	/^        void set_activation_steepness_hidden(fann_type steepness)$/;"	f	class:FANN::neural_net
+set_activation_steepness_layer	src/include/fann_cpp.h	/^        void set_activation_steepness_layer(fann_type steepness, int layer)$/;"	f	class:FANN::neural_net
+set_activation_steepness_output	src/include/fann_cpp.h	/^        void set_activation_steepness_output(fann_type steepness)$/;"	f	class:FANN::neural_net
+set_bit_fail_limit	src/include/fann_cpp.h	/^        void set_bit_fail_limit(fann_type bit_fail_limit)$/;"	f	class:FANN::neural_net
+set_callback	src/include/fann_cpp.h	/^        void set_callback(callback_type callback, void *user_data)$/;"	f	class:FANN::neural_net
+set_cascade_activation_functions	src/include/fann_cpp.h	/^        void set_cascade_activation_functions(activation_function_enum *cascade_activation_functions,$/;"	f	class:FANN::neural_net
+set_cascade_activation_steepnesses	src/include/fann_cpp.h	/^        void set_cascade_activation_steepnesses(fann_type *cascade_activation_steepnesses,$/;"	f	class:FANN::neural_net
+set_cascade_candidate_change_fraction	src/include/fann_cpp.h	/^        void set_cascade_candidate_change_fraction(float cascade_candidate_change_fraction)$/;"	f	class:FANN::neural_net
+set_cascade_candidate_limit	src/include/fann_cpp.h	/^        void set_cascade_candidate_limit(fann_type cascade_candidate_limit)$/;"	f	class:FANN::neural_net
+set_cascade_candidate_stagnation_epochs	src/include/fann_cpp.h	/^        void set_cascade_candidate_stagnation_epochs(unsigned int cascade_candidate_stagnation_epochs)$/;"	f	class:FANN::neural_net
+set_cascade_max_cand_epochs	src/include/fann_cpp.h	/^        void set_cascade_max_cand_epochs(unsigned int cascade_max_cand_epochs)$/;"	f	class:FANN::neural_net
+set_cascade_max_out_epochs	src/include/fann_cpp.h	/^        void set_cascade_max_out_epochs(unsigned int cascade_max_out_epochs)$/;"	f	class:FANN::neural_net
+set_cascade_num_candidate_groups	src/include/fann_cpp.h	/^        void set_cascade_num_candidate_groups(unsigned int cascade_num_candidate_groups)$/;"	f	class:FANN::neural_net
+set_cascade_output_change_fraction	src/include/fann_cpp.h	/^        void set_cascade_output_change_fraction(float cascade_output_change_fraction)$/;"	f	class:FANN::neural_net
+set_cascade_output_stagnation_epochs	src/include/fann_cpp.h	/^        void set_cascade_output_stagnation_epochs(unsigned int cascade_output_stagnation_epochs)$/;"	f	class:FANN::neural_net
+set_cascade_weight_multiplier	src/include/fann_cpp.h	/^        void set_cascade_weight_multiplier(fann_type cascade_weight_multiplier)$/;"	f	class:FANN::neural_net
+set_error_log	src/include/fann_cpp.h	/^        void set_error_log(FILE *log_file)$/;"	f	class:FANN::neural_net
+set_input_scaling_params	src/include/fann_cpp.h	/^        bool set_input_scaling_params(const training_data &data, float new_input_min, float new_input_max)$/;"	f	class:FANN::neural_net
+set_learning_momentum	src/include/fann_cpp.h	/^        void set_learning_momentum(float learning_momentum)$/;"	f	class:FANN::neural_net
+set_learning_rate	src/include/fann_cpp.h	/^        void set_learning_rate(float learning_rate)$/;"	f	class:FANN::neural_net
+set_output_scaling_params	src/include/fann_cpp.h	/^        bool set_output_scaling_params(const training_data &data, float new_output_min, float new_output_max)$/;"	f	class:FANN::neural_net
+set_quickprop_decay	src/include/fann_cpp.h	/^        void set_quickprop_decay(float quickprop_decay)$/;"	f	class:FANN::neural_net
+set_quickprop_mu	src/include/fann_cpp.h	/^        void set_quickprop_mu(float quickprop_mu)$/;"	f	class:FANN::neural_net
+set_rprop_decrease_factor	src/include/fann_cpp.h	/^        void set_rprop_decrease_factor(float rprop_decrease_factor)$/;"	f	class:FANN::neural_net
+set_rprop_delta_max	src/include/fann_cpp.h	/^        void set_rprop_delta_max(float rprop_delta_max)$/;"	f	class:FANN::neural_net
+set_rprop_delta_min	src/include/fann_cpp.h	/^        void set_rprop_delta_min(float rprop_delta_min)$/;"	f	class:FANN::neural_net
+set_rprop_delta_zero	src/include/fann_cpp.h	/^        void set_rprop_delta_zero(float rprop_delta_zero)$/;"	f	class:FANN::neural_net
+set_rprop_increase_factor	src/include/fann_cpp.h	/^        void set_rprop_increase_factor(float rprop_increase_factor)$/;"	f	class:FANN::neural_net
+set_sarprop_step_error_shift	src/include/fann_cpp.h	/^        void set_sarprop_step_error_shift(float sarprop_step_error_shift)$/;"	f	class:FANN::neural_net
+set_sarprop_step_error_threshold_factor	src/include/fann_cpp.h	/^        void set_sarprop_step_error_threshold_factor(float sarprop_step_error_threshold_factor)$/;"	f	class:FANN::neural_net
+set_sarprop_temperature	src/include/fann_cpp.h	/^        void set_sarprop_temperature(float sarprop_temperature)$/;"	f	class:FANN::neural_net
+set_sarprop_weight_decay_shift	src/include/fann_cpp.h	/^        void set_sarprop_weight_decay_shift(float sarprop_weight_decay_shift)$/;"	f	class:FANN::neural_net
+set_scaling_params	src/include/fann_cpp.h	/^        bool set_scaling_params(const training_data &data,$/;"	f	class:FANN::neural_net
+set_train_data	src/include/fann_cpp.h	/^        void set_train_data(struct fann_train_data *data)$/;"	f	class:FANN::training_data
+set_train_data	src/include/fann_cpp.h	/^        void set_train_data(unsigned int num_data,$/;"	f	class:FANN::training_data
+set_train_error_function	src/include/fann_cpp.h	/^        void set_train_error_function(error_function_enum train_error_function)$/;"	f	class:FANN::neural_net
+set_train_stop_function	src/include/fann_cpp.h	/^        void set_train_stop_function(stop_function_enum train_stop_function)$/;"	f	class:FANN::neural_net
+set_training_algorithm	src/include/fann_cpp.h	/^        void set_training_algorithm(training_algorithm_enum training_algorithm)$/;"	f	class:FANN::neural_net
+set_weight	src/include/fann_cpp.h	/^        void set_weight(unsigned int from_neuron, unsigned int to_neuron, fann_type weight)$/;"	f	class:FANN::neural_net
+set_weight_array	src/include/fann_cpp.h	/^        void set_weight_array(connection *connections, unsigned int num_connections)$/;"	f	class:FANN::neural_net
+shuffle_train_data	src/include/fann_cpp.h	/^        void shuffle_train_data()$/;"	f	class:FANN::training_data
+snprintf	src/fann_error.c	30;"	d	file:
+stop_function_enum	src/include/fann_cpp.h	/^    enum stop_function_enum$/;"	g	namespace:FANN
+subset_train_data	src/include/fann_cpp.h	/^        void subset_train_data(unsigned int pos, unsigned int length)$/;"	f	class:FANN::training_data
+sum	src/include/fann_data.h	/^	fann_type sum;$/;"	m	struct:fann_neuron
+test	src/include/fann_cpp.h	/^        fann_type * test(fann_type *input, fann_type *desired_output)$/;"	f	class:FANN::neural_net
+test_callback	examples/xor_train.c	/^int FANN_API test_callback(struct fann *ann, struct fann_train_data *train,$/;"	f
+test_data	src/include/fann_cpp.h	/^        float test_data(const training_data &data)$/;"	f	class:FANN::neural_net
+timeval	src/include/compat_time.h	/^	$/;"	s
+timezone	src/include/compat_time.h	/^$/;"	s
+train	src/include/fann_cpp.h	/^        void train(fann_type *input, fann_type *desired_output)$/;"	f	class:FANN::neural_net
+train_data	src/include/fann_cpp.h	/^        struct fann_train_data* train_data;$/;"	m	class:FANN::training_data	typeref:struct:FANN::training_data::fann_train_data
+train_epoch	src/include/fann_cpp.h	/^        float train_epoch(const training_data &data)$/;"	f	class:FANN::neural_net
+train_on_data	src/include/fann_cpp.h	/^        void train_on_data(const training_data &data, unsigned int max_epochs,$/;"	f	class:FANN::neural_net
+train_on_file	src/include/fann_cpp.h	/^        void train_on_file(const std::string &filename, unsigned int max_epochs,$/;"	f	class:FANN::neural_net
+train_on_steepness_file	examples/steepness_train.c	/^void train_on_steepness_file(struct fann *ann, char *filename,$/;"	f
+training_algorithm_enum	src/include/fann_cpp.h	/^    enum training_algorithm_enum {$/;"	g	namespace:FANN
+training_data	src/include/fann_cpp.h	/^        training_data() : train_data(NULL)$/;"	f	class:FANN::training_data
+training_data	src/include/fann_cpp.h	/^        training_data(const training_data &data)$/;"	f	class:FANN::training_data
+training_data	src/include/fann_cpp.h	/^    class training_data$/;"	c	namespace:FANN
+tv_sec	src/include/compat_time.h	/^	$/;"	m	struct:timeval
+tv_usec	src/include/compat_time.h	/^	 $/;"	m	struct:timeval
+tz_dsttime	src/include/compat_time.h	/^	 $/;"	m	struct:timezone
+tz_minuteswest	src/include/compat_time.h	/^	$/;"	m	struct:timezone
+u	src/include/compat_time.h	/^	$/;"	m	union:_LARGE_INTEGER	typeref:struct:_LARGE_INTEGER::__anon1
+user_callback	src/include/fann_cpp.h	/^            callback_type user_callback; \/\/ Pointer to user callback function$/;"	m	struct:FANN::neural_net::user_context_type
+user_context	src/include/fann_cpp.h	/^        } user_context;$/;"	t	class:FANN::neural_net	typeref:struct:FANN::neural_net::user_context_type
+user_context_type	src/include/fann_cpp.h	/^        typedef struct user_context_type$/;"	s	class:FANN::neural_net
+user_data	src/include/fann_cpp.h	/^            void *user_data; \/\/ Arbitrary data pointer passed to the callback$/;"	m	struct:FANN::neural_net::user_context_type
+value	src/include/fann_data.h	/^	fann_type value;$/;"	m	struct:fann_neuron
+volatile	build/CMakeFiles/3.10.0-rc2/CompilerIdC/CMakeCCompilerId.c	11;"	d	file:
+vsnprintf	src/fann_error.c	29;"	d	file:
+xor_test	examples/xor_sample.cpp	/^void xor_test()$/;"	f
+~neural_net	src/include/fann_cpp.h	/^        ~neural_net()$/;"	f	class:FANN::neural_net
+~training_data	src/include/fann_cpp.h	/^        ~training_data()$/;"	f	class:FANN::training_data

@@ -1,0 +1,625 @@
+{
+ "platform": [
+  {
+   "author": "Intel Corporation",
+   "category": "input/sw",
+   "description": "Platform State",
+   "header_file": "sol-flow/platform.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "any",
+     "description": "Triggers emission of current state.",
+     "name": "TRIGGER",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "platform",
+   "options_symbol": "sol_flow_node_type_platform_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "boolean",
+     "description": "True if platform is ready.",
+     "name": "READY",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_PLATFORM",
+   "url": "http://solettaproject.org/doc/latest/node_types/platform.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "input/sw",
+   "description": "Node used to set the platform target",
+   "header_file": "sol-flow/platform.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "The new platform target to set which must be one of: default, rescue, emergency, poweroff, reboot or suspend.",
+     "name": "TARGET",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "platform/set-target",
+   "options_symbol": "sol_flow_node_type_platform_set_target_options",
+   "symbol": "SOL_FLOW_NODE_TYPE_PLATFORM_SET_TARGET",
+   "url": "http://solettaproject.org/doc/latest/node_types/platform.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "hostname",
+   "description": "This node can be used to set the machine's host name, get the current hostname or monitor for hostname changes",
+   "header_file": "sol-flow/platform.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "The new hostname",
+     "name": "IN",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "platform/hostname",
+   "options": {
+    "members": [
+     {
+      "data_type": "boolean",
+      "default": true,
+      "description": "An initial packet with the current hostname will be sent",
+      "name": "send_initial_packet",
+      "required": false
+     }
+    ],
+    "required": false,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_platform_hostname_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "The current hostname. When the node is created an initial packet will be sent with the current hostname, if the hostname changes a new packet will be set with the new hostname.",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_PLATFORM_HOSTNAME",
+   "url": "http://solettaproject.org/doc/latest/node_types/platform_hostname.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "timer",
+   "description": "This node can be used to set the machine's system time, get the current system time or monitor for system time changes",
+   "header_file": "sol-flow/platform.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "int",
+     "description": "The new system time in seconds relative to 1970-01-01 00:00:00 +0000 (UTC).",
+     "name": "IN",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "platform/system-clock",
+   "options": {
+    "members": [
+     {
+      "data_type": "boolean",
+      "default": true,
+      "description": "An initial packet with the current timestamp will be sent",
+      "name": "send_initial_packet",
+      "required": false
+     }
+    ],
+    "required": false,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_platform_system_clock_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "int",
+     "description": "The current system time which is expressed as the number of seconds since 1970-01-01 00:00:00 +0000 (UTC).",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_PLATFORM_SYSTEM_CLOCK",
+   "url": "http://solettaproject.org/doc/latest/node_types/platform_system_clock.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "timer",
+   "description": "This node can be used to set the machine's timezone, get the current timezone or monitor for timezone changes",
+   "header_file": "sol-flow/platform.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "Set the new timezone",
+     "name": "IN",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "platform/timezone",
+   "options": {
+    "members": [
+     {
+      "data_type": "boolean",
+      "default": true,
+      "description": "An initial packet with the current timezone will be sent",
+      "name": "send_initial_packet",
+      "required": false
+     }
+    ],
+    "required": false,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_platform_timezone_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "The current timezone",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_PLATFORM_TIMEZONE",
+   "url": "http://solettaproject.org/doc/latest/node_types/platform_timezone.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "locale",
+   "description": "This node can be used to set the machine's locales, get the current locales or monitor for locale changes",
+   "header_file": "sol-flow/platform.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "The new current system language",
+     "name": "IN_LANG",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "string",
+     "description": "The new system's address locale",
+     "name": "IN_ADDRESS",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 2,
+     "data_type": "string",
+     "description": "The new system's collate locale",
+     "name": "IN_COLLATE",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 3,
+     "data_type": "string",
+     "description": "The new system's ctype locale",
+     "name": "IN_CTYPE",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 4,
+     "data_type": "string",
+     "description": "The new system's identification locale",
+     "name": "IN_IDENTIFICATION",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 5,
+     "data_type": "string",
+     "description": "The new system's measurement locale",
+     "name": "IN_MEASUREMENT",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 6,
+     "data_type": "string",
+     "description": "The new system's messages locale",
+     "name": "IN_MESSAGES",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 7,
+     "data_type": "string",
+     "description": "The new system's monetary locale",
+     "name": "IN_MONETARY",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 8,
+     "data_type": "string",
+     "description": "The new system's name locale",
+     "name": "IN_NAME",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 9,
+     "data_type": "string",
+     "description": "The new system's numeric locale",
+     "name": "IN_NUMERIC",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 10,
+     "data_type": "string",
+     "description": "The new system's paper locale",
+     "name": "IN_PAPER",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 11,
+     "data_type": "string",
+     "description": "The new system's telephone",
+     "name": "IN_TELEPHONE",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 12,
+     "data_type": "string",
+     "description": "The new system's time locale",
+     "name": "IN_TIME",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 13,
+     "data_type": "any",
+     "description": "Apply the current system language locale to the process",
+     "name": "APPLY_LANG",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 14,
+     "data_type": "any",
+     "description": "Apply the current system time locale to the process",
+     "name": "APPLY_ADDRESS",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 15,
+     "data_type": "any",
+     "description": "Apply the current system collate locale to the process",
+     "name": "APPLY_COLLATE",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 16,
+     "data_type": "any",
+     "description": "Apply the current system ctype locale to the process",
+     "name": "APPLY_CTYPE",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 17,
+     "data_type": "any",
+     "description": "Apply the current system identification locale to the process",
+     "name": "APPLY_IDENTIFICATION",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 18,
+     "data_type": "any",
+     "description": "Apply the current system measurement locale to the process",
+     "name": "APPLY_MEASUREMENT",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 19,
+     "data_type": "any",
+     "description": "Apply the current system monetary locale to the process",
+     "name": "APPLY_MONETARY",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 20,
+     "data_type": "any",
+     "description": "Apply the current system messages locale to the process",
+     "name": "APPLY_MESSAGES",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 21,
+     "data_type": "any",
+     "description": "Apply the current system name locale to the process",
+     "name": "APPLY_NAME",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 22,
+     "data_type": "any",
+     "description": "Apply the current system numeric locale to the process",
+     "name": "APPLY_NUMERIC",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 23,
+     "data_type": "any",
+     "description": "Apply the current system paper locale to the process",
+     "name": "APPLY_PAPER",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 24,
+     "data_type": "any",
+     "description": "Apply the current system telephone locale to the process",
+     "name": "APPLY_TELEPHONE",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 25,
+     "data_type": "any",
+     "description": "Apply the current system time locale to the process",
+     "name": "APPLY_TIME",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "platform/locale",
+   "options": {
+    "members": [
+     {
+      "data_type": "boolean",
+      "default": true,
+      "description": "An initial packet with the current locales will be sent",
+      "name": "send_initial_packet",
+      "required": false
+     }
+    ],
+    "required": false,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_platform_locale_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "The current system's language locale",
+     "name": "OUT_LANG",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "string",
+     "description": "The current system's address locale",
+     "name": "OUT_ADDRESS",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 2,
+     "data_type": "string",
+     "description": "The current system's collate locale",
+     "name": "OUT_COLLATE",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 3,
+     "data_type": "string",
+     "description": "The current system's ctype locale",
+     "name": "OUT_CTYPE",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 4,
+     "data_type": "string",
+     "description": "The current system's identification locale",
+     "name": "OUT_IDENTIFICATION",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 5,
+     "data_type": "string",
+     "description": "The current system's measurement locale",
+     "name": "OUT_MEASUREMENT",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 6,
+     "data_type": "string",
+     "description": "The current system's messages locale",
+     "name": "OUT_MESSAGES",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 7,
+     "data_type": "string",
+     "description": "The current system's monetary localle",
+     "name": "OUT_MONETARY",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 8,
+     "data_type": "string",
+     "description": "The current system's naming locale",
+     "name": "OUT_NAME",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 9,
+     "data_type": "string",
+     "description": "The current system's numeric locale",
+     "name": "OUT_NUMERIC",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 10,
+     "data_type": "string",
+     "description": "The current system's paper locale",
+     "name": "OUT_PAPER",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 11,
+     "data_type": "string",
+     "description": "The current system's telephone locale",
+     "name": "OUT_TELEPHONE",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 12,
+     "data_type": "string",
+     "description": "The current system's time locale",
+     "name": "OUT_TIME",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_PLATFORM_LOCALE",
+   "url": "http://solettaproject.org/doc/latest/node_types/platform_locale.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "input/sw",
+   "description": "Platform Service State",
+   "header_file": "sol-flow/platform.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "any",
+     "description": "Triggers emission of current service state.",
+     "name": "TRIGGER",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "any",
+     "description": "Starts service when receives a signal",
+     "name": "START",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 2,
+     "data_type": "any",
+     "description": "Stops service when receives a signal",
+     "name": "STOP",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 3,
+     "data_type": "string",
+     "description": "The platform service name",
+     "name": "NAME",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "platform/service",
+   "options": {
+    "members": [
+     {
+      "data_type": "string",
+      "default": null,
+      "description": "The platform service name",
+      "name": "name",
+      "required": false
+     }
+    ],
+    "required": false,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_platform_service_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "boolean",
+     "description": "True if platform service is active.",
+     "name": "ACTIVE",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_PLATFORM_SERVICE",
+   "url": "http://solettaproject.org/doc/latest/node_types/platform_service.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "input/sw",
+   "description": "Outputs the machine-id of the system Soletta is being run on. The returned string is assured to be a valid, 16 bytes-long (128 bits) UUID. The output string packet is sent upon node creation.",
+   "header_file": "sol-flow/platform.h",
+   "license": "Apache-2.0",
+   "name": "platform/machine-id",
+   "options_symbol": "sol_flow_node_type_platform_machine_id_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "The machine-id (UUID) string",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_PLATFORM_MACHINE_ID",
+   "url": "http://solettaproject.org/doc/latest/node_types/platform/machine-id.html",
+   "version": "1"
+  }
+ ]
+}

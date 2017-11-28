@@ -1,0 +1,713 @@
+{
+  "$schema": "http://solettaproject.github.io/soletta/schemas/node-type-genspec.schema",
+  "name": "http-server",
+  "meta": {
+    "author": "Intel Corporation",
+    "license": "Apache-2.0",
+    "version": "1"
+  },
+  "types": [
+    {
+      "category": "output/network",
+      "description": "HTTP Server for boolean. It will store the value received in the input port 'IN' and upon HTTP requests to server at 'port' option and the path specified at 'path' will return such value for GET method, and set the value on 'POST', in this case the new value will be sent on the 'OUT' port if it changed. The HTTP methods may change the content-type by providing 'Accept: application/json' header. POST should provide payload value=true or value=false.",
+      "methods": {
+        "close": "common_close",
+        "open": "boolean_open"
+      },
+      "node_type": {
+        "access": [
+          "base"
+        ],
+        "data_type": "struct http_server_node_type",
+        "extra_methods": {
+          "response_cb": "boolean_response_cb",
+          "post_cb": "boolean_post_cb",
+          "process_cb": "boolean_process_cb",
+          "send_packet_cb": "boolean_send_packet_cb",
+          "handle_response_cb": "common_handle_response_cb"
+        }
+      },
+      "name": "http-server/boolean",
+      "options": {
+        "members": [
+          {
+            "data_type": "string",
+	    "default": "/boolean",
+            "description": "The http path where it will be served",
+            "name": "path"
+          },
+          {
+            "data_type": "int",
+            "default": -1,
+            "description": "The port used to bind the server. If a negative value, default port will be used.",
+            "name": "port"
+          },
+          {
+            "data_type": "boolean",
+	    "default": true,
+            "description": "The initial node's value",
+            "name": "value"
+          },
+          {
+            "data_type": "string",
+            "default": "GET|POST",
+            "description": "The allowed HTTP methods. Should be separated by a '|' character.",
+            "name": "allowed_methods"
+          }
+        ],
+        "version": 1
+      },
+      "in_ports": [
+	{
+	  "data_type": "boolean",
+	  "description": "The value that will be given on a GET",
+          "methods": {
+            "process": "common_process"
+          },
+          "name": "IN"
+        }
+      ],
+      "out_ports": [
+	{
+          "data_type": "boolean",
+          "description": "The value received on a POST or input port 'IN'. Packets are only emitted when the value change, so it is safe to use in feedback loops such as with persistence nodes.",
+          "name": "OUT"
+        }
+      ],
+      "private_data_type": "http_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/http-server/boolean.html"
+    },
+    {
+      "category": "output/network",
+      "description": "HTTP Server for string. It will store the value received in the input port 'IN' and upon HTTP requests to server at 'port' option and the path specified at 'path' will return such value for GET method, and set the value on 'POST', in this case the new value will be sent on the 'OUT' port if it changed. The HTTP methods may change the content-type by providing 'Accept: application/json' header. POST should provide payload in the format value=urlencoded+string",
+      "methods": {
+        "close": "string_close",
+        "open": "string_open"
+      },
+      "node_type": {
+        "access": [
+          "base"
+        ],
+        "data_type": "struct http_server_node_type",
+        "extra_methods": {
+          "response_cb": "string_response_cb",
+          "post_cb": "string_post_cb",
+          "process_cb": "string_process_cb",
+          "send_packet_cb": "string_send_packet_cb",
+          "handle_response_cb": "common_handle_response_cb"
+        }
+      },
+      "name": "http-server/string",
+      "options": {
+        "members": [
+          {
+            "data_type": "string",
+	    "default": "/string",
+            "description": "The http path where it will be served",
+            "name": "path"
+          },
+          {
+            "data_type": "int",
+            "default": -1,
+            "description": "The port used to bind the server. If a negative value, default port will be used.",
+            "name": "port"
+          },
+          {
+            "data_type": "string",
+	    "default": "",
+            "description": "The initial node's value",
+            "name": "value"
+          },
+          {
+            "data_type": "string",
+            "default": "GET|POST",
+            "description": "The allowed HTTP methods. Should be separated by a '|' character.",
+            "name": "allowed_methods"
+          }
+        ],
+        "version": 1
+      },
+      "in_ports": [
+	{
+	  "data_type": "string",
+	  "description": "The value that will be given on a GET",
+          "methods": {
+            "process": "common_process"
+          },
+          "name": "IN"
+        }
+      ],
+      "out_ports": [
+	{
+          "data_type": "string",
+          "description": "The value received on a POST or input port 'IN'. Packets are only emitted when the value change, so it is safe to use in feedback loops such as with persistence nodes.",
+          "name": "OUT"
+        }
+      ],
+      "private_data_type": "http_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/http-server/string.html"
+    },
+    {
+      "category": "output/network",
+      "description": "HTTP Server for integer. It will store the value received in the input port 'IN' and upon HTTP requests to server at 'port' option and the path specified at 'path' will return such value for GET method, and set the value on 'POST', in this case the new value will be sent on the 'OUT' port if it changed. The HTTP methods may change the content-type by providing 'Accept: application/json' header. POST should provide payload in the format value=1&min=0&max=100&step=1 or a subset of parameters.",
+      "methods": {
+        "close": "common_close",
+        "open": "int_open"
+      },
+      "node_type": {
+        "access": [
+          "base"
+        ],
+        "data_type": "struct http_server_node_type",
+        "extra_methods": {
+          "response_cb": "int_response_cb",
+          "post_cb": "int_post_cb",
+          "process_cb": "int_process_cb",
+          "send_packet_cb": "int_send_packet_cb",
+          "handle_response_cb": "common_handle_response_cb"
+        }
+      },
+      "name": "http-server/int",
+      "options": {
+        "members": [
+          {
+            "data_type": "string",
+	    "default": "/int",
+            "description": "The http path where it will be served",
+            "name": "path"
+          },
+          {
+            "data_type": "int",
+            "default": -1,
+            "description": "The port used to bind the server. If a negative value, default port will be used.",
+            "name": "port"
+          },
+        {
+            "data_type": "int",
+            "default": 0,
+            "description": "The initial node's value",
+            "name": "value"
+        },
+        {
+            "data_type": "irange-spec",
+            "default": {
+                "min": "INT32_MIN",
+                "max": "INT32_MAX",
+                "step": 1
+            },
+            "description": "The initial node's range",
+            "name": "value_spec"
+        },
+        {
+           "data_type": "string",
+           "default": "GET|POST",
+           "description": "The allowed HTTP methods. Should be separated by a '|' character.",
+           "name": "allowed_methods"
+        }
+        ],
+        "version": 1
+      },
+      "in_ports": [
+	{
+	  "data_type": "int",
+	  "description": "The value that will be given on a GET",
+          "methods": {
+            "process": "common_process"
+          },
+          "name": "IN"
+        }
+      ],
+      "out_ports": [
+	{
+          "data_type": "int",
+          "description": "The value received on a POST or input port 'IN'. Packets are only emitted when the value change, so it is safe to use in feedback loops such as with persistence nodes.",
+          "name": "OUT"
+        }
+      ],
+      "private_data_type": "http_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/http-server/int.html"
+    },
+    {
+      "category": "output/network",
+      "description": "HTTP Server for float. It will store the value received in the input port 'IN' and upon HTTP requests to server at 'port' option and the path specified at 'path' will return such value for GET method, and set the value on 'POST', in this case the new value will be sent on the 'OUT' port if it changed. The HTTP methods may change the content-type by providing 'Accept: application/json' header. POST should provide payload in the format value=1.0&min=0.0&max=100.0&step=1.0 or a subset of parameters.",
+      "methods": {
+        "close": "common_close",
+        "open": "float_open"
+      },
+      "node_type": {
+        "access": [
+          "base"
+        ],
+        "data_type": "struct http_server_node_type",
+        "extra_methods": {
+          "response_cb": "float_response_cb",
+          "post_cb": "float_post_cb",
+          "process_cb": "float_process_cb",
+          "send_packet_cb": "float_send_packet_cb",
+          "handle_response_cb": "common_handle_response_cb"
+        }
+      },
+      "name": "http-server/float",
+      "options": {
+        "members": [
+          {
+            "data_type": "string",
+	    "default": "/float",
+            "description": "The http path where it will be served",
+            "name": "path"
+          },
+          {
+            "data_type": "int",
+            "default": -1,
+            "description": "The port used to bind the server. If a negative value, default port will be used.",
+            "name": "port"
+          },
+        {
+            "data_type": "float",
+            "default": 0,
+            "description": "The initial node's value",
+            "name": "value"
+        },
+        {
+            "data_type": "drange-spec",
+            "default": {
+                "min": "-DBL_MAX",
+                "max": "DBL_MAX",
+                "step": "DBL_MIN"
+            },
+            "description": "The initial node's range",
+            "name": "value_spec"
+        },
+        {
+           "data_type": "string",
+           "default": "GET|POST",
+           "description": "The allowed HTTP methods. Should be separated by a '|' character.",
+           "name": "allowed_methods"
+        }
+        ],
+        "version": 1
+      },
+      "in_ports": [
+	{
+	  "data_type": "float",
+	  "description": "The value that will be given on a GET",
+          "methods": {
+            "process": "common_process"
+          },
+          "name": "IN"
+        }
+      ],
+      "out_ports": [
+	{
+          "data_type": "float",
+          "description": "The value received on a POST or input port 'IN'. Packets are only emitted when the value change, so it is safe to use in feedback loops such as with persistence nodes.",
+          "name": "OUT"
+        }
+      ],
+      "private_data_type": "http_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/http-server/float.html"
+    },
+    {
+      "category": "output/network",
+      "description": "HTTP Server for static files. This is a convenience type that can serve contents to manage or display a set of other resources exposed with http-server/* nodes, such as configuration or status screens.",
+      "methods": {
+        "close": "static_close",
+        "open": "static_open"
+      },
+      "name": "http-server/static",
+      "options": {
+        "members": [
+          {
+            "data_type": "string",
+            "description": "The path where the server will look for the files",
+            "name": "path"
+          },
+          {
+            "data_type": "int",
+            "default": -1,
+            "description": "The port used to bind the server. If a negative value, default port will be used.",
+            "name": "port"
+          },
+	  {
+            "data_type": "string",
+	    "default": "/",
+            "description": "The http base name (prefix path) where it will be served",
+            "name": "basename"
+          },
+          {
+            "data_type": "boolean",
+            "default": true,
+            "description": "If the files will be served as soon as the node opens",
+            "name": "enabled"
+          }
+        ],
+        "version": 1
+      },
+      "in_ports": [
+        {
+          "data_type": "boolean",
+          "description": "Enables or disables serve files from the path set",
+          "methods": {
+            "process": "static_process"
+          },
+          "name": "ENABLED",
+          "required": false
+        }
+      ],
+      "private_data_type": "http_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/http-server/static.html"
+    },
+    {
+      "category": "output/network",
+      "description": "HTTP Server for RGB. The GET response will vary according to the client's HTTP Accept header. If the Accept header is set to 'application/json', the response will include all color components (green, red, blue, green_max, red_max and blue_max). However if the Accept header is not 'application/json', the response will be in 'plain/text' and the color will be expressed in hexdecimal using the following format: #RRGGBB",
+      "methods": {
+        "close": "common_close",
+        "open": "rgb_open"
+      },
+      "node_type": {
+        "access": [
+          "base"
+        ],
+        "data_type": "struct http_server_node_type",
+        "extra_methods": {
+          "response_cb": "rgb_response_cb",
+          "post_cb": "rgb_post_cb",
+          "process_cb": "rgb_process_cb",
+          "send_packet_cb": "rgb_send_packet_cb",
+          "handle_response_cb": "common_handle_response_cb"
+        }
+      },
+      "name": "http-server/rgb",
+      "options": {
+        "members": [
+          {
+            "data_type": "string",
+	    "default": "/rgb",
+            "description": "The http path where it will be served",
+            "name": "path"
+          },
+          {
+            "data_type": "int",
+            "default": -1,
+            "description": "The port used to bind the server. If a negative value, default port will be used.",
+            "name": "port"
+          },
+          {
+            "data_type": "rgb",
+            "default": {
+              "red": 255,
+              "green": 255,
+              "blue": 255
+            },
+            "description": "The initial node's value",
+            "name": "value"
+          },
+          {
+            "data_type": "string",
+            "default": "GET|POST",
+            "description": "The allowed HTTP methods. Should be separated by a '|' character.",
+            "name": "allowed_methods"
+          }
+        ],
+        "version": 1
+      },
+      "in_ports": [
+	{
+	  "data_type": "rgb",
+	  "description": "The value that will be given on a GET",
+          "methods": {
+            "process": "common_process"
+          },
+          "name": "IN"
+        }
+      ],
+      "out_ports": [
+	{
+          "data_type": "rgb",
+          "description": "The value received on a POST",
+          "name": "OUT"
+        }
+      ],
+      "private_data_type": "http_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/http-server/rgb.html"
+    },
+    {
+      "category": "output/network",
+      "description": "HTTP Server for direction vector. The GET response will vary according to the client's HTTP Accept header. If the Accept header is set to 'application/json', the response will include all direction vector components (x, y, z, min, max). However if the Accept header is not 'application/json', the response will be in 'plain/text' and the color will be expressed in hexdecimal using the following format: (X;Y;Z)",
+      "methods": {
+        "close": "common_close",
+        "open": "direction_vector_open"
+      },
+      "node_type": {
+        "access": [
+          "base"
+        ],
+        "data_type": "struct http_server_node_type",
+        "extra_methods": {
+          "response_cb": "direction_vector_response_cb",
+          "post_cb": "direction_vector_post_cb",
+          "process_cb": "direction_vector_process_cb",
+          "send_packet_cb": "direction_vector_send_packet_cb",
+          "handle_response_cb": "common_handle_response_cb"
+        }
+      },
+      "name": "http-server/direction-vector",
+      "options": {
+        "members": [
+          {
+            "data_type": "string",
+            "default": "/direction-vector",
+            "description": "The http path where it will be served",
+            "name": "path"
+          },
+          {
+            "data_type": "int",
+            "default": -1,
+            "description": "The port used to bind the server. If a negative value, default port will be used.",
+            "name": "port"
+          },
+          {
+            "data_type": "direction-vector",
+            "default": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "description": "The initial node's value",
+            "name": "value"
+          },
+          {
+            "data_type": "string",
+            "default": "GET|POST",
+            "description": "The allowed HTTP methods. Should be separated by a '|' character.",
+            "name": "allowed_methods"
+          }
+        ],
+        "version": 1
+      },
+      "in_ports": [
+	{
+	  "data_type": "direction-vector",
+	  "description": "The value that will be given on a GET",
+          "methods": {
+            "process": "common_process"
+          },
+          "name": "IN"
+        }
+      ],
+      "out_ports": [
+	{
+          "data_type": "direction-vector",
+          "description": "The value received on a POST",
+          "name": "OUT"
+        }
+      ],
+      "private_data_type": "http_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/http-server/direction-vector.html"
+    },
+    {
+      "category": "output/network",
+      "description": "HTTP Server for Blob.",
+      "methods": {
+        "close": "blob_close",
+        "open": "blob_open"
+      },
+      "node_type": {
+        "access": [
+          "base"
+        ],
+        "data_type": "struct http_server_node_type",
+        "extra_methods": {
+          "process_cb": "blob_process_cb",
+          "send_packet_cb": "blob_send_packet_cb",
+          "handle_response_cb": "blob_handle_response_cb"
+        }
+      },
+      "name": "http-server/blob",
+      "options": {
+        "members": [
+          {
+            "data_type": "string",
+            "default": "/blob",
+            "description": "The http path where it will be served",
+            "name": "path"
+          },
+          {
+            "data_type": "int",
+            "default": -1,
+            "description": "The port used to bind the server. If a negative value, default port will be used.",
+            "name": "port"
+          },
+          {
+            "data_type": "string",
+            "default": "GET|POST",
+            "description": "The allowed HTTP methods. Should be separated by a '|' character.",
+            "name": "allowed_methods"
+          }
+        ],
+        "version": 1
+      },
+      "in_ports": [
+	{
+	  "data_type": "blob",
+	  "description": "The value that will be given on a GET",
+          "methods": {
+            "process": "common_process"
+          },
+          "name": "IN"
+        }
+      ],
+      "out_ports": [
+	{
+          "data_type": "blob",
+          "description": "The value received on a POST",
+          "name": "OUT"
+        }
+      ],
+      "private_data_type": "http_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/http-server/blob.html"
+    },
+    {
+      "category": "output/network",
+      "description": "HTTP Server for JSON objects/arrays.",
+      "methods": {
+        "close": "json_close",
+        "open": "blob_open"
+      },
+      "node_type": {
+        "access": [
+          "base"
+        ],
+        "data_type": "struct http_server_node_type",
+        "extra_methods": {
+          "response_cb": "json_response_cb",
+          "process_cb": "json_process_cb",
+          "send_packet_cb": "json_send_packet_cb",
+          "post_cb": "json_post_cb",
+          "handle_response_cb": "common_handle_response_cb"
+        }
+      },
+      "name": "http-server/json",
+      "options": {
+        "members": [
+          {
+            "data_type": "string",
+            "default": "/json",
+            "description": "The http path where it will be served",
+            "name": "path"
+          },
+          {
+            "data_type": "int",
+            "default": -1,
+            "description": "The port used to bind the server. If a negative value, default port will be used.",
+            "name": "port"
+          },
+          {
+            "data_type": "string",
+            "default": "GET|POST",
+            "description": "The allowed HTTP methods. Should be separated by a '|' character.",
+            "name": "allowed_methods"
+          }
+        ],
+        "version": 1
+      },
+      "in_ports": [
+	{
+	  "data_type": "json-object",
+	  "description": "The value that will be given on a GET",
+          "methods": {
+            "process": "common_process"
+          },
+          "name": "OBJECT"
+        },
+	{
+	  "data_type": "json-array",
+	  "description": "The value that will be given on a GET",
+          "methods": {
+            "process": "common_process"
+          },
+          "name": "ARRAY"
+        },
+        {
+	  "data_type": "boolean",
+	  "description": "The value that will be given on a GET",
+          "methods": {
+            "process": "common_process"
+          },
+          "name": "BOOLEAN"
+        },
+        {
+	  "data_type": "string",
+	  "description": "The value that will be given on a GET",
+          "methods": {
+            "process": "common_process"
+          },
+          "name": "STRING"
+        },
+        {
+	  "data_type": "int",
+	  "description": "The value that will be given on a GET",
+          "methods": {
+            "process": "common_process"
+          },
+          "name": "INT"
+        },
+        {
+	  "data_type": "float",
+	  "description": "The value that will be given on a GET",
+          "methods": {
+            "process": "common_process"
+          },
+          "name": "FLOAT"
+        },
+        {
+	  "data_type": "any",
+	  "description": "The value that will be given on a GET",
+          "methods": {
+            "process": "common_process"
+          },
+          "name": "NULL"
+        }
+      ],
+      "out_ports": [
+	{
+          "data_type": "json-object",
+          "description": "The value received on a POST",
+          "name": "OBJECT"
+        },
+        {
+          "data_type": "json-array",
+          "description": "The value received on a POST",
+          "name": "ARRAY"
+        },
+        {
+          "data_type": "string",
+          "description": "The value received on a POST",
+          "name": "STRING"
+        },
+        {
+          "data_type": "boolean",
+          "description": "The value received on a POST",
+          "name": "BOOLEAN"
+        },
+        {
+          "data_type": "int",
+          "description": "The value received on a POST",
+          "name": "INT"
+        },
+        {
+          "data_type": "float",
+          "description": "The value received on a POST",
+          "name": "FLOAT"
+        },
+        {
+          "data_type": "empty",
+          "description": "The value received on a POST",
+          "name": "NULL"
+        }
+      ],
+      "private_data_type": "http_json_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/http-server/json.html"
+    }
+  ]
+}

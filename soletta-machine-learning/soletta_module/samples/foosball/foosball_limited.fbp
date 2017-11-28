@@ -1,0 +1,74 @@
+#!/usr/bin/env sol-fbp-runner
+
+# This file is part of the Soletta Project
+#
+# Copyright (C) 2015 Intel Corporation. All rights reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+DECLARE=MultiplePlayerSelector:fbp:multiple_player_selector.fbp
+DECLARE=FoosballMachine:fbp:foosball_machine.fbp
+
+players(MultiplePlayerSelector)
+score1(int/accumulator:setup_value=min:0|max:10)
+score2(int/accumulator:setup_value=min:0|max:10)
+
+main(ButtonMain) OUT -> BTN_CHANGE_PLAYER players
+next(ButtonNext) OUT -> BTN_NEXT players
+
+players LCD -> IN lcd(Lcd)
+
+reset(ButtonReset) OUT -> PULSE_IF_TRUE _(converter/boolean-to-empty) OUT -> RESET players
+
+#prediction
+sml(FoosballMachine)
+players PLAYER1 -> GOAL_KEEPER1 sml
+players PLAYER2 -> STRIKER1 sml
+players PLAYER3 -> GOAL_KEEPER2 sml
+players PLAYER4 -> STRIKER2 sml
+
+players DONE -> PREDICTION_TRIGGER sml
+sml PREDICTED_WINNER1 -> IN _(converter/empty-to-boolean:output_value=true) OUT -> IN led1(Led1)
+sml PREDICTED_WINNER2 -> IN _(converter/empty-to-boolean:output_value=true) OUT -> IN led2(Led2)
+false(constant/boolean:value=false) OUT -> IN led1
+false OUT -> IN led2
+
+sml PREDICTED_WINNER1 -> IN _(converter/empty-to-boolean:output_value=true) OUT -> IN led1_(console)
+sml PREDICTED_WINNER2 -> IN _(converter/empty-to-boolean:output_value=true) OUT -> IN led2_(console)
+#Learn
+players DONE -> RESET score1
+players DONE -> RESET score2
+players DONE -> IN score_lcd
+players DONE -> IN game_started(boolean/toggle)
+score1 OUT -> IN winner1(converter/int-to-empty:range=min:3|max:3) OUT -> WINNER1 sml
+game_started OUT -> IN[0] score1_inc(boolean/and)
+main OUT -> IN[1] score1_inc
+score1_inc OUT -> PULSE_IF_TRUE _(converter/boolean-to-empty) OUT -> INC score1
+
+score2 OUT -> IN winner2(converter/int-to-empty:range=min:3|max:3) OUT -> WINNER2 sml
+game_started OUT -> OUTPUT_VALUE score2_inc(converter/empty-to-boolean:output_value=false)
+next OUT -> PULSE_IF_TRUE _(converter/boolean-to-empty) OUT -> IN score2_inc OUT -> IN _filter(boolean/filter) TRUE -> INC score2
+
+#Game reset
+sml PROCESS_END -> RESET players
+sml PROCESS_END -> IN game_started
+sml PROCESS_END -> IN end_false(converter/empty-to-boolean:output_value=false)
+end_false OUT -> IN led1
+end_false OUT -> IN led2
+
+#score
+str_score(string/concatenate:separator=" x ")
+score1 OUT -> IN _(converter/int-to-string) OUT -> IN[0] str_score
+score2 OUT -> IN _(converter/int-to-string) OUT -> IN[1] str_score
+str_score OUT -> OUTPUT_VALUE score_lcd(converter/empty-to-string)
+str_score OUT -> IN score_lcd OUT -> IN lcd

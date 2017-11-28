@@ -1,0 +1,15 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${prefix}/lib/
+includedir=${prefix}/include
+modulesdir=${libdir}/soletta/modules/
+pkgdatadir=${prefix}/share/soletta
+nodeschemapath=${pkgdatadir}/flow/schemas/node-type-genspec.schema
+nodedescriptionpath=${pkgdatadir}//flow//descriptions/
+
+Name: soletta
+Description: Soletta Project is a framework for making IoT devices.
+Version: 2.0.0
+Libs: -L${libdir} -lsoletta
+Cflags: -I${includedir}/soletta
+Requires.private: 

@@ -1,0 +1,52 @@
+#!/usr/bin/env sol-fbp-runner
+
+# This file is part of the Soletta (TM) Project
+#
+# Copyright (C) 2015 Intel Corporation. All rights reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# sol-fbp-runner grove-lc-text-direction.fbp
+
+# This is a translation of
+# Grove_RGB_BackLight_LCD/TextDirection/TextDirection.ino, from
+# https://github.com/Seeed-Studio/Sketchbook_Starter_Kit_for_Arduino.git
+
+# In this sample, we start to print the alphabet from left to right,
+# switch the direction after m and then again after s, just to start
+# from the origin again.
+
+timer(timer:interval=1000)
+lcd(LCDChar:underline_cursor=true)
+
+# 'a' to 'z'
+chars(int/accumulator:initial_value=97,setup_value=min:97|max:122|step:1)
+chars OUT -> IN to_byte(converter/int-to-byte)
+
+chars OUT -> IN[0] comp_m(int/equal)
+_(constant/int:value=109) OUT -> IN[1] comp_m
+
+to_byte OUT -> OUTPUT_VALUE curr_char(converter/empty-to-byte:output_value=97)
+curr_char OUT -> PUT_CHAR lcd
+
+timer OUT -> IN curr_char
+timer OUT -> INC chars
+
+comp_m OUT -> IN _(boolean/filter) TRUE -> IN _(boolean/not) OUT -> LEFT_TO_RIGHT lcd
+
+chars OUT -> IN[0] comp_s(int/equal)
+_(constant/int:value=115) OUT -> IN[1] comp_s
+
+comp_s OUT -> IN _(boolean/filter) TRUE -> LEFT_TO_RIGHT lcd
+
+chars OVERFLOW -> IN _(converter/empty-to-int:output_value=0) OUT -> COL lcd

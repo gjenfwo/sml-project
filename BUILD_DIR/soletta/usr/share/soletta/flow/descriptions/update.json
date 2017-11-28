@@ -1,0 +1,185 @@
+{
+ "update": [
+  {
+   "author": "Intel Corporation",
+   "category": "system/update",
+   "description": "Check if there's update available. How check is performed depends on current update module implementation. Outputs update file version and its size.",
+   "header_file": "sol-flow/update.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "any",
+     "description": "Start a check on current URL to see if update is available.",
+     "name": "CHECK",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "any",
+     "description": "Cancel an ongoing check operation. No output packets shall be sent, unless a new CHECK is issued",
+     "name": "CANCEL",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 2,
+     "data_type": "any",
+     "description": "Causes task current progress to be sent to PROGRESS port",
+     "name": "GET_PROGRESS",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "update/check",
+   "options_symbol": "sol_flow_node_type_update_check_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "Update version.",
+     "name": "VERSION",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "int",
+     "description": "Update size, in bytes.",
+     "name": "SIZE",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 2,
+     "data_type": "int",
+     "description": "Current progress of task, a number between 0 and 100. An output of -1 indicates that current progress is not available",
+     "name": "PROGRESS",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 3,
+     "data_type": "boolean",
+     "description": "If update version is different from current version, outputs true, false otherwise. Note that this behaviour is backend defined: if an update module also downgrades, it may output true here also.",
+     "name": "NEED_UPDATE",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_UPDATE_CHECK",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "system/update",
+   "description": "Fetch an update. If eveything goes well, it should output true on port SUCCESS.",
+   "header_file": "sol-flow/update.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "any",
+     "description": "Start fetching update.",
+     "name": "FETCH",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "any",
+     "description": "Cancel an ongoing fetch operation. No output packets shall be sent, unless a new FETCH is issued",
+     "name": "CANCEL",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 2,
+     "data_type": "any",
+     "description": "Causes task current progress to be sent to PROGRESS port",
+     "name": "GET_PROGRESS",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "update/fetch",
+   "options_symbol": "sol_flow_node_type_update_fetch_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "boolean",
+     "description": "If FETCH was successfully completed",
+     "name": "SUCCESS",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "int",
+     "description": "Current progress of task, a number between 0 and 100. An output of -1 indicates that current progress is not available",
+     "name": "PROGRESS",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_UPDATE_FETCH",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "system/update",
+   "description": "Install update. Process of installing update depends on current underlying update module.",
+   "header_file": "sol-flow/update.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "any",
+     "description": "Cancel an ongoing install operation. Note that this is dependent on current underlying update module and may not be possible.",
+     "name": "CANCEL",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "any",
+     "description": "Causes task current progress to be sent to PROGRESS port",
+     "name": "GET_PROGRESS",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 2,
+     "data_type": "any",
+     "description": "Install update file.",
+     "name": "INSTALL",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "update/install",
+   "options_symbol": "sol_flow_node_type_update_install_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "boolean",
+     "description": "If install completed successfully, sends true, false otherwise. Note that errors packet may be sent in case of failure",
+     "name": "SUCCESS",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "int",
+     "description": "Current progress of task, a number between 0 and 100. An output of -1 indicates that current progress is not available",
+     "name": "PROGRESS",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_UPDATE_INSTALL",
+   "version": "1"
+  }
+ ]
+}

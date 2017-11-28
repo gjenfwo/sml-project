@@ -1,0 +1,122 @@
+#pragma once
+/* this file was auto-generated from ./src/modules/flow/filter-repeated/filter-repeated.json */
+#include <stdbool.h>
+#include <stdint.h>
+#include <sol-flow.h>
+
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#define SOL_FLOW_NODE_TYPE_FILTER_REPEATED_BOOLEAN_DEFINED 1
+extern const struct sol_flow_node_type *SOL_FLOW_NODE_TYPE_FILTER_REPEATED_BOOLEAN;
+
+/* Input Ports */
+#define SOL_FLOW_NODE_TYPE_FILTER_REPEATED_BOOLEAN__IN__IN (0)
+#define SOL_FLOW_NODE_TYPE_FILTER_REPEATED_BOOLEAN__IN_LAST (0)
+
+/* Output Ports */
+#define SOL_FLOW_NODE_TYPE_FILTER_REPEATED_BOOLEAN__OUT__OUT (0)
+#define SOL_FLOW_NODE_TYPE_FILTER_REPEATED_BOOLEAN__OUT_LAST (0)
+
+#define SOL_FLOW_NODE_TYPE_FILTER_REPEATED_BYTE_DEFINED 1
+extern const struct sol_flow_node_type *SOL_FLOW_NODE_TYPE_FILTER_REPEATED_BYTE;
+
+/* Input Ports */
+#define SOL_FLOW_NODE_TYPE_FILTER_REPEATED_BYTE__IN__IN (0)
+#define SOL_FLOW_NODE_TYPE_FILTER_REPEATED_BYTE__IN_LAST (0)
+
+/* Output Ports */
+#define SOL_FLOW_NODE_TYPE_FILTER_REPEATED_BYTE__OUT__OUT (0)
+#define SOL_FLOW_NODE_TYPE_FILTER_REPEATED_BYTE__OUT_LAST (0)
+
+#define SOL_FLOW_NODE_TYPE_FILTER_REPEATED_ERROR_DEFINED 1
+extern const struct sol_flow_node_type *SOL_FLOW_NODE_TYPE_FILTER_REPEATED_ERROR;
+
+/* Input Ports */
+#define SOL_FLOW_NODE_TYPE_FILTER_REPEATED_ERROR__IN__IN (0)
+#define SOL_FLOW_NODE_TYPE_FILTER_REPEATED_ERROR__IN_LAST (0)
+
+#define SOL_FLOW_NODE_TYPE_FILTER_REPEATED_FLOAT_DEFINED 1
+extern const struct sol_flow_node_type *SOL_FLOW_NODE_TYPE_FILTER_REPEATED_FLOAT;
+
+/* Input Ports */
+#define SOL_FLOW_NODE_TYPE_FILTER_REPEATED_FLOAT__IN__IN (0)
+#define SOL_FLOW_NODE_TYPE_FILTER_REPEATED_FLOAT__IN_LAST (0)
+
+/* Output Ports */
+#define SOL_FLOW_NODE_TYPE_FILTER_REPEATED_FLOAT__OUT__OUT (0)
+#define SOL_FLOW_NODE_TYPE_FILTER_REPEATED_FLOAT__OUT_LAST (0)
+
+#define SOL_FLOW_NODE_TYPE_FILTER_REPEATED_INT_DEFINED 1
+extern const struct sol_flow_node_type *SOL_FLOW_NODE_TYPE_FILTER_REPEATED_INT;
+
+/* Input Ports */
+#define SOL_FLOW_NODE_TYPE_FILTER_REPEATED_INT__IN__IN (0)
+#define SOL_FLOW_NODE_TYPE_FILTER_REPEATED_INT__IN_LAST (0)
+
+/* Output Ports */
+#define SOL_FLOW_NODE_TYPE_FILTER_REPEATED_INT__OUT__OUT (0)
+#define SOL_FLOW_NODE_TYPE_FILTER_REPEATED_INT__OUT_LAST (0)
+
+#define SOL_FLOW_NODE_TYPE_FILTER_REPEATED_RGB_DEFINED 1
+extern const struct sol_flow_node_type *SOL_FLOW_NODE_TYPE_FILTER_REPEATED_RGB;
+
+/* Input Ports */
+#define SOL_FLOW_NODE_TYPE_FILTER_REPEATED_RGB__IN__IN (0)
+#define SOL_FLOW_NODE_TYPE_FILTER_REPEATED_RGB__IN_LAST (0)
+
+/* Output Ports */
+#define SOL_FLOW_NODE_TYPE_FILTER_REPEATED_RGB__OUT__OUT (0)
+#define SOL_FLOW_NODE_TYPE_FILTER_REPEATED_RGB__OUT_LAST (0)
+
+#define SOL_FLOW_NODE_TYPE_FILTER_REPEATED_DIRECTION_VECTOR_DEFINED 1
+extern const struct sol_flow_node_type *SOL_FLOW_NODE_TYPE_FILTER_REPEATED_DIRECTION_VECTOR;
+
+/* Input Ports */
+#define SOL_FLOW_NODE_TYPE_FILTER_REPEATED_DIRECTION_VECTOR__IN__IN (0)
+#define SOL_FLOW_NODE_TYPE_FILTER_REPEATED_DIRECTION_VECTOR__IN_LAST (0)
+
+/* Output Ports */
+#define SOL_FLOW_NODE_TYPE_FILTER_REPEATED_DIRECTION_VECTOR__OUT__OUT (0)
+#define SOL_FLOW_NODE_TYPE_FILTER_REPEATED_DIRECTION_VECTOR__OUT_LAST (0)
+
+#define SOL_FLOW_NODE_TYPE_FILTER_REPEATED_STRING_DEFINED 1
+extern const struct sol_flow_node_type *SOL_FLOW_NODE_TYPE_FILTER_REPEATED_STRING;
+
+/* Input Ports */
+#define SOL_FLOW_NODE_TYPE_FILTER_REPEATED_STRING__IN__IN (0)
+#define SOL_FLOW_NODE_TYPE_FILTER_REPEATED_STRING__IN_LAST (0)
+
+/* Output Ports */
+#define SOL_FLOW_NODE_TYPE_FILTER_REPEATED_STRING__OUT__OUT (0)
+#define SOL_FLOW_NODE_TYPE_FILTER_REPEATED_STRING__OUT_LAST (0)
+
+#ifndef SOL_LOG_DOMAIN
+#define SOL_LOG_DOMAIN &_log_domain
+#include "sol-log.h"
+
+#ifdef SOL_LOG_ENABLED
+#define SOL_LOG_INTERNAL_DECLARE(_var, _name)     SOL_ATTR_UNUSED struct sol_log_domain _var = {         .name = "sol-" _name,         .color = SOL_LOG_COLOR_MAGENTA,         .level = SOL_LOG_LEVEL_WARNING     }
+
+#define SOL_LOG_INTERNAL_DECLARE_STATIC(_var, _name)     static SOL_LOG_INTERNAL_DECLARE(_var, _name)
+
+SOL_LOG_INTERNAL_DECLARE_STATIC(_log_domain, "flow-filter_repeated");
+
+#else // #ifdef SOL_LOG_ENABLED
+
+#define SOL_LOG_INTERNAL_DECLARE(_var, _name)
+#define SOL_LOG_INTERNAL_DECLARE_STATIC(_var, _name)
+
+#ifdef SOL_LOG_DOMAIN
+#undef SOL_LOG_DOMAIN
+#define SOL_LOG_DOMAIN NULL
+#endif // #ifdef SOL_LOG_DOMAIN
+
+#endif // #ifdef SOL_LOG_ENABLED
+#endif // ifndef SOL_LOG_DOMAIN
+
+#ifdef __cplusplus
+}
+#endif

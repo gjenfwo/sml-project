@@ -1,0 +1,3 @@
+config FLOW_NODE_TYPE_APP
+	tristate "Node type: app"
+	default y

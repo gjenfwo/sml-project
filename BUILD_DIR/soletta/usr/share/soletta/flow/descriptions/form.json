@@ -1,0 +1,716 @@
+{
+ "form": [
+  {
+   "author": "Intel Corporation",
+   "category": "io/sw",
+   "description": "Receives packages defining a strings listing and the actual string selection to then output the selection's contents. It will also output the listing itself formatted to fit in character displays. All strings in this node should be ASCII only, as it is meant to output to LCD displays.",
+   "header_file": "sol-flow/form.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "Defines the sequency of items to be selected by the user. Each incoming packet is added to an internal list. Use the CLEAR port to start over. The strings here will fill in the '{value}' field of the format option (e. g. '{title}{value} px'), when sent to STRING output port. Any line breaking characters in the input strings for this port will be translated to a space instead.",
+     "name": "ADD_ITEM",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "string",
+     "description": "Change the current selection to the item in question (useful for initial setups on a flow).",
+     "name": "SELECTED",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 2,
+     "data_type": "any",
+     "description": "Clear the selector's internal state, removing all items.",
+     "name": "CLEAR",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 3,
+     "data_type": "any",
+     "description": "Change selection to the next one in the sequence",
+     "name": "NEXT",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 4,
+     "data_type": "any",
+     "description": "Change selection to the previous one in the sequence",
+     "name": "PREVIOUS",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 5,
+     "data_type": "any",
+     "description": "Confirm the selection to be current one, generating output packets on both STRING and SELECTED output ports.",
+     "name": "SELECT",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 6,
+     "data_type": "boolean",
+     "description": "Make the interaction possible, otherwise don't produce strings or process NEXT/PREVIOUS/SELECT inputs. In other words, enable/disable the node at run-time. The node starts in the enabled state. Note that this does not affect the use of the ADD_ITEM/CLEAR/SELECTED ports.",
+     "name": "ENABLED",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "form/selector",
+   "options": {
+    "members": [
+     {
+      "data_type": "int",
+      "description": "The number of available columns to lay out the output string with. It must be a positive integer.",
+      "name": "columns",
+      "required": true
+     },
+     {
+      "data_type": "int",
+      "description": "The number of available rows to lay out the output string with. It must be a positive integer.",
+      "name": "rows",
+      "required": true
+     },
+     {
+      "data_type": "string",
+      "default": null,
+      "description": "The title string, to be available for referencing when evaluating the format one by means of the '{title}' tag. Any line breaking characters in this string will be translated to a space instead. If no title is provided, a '{title}' tag in the format will be ignored.",
+      "name": "title",
+      "required": false
+     },
+     {
+      "data_type": "string",
+      "default": "* ",
+      "description": "If set, selected items will be laid out with this string pre-fixed.",
+      "name": "selection_marker",
+      "required": false
+     },
+     {
+      "data_type": "string",
+      "default": "> ",
+      "description": "If set, items under the cursor will be laid out with this string pre-fixed.",
+      "name": "cursor_marker",
+      "required": false
+     },
+     {
+      "data_type": "string",
+      "default": "{value}",
+      "description": "The format string to produce the final STRING output with. The syntax is a free-form string with one '{value}' sub-string in it (and one optional '{title}' one). The value tag will be replaced by the actual string items that came in the ITEMS port, while the title one will be replaced by the title string option, if set. The title tag must occur before the value one.",
+      "name": "format",
+      "required": false
+     },
+     {
+      "data_type": "boolean",
+      "default": false,
+      "description": "If true, this makes a circular menu, where after the last option it goes back to the first (and vice-versa).",
+      "name": "circular",
+      "required": false
+     }
+    ],
+    "required": true,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_form_selector_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "The formatted list of entries output. This is meant to feed real display nodes (like grove/lcd-string).",
+     "name": "STRING",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "string",
+     "description": "The selected item.",
+     "name": "SELECTED",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_FORM_SELECTOR",
+   "url": "http://solettaproject.org/doc/latest/node_types/form/selector.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "io/sw",
+   "description": "Receives packages to control a boolean state. One of the input ports will commit to a state when trigerred, and the boolean value will be outputted. A string output with the current state, defined by a format string, is also outputted. All strings in this node should be ASCII only, as it is meant to output to LCD displays.",
+   "header_file": "sol-flow/form.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "boolean",
+     "description": "Change the current state (useful for initial setups on a flow).",
+     "name": "SELECTED",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "any",
+     "description": "Toggle the internal state.",
+     "name": "TOGGLE",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 2,
+     "data_type": "any",
+     "description": "Confirm the selection to be current one, generating output packets on both STRING and SELECTED output ports.",
+     "name": "SELECT",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 3,
+     "data_type": "boolean",
+     "description": "Make the interaction possible, otherwise don't produce strings or process TOGGLE/SELECT inputs. In other words, enable/disable the node at run-time. The node starts in the enabled state. Note that this does not affect the use of the SELECTED port.",
+     "name": "ENABLED",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "form/boolean",
+   "options": {
+    "members": [
+     {
+      "data_type": "int",
+      "description": "The number of available columns to lay out the output string with. It must be a positive integer.",
+      "name": "columns",
+      "required": true
+     },
+     {
+      "data_type": "int",
+      "description": "The number of available rows to lay out the output string with. It must be a positive integer.",
+      "name": "rows",
+      "required": true
+     },
+     {
+      "data_type": "string",
+      "default": null,
+      "description": "The title string, to be available for referencing when evaluating the format one by means of the '{title}' tag. Any line breaking characters in this string will be translated to a space instead. If no title is provided, a '{title}' tag in the format will be ignored.",
+      "name": "title",
+      "required": false
+     },
+     {
+      "data_type": "string",
+      "default": "{value}",
+      "description": "The format string to produce the final STRING output with. The syntax is a free-form string with one '{value}' sub-string in it (and one optional '{title}' one). The value tag will be replaced by the actual true/false strings defined for the node (true_str/false_str options), while the title one will be replaced by the title string option, if set. The title tag must occur before the value one.",
+      "name": "format",
+      "required": false
+     },
+     {
+      "data_type": "string",
+      "default": "true",
+      "description": "The string to show for the 'true' boolean item.",
+      "name": "true_str",
+      "required": false
+     },
+     {
+      "data_type": "string",
+      "default": "false",
+      "description": "The string to show for the 'false' boolean item.",
+      "name": "false_str",
+      "required": false
+     }
+    ],
+    "required": true,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_form_boolean_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "The formatted boolean state output. This is meant to feed real display nodes (like grove/lcd-string).",
+     "name": "STRING",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "boolean",
+     "description": "The current boolean state.",
+     "name": "SELECTED",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_FORM_BOOLEAN",
+   "url": "http://solettaproject.org/doc/latest/node_types/form/boolean.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "io/sw",
+   "description": "Receives packages to control an integer state. Two ports increment/decrement the saved integer state, while another one commits to the state when trigerred (and the integer value is outputted). A string output with the current state, defined by a format string, is also outputted. All strings in this node should be ASCII only, as it is meant to output to LCD displays.",
+   "header_file": "sol-flow/form.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "int",
+     "description": "Change the current state (useful for initial setups on a flow).",
+     "name": "SELECTED",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "any",
+     "description": "Increase the internal integer state.",
+     "name": "UP",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 2,
+     "data_type": "any",
+     "description": "Decrease the internal integer state.",
+     "name": "DOWN",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 3,
+     "data_type": "any",
+     "description": "Confirm the selection to be current one, generating output packets on both STRING and SELECTED output ports.",
+     "name": "SELECT",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 4,
+     "data_type": "boolean",
+     "description": "Make the interaction possible, otherwise don't produce strings or process UP/DOWN/SELECT inputs. In other words, enable/disable the node at run-time. The node starts in the enabled state. Note that this does not affect the use of the SELECTED port.",
+     "name": "ENABLED",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "form/int",
+   "options": {
+    "members": [
+     {
+      "data_type": "int",
+      "description": "The number of available columns to lay out the output string with. It must be a positive integer.",
+      "name": "columns",
+      "required": true
+     },
+     {
+      "data_type": "int",
+      "description": "The number of available rows to lay out the output string with. It must be a positive integer.",
+      "name": "rows",
+      "required": true
+     },
+     {
+      "data_type": "irange-spec",
+      "default": {
+       "max": "INT32_MAX",
+       "min": 0,
+       "step": 1
+      },
+      "description": "The integer range that the node may store.",
+      "name": "range",
+      "required": false
+     },
+     {
+      "data_type": "int",
+      "default": 0,
+      "description": "The initial value (must be inside the range given on the 'range' option) to start at. It may be overriden by a value in the SELECTED input port. Always remember to set it explicitly if custom values are also passed to the 'range' option.",
+      "name": "start_value",
+      "required": false
+     },
+     {
+      "data_type": "string",
+      "default": null,
+      "description": "The title string, to be available for referencing when evaluating the format one by means of the '{title}' tag. Any line breaking characters in this string will be translated to a space instead. If no title is provided, a '{title}' tag in the format will be ignored.",
+      "name": "title",
+      "required": false
+     },
+     {
+      "data_type": "string",
+      "default": "{value}",
+      "description": "The format string to produce the final STRING output with. The syntax is a free-form string with one '{value}' sub-string in it (and one optional '{title}' one). The value tag will be replaced by the actual true/false strings defined for the node (true_str/false_str options), while the title one will be replaced by the title string option, if set. The title tag must occur before the value one.",
+      "name": "format",
+      "required": false
+     },
+     {
+      "data_type": "boolean",
+      "default": true,
+      "description": "Whether the integer selection by the UP/DOWN ports is circular or not.",
+      "name": "circular",
+      "required": false
+     }
+    ],
+    "required": true,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_form_int_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "The formatted integer state output. This is meant to feed real display nodes (like grove/lcd-string).",
+     "name": "STRING",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "int",
+     "description": "The current integer state.",
+     "name": "SELECTED",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 2,
+     "data_type": "boolean",
+     "description": "Whether a given increment/decrement operation, at a given cursor position, leads to out-of-range situations. This can be used to warn users better of that fact.",
+     "name": "OUT_OF_RANGE",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_FORM_INT",
+   "url": "http://solettaproject.org/doc/latest/node_types/form/int.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "io/sw",
+   "description": "Receives packages to control an integer state. Four input ports control the position in the digits (and the digits themselves) of a forming integer number. One of the input ports will commit to a state when trigerred, and the integer value will be outputted. A string output with the current state, defined by a format string, is also outputted (one time per second, to emulate a blinking cursor). All strings in this node should be ASCII only, as it is meant to output to LCD displays.",
+   "header_file": "sol-flow/form.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "int",
+     "description": "Change the current state (useful for initial setups on a flow).",
+     "name": "SELECTED",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "any",
+     "description": "Increase the digit under the cursor position. If the current value is -1 or -9, then this is a shortcut to moving to non-negative numbers state and go directly to 0.",
+     "name": "UP",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 2,
+     "data_type": "any",
+     "description": "Decrease the digit under the cursor position. If the current value is 0 or -1, then this is a shortcut to moving to negative/non-negative numbers states, respectively.",
+     "name": "DOWN",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 3,
+     "data_type": "any",
+     "description": "Advance the cursor position (to the right).",
+     "name": "NEXT",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 4,
+     "data_type": "any",
+     "description": "Retract the cursor position (to the left).",
+     "name": "PREVIOUS",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 5,
+     "data_type": "any",
+     "description": "Toggle the current integer number (state) sign.",
+     "name": "TOGGLE_SIGN",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 6,
+     "data_type": "any",
+     "description": "Confirm the selection to be current one, generating output packets on both STRING and SELECTED output ports.",
+     "name": "SELECT",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 7,
+     "data_type": "boolean",
+     "description": "Make the interaction possible, otherwise don't produce strings or process UP/DOWN/SELECT inputs. In other words, enable/disable the node at run-time. The node starts in the enabled state. Note that this does not affect the use of the SELECTED port.",
+     "name": "ENABLED",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "form/int-custom",
+   "options": {
+    "members": [
+     {
+      "data_type": "int",
+      "description": "The number of available columns to lay out the output string with. It must be a positive integer.",
+      "name": "columns",
+      "required": true
+     },
+     {
+      "data_type": "int",
+      "description": "The number of available rows to lay out the output string with. It must be a positive integer.",
+      "name": "rows",
+      "required": true
+     },
+     {
+      "data_type": "irange-spec",
+      "default": {
+       "max": "INT32_MAX",
+       "min": 0,
+       "step": 1
+      },
+      "description": "The integer range that the node may store. The step for this node is always per integer digit, so only the value of one makes sense and any other will be ignored.",
+      "name": "range",
+      "required": false
+     },
+     {
+      "data_type": "int",
+      "default": 1000,
+      "description": "Cursor blinking time, in miliseconds.",
+      "name": "blink_time",
+      "required": false
+     },
+     {
+      "data_type": "int",
+      "default": 0,
+      "description": "The initial value (must be inside the range given on the 'range' option) to start at. It may be overriden by a value in the SELECTED input port. Always remember to set it explicitly if custom values are also passed to the 'range' option.",
+      "name": "start_value",
+      "required": false
+     },
+     {
+      "data_type": "string",
+      "default": null,
+      "description": "The title string, to be available for referencing when evaluating the format one by means of the '{title}' tag. Any line breaking characters in this string will be translated to a space instead. If no title is provided, a '{title}' tag in the format will be ignored.",
+      "name": "title",
+      "required": false
+     },
+     {
+      "data_type": "string",
+      "default": "{value}",
+      "description": "The format string to produce the final STRING output with. The syntax is a free-form string with one '{value}' sub-string in it (and one optional '{title}' one). The value tag will be replaced by the actual true/false strings defined for the node (true_str/false_str options), while the title one will be replaced by the title string option, if set. The title tag must occur before the value one.",
+      "name": "format",
+      "required": false
+     }
+    ],
+    "required": true,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_form_int_custom_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "The formatted integer state output. This is meant to feed real display nodes (like grove/lcd-string).",
+     "name": "STRING",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "int",
+     "description": "The current integer state.",
+     "name": "SELECTED",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 2,
+     "data_type": "empty",
+     "description": "Outputs packets every time an overflow/underflow would happen on a digit flip operation (UP/DOWN ports).",
+     "name": "OUT_OF_RANGE",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_FORM_INT_CUSTOM",
+   "url": "http://solettaproject.org/doc/latest/node_types/form/int-custom.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "io/sw",
+   "description": "Receives packages to control the formation/edition of a string. Four input ports control the position on the characters (and the characters themselves) of a forming string. There is one dedicated port for deleting the character under the cursor. If no starting string value is given, or if all characters are deleted, the node will go into a state where no character is present, and either UP or DOWN ports have to be exercized to have at least one character again. One of the input ports will commit to a state when trigerred, and the string will be outputted. A (broader) string output with the current state, defined by a format string, is also outputted (one time per second, to emulate a blinking cursor). All strings in this node should be ASCII only, as it is meant to output to LCD displays.",
+   "header_file": "sol-flow/form.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "Change the current state (useful for initial setups on a flow).",
+     "name": "SELECTED",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "any",
+     "description": "Increase the character under the cursor position. The order of the characters list is given by the 'charset' option.",
+     "name": "UP",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 2,
+     "data_type": "any",
+     "description": "Decrease the character under the cursor position.  The order of the characters list is given by the 'charset' option.",
+     "name": "DOWN",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 3,
+     "data_type": "any",
+     "description": "Advance the cursor position (to the right). If the last character was under the cursor, this action grows the string by one character.",
+     "name": "NEXT",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 4,
+     "data_type": "any",
+     "description": "Retract the cursor position (to the left).",
+     "name": "PREVIOUS",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 5,
+     "data_type": "any",
+     "description": "Delete the current char, retracting the cursor (to the left).",
+     "name": "DELETE",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 6,
+     "data_type": "any",
+     "description": "Confirm the selection to be current one, generating output packets on both STRING and SELECTED output ports.",
+     "name": "SELECT",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 7,
+     "data_type": "boolean",
+     "description": "Make the interaction possible, otherwise don't produce strings or process UP/DOWN/SELECT inputs. In other words, enable/disable the node at run-time. The node starts in the enabled state. Note that this does not affect the use of the SELECTED port.",
+     "name": "ENABLED",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "form/string",
+   "options": {
+    "members": [
+     {
+      "data_type": "int",
+      "description": "The number of available columns to lay out the output string with. It must be a positive integer.",
+      "name": "columns",
+      "required": true
+     },
+     {
+      "data_type": "int",
+      "description": "The number of available rows to lay out the output string with. It must be a positive integer.",
+      "name": "rows",
+      "required": true
+     },
+     {
+      "data_type": "int",
+      "default": 1000,
+      "description": "Cursor blinking time, in miliseconds.",
+      "name": "blink_time",
+      "required": false
+     },
+     {
+      "data_type": "int",
+      "default": 0,
+      "description": "Minimum output string length (must be non-negative and less than or equal to 'max_length' option's value).",
+      "name": "min_length",
+      "required": false
+     },
+     {
+      "data_type": "int",
+      "default": 0,
+      "description": "Maximum output string length (must be non-negative and greater than or equal to 'min_length' option's value). The special value of 0 means no maximum will be applied.",
+      "name": "max_length",
+      "required": false
+     },
+     {
+      "data_type": "string",
+      "default": null,
+      "description": "The initial string value (all characters must be inside the 'charset' option's set of chars) to start at. It may be overriden by a value in the SELECTED input port.",
+      "name": "start_value",
+      "required": false
+     },
+     {
+      "data_type": "string",
+      "default": " abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!?.:;,-()[]{}|\\\\^~`_\"'#$%&*+/<>=@",
+      "description": "The character set to build the strings with in this node. The order is important: this is the sequence the UP/DOWN ports will cycle through.",
+      "name": "charset",
+      "required": false
+     },
+     {
+      "data_type": "string",
+      "default": null,
+      "description": "The title string, to be available for referencing when evaluating the format one by means of the '{title}' tag. Any line breaking characters in this string will be translated to a space instead. If no title is provided, a '{title}' tag in the format will be ignored.",
+      "name": "title",
+      "required": false
+     },
+     {
+      "data_type": "string",
+      "default": "{value}",
+      "description": "The format string to produce the final STRING output with. The syntax is a free-form string with one '{value}' sub-string in it (and one optional '{title}' one). The value tag will be replaced by the actual true/false strings defined for the node (true_str/false_str options), while the title one will be replaced by the title string option, if set. The title tag must occur before the value one.",
+      "name": "format",
+      "required": false
+     }
+    ],
+    "required": true,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_form_string_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "The formatted string output. This is meant to feed real display nodes (like grove/lcd-string).",
+     "name": "STRING",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "string",
+     "description": "The current string state.",
+     "name": "SELECTED",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_FORM_STRING",
+   "url": "http://solettaproject.org/doc/latest/node_types/form/string.html",
+   "version": "1"
+  }
+ ]
+}

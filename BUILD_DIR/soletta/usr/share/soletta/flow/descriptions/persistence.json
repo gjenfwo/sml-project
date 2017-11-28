@@ -1,0 +1,508 @@
+{
+ "persistence": [
+  {
+   "author": "Intel Corporation",
+   "category": "io/persistence",
+   "description": "Persists the last input packet's data it receives to storage, also repeating that packet on output port. If the value is unchanged, then the packet is not repeated, this allows the use of persistence in feedback loops with setters of data to be persisted. Note that upon a new connection on the unique output port, if a previous stored packet is found, it will already be sent.",
+   "header_file": "sol-flow/persistence.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "boolean",
+     "description": "A boolean packet to persist (and repeat on output)",
+     "name": "IN",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "any",
+     "description": "Reset persist value to its default and send to output the new value",
+     "name": "RESET",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "persistence/boolean",
+   "options": {
+    "members": [
+     {
+      "data_type": "string",
+      "description": "Name to persist a boolean packet. If 'storage' is 'fs', name can be a fully fledged path to the file where the value will be stored.",
+      "name": "name",
+      "required": true
+     },
+     {
+      "data_type": "string",
+      "description": "Storage where data will be persisted. It can be of the following: fs, efivars",
+      "name": "storage",
+      "required": true
+     },
+     {
+      "data_type": "boolean",
+      "default": false,
+      "description": "Default value for this node, when there's no previous value persisted",
+      "name": "default_value",
+      "required": false
+     }
+    ],
+    "required": true,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_persistence_boolean_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "boolean",
+     "description": "A boolean packet with the persisted value of the node",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_PERSISTENCE_BOOLEAN",
+   "url": "http://solettaproject.org/doc/latest/components/persistence.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "io/persistence",
+   "description": "Persists the last input packet's data it receives to storage, also repeating that packet on output port. If the value is unchanged, then the packet is not repeated, this allows the use of persistence in feedback loops with setters of data to be persisted. Note that upon a new connection on the unique output port, if a previous stored packet is found, it will already be sent.",
+   "header_file": "sol-flow/persistence.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "byte",
+     "description": "A byte packet to persist (and repeat on output)",
+     "name": "IN",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "any",
+     "description": "Reset persist value to its default and send to output the new value",
+     "name": "RESET",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "persistence/byte",
+   "options": {
+    "members": [
+     {
+      "data_type": "string",
+      "description": "Name to persist a byte packet. If 'storage' is 'fs', name can be a fully fledged path to the file where the value will be stored.",
+      "name": "name",
+      "required": true
+     },
+     {
+      "data_type": "string",
+      "description": "Storage where data will be persisted. It can be of the following: fs, efivars",
+      "name": "storage",
+      "required": true
+     },
+     {
+      "data_type": "byte",
+      "default": 0,
+      "description": "Default value for this node, when there's no previous value persisted",
+      "name": "default_value",
+      "required": false
+     }
+    ],
+    "required": true,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_persistence_byte_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "byte",
+     "description": "A byte packet with the persisted value of the node",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_PERSISTENCE_BYTE",
+   "url": "http://solettaproject.org/doc/latest/components/persistence.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "io/persistence",
+   "description": "Persists the last input packet's data it receives to storage, also repeating that packet on output port. If the value is unchanged, then the packet is not repeated, this allows the use of persistence in feedback loops with setters of data to be persisted. Note that upon a new connection on the unique output port, if a previous stored packet is found, it will already be sent.",
+   "header_file": "sol-flow/persistence.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "float",
+     "description": "An float packet to persist (and repeat on output)",
+     "name": "IN",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "any",
+     "description": "Reset persist value to its default and send to output the new value",
+     "name": "RESET",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "persistence/float",
+   "options": {
+    "members": [
+     {
+      "data_type": "string",
+      "description": "Name to persist a float packet. If 'storage' is 'fs', name can be a fully fledged path to the file where the value will be stored.",
+      "name": "name",
+      "required": true
+     },
+     {
+      "data_type": "string",
+      "description": "Storage where data will be persisted. It can be of the following: fs, efivars",
+      "name": "storage",
+      "required": true
+     },
+     {
+      "data_type": "float",
+      "default": 0.0,
+      "description": "Default value for this node, when there's no previous value persisted",
+      "name": "default_value",
+      "required": false
+     },
+     {
+      "data_type": "drange-spec",
+      "default": {
+       "max": "DBL_MAX",
+       "min": "-DBL_MAX",
+       "step": "DBL_MIN"
+      },
+      "description": "Default range for this node, when there's no previous value persisted",
+      "name": "default_value_spec",
+      "required": false
+     },
+     {
+      "data_type": "boolean",
+      "default": false,
+      "description": "Store only drange val, discarding min, max and step values",
+      "name": "store_only_val",
+      "required": false
+     }
+    ],
+    "required": true,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_persistence_float_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "float",
+     "description": "A float packet with the persisted value of the node",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_PERSISTENCE_FLOAT",
+   "url": "http://solettaproject.org/doc/latest/components/persistence.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "io/persistence",
+   "description": "Persists the last input packet's data it receives to storage, also repeating that packet on output port. If the value is unchanged, then the packet is not repeated, this allows the use of persistence in feedback loops with setters of data to be persisted. Note that upon a new connection on the unique output port, if a previous stored packet is found, it will already be sent.",
+   "header_file": "sol-flow/persistence.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "int",
+     "description": "A int packet to persist (and repeat on output)",
+     "name": "IN",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "any",
+     "description": "Reset persist value to its default and send to output the new value",
+     "name": "RESET",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "persistence/int",
+   "options": {
+    "members": [
+     {
+      "data_type": "string",
+      "description": "Name to persist an integer packet with. If 'storage' is 'fs', the name must be a fully fledged path to the file where the value will be stored.",
+      "name": "name",
+      "required": true
+     },
+     {
+      "data_type": "string",
+      "description": "Storage where data will be persisted. It can be of the following: fs, efivars",
+      "name": "storage",
+      "required": true
+     },
+     {
+      "data_type": "int",
+      "default": 0,
+      "description": "Default value for this node, when there's no previous value persisted",
+      "name": "default_value",
+      "required": false
+     },
+     {
+      "data_type": "irange-spec",
+      "default": {
+       "max": "INT32_MAX",
+       "min": "INT32_MIN",
+       "step": 1
+      },
+      "description": "Default range for this node, when there's no previous value persisted",
+      "name": "default_value_spec",
+      "required": false
+     },
+     {
+      "data_type": "boolean",
+      "default": false,
+      "description": "Store only irange val, discarding min, max and step values",
+      "name": "store_only_val",
+      "required": false
+     }
+    ],
+    "required": true,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_persistence_int_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "int",
+     "description": "A int packet with the persisted value of the node",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_PERSISTENCE_INT",
+   "url": "http://solettaproject.org/doc/latest/components/persistence.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "io/persistence",
+   "description": "Persists the last input packet's data it receives to storage, also repeating that packet on output port. If the value is unchanged, then the packet is not repeated, this allows the use of persistence in feedback loops with setters of data to be persisted. Note that upon a new connection on the unique output port, if a previous stored packet is found, it will already be sent.",
+   "header_file": "sol-flow/persistence.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "A string packet to persist (and repeat on output)",
+     "name": "IN",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "any",
+     "description": "Reset persist value to its default and send to output the new value",
+     "name": "RESET",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "persistence/string",
+   "options": {
+    "members": [
+     {
+      "data_type": "string",
+      "description": "Name to persist a string packet. If 'storage' is 'fs', name can be a fully fledged path to the file where the value will be stored.",
+      "name": "name",
+      "required": true
+     },
+     {
+      "data_type": "string",
+      "description": "Storage where data will be persisted. It can be of the following: fs, efivars",
+      "name": "storage",
+      "required": true
+     },
+     {
+      "data_type": "string",
+      "default": "",
+      "description": "Default value for this node, when there's no previous value persisted",
+      "name": "default_value",
+      "required": false
+     }
+    ],
+    "required": true,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_persistence_string_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "A string packet with the persisted value of the node",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_PERSISTENCE_STRING",
+   "url": "http://solettaproject.org/doc/latest/components/persistence.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "io/persistence",
+   "description": "Persists the last input packet's data it receives to storage, also repeating that packet on output port. If the value is unchanged, then the packet is not repeated, this allows the use of persistence in feedback loops with setters of data to be persisted. Note that upon a new connection on the unique output port, if a previous stored packet is found, it will already be sent.",
+   "header_file": "sol-flow/persistence.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "rgb",
+     "description": "A RGB packet to persist (and repeat on output)",
+     "name": "IN",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "any",
+     "description": "Reset persist value to its default and send to output the new value",
+     "name": "RESET",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "persistence/rgb",
+   "options": {
+    "members": [
+     {
+      "data_type": "string",
+      "description": "Name to persist a rgb packet. If 'storage' is 'fs', name can be a fully fledged path to the file where the value will be stored.",
+      "name": "name",
+      "required": true
+     },
+     {
+      "data_type": "string",
+      "description": "Storage where data will be persisted. It can be of the following: fs, efivars",
+      "name": "storage",
+      "required": true
+     },
+     {
+      "data_type": "rgb",
+      "default": {
+       "blue": 0,
+       "blue_max": 255,
+       "green": 0,
+       "green_max": 255,
+       "red": 0,
+       "red_max": 255
+      },
+      "description": "Default value for this node, when there's no previous value persisted",
+      "name": "default_value",
+      "required": false
+     }
+    ],
+    "required": true,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_persistence_rgb_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "rgb",
+     "description": "A RGB packet with the persisted value of the node",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_PERSISTENCE_RGB",
+   "url": "http://solettaproject.org/doc/latest/components/persistence.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "io/persistence",
+   "description": "Persists the last input packet's data it receives to storage, also repeating that packet on output port. If the value is unchanged, then the packet is not repeated, this allows the use of persistence in feedback loops with setters of data to be persisted. Note that upon a new connection on the unique output port, if a previous stored packet is found, it will already be sent.",
+   "header_file": "sol-flow/persistence.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "direction-vector",
+     "description": "A RGB packet to persist (and repeat on output)",
+     "name": "IN",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "any",
+     "description": "Reset persist value to its default and send to output the new value",
+     "name": "RESET",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "persistence/direction-vector",
+   "options": {
+    "members": [
+     {
+      "data_type": "string",
+      "description": "Name to persist a direction-vector packet. If 'storage' is 'fs', name can be a fully fledged path to the file where the value will be stored.",
+      "name": "name",
+      "required": true
+     },
+     {
+      "data_type": "string",
+      "description": "Storage where data will be persisted. It can be of the following: fs, efivars",
+      "name": "storage",
+      "required": true
+     },
+     {
+      "data_type": "direction-vector",
+      "default": {
+       "max": "DBL_MAX",
+       "min": "-DBL_MAX",
+       "x": 0,
+       "y": 0,
+       "z": 0
+      },
+      "description": "Default value for this node, when there's no previous value persisted",
+      "name": "default_value",
+      "required": false
+     }
+    ],
+    "required": true,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_persistence_direction_vector_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "direction-vector",
+     "description": "A RGB packet with the persisted value of the node",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_PERSISTENCE_DIRECTION_VECTOR",
+   "url": "http://solettaproject.org/doc/latest/components/persistence.html",
+   "version": "1"
+  }
+ ]
+}

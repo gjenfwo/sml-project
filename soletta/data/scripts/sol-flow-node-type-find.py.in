@@ -1,0 +1,196 @@
+#!/usr/bin/env python3
+
+# This file is part of the Soletta (TM) Project
+#
+# Copyright (C) 2015 Intel Corporation. All rights reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import json
+import re
+import os
+import sys
+
+defrepo = '{{@DESCDIR@}}'
+
+def ports_match(re_list, entries):
+    if not re_list:
+        return True
+    for e in entries:
+        for re_name, re_type in re_list:
+            if re_name and not re_name.match(e.get("name", "")):
+                continue
+            t = e.get("data_type")
+            if re_type and t and not re_type.match(t):
+                continue
+            return True
+    return False
+
+def find(repodir, category, name, inports, outports, ignored):
+    re_cat = re.compile(category)
+    re_name = re.compile(name)
+    res_inport = []
+    if inports:
+        for a in inports:
+            a = a.split(':', 2)
+            name = re.compile(a[0])
+            if len(a) == 2:
+                type = re.compile(a[1])
+            else:
+                type = None
+            res_inport.append((name, type))
+
+    res_outport = []
+    if outports:
+        for a in outports:
+            a = a.split(':', 2)
+            name = re.compile(a[0])
+            if len(a) == 2:
+                type = re.compile(a[1])
+            else:
+                type = None
+            res_outport.append((name, type))
+
+    results = {}
+    for f in os.listdir(repodir):
+        path = os.path.join(repodir, f)
+        try:
+            data = json.load(open(path))
+        except Exception as e:
+            sys.stderr.write("ERROR: could not load %s: %s\n" % (path, e))
+            continue
+        for k, v in data.items():
+            for t in v:
+                cat = t.get("category", "")
+                if not re_cat.match(cat):
+                    continue
+                name = t.get("name", "")
+                if name in ignored:
+                    continue
+                if not re_name.match(name):
+                    continue
+                inports = t.get("in_ports", [])
+                if not ports_match(res_inport, inports):
+                    continue
+                outports = t.get("out_ports", [])
+                if not ports_match(res_outport, outports):
+                    continue
+                results.setdefault(path, {}).setdefault(k, []).append(t)
+
+    return results
+
+def find_type_by_name(repodir, name):
+    for f in os.listdir(repodir):
+        path = os.path.join(repodir, f)
+        try:
+            data = json.load(open(path))
+        except Exception as e:
+            sys.stderr.write("ERROR: could not load %s: %s\n" % (path, e))
+            continue
+        for k, v in data.items():
+            for t in v:
+                if name == t.get("name"):
+                    return t
+    return None
+
+
+def regexp_from_port(p):
+    n = p.get("name")
+    t = p.get("data_type")
+    if t:
+        return '^%s$:^%s$' % (n, t)
+    else:
+        return '^%s$' % (n,)
+
+
+def regexps_from_ports(ports):
+    ret = []
+    for p in ports:
+        ret.append(regexp_from_port(p))
+    return ret
+
+
+if __name__ == "__main__":
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--repo",
+                        help="Directory to use as JSON repository",
+                        type=str, default=defrepo)
+    parser.add_argument("--category",
+                        help="Category (regular expression) to match",
+                        type=str, default=".*")
+    parser.add_argument("--inport", nargs='*',
+                        help="Input port name to match. If provided multiple times, all should match. Format is name:type, each of name or type being an regular expression.",
+                        type=str)
+    parser.add_argument("--outport", nargs='*',
+                        help="Output port name to match. If provided multiple times, all should match. Format is name:type, each of name or type being an regular expression.",
+                        type=str)
+    parser.add_argument("--name",
+                        help="Name (regular expression) to match",
+                        type=str, default=".*")
+    parser.add_argument("--similar-ports",
+                        help="Find types with ports similar to given name. This overrides the --inport/--outport",
+                        type=str)
+    parser.add_argument("--format",
+                        help="How to format output.",
+                        type=str, default="json", choices=["json", "simple"])
+    args = parser.parse_args()
+
+    inport = args.inport
+    outport = args.outport
+    ignored = []
+    if args.similar_ports:
+        ignored.append(args.similar_ports)
+        t = find_type_by_name(args.repo, args.similar_ports)
+        if not t:
+            raise SystemExit("type not found: %r" % (args.similar_ports,))
+        inport = regexps_from_ports(t.get("in_ports", []))
+        outport = regexps_from_ports(t.get("out_ports", []))
+
+    res = find(args.repo, args.category, args.name, inport, outport, ignored)
+    if args.format == "json":
+        print(json.dumps(res, indent=True, sort_keys=True))
+    elif args.format == "simple":
+        if res:
+            def fmt_port(p):
+                n = p.get("name", "???")
+                t = p.get("data_type")
+                if t:
+                    return "%s:%s" % (n, t)
+                else:
+                    return n
+
+            last_f = None
+            for f, sections in sorted(res.items()):
+                last_sec = None
+                for sec, types in sorted(sections.items()):
+                    for t in types:
+                        category = t.get("category")
+                        if not category:
+                            continue
+                        name = t.get("name")
+                        if not name:
+                            continue
+                        inports = t.get("in_ports", [])
+                        outports = t.get("out_ports", [])
+                        if f != last_f:
+                            print("# File: %s" % (f,))
+                            last_f = f
+                        if sec != last_sec:
+                            print("# Section: %s" % (sec,))
+                            last_sec = sec
+                        print("category=%r name=%r in=[%s] out=[%s]" %
+                              (category,
+                               name,
+                               ", ".join(fmt_port(p) for p in inports),
+                               ", ".join(fmt_port(p) for p in outports)))

@@ -1,0 +1,30 @@
+# This file is part of the Soletta Project
+#
+# Copyright (C) 2015 Intel Corporation. All rights reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+OUTPORT=IsWeekend.OUT:IS_WEEKEND
+
+Sunday(constant/int:value=0)
+Saturday(constant/int:value=6)
+Weekday(wallclock/weekday:send_initial_packet=true)
+
+Weekday OUT -> IN[0] IsSaturday(int/equal)
+Saturday OUT -> IN[1] IsSaturday
+
+Weekday OUT -> IN[0] IsSunday(int/equal)
+Sunday OUT -> IN[1] IsSunday
+
+IsSaturday OUT -> IN[0] IsWeekend(boolean/or)
+IsSunday OUT -> IN[1] IsWeekend

@@ -1,0 +1,3 @@
+config FLOW_NODE_TYPE_CONSOLE
+	tristate "Node type: console"
+	default y

@@ -1,0 +1,39 @@
+{
+  "$schema": "http://solettaproject.github.io/soletta/schemas/node-type-genspec.schema",
+  "name": "udev",
+  "meta": {
+    "author": "Intel Corporation",
+    "license": "Apache-2.0",
+    "version": "1"
+  },
+  "types": [
+    {
+      "category": "output/sw",
+      "description": "Provides boolean packets after a device attach or dettach",
+      "methods": {
+        "close": "udev_close",
+        "open": "udev_open"
+      },
+      "name": "udev/boolean",
+      "options": {
+        "members": [
+          {
+            "data_type": "string",
+            "description": "The device's syspath that should be monitored",
+            "name": "address"
+          }
+        ],
+        "version": 1
+      },
+      "out_ports": [
+        {
+          "data_type": "boolean",
+          "description": "A boolean packet when udev changes. If it's attached true, otherwise false.",
+          "name": "OUT"
+        }
+      ],
+      "private_data_type": "udev_data",
+      "url": "http://solettaproject.org/doc/latest/components/udev.html"
+    }
+  ]
+}

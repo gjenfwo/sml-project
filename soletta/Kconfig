@@ -1,0 +1,255 @@
+mainmenu "Soletta (TM) Framework configuration"
+
+source "Kconfig.gen"
+source "tools/build/Kconfig.features"
+
+config BASE_OS
+    string
+    default "contiki" if HAVE_CONTIKI
+    default "riot" if HAVE_RIOTOS
+    default "zephyr" if HAVE_ZEPHYR
+    default "linux" if HAVE_LINUX
+
+source "tools/build/Kconfig.$BASE_OS"
+
+menu "Basic"
+choice LIB_OUTPUT
+	prompt "Soletta library output"
+	default SHARED_LIBRARY
+
+config SHARED_LIBRARY
+	bool "Shared"
+	depends on FEATURE_DYNAMIC_LINKER
+
+config STATIC_LIBRARY
+	bool "Static"
+	select NO_API_VERSION_NEEDED
+endchoice
+
+config NO_API_VERSION_NEEDED
+    bool
+    default n
+
+# backward compatibility with autotools vars
+config ENABLE_DYNAMIC_MODULES
+	bool
+	depends on SHARED_LIBRARY
+	default n
+
+config MODULES
+	bool "Enable loadable module support"
+	option modules
+	select ENABLE_DYNAMIC_MODULES
+	depends on SHARED_LIBRARY
+	default y
+	help
+            This option enables dynamically loadable modules to be
+            created and used by Soletta. These modules can be created
+            and installed post libsoletta creation and when removed
+            shouldn't impact those that do not use such
+            functionality.
+
+            Modules are usually distributed as ".so" (shared objects)
+            and are usually loaded by libc (libdl) function
+            dlopen(). The modules are commonly installed at
+            $PREFIX/lib/soletta/modules/<subsystem>/<module>.
+
+            One would disable the modules support only when doing
+            single-binary static builds, in this case all modules
+            would be known at compile time, thus the code path can be
+            avoided and the dependency on extra libraries (ie: -ldl
+            on Linux) is not needed.
+
+            If unsure, say Y.
+
+config ENV_PREFIX
+	string
+	option env="PREFIX"
+
+config PREFIX
+	string "Installation prefix"
+	default $ENV_PREFIX
+	help
+            This path is the intended installation prefix for the
+            binaries. It is used by code paths that need to look for
+            further resources, such as loadable module support (see
+            MODULES configuration help).
+
+config RPATH
+	bool "Uses rpath for local builds"
+	depends on HAVE_CHRPATH
+	default y
+	help
+            This option defines if rpath ought be used to look up
+            libraries. If disabled the user should adjust the environment
+            accordingly.
+
+comment "rpath disabled, no chrpath found"
+	depends on !HAVE_CHRPATH
+
+menu "Compiler options"
+choice BUILD_TYPE
+	prompt "Build type"
+	default BUILD_TYPE_RELEASE
+
+config BUILD_TYPE_DEBUG
+	bool "debug"
+
+config BUILD_TYPE_RELEASE
+	bool "release"
+endchoice
+
+config ENV_CFLAGS
+	string
+	option env="CFLAGS"
+
+config CONFIG_CFLAGS
+       string "Arbitrary CFLAGS"
+       default $ENV_CFLAGS
+       help
+           Sets arbitrary CFLAGS to be used across make invocations
+           without the need to be provided on every make call.
+
+config ENV_LDFLAGS
+	string
+	option env="LDFLAGS"
+
+config CONFIG_LDFLAGS
+       string "Arbitrary LDFLAGS"
+       default $ENV_LDFLAGS
+       help
+           Sets arbitrary LDFLAGS to be used across make invocations
+           without the need to be provided on every make call.
+
+config CC_SANITIZE
+	bool "Compiler sanitize"
+	depends on FEATURE_CC_SANITIZE && ((SHARED_LIBRARY && (HAVE_DYNAMIC_SANITIZE_UNDEFINED || HAVE_DYNAMIC_SANITIZE_ADDRESS)) || (STATIC_LIBRARY && (HAVE_STATIC_SANITIZE_UNDEFINED || HAVE_STATIC_SANITIZE_ADDRESS)))
+	default y if BUILD_TYPE_DEBUG
+
+choice CC_SANITIZE_TYPE
+	prompt "Compiler sanitize type"
+	depends on CC_SANITIZE
+	default CC_SANITIZE_UNDEFINED if ((SHARED_LIBRARY && HAVE_DYNAMIC_SANITIZE_UNDEFINED) || (STATIC_LIBRARY && HAVE_STATIC_SANITIZE_UNDEFINED))
+	default CC_SANITIZE_ADDRESS if ((SHARED_LIBRARY && HAVE_DYNAMIC_SANITIZE_ADDRESS) || (STATIC_LIBRARY && HAVE_STATIC_SANITIZE_ADDRESS))
+	help
+	    Enable compiler sanitizer instrumentation to be used during debug.
+
+config CC_SANITIZE_UNDEFINED
+	bool "undefined"
+	depends on (SHARED_LIBRARY && HAVE_DYNAMIC_SANITIZE_UNDEFINED) || (STATIC_LIBRARY && HAVE_STATIC_SANITIZE_UNDEFINED)
+	help
+            Enable UndefinedBehaviorSanitizer, a fast undefined behavior
+            detector.  Various computations are instrumented to detect
+            undefined behavior at runtime.
+
+            Since GCC 4.9, see http://developerblog.redhat.com/2014/10/16/gcc-undefined-behavior-sanitizer-ubsan/
+
+config CC_SANITIZE_ADDRESS
+	bool "address"
+	depends on (SHARED_LIBRARY && HAVE_DYNAMIC_SANITIZE_ADDRESS) || (STATIC_LIBRARY && HAVE_STATIC_SANITIZE_ADDRESS)
+	help
+            Enable AddressSanitizer, a fast memory error detector.  Memory
+            access instructions are instrumented to detect out-of-bounds and
+            use-after-free bugs.
+
+            Since GCC 4.8, see http://code.google.com/p/address-sanitizer/
+endchoice
+endmenu
+
+endmenu
+
+menu "Core library"
+source "src/lib/common/Kconfig"
+source "src/lib/datatypes/Kconfig"
+source "src/lib/parsers/Kconfig"
+endmenu
+
+menu "Flow Based Programming (FBP)"
+depends on FEATURE_FLOW
+source "src/lib/flow/Kconfig"
+endmenu
+
+menu "Cryptography and Signatures"
+source "src/lib/crypto/Kconfig"
+endmenu
+
+menu "Networking"
+depends on FEATURE_NETWORK
+source "src/lib/comms/Kconfig"
+endmenu
+
+menu "Samples"
+depends on FEATURE_RUNNABLE_PROGRAMS
+
+config SAMPLES
+	bool "Build samples"
+	default y
+
+source "src/samples/bluetooth/Kconfig"
+source "src/samples/coap/Kconfig"
+source "src/samples/common/Kconfig"
+source "src/samples/crypto/Kconfig"
+source "src/samples/design_patterns/Kconfig"
+source "src/samples/http/Kconfig"
+source "src/samples/iio+network/Kconfig"
+source "src/samples/mavlink/Kconfig"
+source "src/samples/mqtt/Kconfig"
+source "src/samples/network/Kconfig"
+
+config FLOW_SAMPLES
+	bool "Flow samples"
+	depends on USE_FLOW && SAMPLES
+	default y
+
+config FLOW_FBP_GENERATOR_SAMPLES
+	bool
+	depends on FLOW_SAMPLES && FBP_GENERATOR
+	default y
+
+source "src/samples/flow/am2315/Kconfig"
+source "src/samples/flow/basics/Kconfig"
+source "src/samples/flow/c-api/Kconfig"
+source "src/samples/flow/compass/Kconfig"
+source "src/samples/flow/foosball/Kconfig"
+source "src/samples/flow/grove-kit/Kconfig"
+source "src/samples/flow/grove-kit/lcd/Kconfig"
+source "src/samples/flow/gtk-gallery/Kconfig"
+source "src/samples/flow/http-client/Kconfig"
+source "src/samples/flow/http-composed/Kconfig"
+source "src/samples/flow/http-json/Kconfig"
+source "src/samples/flow/http-oauth/Kconfig"
+source "src/samples/flow/http-server/Kconfig"
+source "src/samples/flow/iio+network/Kconfig"
+source "src/samples/flow/iio/Kconfig"
+source "src/samples/flow/io/Kconfig"
+source "src/samples/flow/js/Kconfig"
+source "src/samples/flow/led-strip/Kconfig"
+source "src/samples/flow/minnow-calamari/Kconfig"
+source "src/samples/flow/misc/Kconfig"
+source "src/samples/flow/mqtt/Kconfig"
+source "src/samples/flow/netctl/Kconfig"
+source "src/samples/flow/oic-and-http-light/Kconfig"
+source "src/samples/flow/oic/Kconfig"
+source "src/samples/flow/oic/light-scan/Kconfig"
+source "src/samples/flow/power-supply/Kconfig"
+source "src/samples/flow/semaphore-monitor/Kconfig"
+source "src/samples/flow/tilt-angle/Kconfig"
+source "src/samples/flow/trash-disposer/Kconfig"
+source "src/samples/flow/unix-socket/Kconfig"
+source "src/samples/flow/webservices/Kconfig"
+
+endmenu
+
+menu "Tools"
+depends on FEATURE_RUNNABLE_PROGRAMS
+source "src/bin/sol-fbp-generator/Kconfig"
+source "src/bin/sol-fbp-runner/Kconfig"
+source "src/bin/sol-fbp-to-dot/Kconfig"
+source "src/bin/sol-aio/Kconfig"
+source "src/bin/sol-gpio/Kconfig"
+endmenu
+
+menu "Test suite"
+depends on FEATURE_RUNNABLE_PROGRAMS
+source "src/test/Kconfig"
+endmenu

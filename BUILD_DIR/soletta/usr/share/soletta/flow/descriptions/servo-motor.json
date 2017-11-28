@@ -1,0 +1,71 @@
+{
+ "servo-motor": [
+  {
+   "author": "Intel Corporation",
+   "category": "output/hw",
+   "description": "Control RC servo motors.",
+   "header_file": "sol-flow/servo-motor.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "float",
+     "description": "Set the angle of the shaft in degrees, from 0 to 180.",
+     "name": "ANGLE",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "int",
+     "description": "Set duty cycle width in microseconds. Shoudln't be less or greater than min and max values, defined on options.",
+     "name": "DUTY_CYCLE",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "servo-motor/controller",
+   "options": {
+    "members": [
+     {
+      "data_type": "irange-spec",
+      "default": {
+       "max": 2400,
+       "min": 544,
+       "step": 1
+      },
+      "description": "Pulse width range, in microseconds, corresponding to the minimum (0-degree) angle on the servo until the maximum (180-degree) angle.",
+      "name": "duty_cycle_range",
+      "required": false
+     },
+     {
+      "data_type": "int",
+      "default": 22000,
+      "description": "Period, in microseconds. A pulse repetition rate of 50 Hz should work with most servos.",
+      "name": "period",
+      "required": false
+     },
+     {
+      "data_type": "string",
+      "description": "Label of the desired pin on the board. If raw is set to true, this should be \"<device> <channel>\" pair, e.g. \"0 3\".",
+      "name": "pin",
+      "required": true
+     },
+     {
+      "data_type": "boolean",
+      "default": false,
+      "description": "Change 'pin' meaning to be the system parameters needed to address the desired pin. Use it if you know what you are doing.",
+      "name": "raw",
+      "required": false
+     }
+    ],
+    "required": true,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_servo_motor_controller_options",
+   "symbol": "SOL_FLOW_NODE_TYPE_SERVO_MOTOR_CONTROLLER",
+   "url": "http://solettaproject.org/doc/latest/components/servo-motor.html",
+   "version": "1"
+  }
+ ]
+}

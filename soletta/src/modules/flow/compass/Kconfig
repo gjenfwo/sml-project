@@ -1,0 +1,3 @@
+config FLOW_NODE_TYPE_COMPASS
+	tristate "Node type: compass"
+	default m

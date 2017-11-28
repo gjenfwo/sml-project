@@ -1,0 +1,187 @@
+{
+ "power-supply": [
+  {
+   "author": "Intel Corporation",
+   "category": "power-supply",
+   "description": "Send list of all power supplies attached to board.",
+   "header_file": "sol-flow/power-supply.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "any",
+     "description": "Trigger to get list of power supplies.",
+     "name": "TRIGGER",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "string",
+     "description": "Name of type to be used to filter power supplies. It can be 'Any', 'Unknown', 'Battery', 'UPS', 'Mains', 'USB', 'USB_DCP', 'USB_CDP', 'USB_ACA'.",
+     "name": "TYPE",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "power-supply/get-list",
+   "options": {
+    "members": [
+     {
+      "data_type": "string",
+      "default": null,
+      "description": "Name of type to be used to filter power supplies. It can be 'Any', 'Unknown', 'Battery', 'UPS', 'Mains', 'USB', 'USB_DCP', 'USB_CDP', 'USB_ACA'. If 'null', no filter is applied.",
+      "name": "type",
+      "required": false
+     }
+    ],
+    "required": false,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_power_supply_get_list_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "Name of power supplies that match specified type.",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_POWER_SUPPLY_GET_LIST",
+   "url": "http://solettaproject.org/doc/latest/node_types/power-supply/get-list.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "power-supply",
+   "description": "Get capacity of a power supply. Usually provided by batteries.",
+   "header_file": "sol-flow/power-supply.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "any",
+     "description": "Trigger to get capacity.",
+     "name": "TRIGGER",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "string",
+     "description": "Name of power supply.",
+     "name": "NAME",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "power-supply/get-capacity",
+   "options": {
+    "members": [
+     {
+      "data_type": "string",
+      "default": null,
+      "description": "Name of power supply from where capacity will be fetched.",
+      "name": "name",
+      "required": false
+     }
+    ],
+    "required": false,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_power_supply_get_capacity_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "int",
+     "description": "Supply capacity percentage.",
+     "name": "CAPACITY",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "string",
+     "description": "Textual description of capacity. May vary between 'Unknown', 'Critical', 'Low', 'Normal', 'High' and 'Full'.",
+     "name": "CAPACITY_LEVEL",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_POWER_SUPPLY_GET_CAPACITY",
+   "url": "http://solettaproject.org/doc/latest/node_types/power-supply/get-capacity.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "power-supply",
+   "description": "Get information about a power supply: model, serial number and manufacturer.",
+   "header_file": "sol-flow/power-supply.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "any",
+     "description": "Trigger to get info.",
+     "name": "TRIGGER",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "string",
+     "description": "Name of power supply.",
+     "name": "NAME",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "power-supply/get-info",
+   "options": {
+    "members": [
+     {
+      "data_type": "string",
+      "default": null,
+      "description": "Name of power supply from where information will be fetched.",
+      "name": "name",
+      "required": false
+     }
+    ],
+    "required": false,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_power_supply_get_info_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "Supply manufacturer.",
+     "name": "MANUFACTURER",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "string",
+     "description": "Supply model name.",
+     "name": "MODEL",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 2,
+     "data_type": "string",
+     "description": "Supply serial number.",
+     "name": "SERIAL",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_POWER_SUPPLY_GET_INFO",
+   "url": "http://solettaproject.org/doc/latest/node_types/power-supply/get-info.html",
+   "version": "1"
+  }
+ ]
+}

@@ -1,0 +1,10 @@
+prefix=/usr
+exec_prefix=${prefix}
+includedir=${exec_prefix}/include
+libdir=/usr/lib
+
+Name: SML
+Description: Soletta machine learning library.
+Version: 1.0
+Libs: -L${libdir} -lsml_libs
+Cflags: -I${includedir}

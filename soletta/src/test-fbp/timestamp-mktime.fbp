@@ -1,0 +1,70 @@
+#!/usr/bin/env sol-fbp-runner
+
+# This file is part of the Soletta (TM) Project
+#
+# Copyright (C) 2015 Intel Corporation. All rights reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+Split(timestamp/split-time)
+MkTime(timestamp/make-time)
+
+Year(constant/int:value=2015)
+Month(constant/int:value=8)
+Day(constant/int:value=26)
+Hour(constant/int:value=15)
+Minute(constant/int:value=20)
+Second(constant/int:value=59)
+NanoSecond(constant/int:value=654321)
+
+EqualYear(int/equal)
+EqualMonth(int/equal)
+EqualDay(int/equal)
+EqualHour(int/equal)
+EqualMinute(int/equal)
+EqualSecond(int/equal)
+EqualNanoSecond(int/equal)
+
+Year OUT -> IN[0] EqualYear
+Month OUT -> IN[0] EqualMonth
+Day OUT -> IN[0] EqualDay
+Hour OUT -> IN[0] EqualHour
+Minute OUT -> IN[0] EqualMinute
+Second OUT -> IN[0] EqualSecond
+NanoSecond OUT -> IN[0] EqualNanoSecond
+
+Year OUT -> YEAR MkTime
+Month OUT -> MONTH MkTime
+Day OUT -> MONTH_DAY MkTime
+Hour OUT -> HOUR MkTime
+Minute OUT -> MINUTE MkTime
+Second OUT -> SECOND MkTime
+NanoSecond OUT -> NANO_SECOND MkTime
+
+MkTime OUT -> IN Split
+
+Split YEAR -> IN[1] EqualYear
+Split MONTH -> IN[1] EqualMonth
+Split MONTH_DAY -> IN[1] EqualDay
+Split HOUR -> IN[1] EqualHour
+Split MINUTE -> IN[1] EqualMinute
+Split SECOND -> IN[1] EqualSecond
+Split NANO_SECOND -> IN[1] EqualNanoSecond
+
+EqualYear OUT -> RESULT result_year(test/result)
+EqualMonth OUT -> RESULT result_month(test/result)
+EqualDay OUT -> RESULT result_day(test/result)
+EqualHour OUT -> RESULT result_hour(test/result)
+EqualMinute OUT -> RESULT result_minute(test/result)
+EqualSecond OUT -> RESULT result_second(test/result)
+EqualNanoSecond OUT -> RESULT result_nano_second(test/result)

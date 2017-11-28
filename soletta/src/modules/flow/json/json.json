@@ -1,0 +1,901 @@
+{
+  "$schema": "http://solettaproject.github.io/soletta/schemas/node-type-genspec.schema",
+  "name": "json",
+  "meta": {
+    "author": "Intel Corporation",
+    "license": "Apache-2.0",
+    "version": "1"
+  },
+  "types": [
+    {
+      "category": "json",
+      "description": "Receives a JSON object and send, to the appropriated port, the value of the child element pointed by key.",
+      "in_ports": [
+        {
+          "data_type": "json-object",
+          "description": "Port to receive the JSON object where key will be located.",
+          "methods": {
+            "process": "json_node_in_process"
+          },
+          "name": "IN",
+          "required": true
+        },
+        {
+          "data_type": "string",
+          "description": "Receives a string packet to override the key set as option.",
+          "methods": {
+            "process": "json_node_get_key_process"
+          },
+          "name": "KEY"
+        }
+      ],
+      "methods": {
+        "open": "json_node_key_open",
+        "close": "json_node_close"
+      },
+      "name": "json/object-get-key",
+      "node_type": {
+        "access": [
+          "base"
+        ],
+        "data_type": "struct json_node_type",
+        "extra_methods": {
+          "process": "json_object_key_process",
+          "get_packet_data": "sol_flow_packet_get_json_object"
+        }
+      },
+      "options": {
+        "members": [
+          {
+            "data_type": "string",
+            "default": "",
+            "description": "The key of the JSON object child to access.",
+            "name": "key"
+          }
+        ],
+        "version": 1
+      },
+      "out_ports": [
+        {
+          "data_type": "int",
+          "description": "The integer value of a given key, if a number",
+          "name": "INT"
+        },
+        {
+          "data_type": "string",
+          "description": "The string value of a given key, if a string",
+          "name": "STRING"
+        },
+        {
+          "data_type": "boolean",
+          "description": "The boolean value of a given key, if a boolean",
+          "name": "BOOLEAN"
+        },
+        {
+          "data_type": "float",
+          "description": "The float value of a given key, if a number",
+          "name": "FLOAT"
+        },
+        {
+          "data_type": "json-object",
+          "description": "The JSON object of a given key, if a JSON object",
+          "name": "OBJECT"
+        },
+        {
+          "data_type": "json-array",
+          "description": "The JSON array of a given key, if a JSON array",
+          "name": "ARRAY"
+        },
+        {
+          "data_type": "empty",
+          "description": "An empty packet if value pointed by given key is null.",
+          "name": "NULL"
+        }
+      ],
+      "private_data_type": "sol_json_node_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/json/json-object-get-key.html"
+    },
+    {
+      "category": "json",
+      "description": "Receives a JSON object and send, to the appropriated port, the value of the child element pointed by path. Path needs to be a valid JSONPath as documented in http://goessner.net/articles/JsonPath/",
+      "in_ports": [
+        {
+          "data_type": "json-object",
+          "description": "Port to receive the JSON object where path will be located.",
+          "methods": {
+            "process": "json_node_in_process"
+          },
+          "name": "IN",
+          "required": true
+        },
+        {
+          "data_type": "string",
+          "description": "Receives a string packet to override the path set as option. Path needs to be a valid JSONPath as documented in http://goessner.net/articles/JsonPath/",
+          "methods": {
+            "process": "json_node_get_key_process"
+          },
+          "name": "PATH"
+        }
+      ],
+      "methods": {
+        "open": "json_node_key_open",
+        "close": "json_node_close"
+      },
+      "name": "json/object-get-path",
+      "node_type": {
+        "access": [
+          "base"
+        ],
+        "data_type": "struct json_node_type",
+        "extra_methods": {
+          "process": "json_object_path_process",
+          "get_packet_data": "sol_flow_packet_get_json_object"
+        }
+      },
+      "options": {
+        "members": [
+          {
+            "data_type": "string",
+            "default": "",
+            "description": "The path of the JSON object child to access. Path needs to be a valid JSONPath as documented in http://goessner.net/articles/JsonPath/",
+            "name": "path"
+          }
+        ],
+        "version": 1
+      },
+      "out_ports": [
+        {
+          "data_type": "int",
+          "description": "The integer value of a given path, if a number",
+          "name": "INT"
+        },
+        {
+          "data_type": "string",
+          "description": "The string value of a given path, if a string",
+          "name": "STRING"
+        },
+        {
+          "data_type": "boolean",
+          "description": "The boolean value of a given path, if a boolean",
+          "name": "BOOLEAN"
+        },
+        {
+          "data_type": "float",
+          "description": "The float value of a given path, if a number",
+          "name": "FLOAT"
+        },
+        {
+          "data_type": "json-object",
+          "description": "The JSON object of a given path, if a JSON object",
+          "name": "OBJECT"
+        },
+        {
+          "data_type": "json-array",
+          "description": "The JSON array of a given path, if a JSON array",
+          "name": "ARRAY"
+        },
+        {
+          "data_type": "empty",
+          "description": "An empty packet if value pointed by given path is null.",
+          "name": "NULL"
+        }
+      ],
+      "private_data_type": "sol_json_node_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/json/json-object-get-path.html"
+    },
+    {
+      "category": "json",
+      "description": "Receives a JSON array and send, to the appropriated port, the value of the child element pointed by path. Path needs to be a valid JSONPath as documented in http://goessner.net/articles/JsonPath/",
+      "in_ports": [
+        {
+          "data_type": "json-array",
+          "description": "Port to receive the JSON array where path will be located.",
+          "methods": {
+            "process": "json_node_in_process"
+          },
+          "name": "IN",
+          "required": true
+        },
+        {
+          "data_type": "string",
+          "description": "Receives a string packet to override the path set as option. Path needs to be a valid JSONPath as documented in http://goessner.net/articles/JsonPath/",
+          "methods": {
+            "process": "json_node_get_key_process"
+          },
+          "name": "PATH"
+        }
+      ],
+      "methods": {
+        "open": "json_node_key_open",
+        "close": "json_node_close"
+      },
+      "name": "json/array-get-path",
+      "node_type": {
+        "access": [
+          "base"
+        ],
+        "data_type": "struct json_node_type",
+        "extra_methods": {
+          "process": "json_object_path_process",
+          "get_packet_data": "sol_flow_packet_get_json_array"
+        }
+      },
+      "options": {
+        "members": [
+          {
+            "data_type": "string",
+            "default": "",
+            "description": "The path of the JSON array child to access. Path needs to be a valid JSONPath as documented in http://goessner.net/articles/JsonPath/",
+            "name": "path"
+          }
+        ],
+        "version": 1
+      },
+      "out_ports": [
+        {
+          "data_type": "int",
+          "description": "The integer value of a given path, if a number",
+          "name": "INT"
+        },
+        {
+          "data_type": "string",
+          "description": "The string value of a given path, if a string",
+          "name": "STRING"
+        },
+        {
+          "data_type": "boolean",
+          "description": "The boolean value of a given path, if a boolean",
+          "name": "BOOLEAN"
+        },
+        {
+          "data_type": "float",
+          "description": "The float value of a given path, if a number",
+          "name": "FLOAT"
+        },
+        {
+          "data_type": "json-object",
+          "description": "The JSON object of a given path, if a JSON object",
+          "name": "OBJECT"
+        },
+        {
+          "data_type": "json-array",
+          "description": "The JSON array of a given path, if a JSON array",
+          "name": "ARRAY"
+        },
+        {
+          "data_type": "empty",
+          "description": "An empty packet if value pointed by given path is null.",
+          "name": "NULL"
+        }
+      ],
+      "private_data_type": "sol_json_node_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/json/json-array-get-path.html"
+    },
+    {
+      "category": "json",
+      "description": "Get the number of children elements in a JSON object.",
+      "in_ports": [
+        {
+          "data_type": "json-object",
+          "description": "Port to receive the JSON object to count children.",
+          "methods": {
+            "process": "json_object_length_process"
+          },
+          "name": "IN",
+          "required": true
+        }
+      ],
+      "name": "json/object-length",
+      "out_ports": [
+        {
+          "data_type": "int",
+          "description": "The number of children from this JSON object",
+          "name": "OUT"
+        }
+      ],
+      "url": "http://solettaproject.org/doc/latest/node_types/json/json-object-length.html"
+    },
+    {
+      "category": "json",
+      "description": "Get all keys contained in this JSON object.",
+      "in_ports": [
+        {
+          "data_type": "json-object",
+          "description": "port to receive the JSON object.",
+          "methods": {
+            "process": "json_object_get_all_keys_process"
+          },
+          "name": "IN",
+          "required": true
+        }
+      ],
+      "name": "json/object-get-all-keys",
+      "out_ports": [
+        {
+          "data_type": "string",
+          "description": "Each key from the JSON object received in IN port. Multiple keys may be emitted for each JSON object",
+          "name": "OUT"
+        },
+        {
+          "data_type": "boolean",
+          "description": "Send true if object is empty, false otherwise.",
+          "name": "EMPTY"
+        }
+      ],
+      "url": "http://solettaproject.org/doc/latest/node_types/json/json-object-get-all-keys.html"
+    },
+    {
+      "category": "json",
+      "description": "Receives a JSON array and send, to the appropriated port, the value of the child element pointed by index.",
+      "in_ports": [
+        {
+          "data_type": "json-array",
+          "description": "Port to receive the JSON array.",
+          "methods": {
+            "process": "json_array_get_index_in_process"
+          },
+          "name": "IN",
+          "required": true
+        },
+        {
+          "data_type": "int",
+          "description": "Receives an int packet to override the index set as option.",
+          "methods": {
+            "process": "json_array_get_index_index_process"
+          },
+          "name": "INDEX"
+        }
+      ],
+      "methods": {
+        "open": "json_array_get_index_open",
+        "close": "json_array_get_index_close"
+      },
+      "name": "json/array-get-at-index",
+      "options": {
+        "members": [
+          {
+            "data_type": "int",
+            "default": -1,
+            "description": "The index of the element to be sent to OUT port. If negative, no value will be sent before setting index using INDEX port",
+            "name": "index"
+          }
+        ],
+        "version": 1
+      },
+      "out_ports": [
+        {
+          "data_type": "int",
+          "description": "The integer value of a given index, if a number",
+          "name": "INT"
+        },
+        {
+          "data_type": "string",
+          "description": "The string value of a given index, if a string",
+          "name": "STRING"
+        },
+        {
+          "data_type": "boolean",
+          "description": "The boolean value of a given index, if a boolean",
+          "name": "BOOLEAN"
+        },
+        {
+          "data_type": "float",
+          "description": "The float value of a given index, if a number",
+          "name": "FLOAT"
+        },
+        {
+          "data_type": "json-object",
+          "description": "The JSON object of a given index, if a JSON object",
+          "name": "OBJECT"
+        },
+        {
+          "data_type": "json-array",
+          "description": "The JSON array of a given index, if a JSON array",
+          "name": "ARRAY"
+        },
+        {
+          "data_type": "empty",
+          "description": "An empty packet if value pointed by given index is null.",
+          "name": "NULL"
+        }
+      ],
+      "private_data_type": "sol_json_array_index",
+      "url": "http://solettaproject.org/doc/latest/node_types/json/json-array-get-at-index.html"
+    },
+    {
+      "category": "json",
+      "description": "Get the number of elements from JSON array.",
+      "in_ports": [
+        {
+          "data_type": "json-array",
+          "description": "Port to receive the JSON array to count elements.",
+          "methods": {
+            "process": "json_array_length_process"
+          },
+          "name": "IN",
+          "required": true
+        }
+      ],
+      "name": "json/array-length",
+      "out_ports": [
+        {
+          "data_type": "int",
+          "description": "The number of elements in this JSON array",
+          "name": "OUT"
+        }
+      ],
+      "url": "http://solettaproject.org/doc/latest/node_types/json/json-array-length.html"
+    },
+    {
+      "category": "json",
+      "description": "Get all elements contained in this JSON array.",
+      "in_ports": [
+        {
+          "data_type": "json-array",
+          "description": "port to receive the JSON array.",
+          "methods": {
+            "process": "json_array_get_all_elements_process"
+          },
+          "name": "IN",
+          "required": true
+        }
+      ],
+      "name": "json/array-get-all-elements",
+      "out_ports": [
+        {
+          "data_type": "int",
+          "description": "Each int value from number elements in the array. Multiple values may be emitted for each JSON array",
+          "name": "INT"
+        },
+        {
+          "data_type": "string",
+          "description": "Each string value from string elements in the array. Multiple values may be emitted for each JSON array",
+          "name": "STRING"
+        },
+        {
+          "data_type": "boolean",
+          "description": "Each boolean value from boolean elements in the array. Multiple values may be emitted for each JSON array",
+          "name": "BOOLEAN"
+        },
+        {
+          "data_type": "float",
+          "description": "Each float value from number elements in the array. Multiple values may be emitted for each JSON array",
+          "name": "FLOAT"
+        },
+        {
+          "data_type": "json-object",
+          "description": "Each JSON object value from JSON object elements in the array. Multiple values may be emitted for each JSON array",
+          "name": "OBJECT"
+        },
+        {
+          "data_type": "json-array",
+          "description": "Each JSON array value from JSON array elements in the array. Multiple values may be emitted for each JSON array",
+          "name": "ARRAY"
+        },
+        {
+          "data_type": "empty",
+          "description": "Empty packets for each null element in array. Multiple values may be emitted for each JSON array",
+          "name": "NULL"
+        },
+        {
+          "data_type": "boolean",
+          "description": "Send true if array is empty, false otherwise.",
+          "name": "EMPTY"
+        }
+      ],
+      "url": "http://solettaproject.org/doc/latest/node_types/json/json-array-get-all-elements.html"
+    },
+    {
+     "category": "json",
+      "description": "Create a JSON array using data from input ports. JSON array is only created and sent to OUT port when CREATE port is triggered.",
+      "in_ports": [
+        {
+          "data_type": "int",
+          "description": "A integer number to append as last element",
+          "methods": {
+            "process": "json_array_in_process"
+          },
+          "name": "INT"
+        },
+        {
+          "data_type": "string",
+          "description": "A string to append as last element",
+          "methods": {
+            "process": "json_array_in_process"
+          },
+          "name": "STRING"
+        },
+        {
+          "data_type": "boolean",
+          "description": "A boolean value to append as last element",
+          "methods": {
+            "process": "json_array_in_process"
+          },
+          "name": "BOOLEAN"
+        },
+        {
+          "data_type": "float",
+          "description": "A float number to append as last element",
+          "methods": {
+            "process": "json_array_in_process"
+          },
+          "name": "FLOAT"
+        },
+        {
+          "data_type": "json-object",
+          "description": "A JSON object to append as last element",
+          "methods": {
+            "process": "json_array_in_process"
+          },
+          "name": "OBJECT"
+        },
+        {
+          "data_type": "json-array",
+          "description": "A JSON array to append as last element",
+          "methods": {
+            "process": "json_array_in_process"
+          },
+          "name": "ARRAY"
+        },
+        {
+          "data_type": "any",
+          "description": "A null element will be appended each time a packet is received in this port",
+          "methods": {
+            "process": "json_array_in_process"
+          },
+          "name": "NULL"
+        },
+        {
+          "data_type": "any",
+          "description": "Clear the JSON array.",
+          "methods": {
+            "process": "json_clear_process"
+          },
+          "name": "CLEAR"
+        },
+        {
+          "data_type": "any",
+          "description": "Create a JSON array with data received in input ports and send it to OUT port.",
+          "methods": {
+            "process": "json_node_create_process"
+          },
+          "name": "CREATE"
+        }
+      ],
+      "methods": {
+        "open": "json_array_create_open",
+        "close": "json_create_close"
+      },
+      "name": "json/create-array",
+      "node_type": {
+        "access": [
+          "base"
+        ],
+        "data_type": "struct json_node_create_type",
+        "extra_methods": {
+          "send_json_packet": "sol_flow_send_json_array_packet"
+        }
+      },
+      "out_ports": [
+        {
+          "data_type": "json-array",
+          "description": "A JSON array created and sent by CREATE trigger.",
+          "name": "OUT"
+        },
+        {
+          "data_type": "int",
+          "description": "Number of elements added to this array so far.",
+          "name": "COUNT"
+        }
+      ],
+      "private_data_type": "json_element",
+      "url": "http://solettaproject.org/doc/latest/node_types/json/json-create-array.html"
+    },
+    {
+      "category": "json",
+      "description": "Create a JSON object using data from input ports. JSON object is only created and sent to OUT port when CREATE port is triggered.",
+      "in_ports": [
+        {
+          "data_type": "composed:string,int",
+          "description": "A string with the key and the int number value",
+          "methods": {
+            "process": "json_object_in_process"
+          },
+          "name": "INT"
+        },
+        {
+          "data_type": "composed:string,string",
+          "description": "A string with the key and the string value",
+          "methods": {
+            "process": "json_object_in_process"
+          },
+          "name": "STRING"
+        },
+        {
+          "data_type": "composed:string,boolean",
+          "description": "A string with the key and the boolean value",
+          "methods": {
+            "process": "json_object_in_process"
+          },
+          "name": "BOOLEAN"
+        },
+        {
+          "data_type": "composed:string,float",
+          "description": "A string with the key and the float number value",
+          "methods": {
+            "process": "json_object_in_process"
+          },
+          "name": "FLOAT"
+        },
+        {
+          "data_type": "composed:string,json-object",
+          "description": "A string with the key and the JSON array value",
+          "methods": {
+            "process": "json_object_in_process"
+          },
+          "name": "OBJECT"
+        },
+        {
+          "data_type": "composed:string,json-array",
+          "description": "A string with the key and the JSON object value",
+          "methods": {
+            "process": "json_object_in_process"
+          },
+          "name": "ARRAY"
+        },
+        {
+          "data_type": "string",
+          "description": "A string with the key of null value",
+          "methods": {
+            "process": "json_object_null_process"
+          },
+          "name": "NULL"
+        },
+        {
+          "data_type": "any",
+          "description": "Clear the JSON object",
+          "methods": {
+            "process": "json_clear_process"
+          },
+          "name": "CLEAR"
+        },
+        {
+          "data_type": "any",
+          "description": "Create a JSON object with data received in input ports and send it to OUT port.",
+          "methods": {
+            "process": "json_node_create_process"
+          },
+          "name": "CREATE"
+        }
+      ],
+      "methods": {
+        "open": "json_object_create_open",
+        "close": "json_create_close"
+      },
+      "name": "json/create-object",
+      "node_type": {
+        "access": [
+          "base"
+        ],
+        "data_type": "struct json_node_create_type",
+        "extra_methods": {
+          "send_json_packet": "sol_flow_send_json_object_packet",
+          "add_new_element": "json_object_add_new_element"
+        }
+      },
+      "out_ports": [
+        {
+          "data_type": "json-object",
+          "description": "A JSON object created and sent by CREATE trigger.",
+          "name": "OUT"
+        }
+      ],
+      "private_data_type": "json_element",
+      "url": "http://solettaproject.org/doc/latest/node_types/json/json-create-object.html"
+    },
+    {
+     "category": "json",
+      "description": "Create a JSON array using data from input ports. JSON array is only created and sent to OUT port when CREATE port is triggered. Path for inputs needs to be a valid JSONPath as documented in http://goessner.net/articles/JsonPath/",
+      "in_ports": [
+        {
+          "data_type": "composed:string,int",
+          "description": "A string with the JSONPath and the int number value. Path for inputs needs to be a valid JSONPath as documented in http://goessner.net/articles/JsonPath/",
+          "methods": {
+            "process": "json_object_in_process"
+          },
+          "name": "INT"
+        },
+        {
+          "data_type": "composed:string,string",
+          "description": "A string with the JSONPath and the string value. Path for inputs needs to be a valid JSONPath as documented in http://goessner.net/articles/JsonPath/",
+          "methods": {
+            "process": "json_object_in_process"
+          },
+          "name": "STRING"
+        },
+        {
+          "data_type": "composed:string,boolean",
+          "description": "A string with the JSONPath and the boolean value. Path for inputs needs to be a valid JSONPath as documented in http://goessner.net/articles/JsonPath/",
+          "methods": {
+            "process": "json_object_in_process"
+          },
+          "name": "BOOLEAN"
+        },
+        {
+          "data_type": "composed:string,float",
+          "description": "A string with the JSONPath and the float number value. Path for inputs needs to be a valid JSONPath as documented in http://goessner.net/articles/JsonPath/",
+          "methods": {
+            "process": "json_object_in_process"
+          },
+          "name": "FLOAT"
+        },
+        {
+          "data_type": "composed:string,json-object",
+          "description": "A string with the JSONPath and the JSON array value. Path for inputs needs to be a valid JSONPath as documented in http://goessner.net/articles/JsonPath/",
+          "methods": {
+            "process": "json_object_in_process"
+          },
+          "name": "OBJECT"
+        },
+        {
+          "data_type": "composed:string,json-array",
+          "description": "A string with the JSONPath and the JSON object value. Path for inputs needs to be a valid JSONPath as documented in http://goessner.net/articles/JsonPath/",
+          "methods": {
+            "process": "json_object_in_process"
+          },
+          "name": "ARRAY"
+        },
+        {
+          "data_type": "string",
+          "description": "A string with the JSONPath of null value. Path for inputs needs to be a valid JSONPath as documented in http://goessner.net/articles/JsonPath/",
+          "methods": {
+            "process": "json_object_null_process"
+          },
+          "name": "NULL"
+        },
+        {
+          "data_type": "any",
+          "description": "Clear the JSON object",
+          "methods": {
+            "process": "json_clear_process"
+          },
+          "name": "CLEAR"
+        },
+        {
+          "data_type": "any",
+          "description": "Create a JSON object with data received in input ports and send it to OUT port.",
+          "methods": {
+            "process": "json_node_create_process"
+          },
+          "name": "CREATE"
+        }
+      ],
+      "methods": {
+        "open": "json_array_create_open",
+        "close": "json_create_close"
+      },
+      "name": "json/create-array-path",
+      "node_type": {
+        "access": [
+          "base"
+        ],
+        "data_type": "struct json_node_create_type",
+        "extra_methods": {
+          "send_json_packet": "sol_flow_send_json_array_packet",
+          "add_new_element": "json_path_add_new_element"
+        }
+      },
+      "out_ports": [
+        {
+          "data_type": "json-array",
+          "description": "A JSON array created and sent by CREATE trigger.",
+          "name": "OUT"
+        }
+      ],
+      "private_data_type": "json_element",
+      "url": "http://solettaproject.org/doc/latest/node_types/json/json-create-array-path.html"
+    },
+    {
+      "category": "json",
+      "description": "Create a JSON object using data from input ports. JSON object is only created and sent to OUT port when CREATE port is triggered. Path for inputs needs to be a valid JSONPath as documented in http://goessner.net/articles/JsonPath/",
+      "in_ports": [
+        {
+          "data_type": "composed:string,int",
+          "description": "A string with the JSONPath and the int number value. Path for inputs needs to be a valid JSONPath as documented in http://goessner.net/articles/JsonPath/",
+          "methods": {
+            "process": "json_object_in_process"
+          },
+          "name": "INT"
+        },
+        {
+          "data_type": "composed:string,string",
+          "description": "A string with the JSONPath and the string value. Path for inputs needs to be a valid JSONPath as documented in http://goessner.net/articles/JsonPath/",
+          "methods": {
+            "process": "json_object_in_process"
+          },
+          "name": "STRING"
+        },
+        {
+          "data_type": "composed:string,boolean",
+          "description": "A string with the JSONPath and the boolean value. Path for inputs needs to be a valid JSONPath as documented in http://goessner.net/articles/JsonPath/",
+          "methods": {
+            "process": "json_object_in_process"
+          },
+          "name": "BOOLEAN"
+        },
+        {
+          "data_type": "composed:string,float",
+          "description": "A string with the JSONPath and the float number value. Path for inputs needs to be a valid JSONPath as documented in http://goessner.net/articles/JsonPath/",
+          "methods": {
+            "process": "json_object_in_process"
+          },
+          "name": "FLOAT"
+        },
+        {
+          "data_type": "composed:string,json-object",
+          "description": "A string with the JSONPath and the JSON array value. Path for inputs needs to be a valid JSONPath as documented in http://goessner.net/articles/JsonPath/",
+          "methods": {
+            "process": "json_object_in_process"
+          },
+          "name": "OBJECT"
+        },
+        {
+          "data_type": "composed:string,json-array",
+          "description": "A string with the JSONPath and the JSON object value. Path for inputs needs to be a valid JSONPath as documented in http://goessner.net/articles/JsonPath/",
+          "methods": {
+            "process": "json_object_in_process"
+          },
+          "name": "ARRAY"
+        },
+        {
+          "data_type": "string",
+          "description": "A string with the JSONPath of null value. Path for inputs needs to be a valid JSONPath as documented in http://goessner.net/articles/JsonPath/",
+          "methods": {
+            "process": "json_object_null_process"
+          },
+          "name": "NULL"
+        },
+        {
+          "data_type": "any",
+          "description": "Clear the JSON object",
+          "methods": {
+            "process": "json_clear_process"
+          },
+          "name": "CLEAR"
+        },
+        {
+          "data_type": "any",
+          "description": "Create a JSON object with data received in input ports and send it to OUT port.",
+          "methods": {
+            "process": "json_node_create_process"
+          },
+          "name": "CREATE"
+        }
+      ],
+      "methods": {
+        "open": "json_object_create_open",
+        "close": "json_create_close"
+      },
+      "name": "json/create-object-path",
+      "node_type": {
+        "access": [
+          "base"
+        ],
+        "data_type": "struct json_node_create_type",
+        "extra_methods": {
+          "send_json_packet": "sol_flow_send_json_object_packet",
+          "add_new_element": "json_path_add_new_element"
+        }
+      },
+      "out_ports": [
+        {
+          "data_type": "json-object",
+          "description": "A JSON object created and sent by CREATE trigger.",
+          "name": "OUT"
+        }
+      ],
+      "private_data_type": "json_element",
+      "url": "http://solettaproject.org/doc/latest/node_types/json/json-create-object-path.html"
+    }
+  ]
+}

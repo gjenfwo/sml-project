@@ -1,0 +1,42 @@
+{
+  "id": "http://openinterconnect.org/schemas/oic.r.colour.chroma#",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description" : "Copyright (c) 2016 Open Interconnect Consortium, Inc. All rights reserved.",
+  "title": "Colour Chroma",
+  "definitions": {
+    "oic.r.colour.chroma": {
+      "type": "object",
+      "properties": {
+        "hue":             {
+          "type": "integer",
+          "description": "Hue as defined by the CIECAM02 model definition"
+        },
+        "saturation":      {
+          "type": "integer",
+          "description": "Saturation as defined by the CIECAM02 model definition"
+        },
+        "csc": {
+          "type": "array",
+          "description": "X and Y coordinates of the colour in CIE colour space",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "number"
+          }
+        },
+        "ct": {
+          "type": "integer",
+          "description": "Mired colour temperarture"
+        }
+      }
+    }
+  },
+  "type": "object",
+  "allOf": [
+    {"$ref": "oic.core.json#/definitions/oic.core"},
+    {"$ref": "oic.baseResource.json#/definitions/oic.r.baseresource"},
+    {"$ref": "#/definitions/oic.r.colour.chroma"}
+  ],
+  "required": [ "hue", "saturation", "csc" ]
+
+}

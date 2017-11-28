@@ -1,0 +1,43 @@
+{
+ "$schema": "http://solettaproject.github.io/soletta/schemas/config.schema",
+ "nodetypes": [
+  {
+   "name": "BtnFuzzy",
+   "type": "gtk/pushbutton"
+  },
+  {
+   "name": "BtnAnn",
+   "type": "gtk/pushbutton"
+  },
+  {
+   "name": "EngineFuzzy",
+   "type": "gtk/led"
+  },
+  {
+   "name": "EngineAnn",
+   "type": "gtk/led"
+  },
+  {
+   "name": "FlowerPowerStatusLed",
+   "type": "gtk/led"
+  },
+  {
+   "name": "SmlAnn",
+   "type": "machine-learning/neural-network-sync",
+    "options": {
+        "stabilization_hits": 0,
+        "initial_required_observations": 20,
+        "data_dir": "/tmp/ann_data/"
+   }
+  },
+  {
+   "name": "SmlFuzzy",
+    "type": "machine-learning/fuzzy-sync",
+    "options": {
+        "stabilization_hits": 0,
+        "data_dir": "/tmp/fuzzy_data/",
+        "number_of_terms": 30
+   }
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+# This file is part of the Soletta Project
+#
+# Copyright (C) 2015 Intel Corporation. All rights reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# This module is responsible for leaving the engine on for X seconds,
+# where X is an input.
+
+INPORT=ClassifyFloat.IN:SECONDS
+OUTPORT=IsEngineOn.OUT:OUT
+
+ClassifyFloat(float/classify) NORMAL -> IN _(converter/float-to-int) OUT -> IN Filter(int/filter:min=0, max=30)
+
+MilliSeconds(constant/int:value=1000) OUT -> OPERAND[0] ToMilliSeconds(int/multiplication)
+Filter OUT -> OPERAND[1] ToMilliSeconds OUT -> INTERVAL Timer(timer:interval=0)
+
+Filter OUT -> IN ConverterRange(converter/int-to-boolean:true_range=min:1|max:INT32_MAX) OUT -> ENABLED Timer
+
+Timer OUT -> IN ConverterEmpty(converter/empty-to-boolean:output_value=false) OUT -> ENABLED Timer
+
+ConverterRange OUT -> IN[0] IsEngineOn(boolean/and)
+
+ConverterEmpty OUT -> IN[0] IsEngineOn
+
+_(constant/boolean:value=true) OUT -> IN[1] IsEngineOn

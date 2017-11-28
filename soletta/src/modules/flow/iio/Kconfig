@@ -1,0 +1,4 @@
+config FLOW_NODE_TYPE_IIO
+	tristate "Node type: iio"
+	depends on USE_IIO
+	default m

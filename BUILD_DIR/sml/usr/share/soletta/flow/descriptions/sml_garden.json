@@ -1,0 +1,59 @@
+{
+ "sml-garden": [
+  {
+   "author": "Intel Corporation",
+   "category": "sml-garden",
+   "description": "Tag output variables.",
+   "header_file": "sml_garden_gen.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "custom:PACKET_TYPE_FLOWER_POWER",
+     "description": "Packet with measures (sunlight, temperature, soil moisture and fertilizer) related to a plant.",
+     "name": "FLOWER_POWER_PACKET",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "boolean",
+     "description": "Flag that indicates if the engine is on or off.",
+     "name": "ENGINE_STATE",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 2,
+     "data_type": "int",
+     "description": "The current timeblock of the day.",
+     "name": "TIMEBLOCK",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "sml-garden/message-constructor",
+   "options_symbol": "sol_flow_node_type_sml_garden_message_constructor_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "custom:PACKET_TYPE_SML_DATA",
+     "description": "A message used to feed SML process port that contains the current timeblock, how many seconds the engine was on and plant data.",
+     "name": "OUT",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "custom:PACKET_TYPE_SML_DATA",
+     "description": "A message used to feed SML predict port that contains the current timeblock, how many seconds the engine was on and plant data.",
+     "name": "OUT_PREDICT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_SML_GARDEN_MESSAGE_CONSTRUCTOR",
+   "version": "1"
+  }
+ ]
+}

@@ -1,0 +1,43 @@
+#!/usr/bin/env sol-fbp-runner
+
+# This file is part of the Soletta (TM) Project
+#
+# Copyright (C) 2015 Intel Corporation. All rights reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+MkTime(timestamp/make-time)
+Time(timestamp/time)
+Delta(timestamp/delta)
+Range(int/inrange:range=min:-1|max:1)
+
+Year(wallclock/year:send_initial_packet=true)
+Month(wallclock/month:send_initial_packet=true)
+Day(wallclock/monthday:send_initial_packet=true)
+Hour(wallclock/hour:send_initial_packet=true)
+Minute(wallclock/minute:send_initial_packet=true)
+Second(wallclock/second:send_initial_packet=true)
+NanoSecond(constant/int:value=0)
+
+Year OUT -> YEAR MkTime
+Month OUT -> MONTH MkTime
+Day OUT -> MONTH_DAY MkTime
+Hour OUT -> HOUR MkTime
+Minute OUT -> MINUTE MkTime
+Second OUT -> SECOND MkTime
+NanoSecond OUT -> NANO_SECOND MkTime
+
+Time OUT -> IN[0] Delta
+MkTime OUT -> IN[1] Delta
+
+Delta SECONDS -> IN Range OUT -> RESULT result_wallclock(test/result)

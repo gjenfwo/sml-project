@@ -1,0 +1,337 @@
+{
+ "constant": [
+  {
+   "author": "Intel Corporation",
+   "category": "constant",
+   "description": "Send an initial packet with a constant value set on options.",
+   "header_file": "sol-flow/constant.h",
+   "license": "Apache-2.0",
+   "name": "constant/boolean",
+   "options": {
+    "members": [
+     {
+      "data_type": "boolean",
+      "description": "Value of constant.",
+      "name": "value",
+      "required": true
+     }
+    ],
+    "required": true,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_constant_boolean_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "boolean",
+     "description": "Constant value, sent only once, when connected to a node.",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_CONSTANT_BOOLEAN",
+   "url": "http://solettaproject.org/doc/latest/node_types/constant/boolean.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "constant",
+   "description": "Send an initial packet with a constant value set on options.",
+   "header_file": "sol-flow/constant.h",
+   "license": "Apache-2.0",
+   "name": "constant/byte",
+   "options": {
+    "members": [
+     {
+      "data_type": "byte",
+      "description": "Value of constant.",
+      "name": "value",
+      "required": true
+     }
+    ],
+    "required": true,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_constant_byte_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "byte",
+     "description": "Constant value, sent only once, when connected to a node.",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_CONSTANT_BYTE",
+   "url": "http://solettaproject.org/doc/latest/node_types/constant/byte.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "constant",
+   "description": "Send an initial packet with a constant value set on options.",
+   "header_file": "sol-flow/constant.h",
+   "license": "Apache-2.0",
+   "name": "constant/float",
+   "options": {
+    "members": [
+     {
+      "data_type": "float",
+      "default": 0,
+      "description": "Value of constant.",
+      "name": "value",
+      "required": false
+     },
+     {
+      "data_type": "drange-spec",
+      "default": {
+       "max": "DBL_MAX",
+       "min": "-DBL_MAX",
+       "step": "DBL_MIN"
+      },
+      "description": "Range (min / max) and step of constant.",
+      "name": "value_spec",
+      "required": false
+     }
+    ],
+    "required": false,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_constant_float_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "float",
+     "description": "Constant value, sent only once, when connected to a node.",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_CONSTANT_FLOAT",
+   "url": "http://solettaproject.org/doc/latest/node_types/constant/drange.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "constant",
+   "description": "Send an initial empty packet.",
+   "header_file": "sol-flow/constant.h",
+   "license": "Apache-2.0",
+   "name": "constant/empty",
+   "options_symbol": "sol_flow_node_type_constant_empty_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "empty",
+     "description": "A single pulse sent when connected to a node.",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_CONSTANT_EMPTY",
+   "url": "http://solettaproject.org/doc/latest/node_types/constant/empty.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "constant",
+   "description": "Send an initial packet with a constant value set on options.",
+   "header_file": "sol-flow/constant.h",
+   "license": "Apache-2.0",
+   "name": "constant/int",
+   "options": {
+    "members": [
+     {
+      "data_type": "int",
+      "default": 0,
+      "description": "Value of constant.",
+      "name": "value",
+      "required": false
+     },
+     {
+      "data_type": "irange-spec",
+      "default": {
+       "max": "INT32_MAX",
+       "min": "INT32_MIN",
+       "step": 1
+      },
+      "description": "Range (min / max) and step of constant.",
+      "name": "value_spec",
+      "required": false
+     }
+    ],
+    "required": false,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_constant_int_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "int",
+     "description": "Constant value, sent only once, when connected to a node.",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_CONSTANT_INT",
+   "url": "http://solettaproject.org/doc/latest/node_types/constant/irange.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "constant",
+   "description": "Send an initial packet with a constant value set on options.",
+   "header_file": "sol-flow/constant.h",
+   "license": "Apache-2.0",
+   "name": "constant/rgb",
+   "options": {
+    "members": [
+     {
+      "data_type": "rgb",
+      "description": "Value of constant.",
+      "name": "value",
+      "required": true
+     }
+    ],
+    "required": true,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_constant_rgb_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "rgb",
+     "description": "Constant value, sent only once, when connected to a node.",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_CONSTANT_RGB",
+   "url": "http://solettaproject.org/doc/latest/node_types/constant/rgb.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "constant",
+   "description": "Send an initial packet with a constant value set on options.",
+   "header_file": "sol-flow/constant.h",
+   "license": "Apache-2.0",
+   "name": "constant/direction-vector",
+   "options": {
+    "members": [
+     {
+      "data_type": "direction-vector",
+      "description": "Value of constant.",
+      "name": "value",
+      "required": true
+     }
+    ],
+    "required": true,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_constant_direction_vector_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "direction-vector",
+     "description": "Constant value, sent only once, when connected to a node.",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_CONSTANT_DIRECTION_VECTOR",
+   "url": "http://solettaproject.org/doc/latest/node_types/constant/direction-vector.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "constant",
+   "description": "Send an initial packet with a string set on options.",
+   "header_file": "sol-flow/constant.h",
+   "license": "Apache-2.0",
+   "name": "constant/string",
+   "options": {
+    "members": [
+     {
+      "data_type": "string",
+      "description": "String to be sent when node is connected.",
+      "name": "value",
+      "required": true
+     }
+    ],
+    "required": true,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_constant_string_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "Constant value, sent only once, when connected to a node.",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_CONSTANT_STRING",
+   "url": "http://solettaproject.org/doc/latest/node_types/constant/string.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "constant",
+   "description": "Send an initial location packet with a constant value set via options.",
+   "header_file": "sol-flow/constant.h",
+   "license": "Apache-2.0",
+   "name": "constant/location",
+   "options": {
+    "members": [
+     {
+      "data_type": "float",
+      "default": 0,
+      "description": "Latitude coordinate",
+      "name": "latitude",
+      "required": false
+     },
+     {
+      "data_type": "float",
+      "default": 0,
+      "description": "Longitude coordinate",
+      "name": "longitude",
+      "required": false
+     },
+     {
+      "data_type": "float",
+      "default": 0,
+      "description": "Altitude coordinate",
+      "name": "altitude",
+      "required": false
+     }
+    ],
+    "required": false,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_constant_location_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "location",
+     "description": "Constant value, sent only once, when connected to a node.",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_CONSTANT_LOCATION",
+   "url": "http://solettaproject.org/doc/latest/node_types/constant/location.html",
+   "version": "1"
+  }
+ ]
+}

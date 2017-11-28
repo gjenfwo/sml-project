@@ -1,0 +1,47 @@
+# This file is part of the Soletta (TM) Project
+#
+# Copyright (C) 2015 Intel Corporation. All rights reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+OPTION=Bool.value:bool-ahoi
+OPTION=Int.value:MyInt
+OPTION=Float.value:Float
+OPTION=String.value:AString
+OPTION=Byte.value:Byte
+OPTION=DirectionVector.value:Direction
+
+Int(constant/int:value=0) OUT -> IN[0] IntEqual(int/equal) OUT -> RESULT TestInt(test/result)
+_(constant/int:value=20) OUT -> IN[1] IntEqual
+
+Float(constant/float:value=0.0) OUT -> IN[0] FloatEqual(float/equal) OUT -> RESULT TestFloat(test/result)
+_(constant/float:value=2.4) OUT -> IN[1] FloatEqual
+
+String(constant/string:value=null) OUT -> IN[0] StrEqual(string/compare) EQUAL -> RESULT TestString(test/result)
+_(constant/string:value="Soletta is awesome") OUT -> IN[1] StrEqual
+
+Byte(constant/byte:value=0x00) OUT -> IN[0] ByteEqual(byte/equal) OUT -> RESULT TestByte(test/result)
+_(constant/byte:value=0x02) OUT -> IN[1] ByteEqual
+
+DirectionVector(constant/direction-vector:value=0|199|22) OUT -> IN ConverterDirection(converter/direction-vector-to-int)
+
+ConverterDirection X -> IN[0] DirXEqual(int/equal) OUT -> RESULT TestDirectionVectorX(test/result)
+_(constant/int:value=1) OUT -> IN[1] DirXEqual
+
+ConverterDirection Y -> IN[0] DirYEqual(int/equal) OUT -> RESULT TestDirectionVectorY(test/result)
+_(constant/int:value=2) OUT -> IN[1] DirYEqual
+
+ConverterDirection Z -> IN[0] DirZEqual(int/equal) OUT -> RESULT TestDirectionVectorZ(test/result)
+_(constant/int:value=3) OUT -> IN[1] DirZEqual
+
+Bool(constant/boolean:value=false) OUT -> RESULT TestBool(test/result)

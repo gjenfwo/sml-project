@@ -1,0 +1,49 @@
+{
+ "network": [
+  {
+   "author": "Intel Corporation",
+   "category": "output/sw",
+   "description": "Provides boolean packets after connect or disconnect from network",
+   "header_file": "sol-flow/network.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "Which interface should be monitored (it MUST be a regexp - so if you want a exact match with a name, use '^name$')",
+     "name": "ADDRESS",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "network/boolean",
+   "options": {
+    "members": [
+     {
+      "data_type": "string",
+      "default": null,
+      "description": "Which interface should be monitored (it MUST be a regexp - so if you want a exact match with a name, use '^name$')",
+      "name": "address",
+      "required": false
+     }
+    ],
+    "required": false,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_network_boolean_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "boolean",
+     "description": "A boolean packet when network changes. If it's connect true, otherwise false.",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_NETWORK_BOOLEAN",
+   "url": "http://solettaproject.org/doc/latest/components/network.html",
+   "version": "1"
+  }
+ ]
+}

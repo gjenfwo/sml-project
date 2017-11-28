@@ -1,0 +1,45 @@
+# This file is part of the Soletta (TM) Project
+#
+# Copyright (C) 2015 Intel Corporation. All rights reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+HelloWorld(constant/string:value="Hello World")
+PrefixForSpaceSplit(constant/string:value="Hello")
+SuffixForMaxSplit(constant/string:value="d d d d d")
+SuffixForOtherSplit(constant/string:value="rld")
+Len(constant/int:value=2)
+LongString(constant/string:value="H d d d d d")
+
+HelloWorld OUT -> IN split(string/split)
+split OUT -> IN[0] cmp(string/compare)
+PrefixForSpaceSplit OUT -> IN[1] cmp
+cmp EQUAL -> RESULT split_first_word(test/result)
+
+HelloWorld OUT -> IN split2(string/split:separator="Wo",index=1)
+split2 OUT -> IN[0] cmp2(string/compare)
+SuffixForOtherSplit OUT -> IN[1] cmp2
+cmp2 EQUAL -> RESULT split_second_word(test/result)
+
+split2 LENGTH -> IN[0] equal(int/equal)
+Len OUT -> IN[1] equal
+equal OUT -> RESULT split_length(test/result)
+
+LongString OUT -> IN split3(string/split:max_split=1,index=1)
+split3 OUT -> IN[0] cmp3(string/compare)
+SuffixForMaxSplit OUT -> IN[1] cmp3
+cmp3 EQUAL -> RESULT split_with_max(test/result)
+
+split3 LENGTH -> IN[0] max_equal(int/equal)
+Len OUT -> IN[1] max_equal
+max_equal OUT -> RESULT split_max_length(test/result)

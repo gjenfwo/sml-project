@@ -1,0 +1,142 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ANN_ENGINE	example_air_conditioner.c	40;"	d	file:
+ANN_ENGINE	example_foosball.c	38;"	d	file:
+ANN_ENGINE	example_sensor_file.c	41;"	d	file:
+ANN_ENGINE	fuzzy_test.cpp	31;"	d	file:
+ANN_ENGINE	test_memory.c	29;"	d	file:
+Air_Conditioner_Controller	example_air_conditioner.c	/^} Air_Conditioner_Controller;$/;"	t	typeref:struct:__anon2	file:
+COLD	example_air_conditioner.c	/^    COLD = 0,$/;"	e	enum:__anon1	file:
+Context	example_foosball.c	/^} Context;$/;"	t	typeref:struct:__anon5	file:
+Context	example_sensor_file.c	/^} Context;$/;"	t	typeref:struct:__anon4	file:
+Context	fuzzy_test.cpp	/^} Context;$/;"	t	typeref:struct:__anon6	file:
+ERROR_FREQUENCY	example_air_conditioner.c	35;"	d	file:
+ERROR_START	example_air_conditioner.c	34;"	d	file:
+FUZZY_ENGINE	example_air_conditioner.c	39;"	d	file:
+FUZZY_ENGINE	example_foosball.c	37;"	d	file:
+FUZZY_ENGINE	example_sensor_file.c	40;"	d	file:
+FUZZY_ENGINE	fuzzy_test.cpp	30;"	d	file:
+FUZZY_ENGINE	test_memory.c	28;"	d	file:
+HOT	example_air_conditioner.c	/^    HOT$/;"	e	enum:__anon1	file:
+INITIAL_REQUIRED_OBS	example_air_conditioner.c	38;"	d	file:
+INITIAL_REQUIRED_OBS	example_sensor_file.c	39;"	d	file:
+LINE_LEN	example_sensor_file.c	38;"	d	file:
+LINE_SIZE	example_foosball.c	35;"	d	file:
+MIN_PLAYERS	example_foosball.c	39;"	d	file:
+READ_TIMEOUT	example_air_conditioner.c	36;"	d	file:
+REQUIRED_OBS	example_foosball.c	36;"	d	file:
+STABILIZATION_HITS	example_air_conditioner.c	37;"	d	file:
+STRLEN	test_memory.c	27;"	d	file:
+Stat	example_sensor_file.c	/^} Stat;$/;"	t	typeref:struct:__anon3	file:
+THRESHOLD	example_sensor_file.c	37;"	d	file:
+Temperature	example_air_conditioner.c	/^} Temperature;$/;"	t	typeref:enum:__anon1	file:
+VAR_POWER	example_air_conditioner.c	33;"	d	file:
+VAR_PRESENCE	example_air_conditioner.c	32;"	d	file:
+VAR_TEMPERATURE	example_air_conditioner.c	31;"	d	file:
+WARM	example_air_conditioner.c	/^    WARM,$/;"	e	enum:__anon1	file:
+WINNER1	example_foosball.c	41;"	d	file:
+WINNER2	example_foosball.c	42;"	d	file:
+WINNER_NONE	example_foosball.c	40;"	d	file:
+_add_terms	test_memory.c	/^_add_terms(struct sml_object *sml, struct sml_variable *var, char *strbuf,$/;"	f	file:
+_calculate_power	example_air_conditioner.c	/^_calculate_power(Air_Conditioner_Controller *acc)$/;"	f	file:
+_clear_context	example_sensor_file.c	/^_clear_context(Context *ctx)$/;"	f	file:
+_create_input	example_foosball.c	/^_create_input(Context *ctx, const char *name)$/;"	f	file:
+_do_prediction	example_foosball.c	/^_do_prediction(Context *ctx)$/;"	f	file:
+_double_rand	fuzzy_test.cpp	/^double _double_rand(double min, double max) {$/;"	f
+_engine_initialize	fuzzy_test.cpp	/^_engine_initialize(Context *ctx)$/;"	f	file:
+_find_player_by_name	example_foosball.c	/^_find_player_by_name(Context *ctx, const char *name, uint16_t *number)$/;"	f	file:
+_free_players	example_foosball.c	/^_free_players(char **players, uint16_t num_players)$/;"	f	file:
+_generate_temperature	example_air_conditioner.c	/^_generate_temperature(Temperature t)$/;"	f	file:
+_initialize_acc	example_air_conditioner.c	/^_initialize_acc(Air_Conditioner_Controller *acc)$/;"	f	file:
+_initialize_context	example_sensor_file.c	/^_initialize_context(Context *ctx, struct sml_object *sml)$/;"	f	file:
+_initialize_sml	example_foosball.c	/^_initialize_sml(Context *ctx)$/;"	f	file:
+_number_of_states	fuzzy_test.cpp	/^_number_of_states (Context *ctx)$/;"	f	file:
+_output_state_changed_cb	example_air_conditioner.c	/^_output_state_changed_cb(struct sml_object *sml,$/;"	f	file:
+_output_state_changed_cb	example_sensor_file.c	/^_output_state_changed_cb(struct sml_object *sml,$/;"	f	file:
+_output_state_changed_cb_false_negative	fuzzy_test.cpp	/^_output_state_changed_cb_false_negative (struct sml_object *sml, struct sml_variables_list *changed, void *data)$/;"	f	file:
+_output_state_changed_cb_test_false_positive	fuzzy_test.cpp	/^_output_state_changed_cb_test_false_positive (struct sml_object *sml, struct sml_variables_list *changed, void *data)$/;"	f	file:
+_print_results	example_sensor_file.c	/^_print_results(Context *ctx, struct sml_object *sml)$/;"	f	file:
+_process_state	example_sensor_file.c	/^_process_state(struct sml_object *sml, Context *ctx)$/;"	f	file:
+_read_config	example_foosball.c	/^_read_config(Context *ctx, const char *filename)$/;"	f	file:
+_read_data	example_foosball.c	/^_read_data(Context *ctx)$/;"	f	file:
+_read_line	example_sensor_file.c	/^_read_line(FILE *f, char *line, size_t len)$/;"	f	file:
+_read_next_line	example_foosball.c	/^_read_next_line(char *line, int len, FILE *f)$/;"	f	file:
+_read_sensor_values	example_air_conditioner.c	/^_read_sensor_values(Air_Conditioner_Controller *acc, float *temp,$/;"	f	file:
+_read_state_cb	example_air_conditioner.c	/^_read_state_cb(struct sml_object *sml, void *data)$/;"	f	file:
+_read_state_cb	example_foosball.c	/^_read_state_cb(struct sml_object *sml, void *data)$/;"	f	file:
+_read_state_cb	example_sensor_file.c	/^_read_state_cb(struct sml_object *sml, void *data)$/;"	f	file:
+_read_state_cb	test_memory.c	/^_read_state_cb(struct sml_object *sml, void *data)$/;"	f	file:
+_search_variable	fuzzy_test.cpp	/^_search_variable(Context *ctx, const char *id)$/;"	f	file:
+_set_list_values	test_memory.c	/^_set_list_values(struct sml_object *sml, struct sml_variables_list *list)$/;"	f	file:
+_sml_new	example_air_conditioner.c	/^_sml_new(int id)$/;"	f	file:
+_sml_new	example_foosball.c	/^_sml_new(int id)$/;"	f	file:
+_sml_new	example_sensor_file.c	/^_sml_new(int id)$/;"	f	file:
+_sml_new	fuzzy_test.cpp	/^_sml_new(int id)$/;"	f	file:
+_sml_new	test_memory.c	/^_sml_new(int id)$/;"	f	file:
+_update_air_conditioner_power	example_air_conditioner.c	/^_update_air_conditioner_power(Air_Conditioner_Controller *acc, float new_value)$/;"	f	file:
+_value_from_variable	fuzzy_test.cpp	/^_value_from_variable(Context *ctx, fl::Variable *v)$/;"	f	file:
+compare	example_sensor_file.c	/^compare(float new, float old, float threshold)$/;"	f	file:
+defense1	example_foosball.c	/^    struct sml_variable *offense1, *defense1;$/;"	m	struct:__anon5	typeref:struct:__anon5::	file:
+defense2	example_foosball.c	/^    struct sml_variable *offense2, *defense2;$/;"	m	struct:__anon5	typeref:struct:__anon5::	file:
+engine	fuzzy_test.cpp	/^    fl::Engine *engine;$/;"	m	struct:__anon6	file:
+error	fuzzy_test.cpp	/^    double error;$/;"	m	struct:__anon6	file:
+expected_outputs	example_sensor_file.c	/^    float *expected_outputs;$/;"	m	struct:__anon4	file:
+f	example_foosball.c	/^    FILE *f;$/;"	m	struct:__anon5	file:
+f	example_sensor_file.c	/^    FILE *f;$/;"	m	struct:__anon4	file:
+false_negatives	example_sensor_file.c	/^    unsigned int false_negatives;$/;"	m	struct:__anon3	file:
+false_positive	fuzzy_test.cpp	/^    int false_positive;$/;"	m	struct:__anon6	file:
+false_positives	example_sensor_file.c	/^    unsigned int false_positives;$/;"	m	struct:__anon3	file:
+first_train	example_foosball.c	/^    bool first_train;$/;"	m	struct:__anon5	file:
+increment	fuzzy_test.cpp	/^    double increment;$/;"	m	struct:__anon6	file:
+line	example_foosball.c	/^    char line[LINE_SIZE];$/;"	m	struct:__anon5	file:
+main	example_air_conditioner.c	/^main(int argc, char **argv)$/;"	f
+main	example_doc.c	/^main(int argc, char *argv[])$/;"	f
+main	example_foosball.c	/^main(int argc, char *argv[])$/;"	f
+main	example_sensor_file.c	/^main(int argc, char *argv[])$/;"	f
+main	fuzzy_test.cpp	/^main(int argc, char *argv[])$/;"	f
+main	test_memory.c	/^main(int argc, char *argv[])$/;"	f
+mse	example_sensor_file.c	/^    float mse; \/\/Mean Square Error$/;"	m	struct:__anon3	file:
+noise	fuzzy_test.cpp	/^    double noise;$/;"	m	struct:__anon6	file:
+num_players	example_foosball.c	/^    uint16_t num_players;$/;"	m	struct:__anon5	file:
+offense1	example_foosball.c	/^    struct sml_variable *offense1, *defense1;$/;"	m	struct:__anon5	typeref:struct:__anon5::sml_variable	file:
+offense2	example_foosball.c	/^    struct sml_variable *offense2, *defense2;$/;"	m	struct:__anon5	typeref:struct:__anon5::sml_variable	file:
+output_state_changed_cb	example_doc.c	/^output_state_changed_cb(struct sml_object *sml,$/;"	f	file:
+output_state_changed_count	example_sensor_file.c	/^    unsigned int output_state_changed_count;$/;"	m	struct:__anon4	file:
+output_state_changed_outputs	example_sensor_file.c	/^    float *output_state_changed_outputs;$/;"	m	struct:__anon4	file:
+outputs	example_sensor_file.c	/^    float *outputs;$/;"	m	struct:__anon4	file:
+players	example_foosball.c	/^    char **players;$/;"	m	struct:__anon5	file:
+positive_count	fuzzy_test.cpp	/^    int positive_count;$/;"	m	struct:__anon6	file:
+power	example_air_conditioner.c	/^    int power;$/;"	m	struct:__anon2	file:
+predictions	example_foosball.c	/^    int reads, predictions, rights;$/;"	m	struct:__anon5	file:
+presence	example_air_conditioner.c	/^    int presence;$/;"	m	struct:__anon2	file:
+read_count	example_sensor_file.c	/^    unsigned int read_count;$/;"	m	struct:__anon4	file:
+read_state_cb	example_doc.c	/^read_state_cb(struct sml_object *sml, void *data)$/;"	f	file:
+read_state_cb	fuzzy_test.cpp	/^read_state_cb(struct sml_object *sml, void *data)$/;"	f
+reads	example_air_conditioner.c	/^    int reads;$/;"	m	struct:__anon2	file:
+reads	example_foosball.c	/^    int reads, predictions, rights;$/;"	m	struct:__anon5	file:
+repeat	fuzzy_test.cpp	/^    int repeat;$/;"	m	struct:__anon6	file:
+rights	example_foosball.c	/^    int reads, predictions, rights;$/;"	m	struct:__anon5	file:
+set_list_values	fuzzy_test.cpp	/^set_list_values(Context *ctx, struct sml_variables_list *list)$/;"	f
+set_value	fuzzy_test.cpp	/^set_value(Context *ctx, struct sml_variable *sml_variable)$/;"	f
+sml	example_foosball.c	/^    struct sml_object *sml;$/;"	m	struct:__anon5	typeref:struct:__anon5::sml_object	file:
+sml	fuzzy_test.cpp	/^    struct sml_object *sml;$/;"	m	struct:__anon6	typeref:struct:__anon6::sml_object	file:
+sml_engine	example_foosball.c	/^    int sml_engine;$/;"	m	struct:__anon5	file:
+stats	example_sensor_file.c	/^    Stat *stats;$/;"	m	struct:__anon4	file:
+switch_state	example_doc.c	/^static int switch_state = 0;$/;"	v	file:
+temp	example_air_conditioner.c	/^    Temperature temp;$/;"	m	struct:__anon2	file:
+threshold	example_sensor_file.c	/^    float threshold;$/;"	m	struct:__anon4	file:
+true_negatives	example_sensor_file.c	/^    unsigned int true_negatives;$/;"	m	struct:__anon3	file:
+true_positives	example_sensor_file.c	/^    unsigned int true_positives;$/;"	m	struct:__anon3	file:
+use_incorrect_output	fuzzy_test.cpp	/^    bool use_incorrect_output;$/;"	m	struct:__anon6	file:
+val_defense1	example_foosball.c	/^    uint16_t val_offense1, val_defense1, val_offense2, val_defense2;$/;"	m	struct:__anon5	file:
+val_defense2	example_foosball.c	/^    uint16_t val_offense1, val_defense1, val_offense2, val_defense2;$/;"	m	struct:__anon5	file:
+val_offense1	example_foosball.c	/^    uint16_t val_offense1, val_defense1, val_offense2, val_defense2;$/;"	m	struct:__anon5	file:
+val_offense2	example_foosball.c	/^    uint16_t val_offense1, val_defense1, val_offense2, val_defense2;$/;"	m	struct:__anon5	file:
+val_score1	example_foosball.c	/^    int val_score1, val_score2, val_winner;$/;"	m	struct:__anon5	file:
+val_score2	example_foosball.c	/^    int val_score1, val_score2, val_winner;$/;"	m	struct:__anon5	file:
+val_winner	example_foosball.c	/^    int val_score1, val_score2, val_winner;$/;"	m	struct:__anon5	file:
+winner	example_foosball.c	/^    struct sml_variable *winner;$/;"	m	struct:__anon5	typeref:struct:__anon5::sml_variable	file:

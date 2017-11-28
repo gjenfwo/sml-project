@@ -1,0 +1,41 @@
+{
+  "id": "http://openinterconnect.org/schemas/oic.r.baseResource.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description" : "Copyright (c) 2016 Open Interconnect Consortium, Inc. All rights reserved.",
+  "title": "Base Resource",
+  "definitions": {
+    "oic.r.baseresource": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "anyOf": [
+            {"type": "array"},
+            {"type": "string"},
+            {"type": "boolean"},
+            {"type": "integer"},
+            {"type": "number"},
+            {"type": "object"}
+          ],
+          "description": "The value sensed or actuated by this Resource"
+        },
+        "range": {
+          "type": "array",
+          "description": "ReadOnly, The valid range for the value Property",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "anyOf": [
+              {"type": "number"},
+              {"type": "integer"}
+            ]
+          }
+        }
+      }
+    }
+  },
+  "type": "object",
+  "allOf": [
+    {"$ref": "oic.core.json#/definitions/oic.core"},
+    {"$ref": "#/definitions/oic.r.baseresource"}
+  ]
+}

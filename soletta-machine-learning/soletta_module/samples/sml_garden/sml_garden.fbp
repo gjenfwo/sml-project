@@ -1,0 +1,80 @@
+#!/usr/bin/env sol-fbp-runner
+
+# This file is part of the Soletta Project
+#
+# Copyright (C) 2015 Intel Corporation. All rights reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+DECLARE=EngineController:fbp:engine_controller.fbp
+DECLARE=FlowerPowerStatus:fbp:flower_power_status.fbp
+DECLARE=IsWeekend:fbp:is_weekend.fbp
+
+SmlFuzzy(SmlFuzzy)
+SmlAnn(SmlAnn)
+
+Console(console)
+Username(app/argv:index=1)
+Password(app/argv:index=2)
+LocationIdFuzzy(app/argv:index=3)
+LocationIdAnn(app/argv:index=4)
+AnnDebugFile(app/argv:index=5)
+FuzzyDebugFile(app/argv:index=6)
+
+AnnDebugFile OUT -> DEBUG_FILE SmlAnn
+FuzzyDebugFile OUT -> DEBUG_FILE SmlFuzzy
+
+BtnFuzzy(BtnFuzzy) OUT -> IN EngineFuzzy(EngineFuzzy)
+BtnAnn(BtnAnn) OUT -> IN EngineAnn(EngineAnn)
+
+EngineControllerFuzzy(EngineController)
+EngineControllerAnn(EngineController)
+
+EngineControllerFuzzy OUT -> IN EngineFuzzy
+EngineControllerAnn OUT -> IN EngineAnn
+
+FlowerPowerAPI(flower-power/http-get:client_id="CLIENT_ID", client_secret="CLIENT_SECRET")
+Username OUT -> USERNAME FlowerPowerAPI
+Password OUT -> PASSWORD FlowerPowerAPI
+
+FlowerPowerAPI ERROR -> ERROR FlowerPowerStatus(FlowerPowerStatus)
+FlowerPowerAPI OUT -> PACKET FlowerPowerStatus
+FlowerPowerStatus LED_STATUS -> IN Status(FlowerPowerStatusLed)
+
+BtnFuzzy OUT -> IN _(boolean/filter) TRUE -> GET FlowerPowerAPI
+BtnAnn OUT -> IN _(boolean/filter) TRUE -> GET FlowerPowerAPI
+
+BtnFuzzy OUT -> ENGINE_STATE SmlMessageConstructorFuzzy(sml-garden/message-constructor)
+BtnAnn OUT -> ENGINE_STATE SmlMessageConstructorAnn(sml-garden/message-constructor)
+
+Timeblocks (wallclock/timeblock:interval=30, send_initial_packet=true) OUT -> TIMEBLOCK SmlMessageConstructorFuzzy
+Timeblocks OUT -> TIMEBLOCK SmlMessageConstructorAnn
+Timeblocks OUT -> GET FlowerPowerAPI
+Timeblocks OUT -> SAVE SmlFuzzy
+Timeblocks OUT -> SAVE SmlAnn
+
+LocationIdFuzzy OUT -> ID FilterFuzzy(flower-power/filter-id)
+LocationIdAnn OUT -> ID FilterAnn(flower-power/filter-id)
+
+FlowerPowerAPI OUT -> IN FilterFuzzy OUT -> FLOWER_POWER_PACKET SmlMessageConstructorFuzzy OUT -> IN SmlFuzzy
+SmlMessageConstructorFuzzy OUT_PREDICT -> IN_PREDICT SmlFuzzy
+FlowerPowerAPI OUT -> IN FilterAnn OUT -> FLOWER_POWER_PACKET SmlMessageConstructorAnn OUT -> IN SmlAnn
+SmlMessageConstructorAnn OUT_PREDICT -> IN_PREDICT SmlAnn
+
+SmlFuzzy OUT_PREDICT -> IN SmlFuzzyFilter(machine-learning/filter-sync) OUT[0] -> SECONDS EngineControllerFuzzy
+SmlAnn OUT_PREDICT -> IN SmlAnnFilter(machine-learning/filter-sync) OUT[0] -> SECONDS EngineControllerAnn
+SmlFuzzyFilter OUT[0] -> IN WaterPredictionFuzzy(console)
+SmlAnnFilter OUT[0] -> IN WaterPredictionAnn(console)
+
+IsWeekend(IsWeekend) IS_WEEKEND -> LEARN_DISABLED SmlFuzzy
+IsWeekend IS_WEEKEND -> LEARN_DISABLED SmlAnn

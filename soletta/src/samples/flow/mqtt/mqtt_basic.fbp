@@ -1,0 +1,54 @@
+# This file is part of the Soletta (TM) Project
+#
+# Copyright (C) 2015 Intel Corporation. All rights reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# This sample creates two MQTT clients:
+#  * a publisher that send the message "Hello World" at every second
+#    on topic "soletta/mqtt/test"
+#  * a subscriber that print all messages published on topic
+#    "soletta/mqtt/test" to console
+#
+# NOTE: This sample expects that a MQTT broker is running on
+# the local machine on the default port (1883)
+# It may be done by simply running mosquitto (http://mosquitto.org) local
+# (with default configuration) or other broker of preference.
+
+# subscribe
+sub(mqtt/client:host="127.0.0.1",topic="soletta/mqtt/test")
+# publish
+pub(mqtt/client:host="127.0.0.1",topic="soletta/mqtt/test")
+
+# Message
+hello_world(constant/string:value="Hello World")
+
+# output
+pub_out(console:prefix="pub=")
+sub_out(console:prefix="sub=")
+
+# Use "Hello World" as the message payload
+hello_world OUT -> IN _(converter/string-to-blob) OUT -> DATA pub
+
+# Subscribe to topic on start
+_(constant/empty) OUT -> SUBSCRIBE sub
+
+# Publish a message every 1 second
+timer(timer:interval=1000) OUT -> PUBLISH pub
+
+# print to console received message
+sub OUTDATA -> IN _(converter/blob-to-string) OUT -> IN sub_out
+
+# print error to console
+pub ERROR -> IN _(converter/error) MESSAGE -> IN pub_out
+sub ERROR -> IN _(converter/error) MESSAGE -> IN sub_out

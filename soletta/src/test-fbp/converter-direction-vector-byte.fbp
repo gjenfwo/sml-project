@@ -1,0 +1,39 @@
+# This file is part of the Soletta (TM) Project
+#
+# Copyright (C) 2015 Intel Corporation. All rights reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+XByte(constant/byte:value=20)
+YByte(constant/byte:value=40)
+ZByte(constant/byte:value=70)
+byte_to_direction_vector(converter/byte-to-direction-vector)
+
+XByte OUT -> X byte_to_direction_vector
+YByte OUT -> Y byte_to_direction_vector
+ZByte OUT -> Z byte_to_direction_vector
+
+match_twenty(constant/byte:value=20)
+match_eighty(constant/byte:value=80)
+match_seventy(constant/byte:value=70)
+
+byte_to_direction_vector OUT -> IN direction_vector_to_byte(converter/direction-vector-to-byte)
+
+direction_vector_to_byte X -> IN[0] eq_twenty(byte/equal)
+match_twenty OUT -> IN[1] eq_twenty OUT -> RESULT x(test/result)
+
+direction_vector_to_byte Y -> IN[0] eq_eighty(byte/equal)
+match_eighty OUT -> IN[1] eq_eighty OUT -> IN _(boolean/not) OUT -> RESULT y(test/result)
+
+direction_vector_to_byte Z -> IN[0] eq_seventy(byte/equal)
+match_seventy OUT -> IN[1] eq_seventy OUT -> RESULT z(test/result)

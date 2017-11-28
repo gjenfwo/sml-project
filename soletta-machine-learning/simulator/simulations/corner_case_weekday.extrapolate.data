@@ -1,0 +1,53 @@
+# This file is part of the Soletta Project
+#
+# Copyright (C) 2015 Intel Corporation. All rights reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+#Check if sml learns to extrapolate output is constant in different days of week
+#I.E. If it is off on mondays, tuesdays and wednesday, let's assume it is off
+#on Thursdays
+#
+#Initial Scenario
+#Day 0
+0 0:00 in i0
+0 0:00 out o0
+0 10:00 in i1
+0 10:00 out o1
+
+#Day 1
+1 0:00 in i0
+1 0:00 out o0
+1 10:00 in i1
+1 10:00 out o1
+
+#Day 2
+2 0:00 in i0
+2 0:00 out o0
+2 10:00 in i1
+2 10:00 out o1
+
+#Day 3
+3 0:00 BEGIN_EXPECTATIONS
+3 0:00 in i0
+3 0:00 out o3
+3 0:00 EXP_out o0
+3 0:00 END_EXPECTATIONS
+3 0:01 out o0
+
+3 2:00 BEGIN_EXPECTATIONS
+3 2:00 in i1
+3 2:00 out o3
+3 2:00 EXP_out o1
+3 2:00 END_EXPECTATIONS
+3 2:01 out o1

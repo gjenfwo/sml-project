@@ -1,0 +1,816 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ALL_SET	sml_fuzzy/src/sml_rule_group.c	26;"	d	file:
+ANN_ENGINE	common/include/config.h	5;"	d
+ANN_FILE_EXTENSION	sml_ann/src/sml_ann.c	44;"	d	file:
+ANN_FILE_PREFIX	sml_ann/src/sml_ann.c	43;"	d	file:
+ANN_MAGIC	sml_ann/src/sml_ann.c	50;"	d	file:
+ANN_PSEUDOREHEARSAL_PREFIX	sml_ann/src/sml_ann.c	47;"	d	file:
+API_EXPORT	common/include/macros.h	35;"	d
+BITS	sml_fuzzy/src/sml_bit_array.c	27;"	d	file:
+BUF_LEN	common/src/sml_matrix.c	24;"	d	file:
+CFG_FILE_EXTENSION	sml_ann/src/sml_ann.c	49;"	d	file:
+CFG_FILE_PREFIX	sml_ann/src/sml_ann.c	48;"	d	file:
+CI_FILE_EXTENSION	sml_ann/src/sml_ann.c	46;"	d	file:
+CI_FILE_PREFIX	sml_ann/src/sml_ann.c	45;"	d	file:
+Confidence_Interval	sml_ann/src/sml_ann_bridge.c	/^} Confidence_Interval;$/;"	t	typeref:struct:_Confidence_Interval	file:
+DEFAULT_ACCUMULATION	sml_fuzzy/src/sml_fuzzy_bridge.cpp	33;"	d	file:
+DEFAULT_CACHE_SIZE	sml_ann/src/sml_ann.c	42;"	d	file:
+DEFAULT_CACHE_SIZE	sml_fuzzy/src/sml_observation_controller.c	31;"	d	file:
+DEFAULT_CANDIDATE_GROUPS	sml_ann/src/sml_ann.c	38;"	d	file:
+DEFAULT_DESIRED_ERROR	sml_ann/src/sml_ann.c	39;"	d	file:
+DEFAULT_EPOCHS	sml_ann/src/sml_ann.c	37;"	d	file:
+DEFAULT_FLL	sml_fuzzy/src/sml_fuzzy.c	38;"	d	file:
+DEFAULT_NUM_TERMS	sml_fuzzy/src/sml_fuzzy.c	40;"	d	file:
+DEFAULT_OBS_CONTROLLER_FILE	sml_fuzzy/src/sml_observation_controller.c	33;"	d	file:
+DEFAULT_OVERLAP_PERCENTAGE	sml_fuzzy/src/sml_fuzzy.c	41;"	d	file:
+DEFAULT_SIZE	common/src/sml_string.c	24;"	d	file:
+Debug	common/include/config.h	3;"	d
+EXPAND_FACTOR	sml_ann/src/sml_ann.c	51;"	d	file:
+FLOAT_THREASHOLD	sml_fuzzy/src/sml_terms_manager.c	35;"	d	file:
+FLOAT_THRESHOLD	sml_fuzzy/src/sml_observation.c	33;"	d	file:
+FUZZY_ENGINE	common/include/config.h	4;"	d
+FUZZY_FILE_PREFIX	sml_fuzzy/src/sml_fuzzy.c	37;"	d	file:
+FUZZY_MAGIC	sml_fuzzy/src/sml_fuzzy.c	39;"	d	file:
+INITIAL_REQUIRED_OBSERVATIONS	sml_ann/src/sml_ann.c	41;"	d	file:
+ITEMS_IN_BYTE	sml_fuzzy/src/sml_bit_array.c	28;"	d	file:
+LINE_SIZE	common/src/sml_engine.c	32;"	d	file:
+MASK	sml_fuzzy/src/sml_bit_array.c	29;"	d	file:
+MATRIX_CONVERT	common/include/sml_matrix.h	55;"	d
+MATRIX_CONVERT	common/include/sml_matrix.h	71;"	d
+MAX_CAP	sml_fuzzy/src/sml_terms_manager.c	33;"	d	file:
+MAX_EPOCHS	sml_ann/src/sml_ann_bridge.c	32;"	d	file:
+MAX_HIT	sml_fuzzy/src/sml_terms_manager.c	31;"	d	file:
+MAX_NEURONS_MULTIPLIER	sml_ann/src/sml_ann_bridge.c	31;"	d	file:
+MIN_CAP	sml_fuzzy/src/sml_terms_manager.c	34;"	d	file:
+MIN_TRESHOLD	sml_ann/src/sml_ann.c	40;"	d	file:
+NAIVE_ENGINE	common/include/config.h	6;"	d
+NAIVE_MAGIC	sml_naive/src/sml_naive.c	30;"	d	file:
+ON_NULL_RETURN	common/include/macros.h	29;"	d
+ON_NULL_RETURN_NULL	common/include/macros.h	27;"	d
+ON_NULL_RETURN_VAL	common/include/macros.h	21;"	d
+OVERLAP_RATIO	sml_fuzzy/src/sml_terms_manager.c	27;"	d	file:
+REPORTS_BETWEEN_EPOCHS	sml_ann/src/sml_ann_bridge.c	30;"	d	file:
+RULE_WEIGHT	sml_fuzzy/src/sml_observation.c	31;"	d	file:
+SET	sml_fuzzy/src/sml_bit_array.h	25;"	d
+SML_ANN_ACTIVATION_FUNCTION_COS	include/sml_ann.h	/^    SML_ANN_ACTIVATION_FUNCTION_COS,      \/**< Cosinus function. Defined for 0 <= y <= 1 *\/$/;"	e	enum:sml_ann_activation_function
+SML_ANN_ACTIVATION_FUNCTION_COS_SYMMETRIC	include/sml_ann.h	/^    SML_ANN_ACTIVATION_FUNCTION_COS_SYMMETRIC,     \/**< Cosinus function. Defined for -1 <= y <= 1 *\/$/;"	e	enum:sml_ann_activation_function
+SML_ANN_ACTIVATION_FUNCTION_ELLIOT	include/sml_ann.h	/^    SML_ANN_ACTIVATION_FUNCTION_ELLIOT,     \/**< Elliot function. Defined for 0 < y < 1*\/$/;"	e	enum:sml_ann_activation_function
+SML_ANN_ACTIVATION_FUNCTION_ELLIOT_SYMMETRIC	include/sml_ann.h	/^    SML_ANN_ACTIVATION_FUNCTION_ELLIOT_SYMMETRIC,     \/**< Elliot function. Defined for -1 < y < 1*\/$/;"	e	enum:sml_ann_activation_function
+SML_ANN_ACTIVATION_FUNCTION_GAUSSIAN	include/sml_ann.h	/^    SML_ANN_ACTIVATION_FUNCTION_GAUSSIAN,     \/**< Gaussian function. Defined for  0 < y < 1*\/$/;"	e	enum:sml_ann_activation_function
+SML_ANN_ACTIVATION_FUNCTION_GAUSSIAN_SYMMETRIC	include/sml_ann.h	/^    SML_ANN_ACTIVATION_FUNCTION_GAUSSIAN_SYMMETRIC,     \/**< Gaussian function. Defined for -1 < y < 1*\/$/;"	e	enum:sml_ann_activation_function
+SML_ANN_ACTIVATION_FUNCTION_SIGMOID	include/sml_ann.h	/^    SML_ANN_ACTIVATION_FUNCTION_SIGMOID,     \/**< Sigmoid function. Defined for 0 < y < 1*\/$/;"	e	enum:sml_ann_activation_function
+SML_ANN_ACTIVATION_FUNCTION_SIGMOID_SYMMETRIC	include/sml_ann.h	/^    SML_ANN_ACTIVATION_FUNCTION_SIGMOID_SYMMETRIC,     \/**< Sigmoid function. Defined for -1 < y < 1*\/$/;"	e	enum:sml_ann_activation_function
+SML_ANN_ACTIVATION_FUNCTION_SIN	include/sml_ann.h	/^    SML_ANN_ACTIVATION_FUNCTION_SIN,     \/**< Sinus function. Defined for 0 <= y <= 1 *\/$/;"	e	enum:sml_ann_activation_function
+SML_ANN_ACTIVATION_FUNCTION_SIN_SYMMETRIC	include/sml_ann.h	/^    SML_ANN_ACTIVATION_FUNCTION_SIN_SYMMETRIC     \/**< Sinus function. Defined for -1 <= y <= 1 *\/$/;"	e	enum:sml_ann_activation_function
+SML_ANN_TRAINING_ALGORITHM_QUICKPROP	include/sml_ann.h	/^    SML_ANN_TRAINING_ALGORITHM_QUICKPROP,     \/**< Faster than the standard backpropagation.$/;"	e	enum:sml_ann_training_algorithm
+SML_ANN_TRAINING_ALGORITHM_RPROP	include/sml_ann.h	/^    SML_ANN_TRAINING_ALGORITHM_RPROP     \/**< Uses the sign of the gradient to update the weights.*\/$/;"	e	enum:sml_ann_training_algorithm
+SML_FUZZY_DEFUZZIFIER_BISECTOR	include/sml_fuzzy.h	/^    SML_FUZZY_DEFUZZIFIER_BISECTOR,     \/**< The point that divide the curve into two equal sub-regions *\/$/;"	e	enum:sml_fuzzy_defuzzifier
+SML_FUZZY_DEFUZZIFIER_CENTROID	include/sml_fuzzy.h	/^    SML_FUZZY_DEFUZZIFIER_CENTROID,     \/**< The center of the area under the curve *\/$/;"	e	enum:sml_fuzzy_defuzzifier
+SML_FUZZY_DEFUZZIFIER_LARGEST_OF_MAXIMUM	include/sml_fuzzy.h	/^    SML_FUZZY_DEFUZZIFIER_LARGEST_OF_MAXIMUM,     \/**< The largest value of the maximum degrees of membership *\/$/;"	e	enum:sml_fuzzy_defuzzifier
+SML_FUZZY_DEFUZZIFIER_MEAN_OF_MAXIMUM	include/sml_fuzzy.h	/^    SML_FUZZY_DEFUZZIFIER_MEAN_OF_MAXIMUM,     \/**< The mean of the maximum degrees of membership *\/$/;"	e	enum:sml_fuzzy_defuzzifier
+SML_FUZZY_DEFUZZIFIER_SMALLEST_OF_MAXIMUM	include/sml_fuzzy.h	/^    SML_FUZZY_DEFUZZIFIER_SMALLEST_OF_MAXIMUM,     \/**< The smallest value of the maximun degrees of membership *\/$/;"	e	enum:sml_fuzzy_defuzzifier
+SML_FUZZY_DEFUZZIFIER_WEIGHTED_AVERAGE	include/sml_fuzzy.h	/^    SML_FUZZY_DEFUZZIFIER_WEIGHTED_AVERAGE,     \/**< The average of the activation degrees multiplied by a weight*\/$/;"	e	enum:sml_fuzzy_defuzzifier
+SML_FUZZY_DEFUZZIFIER_WEIGHTED_SUM	include/sml_fuzzy.h	/^    SML_FUZZY_DEFUZZIFIER_WEIGHTED_SUM,     \/**< The sum of the activation degrees multiplied by a weight*\/$/;"	e	enum:sml_fuzzy_defuzzifier
+SML_FUZZY_SNORM_ALGEBRAIC_SUM	include/sml_fuzzy.h	/^    SML_FUZZY_SNORM_ALGEBRAIC_SUM,     \/**< A or B ->  A+B - (A*B)*\/$/;"	e	enum:sml_fuzzy_snorm
+SML_FUZZY_SNORM_BOUNDED_SUM	include/sml_fuzzy.h	/^    SML_FUZZY_SNORM_BOUNDED_SUM,     \/**< A or B -> min(A+B,1) *\/$/;"	e	enum:sml_fuzzy_snorm
+SML_FUZZY_SNORM_DRASTIC_SUM	include/sml_fuzzy.h	/^    SML_FUZZY_SNORM_DRASTIC_SUM,     \/**< A or B -> if A=0 then B else if B=0 then A else 0 *\/$/;"	e	enum:sml_fuzzy_snorm
+SML_FUZZY_SNORM_EINSTEIN_SUM	include/sml_fuzzy.h	/^    SML_FUZZY_SNORM_EINSTEIN_SUM,     \/**< A or B -> A+B\/1+A*B  *\/$/;"	e	enum:sml_fuzzy_snorm
+SML_FUZZY_SNORM_HAMACHER_SUM	include/sml_fuzzy.h	/^    SML_FUZZY_SNORM_HAMACHER_SUM,     \/**< A or B -> if A=B=0 then 0 else A*B\/A+B-A*B *\/$/;"	e	enum:sml_fuzzy_snorm
+SML_FUZZY_SNORM_MAXIMUM	include/sml_fuzzy.h	/^    SML_FUZZY_SNORM_MAXIMUM,     \/**< A or B -> max(A,B) *\/$/;"	e	enum:sml_fuzzy_snorm
+SML_FUZZY_SNORM_NILPOTENT_MAXIMUM	include/sml_fuzzy.h	/^    SML_FUZZY_SNORM_NILPOTENT_MAXIMUM,     \/**< A or B -> if A+B < 1 then max(A,B) else 1 *\/$/;"	e	enum:sml_fuzzy_snorm
+SML_FUZZY_SNORM_NORMALIZED_SUM	include/sml_fuzzy.h	/^    SML_FUZZY_SNORM_NORMALIZED_SUM,     \/**< A or B ->  A+B\/max(1, max(A,B))*\/$/;"	e	enum:sml_fuzzy_snorm
+SML_FUZZY_TNORM_ALGEBRAIC_PRODUCT	include/sml_fuzzy.h	/^    SML_FUZZY_TNORM_ALGEBRAIC_PRODUCT,     \/**< A and B -> A*B *\/$/;"	e	enum:sml_fuzzy_tnorm
+SML_FUZZY_TNORM_BOUNDED_DIFFERENCE	include/sml_fuzzy.h	/^    SML_FUZZY_TNORM_BOUNDED_DIFFERENCE,     \/**< A and B -> max(A+B-1, 0)*\/$/;"	e	enum:sml_fuzzy_tnorm
+SML_FUZZY_TNORM_DRASTIC_PRODUCT	include/sml_fuzzy.h	/^    SML_FUZZY_TNORM_DRASTIC_PRODUCT,     \/**< A and B -> if A=1 then B else if B=1 then A else 0*\/$/;"	e	enum:sml_fuzzy_tnorm
+SML_FUZZY_TNORM_EINSTEIN_PRODUCT	include/sml_fuzzy.h	/^    SML_FUZZY_TNORM_EINSTEIN_PRODUCT,     \/**< A and B -> A*B\/2-(A+B-A*B)*\/$/;"	e	enum:sml_fuzzy_tnorm
+SML_FUZZY_TNORM_HAMACHER_PRODUCT	include/sml_fuzzy.h	/^    SML_FUZZY_TNORM_HAMACHER_PRODUCT,     \/**< A and B -> A*B\/A+B-A*B*\/$/;"	e	enum:sml_fuzzy_tnorm
+SML_FUZZY_TNORM_MINIMUM	include/sml_fuzzy.h	/^    SML_FUZZY_TNORM_MINIMUM,     \/**< A and B -> min(A,B)*\/$/;"	e	enum:sml_fuzzy_tnorm
+SML_FUZZY_TNORM_NILPOTENT_MINIMUM	include/sml_fuzzy.h	/^    SML_FUZZY_TNORM_NILPOTENT_MINIMUM,     \/**< A and B -> if A+B > 1 then min(A,B) else 0 *\/$/;"	e	enum:sml_fuzzy_tnorm
+SML_INTERNAL_ERROR	include/sml.h	165;"	d
+SML_LOG_DEBUG_DATA	common/src/sml_engine.c	37;"	d	file:
+SML_LOG_DEBUG_DATA	common/src/sml_engine.c	58;"	d	file:
+SML_LOG_DEBUG_DATA_LIST	common/src/sml_engine.c	51;"	d	file:
+SML_LOG_DEBUG_DATA_LIST	common/src/sml_engine.c	60;"	d	file:
+SML_LOG_DEBUG_DATA_VAR	common/src/sml_engine.c	45;"	d	file:
+SML_LOG_DEBUG_DATA_VAR	common/src/sml_engine.c	59;"	d	file:
+SML_LOG_LEVEL_ALL	include/sml_log.h	/^    SML_LOG_LEVEL_ALL = (SML_LOG_LEVEL_DEBUG | SML_LOG_LEVEL_INFO | SML_LOG_LEVEL_WARNING | SML_LOG_LEVEL_ERROR | SML_LOG_LEVEL_CRITICAL) \/**< Show all messages. *\/$/;"	e	enum:sml_log_level
+SML_LOG_LEVEL_CRITICAL	include/sml_log.h	/^    SML_LOG_LEVEL_CRITICAL = 1 << 4, \/**< Show critical messages. *\/$/;"	e	enum:sml_log_level
+SML_LOG_LEVEL_DEBUG	include/sml_log.h	/^    SML_LOG_LEVEL_DEBUG = 1 << 0,     \/**< Show debug messages. The debug messages will not be logged with SML is compiled in Release mode. *\/$/;"	e	enum:sml_log_level
+SML_LOG_LEVEL_ERROR	include/sml_log.h	/^    SML_LOG_LEVEL_ERROR = 1 << 3, \/**< Show error messages. *\/$/;"	e	enum:sml_log_level
+SML_LOG_LEVEL_INFO	include/sml_log.h	/^    SML_LOG_LEVEL_INFO = 1 << 1,     \/**< Show info messages. *\/$/;"	e	enum:sml_log_level
+SML_LOG_LEVEL_WARNING	include/sml_log.h	/^    SML_LOG_LEVEL_WARNING = 1 << 2, \/**< Show warning messages. *\/$/;"	e	enum:sml_log_level
+SML_MATRIX_FOREACH_IDX	common/include/sml_matrix.h	51;"	d
+SML_PATH_MAX	common/include/sml_util.h	25;"	d
+SML_TERM_NAME_MAX_LEN	include/sml_fuzzy.h	39;"	d
+SML_VARIABLES_LIST_FOREACH	include/sml.h	651;"	d
+SML_VARIABLE_NAME_MAX_LEN	include/sml.h	167;"	d
+START_TERMS_COUNT	sml_fuzzy/src/sml_terms_manager.c	26;"	d	file:
+STR_FMT	common/src/sml_engine.c	34;"	d	file:
+STR_FORMAT	common/src/sml_engine.c	33;"	d	file:
+TERM_LEN	sml_fuzzy/src/sml_terms_manager.c	30;"	d	file:
+TERM_NAME_FMT	sml_fuzzy/src/sml_fuzzy.c	42;"	d	file:
+TERM_PREFIX	sml_fuzzy/src/sml_terms_manager.c	28;"	d	file:
+TERM_SPLIT_PREFIX	sml_fuzzy/src/sml_terms_manager.c	29;"	d	file:
+Tmp_Rule_Fuzzy	sml_fuzzy/src/sml_rule_group.c	/^} Tmp_Rule_Fuzzy;$/;"	t	typeref:struct:_Tmp_Rule_Fuzzy	file:
+UNSET	sml_fuzzy/src/sml_bit_array.h	24;"	d
+VARIABLE_MEMBERSHIP_THRESHOLD	common/include/macros.h	36;"	d
+VERSION	sml_fuzzy/src/sml_observation_controller.c	34;"	d	file:
+Variable	sml_naive/src/sml_naive.c	/^} Variable;$/;"	t	typeref:struct:_Variable	file:
+WEIGHT_THRESHOLD	sml_fuzzy/src/sml_observation.c	32;"	d	file:
+WEIGHT_THRESHOLD	sml_fuzzy/src/sml_observation_controller.c	32;"	d	file:
+_Confidence_Interval	sml_ann/src/sml_ann_bridge.c	/^typedef struct _Confidence_Interval {$/;"	s	file:
+_Tmp_Rule_Fuzzy	sml_fuzzy/src/sml_rule_group.c	/^typedef struct _Tmp_Rule_Fuzzy {$/;"	s	file:
+_Variable	sml_naive/src/sml_naive.c	/^typedef struct _Variable {$/;"	s	file:
+_act	sml_fuzzy/src/sml_fuzzy.c	/^_act(struct sml_fuzzy_engine *fuzzy_engine, bool *should_learn)$/;"	f	file:
+_break_groups	sml_fuzzy/src/sml_rule_group.c	/^_break_groups(struct sml_fuzzy *fuzzy,$/;"	f	file:
+_break_groups_hard	sml_fuzzy/src/sml_rule_group.c	/^_break_groups_hard(struct sml_fuzzy *fuzzy,$/;"	f	file:
+_cache_element_free	sml_fuzzy/src/sml_observation_controller.c	/^_cache_element_free(void *element, void *data)$/;"	f	file:
+_calc_data_size	sml_fuzzy/src/sml_bit_array.c	/^_calc_data_size(uint16_t size)$/;"	f	file:
+_calc_terms_count	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^_calc_terms_count(const std::vector<Variable*> &vec)$/;"	f	file:
+_check_name	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^_check_name(const char *name)$/;"	f	file:
+_controller_append_observation	sml_fuzzy/src/sml_observation_controller.c	/^_controller_append_observation($/;"	f	file:
+_create_fuzzy_terms	sml_fuzzy/src/sml_fuzzy.c	/^_create_fuzzy_terms(struct sml_fuzzy_engine *fuzzy_engine,$/;"	f	file:
+_create_fuzzy_terms_variable	sml_fuzzy/src/sml_fuzzy.c	/^_create_fuzzy_terms_variable(struct sml_fuzzy_engine *fuzzy_engine,$/;"	f	file:
+_create_rule_block	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^_create_rule_block(fl::Engine *engine)$/;"	f	file:
+_create_term	sml_fuzzy/src/sml_terms_manager.c	/^_create_term(struct sml_fuzzy *fuzzy, struct sml_variable *var,$/;"	f	file:
+_create_var	sml_naive/src/sml_naive.c	/^_create_var(const char *name)$/;"	f	file:
+_debug_variables	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^_debug_variables(struct sml_variables_list *list)$/;"	f	file:
+_default_load_fll_file	common/src/sml_engine.c	/^_default_load_fll_file(struct sml_object *engine, const char *filename)$/;"	f	file:
+_fill_variables	sml_fuzzy/src/sml_fuzzy.c	/^_fill_variables(struct sml_variables_list *list,$/;"	f	file:
+_find_variable	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^_find_variable(std::vector<fl::Variable*> *list, fl::Variable *var,$/;"	f	file:
+_float_equals	sml_fuzzy/src/sml_fuzzy.c	/^_float_equals(void *v1, void *v2)$/;"	f	file:
+_fuzzy_initialize_terms	sml_fuzzy/src/sml_fuzzy.c	/^_fuzzy_initialize_terms(struct sml_fuzzy_engine *fuzzy_engine)$/;"	f	file:
+_fuzzy_initialize_terms_list	sml_fuzzy/src/sml_fuzzy.c	/^_fuzzy_initialize_terms_list(struct sml_fuzzy_engine *fuzzy_engine,$/;"	f	file:
+_fuzzy_variable_set_range	sml_fuzzy/src/sml_fuzzy.c	/^_fuzzy_variable_set_range(struct sml_engine *engine,$/;"	f	file:
+_fuzzy_variables_list_index	sml_fuzzy/src/sml_fuzzy.c	/^_fuzzy_variables_list_index(struct sml_variables_list *list, unsigned int index)$/;"	f	file:
+_get_column	common/src/sml_matrix.c	/^_get_column(struct sol_vector *line, uint16_t pos, uint16_t elem_size)$/;"	f	file:
+_get_line	common/src/sml_matrix.c	/^_get_line(struct sol_vector *v, uint16_t pos, uint16_t elem_size)$/;"	f	file:
+_get_next_term_id	sml_fuzzy/src/sml_fuzzy.c	/^_get_next_term_id(struct sml_fuzzy *fuzzy, struct sml_variable *var)$/;"	f	file:
+_get_snorm	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^_get_snorm(enum sml_fuzzy_snorm norm)$/;"	f	file:
+_get_terms_width	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^_get_terms_width(struct sml_fuzzy *fuzzy, struct sml_variable *var)$/;"	f
+_get_tnorm	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^_get_tnorm(enum sml_fuzzy_tnorm norm) {$/;"	f	file:
+_handle_removals	sml_fuzzy/src/sml_fuzzy.c	/^_handle_removals(struct sml_fuzzy_engine *fuzzy_engine)$/;"	f	file:
+_handler_cb	common/src/sml_log.c	/^static sml_log_handler_cb _handler_cb = _sml_log_default_handler;$/;"	v	file:
+_handler_data	common/src/sml_log.c	/^static void *_handler_data = NULL;$/;"	v	file:
+_hit	sml_fuzzy/src/sml_terms_manager.c	/^_hit(struct sml_fuzzy *fuzzy, struct sml_variables_list *list,$/;"	f	file:
+_init_count	common/src/sml_main_loop.c	/^static int _init_count;$/;"	v	file:
+_initialize_rule_group_map	sml_fuzzy/src/sml_observation_controller.c	/^_initialize_rule_group_map(struct sml_observation_controller *obs_controller)$/;"	f	file:
+_initialize_terms_list	sml_fuzzy/src/sml_fuzzy.c	/^_initialize_terms_list(struct sml_fuzzy *fuzzy, struct sml_variables_list *list)$/;"	f	file:
+_input_membership_free	sml_fuzzy/src/sml_observation.c	/^_input_membership_free(struct sml_observation *observation)$/;"	f	file:
+_input_membership_initialize	sml_fuzzy/src/sml_observation.c	/^_input_membership_initialize(struct sml_fuzzy *fuzzy,$/;"	f	file:
+_input_set	sml_fuzzy/src/sml_observation.c	/^_input_set(struct sml_observation *observation, uint16_t input, uint16_t term,$/;"	f	file:
+_insert_in_rule_group	sml_fuzzy/src/sml_rule_group.c	/^_insert_in_rule_group(struct sml_fuzzy *fuzzy,$/;"	f	file:
+_is_in_list	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^_is_in_list(struct sml_variables_list *list, fl::Variable *var,$/;"	f	file:
+_is_input_relevant	sml_fuzzy/src/sml_observation.c	/^_is_input_relevant(struct sml_bit_array *relevant_inputs, uint16_t i)$/;"	f	file:
+_log_levels	common/src/sml_log.c	/^static enum sml_log_level _log_levels = SML_LOG_LEVEL_ALL;$/;"	v	typeref:enum:sml_log_level	file:
+_matrix_has_significant_changes	sml_fuzzy/src/sml_fuzzy.c	/^_matrix_has_significant_changes(struct sml_matrix *old, struct sml_matrix *new,$/;"	f	file:
+_measure_has_significant_changes	sml_fuzzy/src/sml_fuzzy.c	/^_measure_has_significant_changes(struct sml_measure *old_measure,$/;"	f	file:
+_merge	sml_fuzzy/src/sml_terms_manager.c	/^_merge(struct sml_fuzzy *fuzzy,$/;"	f	file:
+_merge_obs_groups	sml_fuzzy/src/sml_observation_controller.c	/^_merge_obs_groups(struct sml_observation_controller *obs_controller)$/;"	f	file:
+_observation_alloc	sml_fuzzy/src/sml_observation.c	/^_observation_alloc(struct sml_fuzzy *fuzzy)$/;"	f	file:
+_observation_belong_in_group	sml_fuzzy/src/sml_rule_group.c	/^_observation_belong_in_group(struct sml_fuzzy *fuzzy,$/;"	f	file:
+_observation_conflicts_in_group	sml_fuzzy/src/sml_rule_group.c	/^_observation_conflicts_in_group(struct sml_fuzzy *fuzzy,$/;"	f	file:
+_observation_input_rule_generate	sml_fuzzy/src/sml_observation.c	/^_observation_input_rule_generate(struct sml_variables_list *list,$/;"	f	file:
+_observation_output_rule_generate	sml_fuzzy/src/sml_observation.c	/^_observation_output_rule_generate(struct sml_variables_list *list,$/;"	f	file:
+_on_signal	common/src/sml_main_loop.c	/^_on_signal(gpointer ptr)$/;"	f	file:
+_output_get	sml_fuzzy/src/sml_observation.c	/^_output_get(struct sml_observation *observation, uint16_t output, uint16_t term)$/;"	f	file:
+_output_set	sml_fuzzy/src/sml_observation.c	/^_output_set(struct sml_fuzzy *fuzzy, struct sml_observation *obs, uint16_t$/;"	f	file:
+_output_weights_free	sml_fuzzy/src/sml_observation.c	/^_output_weights_free(struct sml_observation *observation)$/;"	f	file:
+_output_weights_initialize	sml_fuzzy/src/sml_observation.c	/^_output_weights_initialize(struct sml_fuzzy *fuzzy, struct sml_observation *obs)$/;"	f	file:
+_pre_process	sml_fuzzy/src/sml_fuzzy.c	/^_pre_process(struct sml_fuzzy_engine *fuzzy_engine, bool *should_act,$/;"	f	file:
+_print_list	sml_naive/src/sml_naive.c	/^_print_list(struct sol_ptr_vector *list)$/;"	f	file:
+_print_rule	sml_fuzzy/src/sml_fuzzy.c	/^_print_rule(const char *str, void *data)$/;"	f	file:
+_process_timeout	common/src/sml_main_loop.c	/^_process_timeout(gpointer data)$/;"	f	file:
+_ptr_vector_del_obj	sml_fuzzy/src/sml_rule_group.c	/^_ptr_vector_del_obj(struct sol_ptr_vector *pv, void *ptr)$/;"	f	file:
+_rearrange_fuzzy_terms	sml_fuzzy/src/sml_fuzzy.c	/^_rearrange_fuzzy_terms(struct sml_engine *engine,$/;"	f	file:
+_remove	sml_fuzzy/src/sml_terms_manager.c	/^_remove(struct sml_matrix *variable_hits, bool *to_remove)$/;"	f	file:
+_remove_from_rule_group_list	sml_fuzzy/src/sml_rule_group.c	/^_remove_from_rule_group_list(struct sml_fuzzy *fuzzy,$/;"	f	file:
+_remove_rule_blocks	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^_remove_rule_blocks(fl::Engine *engine)$/;"	f	file:
+_remove_terms	sml_fuzzy/src/sml_fuzzy.c	/^_remove_terms(struct sml_fuzzy_engine *fuzzy_engine, bool *removed)$/;"	f	file:
+_remove_variables	sml_fuzzy/src/sml_fuzzy.c	/^_remove_variables(struct sml_fuzzy_engine *fuzzy_engine, bool *removed)$/;"	f	file:
+_rule_append	sml_fuzzy/src/sml_rule_group.c	/^_rule_append(const char *str, void *data)$/;"	f	file:
+_rule_group_list_observation_append	sml_fuzzy/src/sml_rule_group.c	/^_rule_group_list_observation_append(struct sml_fuzzy *fuzzy,$/;"	f	file:
+_rule_group_list_observation_append_no_simplification	sml_fuzzy/src/sml_rule_group.c	/^_rule_group_list_observation_append_no_simplification(struct sml_fuzzy *fuzzy,$/;"	f	file:
+_rule_group_map_clear	sml_fuzzy/src/sml_observation_controller.c	/^_rule_group_map_clear(struct sml_observation_controller *obs_controller)$/;"	f	file:
+_rule_group_rule_refresh	sml_fuzzy/src/sml_rule_group.c	/^_rule_group_rule_refresh(struct sml_fuzzy *fuzzy,$/;"	f	file:
+_set_input_observations_values	sml_fuzzy/src/sml_observation.c	/^_set_input_observations_values(struct sml_observation *observation,$/;"	f	file:
+_should_merge	sml_fuzzy/src/sml_terms_manager.c	/^_should_merge(uint16_t val)$/;"	f	file:
+_should_split	sml_fuzzy/src/sml_terms_manager.c	/^_should_split(uint16_t val)$/;"	f	file:
+_sml_ann_add_variable	sml_ann/src/sml_ann.c	/^_sml_ann_add_variable(struct sml_ann_engine *ann_engine, const char *name,$/;"	f	file:
+_sml_ann_alloc_arrays_if_needed	sml_ann/src/sml_ann.c	/^_sml_ann_alloc_arrays_if_needed(struct sml_ann_engine *ann_engine)$/;"	f	file:
+_sml_ann_bridge_calculate_confidence_interval	sml_ann/src/sml_ann_bridge.c	/^_sml_ann_bridge_calculate_confidence_interval(struct sml_ann_bridge *iann,$/;"	f	file:
+_sml_ann_bridge_fill_train_data_array	sml_ann/src/sml_ann_bridge.c	/^_sml_ann_bridge_fill_train_data_array(struct sml_variables_list *inputs,$/;"	f	file:
+_sml_ann_bridge_get_variable_value	sml_ann/src/sml_ann_bridge.c	/^_sml_ann_bridge_get_variable_value(struct sml_variables_list *list,$/;"	f	file:
+_sml_ann_bridge_new	sml_ann/src/sml_ann_bridge.c	/^_sml_ann_bridge_new(struct fann *ann, bool trained)$/;"	f	file:
+_sml_ann_bridge_really_predict_output	sml_ann/src/sml_ann_bridge.c	/^_sml_ann_bridge_really_predict_output(struct sml_ann_bridge *iann,$/;"	f	file:
+_sml_ann_bridge_setup_ci_and_observations	sml_ann/src/sml_ann_bridge.c	/^_sml_ann_bridge_setup_ci_and_observations(struct sml_ann_bridge *iann,$/;"	f	file:
+_sml_ann_bridge_translate_to_fann_activation_func	sml_ann/src/sml_ann_bridge.c	/^_sml_ann_bridge_translate_to_fann_activation_func($/;"	f	file:
+_sml_ann_bridge_translate_to_fann_activation_vector	sml_ann/src/sml_ann_bridge.c	/^_sml_ann_bridge_translate_to_fann_activation_vector($/;"	f	file:
+_sml_ann_bridge_translate_to_fann_train_enum	sml_ann/src/sml_ann_bridge.c	/^_sml_ann_bridge_translate_to_fann_train_enum($/;"	f	file:
+_sml_ann_cache_element_free	sml_ann/src/sml_ann.c	/^_sml_ann_cache_element_free(void *element, void *data)$/;"	f	file:
+_sml_ann_can_alloc_memory_for_observations	sml_ann/src/sml_ann.c	/^_sml_ann_can_alloc_memory_for_observations(unsigned int total_variables,$/;"	f	file:
+_sml_ann_change_ann_layout_if_needed	sml_ann/src/sml_ann.c	/^_sml_ann_change_ann_layout_if_needed(struct sml_ann_engine *ann_engine)$/;"	f	file:
+_sml_ann_engine_free	sml_ann/src/sml_ann.c	/^_sml_ann_engine_free(struct sml_engine *engine)$/;"	f	file:
+_sml_ann_erase_knowledge	sml_ann/src/sml_ann.c	/^_sml_ann_erase_knowledge(struct sml_engine *engine)$/;"	f	file:
+_sml_ann_find_variable_by_name	sml_ann/src/sml_ann.c	/^_sml_ann_find_variable_by_name(struct sml_ann_engine *ann_engine,$/;"	f	file:
+_sml_ann_get_best_ann_for_latest_observations	sml_ann/src/sml_ann.c	/^_sml_ann_get_best_ann_for_latest_observations(struct sml_ann_engine *ann_engine)$/;"	f	file:
+_sml_ann_get_input	sml_ann/src/sml_ann.c	/^_sml_ann_get_input(struct sml_engine *engine, const char *name)$/;"	f	file:
+_sml_ann_get_input_list	sml_ann/src/sml_ann.c	/^_sml_ann_get_input_list(struct sml_engine *engine)$/;"	f	file:
+_sml_ann_get_observations_length	sml_ann/src/sml_ann.c	/^_sml_ann_get_observations_length(struct sml_ann_engine *ann_engine)$/;"	f	file:
+_sml_ann_get_output	sml_ann/src/sml_ann.c	/^_sml_ann_get_output(struct sml_engine *engine, const char *name)$/;"	f	file:
+_sml_ann_get_output_list	sml_ann/src/sml_ann.c	/^_sml_ann_get_output_list(struct sml_engine *engine)$/;"	f	file:
+_sml_ann_load	sml_ann/src/sml_ann.c	/^_sml_ann_load(struct sml_engine *engine, const char *path)$/;"	f	file:
+_sml_ann_new	sml_ann/src/sml_ann.c	/^_sml_ann_new(struct sml_ann_engine *ann_engine, int *error_code)$/;"	f	file:
+_sml_ann_new_input	sml_ann/src/sml_ann.c	/^_sml_ann_new_input(struct sml_engine *engine, const char *name)$/;"	f	file:
+_sml_ann_new_output	sml_ann/src/sml_ann.c	/^_sml_ann_new_output(struct sml_engine *engine, const char *name)$/;"	f	file:
+_sml_ann_output_has_significant_changes	sml_ann/src/sml_ann.c	/^_sml_ann_output_has_significant_changes(struct sml_variables_list *outputs)$/;"	f	file:
+_sml_ann_predict	sml_ann/src/sml_ann.c	/^_sml_ann_predict(struct sml_engine *engine)$/;"	f	file:
+_sml_ann_print_debug	sml_ann/src/sml_ann.c	/^_sml_ann_print_debug(struct sml_engine *engine, bool full)$/;"	f	file:
+_sml_ann_print_variables_list	sml_ann/src/sml_ann.c	/^_sml_ann_print_variables_list(struct sml_variables_list *list)$/;"	f	file:
+_sml_ann_process	sml_ann/src/sml_ann.c	/^_sml_ann_process(struct sml_engine *engine)$/;"	f	file:
+_sml_ann_pseudorehearsal_train	sml_ann/src/sml_ann.c	/^_sml_ann_pseudorehearsal_train(struct sml_ann_engine *ann_engine,$/;"	f	file:
+_sml_ann_remove_variable	sml_ann/src/sml_ann.c	/^_sml_ann_remove_variable(struct sml_engine *engine, struct sml_variable *var)$/;"	f	file:
+_sml_ann_remove_variable_from_lists	sml_ann/src/sml_ann.c	/^_sml_ann_remove_variable_from_lists(struct sml_ann_engine *ann_engine,$/;"	f	file:
+_sml_ann_remove_variable_from_sml	sml_ann/src/sml_ann.c	/^_sml_ann_remove_variable_from_sml(struct sml_ann_engine *ann_engine,$/;"	f	file:
+_sml_ann_save	sml_ann/src/sml_ann.c	/^_sml_ann_save(struct sml_engine *engine, const char *path)$/;"	f	file:
+_sml_ann_store_observations	sml_ann/src/sml_ann.c	/^_sml_ann_store_observations(struct sml_ann_engine *ann_engine)$/;"	f	file:
+_sml_ann_train	sml_ann/src/sml_ann.c	/^_sml_ann_train(struct sml_ann_engine *ann_engine, struct sml_ann_bridge *iann,$/;"	f	file:
+_sml_ann_variable_list_has_significant_changes	sml_ann/src/sml_ann.c	/^_sml_ann_variable_list_has_significant_changes($/;"	f	file:
+_sml_ann_variable_set_enabled	sml_ann/src/sml_ann.c	/^_sml_ann_variable_set_enabled(struct sml_engine *engine,$/;"	f	file:
+_sml_cache_find_index_by_data	common/src/sml_cache.c	/^_sml_cache_find_index_by_data(struct sol_ptr_vector *elements, void *data,$/;"	f	file:
+_sml_free	sml_fuzzy/src/sml_fuzzy.c	/^_sml_free(struct sml_engine *engine)$/;"	f	file:
+_sml_free	sml_naive/src/sml_naive.c	/^_sml_free(struct sml_engine *engine)$/;"	f	file:
+_sml_fuzzy_erase_knowledge	sml_fuzzy/src/sml_fuzzy.c	/^_sml_fuzzy_erase_knowledge(struct sml_engine *engine)$/;"	f	file:
+_sml_fuzzy_fill_membership_values	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^_sml_fuzzy_fill_membership_values(struct sml_matrix *variables,$/;"	f	file:
+_sml_get_input	sml_fuzzy/src/sml_fuzzy.c	/^_sml_get_input(struct sml_engine *engine, const char *name)$/;"	f	file:
+_sml_get_input	sml_naive/src/sml_naive.c	/^_sml_get_input(struct sml_engine *engine, const char *name)$/;"	f	file:
+_sml_get_input_list	sml_fuzzy/src/sml_fuzzy.c	/^_sml_get_input_list(struct sml_engine *engine)$/;"	f	file:
+_sml_get_input_list	sml_naive/src/sml_naive.c	/^_sml_get_input_list(struct sml_engine *engine)$/;"	f	file:
+_sml_get_output	sml_fuzzy/src/sml_fuzzy.c	/^_sml_get_output(struct sml_engine *engine, const char *name)$/;"	f	file:
+_sml_get_output	sml_naive/src/sml_naive.c	/^_sml_get_output(struct sml_engine *engine, const char *name)$/;"	f	file:
+_sml_get_output_list	sml_fuzzy/src/sml_fuzzy.c	/^_sml_get_output_list(struct sml_engine *engine)$/;"	f	file:
+_sml_get_output_list	sml_naive/src/sml_naive.c	/^_sml_get_output_list(struct sml_engine *engine)$/;"	f	file:
+_sml_load	sml_fuzzy/src/sml_fuzzy.c	/^_sml_load(struct sml_engine *engine, const char *path)$/;"	f	file:
+_sml_load	sml_naive/src/sml_naive.c	/^_sml_load(struct sml_engine *engine, const char *path)$/;"	f	file:
+_sml_load_fll_file	sml_fuzzy/src/sml_fuzzy.c	/^_sml_load_fll_file(struct sml_engine *engine, const char *filename)$/;"	f	file:
+_sml_log_default_handler	common/src/sml_log.c	/^_sml_log_default_handler(enum sml_log_level level, const char *msg, void *data)$/;"	f	file:
+_sml_new_input	sml_fuzzy/src/sml_fuzzy.c	/^_sml_new_input(struct sml_engine *engine, const char *name)$/;"	f	file:
+_sml_new_input	sml_naive/src/sml_naive.c	/^_sml_new_input(struct sml_engine *engine, const char *name)$/;"	f	file:
+_sml_new_output	sml_fuzzy/src/sml_fuzzy.c	/^_sml_new_output(struct sml_engine *engine, const char *name)$/;"	f	file:
+_sml_new_output	sml_naive/src/sml_naive.c	/^_sml_new_output(struct sml_engine *engine, const char *name)$/;"	f	file:
+_sml_predict	sml_fuzzy/src/sml_fuzzy.c	/^_sml_predict(struct sml_engine *engine)$/;"	f	file:
+_sml_predict	sml_naive/src/sml_naive.c	/^_sml_predict(struct sml_engine *engine)$/;"	f	file:
+_sml_print_debug	sml_fuzzy/src/sml_fuzzy.c	/^_sml_print_debug(struct sml_engine *engine, bool full)$/;"	f	file:
+_sml_print_debug	sml_naive/src/sml_naive.c	/^_sml_print_debug(struct sml_engine *engine, bool full)$/;"	f	file:
+_sml_process	sml_fuzzy/src/sml_fuzzy.c	/^_sml_process(struct sml_engine *engine)$/;"	f	file:
+_sml_process	sml_naive/src/sml_naive.c	/^_sml_process(struct sml_engine *engine)$/;"	f	file:
+_sml_really_train	sml_ann/src/sml_ann_bridge.c	/^_sml_really_train(struct sml_ann_bridge *iann,$/;"	f	file:
+_sml_remove_variable	sml_fuzzy/src/sml_fuzzy.c	/^_sml_remove_variable(struct sml_engine *engine, struct sml_variable *variable)$/;"	f	file:
+_sml_remove_variable	sml_naive/src/sml_naive.c	/^_sml_remove_variable(struct sml_engine *engine, struct sml_variable *variable)$/;"	f	file:
+_sml_save	sml_fuzzy/src/sml_fuzzy.c	/^_sml_save(struct sml_engine *engine, const char *path)$/;"	f	file:
+_sml_save	sml_naive/src/sml_naive.c	/^_sml_save(struct sml_engine *engine, const char *path)$/;"	f	file:
+_sml_string_create_formatted_str	common/src/sml_string.c	/^_sml_string_create_formatted_str(char **buf, const char *format, va_list ap)$/;"	f
+_sml_variable_get_name	sml_naive/src/sml_naive.c	/^_sml_variable_get_name(struct sml_variable *sml_variable, char *var_name, size_t var_name_size)$/;"	f	file:
+_sml_variable_get_range	sml_naive/src/sml_naive.c	/^_sml_variable_get_range(struct sml_variable *variable, float *min, float *max)$/;"	f	file:
+_sml_variable_get_value	sml_naive/src/sml_naive.c	/^_sml_variable_get_value(struct sml_variable *sml_variable)$/;"	f	file:
+_sml_variable_is_enabled	sml_naive/src/sml_naive.c	/^_sml_variable_is_enabled(struct sml_variable *sml_variable)$/;"	f	file:
+_sml_variable_set_enabled	sml_fuzzy/src/sml_fuzzy.c	/^_sml_variable_set_enabled(struct sml_engine *engine,$/;"	f	file:
+_sml_variable_set_enabled	sml_naive/src/sml_naive.c	/^_sml_variable_set_enabled(struct sml_engine *engine,$/;"	f	file:
+_sml_variable_set_range	sml_naive/src/sml_naive.c	/^_sml_variable_set_range(struct sml_engine *engine,$/;"	f	file:
+_sml_variable_set_value	sml_fuzzy/src/sml_fuzzy.c	/^_sml_variable_set_value(struct sml_variable *sml_variable, float value)$/;"	f	file:
+_sml_variable_set_value	sml_naive/src/sml_naive.c	/^_sml_variable_set_value(struct sml_variable *sml_variable, float val)$/;"	f	file:
+_sml_variables_list_get_length	sml_naive/src/sml_naive.c	/^_sml_variables_list_get_length(struct sml_variables_list *list)$/;"	f	file:
+_split	sml_fuzzy/src/sml_terms_manager.c	/^_split(struct sml_fuzzy *fuzzy,$/;"	f	file:
+_var_get_val_in_range	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^_var_get_val_in_range(fl::Variable *fl_var, float value)$/;"	f	file:
+_variables_list_index	sml_naive/src/sml_naive.c	/^_variables_list_index(struct sml_variables_list *list, unsigned int index)$/;"	f	file:
+activation_functions	sml_ann/src/sml_ann.c	/^    struct sol_vector activation_functions;$/;"	m	struct:sml_ann_engine	typeref:struct:sml_ann_engine::sol_vector	file:
+ann	sml_ann/src/sml_ann_bridge.c	/^    struct fann *ann;$/;"	m	struct:sml_ann_bridge	typeref:struct:sml_ann_bridge::fann	file:
+anns_cache	sml_ann/src/sml_ann.c	/^    struct sml_cache *anns_cache;$/;"	m	struct:sml_ann_engine	typeref:struct:sml_ann_engine::sml_cache	file:
+candidate_groups	sml_ann/src/sml_ann.c	/^    unsigned int candidate_groups;$/;"	m	struct:sml_ann_engine	file:
+ci_length_sum	sml_ann/src/sml_ann_bridge.c	/^    float ci_length_sum;$/;"	m	struct:sml_ann_bridge	file:
+clean_dir	common/src/sml_util.c	/^clean_dir(const char *path, const char *prefix)$/;"	f
+confidence_intervals	sml_ann/src/sml_ann_bridge.c	/^    struct sol_vector confidence_intervals;$/;"	m	struct:sml_ann_bridge	typeref:struct:sml_ann_bridge::sol_vector	file:
+create_dir	common/src/sml_util.c	/^create_dir(const char *path)$/;"	f
+current_value	sml_ann/src/sml_ann_variable_list.c	/^    float current_value;$/;"	m	struct:sml_variable_impl	file:
+data	common/include/sml_matrix.h	/^    struct sol_vector data;$/;"	m	struct:sml_matrix	typeref:struct:sml_matrix::sol_vector
+data	sml_fuzzy/src/sml_bit_array.h	/^    uint8_t *data;$/;"	m	struct:sml_bit_array
+debug_file	common/include/sml_engine.h	/^    FILE *debug_file;$/;"	m	struct:sml_engine
+delete_file	common/src/sml_util.c	/^delete_file(const char *path)$/;"	f
+elem_size	common/include/sml_matrix.h	/^    uint16_t elem_size;$/;"	m	struct:sml_matrix
+elements	common/src/sml_cache.c	/^    struct sol_ptr_vector elements;$/;"	m	struct:sml_cache	typeref:struct:sml_cache::sol_ptr_vector	file:
+empty_output_state_changed_cb	common/src/sml_engine.c	/^empty_output_state_changed_cb(struct sml_object *sml,$/;"	f	file:
+empty_read_state_cb	common/src/sml_engine.c	/^empty_read_state_cb(struct sml_object *sml, void *data)$/;"	f	file:
+enabled	sml_ann/src/sml_ann_variable_list.c	/^    bool enabled;$/;"	m	struct:sml_variable_impl	file:
+enabled	sml_naive/src/sml_naive.c	/^    bool enabled;$/;"	m	struct:_Variable	file:
+engine	sml_ann/src/sml_ann.c	/^    struct sml_engine engine;$/;"	m	struct:sml_ann_engine	typeref:struct:sml_ann_engine::sml_engine	file:
+engine	sml_fuzzy/src/sml_fuzzy.c	/^    struct sml_engine engine;$/;"	m	struct:sml_fuzzy_engine	typeref:struct:sml_fuzzy_engine::sml_engine	file:
+engine	sml_fuzzy/src/sml_fuzzy_bridge.h	/^    void *engine;$/;"	m	struct:sml_fuzzy
+engine	sml_naive/src/sml_naive.c	/^    struct sml_engine engine;$/;"	m	struct:sml_naive_engine	typeref:struct:sml_naive_engine::sml_engine	file:
+erase_knowledge	common/include/sml_engine.h	/^    sml_engine_erase_knowledge erase_knowledge;$/;"	m	struct:sml_engine
+error	sml_fuzzy/src/sml_rule_group.c	/^    bool error;$/;"	m	struct:_Tmp_Rule_Fuzzy	file:
+file_exists	common/src/sml_util.c	/^file_exists(const char *path)$/;"	f
+first_run	sml_ann/src/sml_ann.c	/^    bool first_run;$/;"	m	struct:sml_ann_engine	file:
+free	common/include/sml_engine.h	/^    sml_engine_free free;$/;"	m	struct:sml_engine
+free_cb	common/src/sml_cache.c	/^    sml_cache_element_free_cb free_cb;$/;"	m	struct:sml_cache	file:
+free_cb_data	common/src/sml_cache.c	/^    void *free_cb_data;$/;"	m	struct:sml_cache	file:
+fuzzy	sml_fuzzy/src/sml_fuzzy.c	/^    struct sml_fuzzy *fuzzy;$/;"	m	struct:sml_fuzzy_engine	typeref:struct:sml_fuzzy_engine::sml_fuzzy	file:
+fuzzy	sml_fuzzy/src/sml_observation_controller.c	/^    struct sml_fuzzy *fuzzy;$/;"	m	struct:sml_observation_controller	typeref:struct:sml_observation_controller::sml_fuzzy	file:
+fuzzy	sml_fuzzy/src/sml_rule_group.c	/^    struct sml_fuzzy *fuzzy;$/;"	m	struct:_Tmp_Rule_Fuzzy	typeref:struct:_Tmp_Rule_Fuzzy::sml_fuzzy	file:
+get_input	common/include/sml_engine.h	/^    sml_engine_get_input get_input;$/;"	m	struct:sml_engine
+get_input_list	common/include/sml_engine.h	/^    sml_engine_get_input_list get_input_list;$/;"	m	struct:sml_engine
+get_name	common/include/sml_engine.h	/^    sml_engine_variable_get_name get_name;$/;"	m	struct:sml_engine
+get_output	common/include/sml_engine.h	/^    sml_engine_get_output get_output;$/;"	m	struct:sml_engine
+get_output_list	common/include/sml_engine.h	/^    sml_engine_get_output_list get_output_list;$/;"	m	struct:sml_engine
+get_value	common/include/sml_engine.h	/^    sml_engine_variable_get_value get_value;$/;"	m	struct:sml_engine
+hits	common/include/sml_engine.h	/^    uint16_t hits;$/;"	m	struct:sml_engine
+hits	sml_fuzzy/src/sml_terms_manager.h	/^    struct sml_measure hits;$/;"	m	struct:sml_terms_manager	typeref:struct:sml_terms_manager::sml_measure
+input	sml_ann/src/sml_ann_variable_list.c	/^    bool input;$/;"	m	struct:sml_variable_impl	file:
+input_list	sml_fuzzy/src/sml_fuzzy_bridge.h	/^    struct sml_variables_list *input_list;$/;"	m	struct:sml_fuzzy	typeref:struct:sml_fuzzy::sml_variables_list
+input_list	sml_naive/src/sml_naive.c	/^    struct sol_ptr_vector input_list;$/;"	m	struct:sml_naive_engine	typeref:struct:sml_naive_engine::sol_ptr_vector	file:
+input_membership	sml_fuzzy/src/sml_observation.c	/^    struct sol_vector input_membership;$/;"	m	struct:sml_observation	typeref:struct:sml_observation::sol_vector	file:
+input_terms_count	sml_fuzzy/src/sml_fuzzy_bridge.h	/^    uint16_t input_terms_count;$/;"	m	struct:sml_fuzzy
+input_terms_width	sml_fuzzy/src/sml_fuzzy_bridge.h	/^    struct sol_vector input_terms_width;$/;"	m	struct:sml_fuzzy	typeref:struct:sml_fuzzy::sol_vector
+inputs	sml_ann/src/sml_ann.c	/^    struct sml_variables_list *inputs;$/;"	m	struct:sml_ann_engine	typeref:struct:sml_ann_engine::sml_variables_list	file:
+inputs	sml_fuzzy/src/sml_measure.h	/^    struct sml_matrix inputs;$/;"	m	struct:sml_measure	typeref:struct:sml_measure::sml_matrix
+inputs_to_be_removed	sml_fuzzy/src/sml_fuzzy.c	/^    struct sol_ptr_vector inputs_to_be_removed;$/;"	m	struct:sml_fuzzy_engine	typeref:struct:sml_fuzzy_engine::sol_ptr_vector	file:
+is_dir	common/src/sml_util.c	/^is_dir(const char *path)$/;"	f
+is_file	common/src/sml_util.c	/^is_file(const char *path)$/;"	f
+is_id	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^    bool is_id;$/;"	m	struct:terms_width	file:
+is_input	sml_fuzzy/src/sml_fuzzy.c	/^    bool is_input;$/;"	m	struct:sml_term_to_remove	file:
+last_stable_measure	sml_fuzzy/src/sml_fuzzy.c	/^    struct sml_measure *last_stable_measure;$/;"	m	struct:sml_fuzzy_engine	typeref:struct:sml_fuzzy_engine::sml_measure	file:
+last_stable_value	sml_ann/src/sml_ann_variable_list.c	/^    float last_stable_value;$/;"	m	struct:sml_variable_impl	file:
+last_train_error	sml_ann/src/sml_ann_bridge.c	/^    float last_train_error;$/;"	m	struct:sml_ann_bridge	file:
+learn_disabled	common/include/sml_engine.h	/^    bool learn_disabled;$/;"	m	struct:sml_engine
+len	common/src/sml_string.c	/^    size_t len;$/;"	m	struct:sml_string	file:
+load	common/include/sml_engine.h	/^    sml_engine_load load;$/;"	m	struct:sml_engine
+load_file	common/include/sml_engine.h	/^    sml_engine_load_file load_file;$/;"	m	struct:sml_engine
+loop	common/src/sml_main_loop.c	/^static GMainLoop *loop;$/;"	v	file:
+lower_limit	sml_ann/src/sml_ann_bridge.c	/^    float lower_limit;$/;"	m	struct:_Confidence_Interval	file:
+magic_number	common/include/sml_engine.h	/^    uint32_t magic_number;$/;"	m	struct:sml_engine
+max	common/src/sml_matrix.c	23;"	d	file:
+max	sml_naive/src/sml_naive.c	/^    float min, max, val;$/;"	m	struct:_Variable	file:
+max_elements	common/src/sml_cache.c	/^    uint16_t max_elements;$/;"	m	struct:sml_cache	file:
+max_neurons	sml_ann/src/sml_ann.c	/^    unsigned int max_neurons;$/;"	m	struct:sml_ann_engine	file:
+max_neurons	sml_ann/src/sml_ann_bridge.c	/^    unsigned int max_neurons;$/;"	m	struct:sml_ann_bridge	file:
+max_value	sml_ann/src/sml_ann_variable_list.c	/^    float max_value;$/;"	m	struct:sml_variable_impl	file:
+min	sml_naive/src/sml_naive.c	/^    float min, max, val;$/;"	m	struct:_Variable	file:
+min_value	sml_ann/src/sml_ann_variable_list.c	/^    float min_value;$/;"	m	struct:sml_variable_impl	file:
+name	sml_ann/src/sml_ann_variable_list.c	/^    char *name;$/;"	m	struct:sml_variable_impl	file:
+name	sml_naive/src/sml_naive.c	/^    char *name;$/;"	m	struct:_Variable	file:
+new_input	common/include/sml_engine.h	/^    sml_engine_new_input new_input;$/;"	m	struct:sml_engine
+new_output	common/include/sml_engine.h	/^    sml_engine_new_output new_output;$/;"	m	struct:sml_engine
+obs_group_cache	sml_fuzzy/src/sml_observation_controller.c	/^    struct sml_cache *obs_group_cache;$/;"	m	struct:sml_observation_controller	typeref:struct:sml_observation_controller::sml_cache	file:
+obs_max_size	common/include/sml_engine.h	/^    unsigned int obs_max_size;$/;"	m	struct:sml_engine
+observation_controller	sml_fuzzy/src/sml_fuzzy.c	/^    struct sml_observation_controller *observation_controller;$/;"	m	struct:sml_fuzzy_engine	typeref:struct:sml_fuzzy_engine::sml_observation_controller	file:
+observation_idx	sml_ann/src/sml_ann_bridge.c	/^    unsigned int observation_idx;$/;"	m	struct:sml_ann_bridge	file:
+observations	sml_ann/src/sml_ann_bridge.c	/^    struct fann_train_data *observations;$/;"	m	struct:sml_ann_bridge	typeref:struct:sml_ann_bridge::fann_train_data	file:
+observations	sml_ann/src/sml_ann_variable_list.c	/^    float *observations;$/;"	m	struct:sml_variable_impl	file:
+observations	sml_fuzzy/src/sml_rule_group.c	/^    struct sol_ptr_vector observations;$/;"	m	struct:sml_rule_group	typeref:struct:sml_rule_group::sol_ptr_vector	file:
+observations_idx	sml_ann/src/sml_ann_variable_list.c	/^    unsigned int observations_idx;$/;"	m	struct:sml_variable_impl	file:
+output_list	sml_fuzzy/src/sml_fuzzy_bridge.h	/^    struct sml_variables_list *output_list;$/;"	m	struct:sml_fuzzy	typeref:struct:sml_fuzzy::sml_variables_list
+output_list	sml_naive/src/sml_naive.c	/^    struct sol_ptr_vector output_list;$/;"	m	struct:sml_naive_engine	typeref:struct:sml_naive_engine::sol_ptr_vector	file:
+output_state_changed_called	common/include/sml_engine.h	/^    bool output_state_changed_called;$/;"	m	struct:sml_engine
+output_state_changed_called	sml_fuzzy/src/sml_fuzzy.c	/^    bool output_state_changed_called;$/;"	m	struct:sml_fuzzy_engine	file:
+output_state_changed_cb	common/include/sml_engine.h	/^    sml_change_cb output_state_changed_cb;$/;"	m	struct:sml_engine
+output_state_changed_cb_data	common/include/sml_engine.h	/^    void *output_state_changed_cb_data;$/;"	m	struct:sml_engine
+output_terms_count	sml_fuzzy/src/sml_fuzzy_bridge.h	/^    uint16_t output_terms_count;$/;"	m	struct:sml_fuzzy
+output_terms_width	sml_fuzzy/src/sml_fuzzy_bridge.h	/^    struct sol_vector output_terms_width;$/;"	m	struct:sml_fuzzy	typeref:struct:sml_fuzzy::sol_vector
+output_weights	sml_fuzzy/src/sml_observation.c	/^    struct sol_vector output_weights;$/;"	m	struct:sml_observation	typeref:struct:sml_observation::sol_vector	file:
+outputs	sml_ann/src/sml_ann.c	/^    struct sml_variables_list *outputs;$/;"	m	struct:sml_ann_engine	typeref:struct:sml_ann_engine::sml_variables_list	file:
+outputs	sml_fuzzy/src/sml_measure.h	/^    struct sml_matrix outputs;$/;"	m	struct:sml_measure	typeref:struct:sml_measure::sml_matrix
+outputs_to_be_removed	sml_fuzzy/src/sml_fuzzy.c	/^    struct sol_ptr_vector outputs_to_be_removed;$/;"	m	struct:sml_fuzzy_engine	typeref:struct:sml_fuzzy_engine::sol_ptr_vector	file:
+pending_add	sml_ann/src/sml_ann.c	/^    struct sol_ptr_vector pending_add;$/;"	m	struct:sml_ann_engine	typeref:struct:sml_ann_engine::sol_ptr_vector	file:
+pending_remove	sml_ann/src/sml_ann.c	/^    struct sol_ptr_vector pending_remove;$/;"	m	struct:sml_ann_engine	typeref:struct:sml_ann_engine::sol_ptr_vector	file:
+predict	common/include/sml_engine.h	/^    sml_engine_predict predict;$/;"	m	struct:sml_engine
+previous_value	sml_ann/src/sml_ann_variable_list.c	/^    float previous_value;$/;"	m	struct:sml_variable_impl	file:
+print_debug	common/include/sml_engine.h	/^    sml_engine_print_debug print_debug;$/;"	m	struct:sml_engine
+process	common/include/sml_engine.h	/^    sml_engine_process process;$/;"	m	struct:sml_engine
+read_state_cb	common/include/sml_engine.h	/^    sml_read_state_cb read_state_cb;$/;"	m	struct:sml_engine
+read_state_cb_data	common/include/sml_engine.h	/^    void *read_state_cb_data;$/;"	m	struct:sml_engine
+relevant_inputs	sml_fuzzy/src/sml_rule_group.c	/^    struct sml_bit_array relevant_inputs;$/;"	m	struct:sml_rule_group	typeref:struct:sml_rule_group::sml_bit_array	file:
+remove_variable	common/include/sml_engine.h	/^    sml_engine_remove_variable remove_variable;$/;"	m	struct:sml_engine
+required_observations	sml_ann/src/sml_ann.c	/^    unsigned int required_observations;$/;"	m	struct:sml_ann_engine	file:
+required_observations	sml_ann/src/sml_ann_bridge.c	/^    unsigned int required_observations;$/;"	m	struct:sml_ann_bridge	file:
+rule_group	sml_fuzzy/src/sml_rule_group.c	/^    struct sml_rule_group *rule_group;$/;"	m	struct:_Tmp_Rule_Fuzzy	typeref:struct:_Tmp_Rule_Fuzzy::sml_rule_group	file:
+rule_group_map	sml_fuzzy/src/sml_observation_controller.c	/^    struct sol_vector rule_group_map; \/\/TODO: User Matrix$/;"	m	struct:sml_observation_controller	typeref:struct:sml_observation_controller::sol_vector	file:
+rules	sml_fuzzy/src/sml_rule_group.c	/^    struct sol_ptr_vector rules;$/;"	m	struct:sml_rule_group	typeref:struct:sml_rule_group::sol_ptr_vector	file:
+save	common/include/sml_engine.h	/^    sml_engine_save save;$/;"	m	struct:sml_engine
+set_value	common/include/sml_engine.h	/^    sml_engine_variable_set_value set_value;$/;"	m	struct:sml_engine
+simplification_disabled	sml_fuzzy/src/sml_observation_controller.c	/^    bool simplification_disabled;$/;"	m	struct:sml_observation_controller	file:
+size	sml_fuzzy/src/sml_bit_array.h	/^    uint16_t size;$/;"	m	struct:sml_bit_array
+sml_ann_activation_function	include/sml_ann.h	/^enum sml_ann_activation_function {$/;"	g
+sml_ann_bridge	sml_ann/src/sml_ann_bridge.c	/^struct sml_ann_bridge {$/;"	s	file:
+sml_ann_bridge_add_observation	sml_ann/src/sml_ann_bridge.c	/^sml_ann_bridge_add_observation(struct sml_ann_bridge *iann,$/;"	f
+sml_ann_bridge_confidence_intervals_distance_sum	sml_ann/src/sml_ann_bridge.c	/^sml_ann_bridge_confidence_intervals_distance_sum(struct sml_ann_bridge *iann,$/;"	f
+sml_ann_bridge_consider_trained	sml_ann/src/sml_ann_bridge.c	/^sml_ann_bridge_consider_trained(struct sml_ann_bridge *iann,$/;"	f
+sml_ann_bridge_free	sml_ann/src/sml_ann_bridge.c	/^sml_ann_bridge_free(struct sml_ann_bridge *iann)$/;"	f
+sml_ann_bridge_get_confidence_interval_sum	sml_ann/src/sml_ann_bridge.c	/^sml_ann_bridge_get_confidence_interval_sum(struct sml_ann_bridge *iann)$/;"	f
+sml_ann_bridge_get_error	sml_ann/src/sml_ann_bridge.c	/^sml_ann_bridge_get_error(struct sml_ann_bridge *iann,$/;"	f
+sml_ann_bridge_inputs_in_confidence_interval_hits	sml_ann/src/sml_ann_bridge.c	/^sml_ann_bridge_inputs_in_confidence_interval_hits(struct sml_ann_bridge *iann,$/;"	f
+sml_ann_bridge_is_trained	sml_ann/src/sml_ann_bridge.c	/^sml_ann_bridge_is_trained(struct sml_ann_bridge *iann)$/;"	f
+sml_ann_bridge_load_from_file	sml_ann/src/sml_ann_bridge.c	/^sml_ann_bridge_load_from_file(const char *ann_path, const char *cfg_path)$/;"	f
+sml_ann_bridge_load_from_file_with_no_cfg	sml_ann/src/sml_ann_bridge.c	/^sml_ann_bridge_load_from_file_with_no_cfg(const char *ann_path)$/;"	f
+sml_ann_bridge_new	sml_ann/src/sml_ann_bridge.c	/^sml_ann_bridge_new(unsigned int inputs, unsigned int outputs,$/;"	f
+sml_ann_bridge_predict_output	sml_ann/src/sml_ann_bridge.c	/^sml_ann_bridge_predict_output(struct sml_ann_bridge *iann,$/;"	f
+sml_ann_bridge_predict_output_by_index	sml_ann/src/sml_ann_bridge.c	/^sml_ann_bridge_predict_output_by_index(struct sml_ann_bridge *iann,$/;"	f
+sml_ann_bridge_print_debug	sml_ann/src/sml_ann_bridge.c	/^sml_ann_bridge_print_debug(struct sml_ann_bridge *ann)$/;"	f
+sml_ann_bridge_save	sml_ann/src/sml_ann_bridge.c	/^sml_ann_bridge_save(struct sml_ann_bridge *iann, const char *ann_path,$/;"	f
+sml_ann_bridge_save_with_no_cfg	sml_ann/src/sml_ann_bridge.c	/^sml_ann_bridge_save_with_no_cfg(struct sml_ann_bridge *iann,$/;"	f
+sml_ann_bridge_train	sml_ann/src/sml_ann_bridge.c	/^sml_ann_bridge_train(struct sml_ann_bridge *iann,$/;"	f
+sml_ann_engine	sml_ann/src/sml_ann.c	/^struct sml_ann_engine {$/;"	s	file:
+sml_ann_new	sml_ann/src/sml_ann.c	/^sml_ann_new(void)$/;"	f
+sml_ann_new	sml_ann/src/sml_ann_support.c	/^sml_ann_new(void)$/;"	f
+sml_ann_set_activation_function_candidates	sml_ann/src/sml_ann.c	/^sml_ann_set_activation_function_candidates(struct sml_object *sml,$/;"	f
+sml_ann_set_cache_max_size	sml_ann/src/sml_ann.c	/^sml_ann_set_cache_max_size(struct sml_object *sml, unsigned int max_size)$/;"	f
+sml_ann_set_cache_max_size	sml_ann/src/sml_ann_support.c	/^sml_ann_set_cache_max_size(struct sml_object *sml, unsigned int max_size)$/;"	f
+sml_ann_set_candidate_groups	sml_ann/src/sml_ann.c	/^sml_ann_set_candidate_groups(struct sml_object *sml,$/;"	f
+sml_ann_set_candidate_groups	sml_ann/src/sml_ann_support.c	/^sml_ann_set_candidate_groups(struct sml_object *sml,$/;"	f
+sml_ann_set_desired_error	sml_ann/src/sml_ann.c	/^sml_ann_set_desired_error(struct sml_object *sml, float desired_error)$/;"	f
+sml_ann_set_desired_error	sml_ann/src/sml_ann_support.c	/^sml_ann_set_desired_error(struct sml_object *sml, float desired_error)$/;"	f
+sml_ann_set_initial_required_observations	sml_ann/src/sml_ann.c	/^sml_ann_set_initial_required_observations(struct sml_object *sml,$/;"	f
+sml_ann_set_initial_required_observations	sml_ann/src/sml_ann_support.c	/^sml_ann_set_initial_required_observations(struct sml_object *sml,$/;"	f
+sml_ann_set_max_memory_for_observations	sml_ann/src/sml_ann_support.c	/^sml_ann_set_max_memory_for_observations(struct sml_object *sml,$/;"	f
+sml_ann_set_max_neurons	sml_ann/src/sml_ann.c	/^sml_ann_set_max_neurons(struct sml_object *sml, unsigned int max_neurons)$/;"	f
+sml_ann_set_max_neurons	sml_ann/src/sml_ann_support.c	/^sml_ann_set_max_neurons(struct sml_object *sml, unsigned int max_neurons)$/;"	f
+sml_ann_set_training_algorithm	sml_ann/src/sml_ann.c	/^sml_ann_set_training_algorithm(struct sml_object *sml,$/;"	f
+sml_ann_set_training_algorithm	sml_ann/src/sml_ann_support.c	/^sml_ann_set_training_algorithm(struct sml_object *sml,$/;"	f
+sml_ann_set_training_epochs	sml_ann/src/sml_ann.c	/^sml_ann_set_training_epochs(struct sml_object *sml,$/;"	f
+sml_ann_set_training_epochs	sml_ann/src/sml_ann_support.c	/^sml_ann_set_training_epochs(struct sml_object *sml,$/;"	f
+sml_ann_supported	sml_ann/src/sml_ann.c	/^sml_ann_supported(void)$/;"	f
+sml_ann_supported	sml_ann/src/sml_ann_support.c	/^sml_ann_supported(void)$/;"	f
+sml_ann_training_algorithm	include/sml_ann.h	/^enum sml_ann_training_algorithm {$/;"	g
+sml_ann_use_pseudorehearsal_strategy	sml_ann/src/sml_ann.c	/^sml_ann_use_pseudorehearsal_strategy(struct sml_object *sml,$/;"	f
+sml_ann_use_pseudorehearsal_strategy	sml_ann/src/sml_ann_support.c	/^sml_ann_use_pseudorehearsal_strategy(struct sml_object *sml,$/;"	f
+sml_ann_variable_descale_value	sml_ann/src/sml_ann_variable_list.c	/^sml_ann_variable_descale_value(struct sml_variable *var, float value)$/;"	f
+sml_ann_variable_fill_with_random_values	sml_ann/src/sml_ann_variable_list.c	/^sml_ann_variable_fill_with_random_values(struct sml_variable *var,$/;"	f
+sml_ann_variable_free	sml_ann/src/sml_ann_variable_list.c	/^sml_ann_variable_free(struct sml_variable *var)$/;"	f
+sml_ann_variable_get_last_stable_value	sml_ann/src/sml_ann_variable_list.c	/^sml_ann_variable_get_last_stable_value(struct sml_variable *var)$/;"	f
+sml_ann_variable_get_name	sml_ann/src/sml_ann_variable_list.c	/^sml_ann_variable_get_name(struct sml_variable *var, char *var_name, size_t var_name_size)$/;"	f
+sml_ann_variable_get_observations_length	sml_ann/src/sml_ann_variable_list.c	/^sml_ann_variable_get_observations_length(struct sml_variable *var)$/;"	f
+sml_ann_variable_get_previous_value	sml_ann/src/sml_ann_variable_list.c	/^sml_ann_variable_get_previous_value(struct sml_variable *var)$/;"	f
+sml_ann_variable_get_range	sml_ann/src/sml_ann_variable_list.c	/^sml_ann_variable_get_range(struct sml_variable *var, float *min, float *max)$/;"	f
+sml_ann_variable_get_value	sml_ann/src/sml_ann_variable_list.c	/^sml_ann_variable_get_value(struct sml_variable *var)$/;"	f
+sml_ann_variable_get_value_by_index	sml_ann/src/sml_ann_variable_list.c	/^sml_ann_variable_get_value_by_index(struct sml_variable *var,$/;"	f
+sml_ann_variable_is_enabled	sml_ann/src/sml_ann_variable_list.c	/^sml_ann_variable_is_enabled(struct sml_variable *var)$/;"	f
+sml_ann_variable_is_input	sml_ann/src/sml_ann_variable_list.c	/^sml_ann_variable_is_input(struct sml_variable *var)$/;"	f
+sml_ann_variable_list_add_variable	sml_ann/src/sml_ann_variable_list.c	/^sml_ann_variable_list_add_variable(struct sml_variables_list *list,$/;"	f
+sml_ann_variable_list_free	sml_ann/src/sml_ann_variable_list.c	/^sml_ann_variable_list_free(struct sml_variables_list *list, bool free_var)$/;"	f
+sml_ann_variable_list_new	sml_ann/src/sml_ann_variable_list.c	/^sml_ann_variable_list_new()$/;"	f
+sml_ann_variable_list_remove	sml_ann/src/sml_ann_variable_list.c	/^sml_ann_variable_list_remove(struct sml_variables_list *list, uint16_t index)$/;"	f
+sml_ann_variable_new	sml_ann/src/sml_ann_variable_list.c	/^sml_ann_variable_new(const char *name, bool input)$/;"	f
+sml_ann_variable_realloc_observation_array	sml_ann/src/sml_ann_variable_list.c	/^sml_ann_variable_realloc_observation_array(struct sml_variable *var,$/;"	f
+sml_ann_variable_scale_value	sml_ann/src/sml_ann_variable_list.c	/^sml_ann_variable_scale_value(struct sml_variable *var, float value)$/;"	f
+sml_ann_variable_set_enabled	sml_ann/src/sml_ann_variable_list.c	/^sml_ann_variable_set_enabled(struct sml_variable *var, bool enabled)$/;"	f
+sml_ann_variable_set_observations_array_index	sml_ann/src/sml_ann_variable_list.c	/^sml_ann_variable_set_observations_array_index(struct sml_variable *var,$/;"	f
+sml_ann_variable_set_range	sml_ann/src/sml_ann_variable_list.c	/^sml_ann_variable_set_range(struct sml_engine *engine, struct sml_variable *var,$/;"	f
+sml_ann_variable_set_value	sml_ann/src/sml_ann_variable_list.c	/^sml_ann_variable_set_value(struct sml_variable *var, float value)$/;"	f
+sml_ann_variable_set_value_by_index	sml_ann/src/sml_ann_variable_list.c	/^sml_ann_variable_set_value_by_index(struct sml_variable *var, float value,$/;"	f
+sml_ann_variables_list_add_last_value_to_observation	sml_ann/src/sml_ann_variable_list.c	/^sml_ann_variables_list_add_last_value_to_observation($/;"	f
+sml_ann_variables_list_get_length	sml_ann/src/sml_ann_variable_list.c	/^sml_ann_variables_list_get_length(struct sml_variables_list *list)$/;"	f
+sml_ann_variables_list_index	sml_ann/src/sml_ann_variable_list.c	/^sml_ann_variables_list_index(struct sml_variables_list *list,$/;"	f
+sml_ann_variables_list_realloc_observations_array	sml_ann/src/sml_ann_variable_list.c	/^sml_ann_variables_list_realloc_observations_array($/;"	f
+sml_ann_variables_list_reset_observations	sml_ann/src/sml_ann_variable_list.c	/^sml_ann_variables_list_reset_observations(struct sml_variables_list *list,$/;"	f
+sml_ann_variables_list_set_current_value_as_stable	sml_ann/src/sml_ann_variable_list.c	/^sml_ann_variables_list_set_current_value_as_stable($/;"	f
+sml_bit_array	sml_fuzzy/src/sml_bit_array.h	/^struct sml_bit_array {$/;"	s
+sml_bit_array_byte_size_get	sml_fuzzy/src/sml_bit_array.c	/^sml_bit_array_byte_size_get(struct sml_bit_array *array)$/;"	f
+sml_bit_array_clear	sml_fuzzy/src/sml_bit_array.c	/^sml_bit_array_clear(struct sml_bit_array *array)$/;"	f
+sml_bit_array_get	sml_fuzzy/src/sml_bit_array.c	/^sml_bit_array_get(struct sml_bit_array *array, uint16_t pos)$/;"	f
+sml_bit_array_init	sml_fuzzy/src/sml_bit_array.c	/^sml_bit_array_init(struct sml_bit_array *array)$/;"	f
+sml_bit_array_remove	sml_fuzzy/src/sml_bit_array.c	/^sml_bit_array_remove(struct sml_bit_array *array, uint16_t pos)$/;"	f
+sml_bit_array_set	sml_fuzzy/src/sml_bit_array.c	/^sml_bit_array_set(struct sml_bit_array *array, uint16_t pos, uint8_t value)$/;"	f
+sml_bit_array_size_get	sml_fuzzy/src/sml_bit_array.c	/^sml_bit_array_size_get(struct sml_bit_array *array)$/;"	f
+sml_bit_array_size_set	sml_fuzzy/src/sml_bit_array.c	/^sml_bit_array_size_set(struct sml_bit_array *array, uint16_t new_size,$/;"	f
+sml_cache	common/src/sml_cache.c	/^struct sml_cache {$/;"	s	file:
+sml_cache_clear	common/src/sml_cache.c	/^sml_cache_clear(struct sml_cache *cache)$/;"	f
+sml_cache_element_free_cb	common/include/sml_cache.h	/^typedef void (*sml_cache_element_free_cb)(void *element, void *data);$/;"	t
+sml_cache_free	common/src/sml_cache.c	/^sml_cache_free(struct sml_cache *cache)$/;"	f
+sml_cache_get_element	common/src/sml_cache.c	/^sml_cache_get_element(struct sml_cache *cache, uint16_t elem)$/;"	f
+sml_cache_get_elements	common/src/sml_cache.c	/^sml_cache_get_elements(struct sml_cache *cache)$/;"	f
+sml_cache_get_size	common/src/sml_cache.c	/^sml_cache_get_size(struct sml_cache *cache)$/;"	f
+sml_cache_get_total_elements_inserted	common/src/sml_cache.c	/^sml_cache_get_total_elements_inserted(struct sml_cache *cache)$/;"	f
+sml_cache_hit	common/src/sml_cache.c	/^sml_cache_hit(struct sml_cache *cache, void *data)$/;"	f
+sml_cache_new	common/src/sml_cache.c	/^sml_cache_new(uint16_t max_elements, sml_cache_element_free_cb free_cb,$/;"	f
+sml_cache_put	common/src/sml_cache.c	/^sml_cache_put(struct sml_cache *cache, void *data)$/;"	f
+sml_cache_remove	common/src/sml_cache.c	/^sml_cache_remove(struct sml_cache *cache, void *data)$/;"	f
+sml_cache_remove_by_id	common/src/sml_cache.c	/^sml_cache_remove_by_id(struct sml_cache *cache, uint16_t elem)$/;"	f
+sml_cache_set_max_size	common/src/sml_cache.c	/^sml_cache_set_max_size(struct sml_cache *cache, uint16_t max_elements)$/;"	f
+sml_call_output_state_changed_cb	common/src/sml_engine.c	/^sml_call_output_state_changed_cb(struct sml_engine *engine,$/;"	f
+sml_call_read_state_cb	common/src/sml_engine.c	/^sml_call_read_state_cb(struct sml_engine *engine)$/;"	f
+sml_change_cb	include/sml.h	/^typedef void (*sml_change_cb)(struct sml_object *sml, struct sml_variables_list *changed, void *data);$/;"	t
+sml_cmp_cb	common/include/sml_matrix.h	/^typedef bool (*sml_cmp_cb) (void *a, void *b);$/;"	t
+sml_critical	include/sml_log.h	128;"	d
+sml_debug	include/sml_log.h	92;"	d
+sml_engine	common/include/sml_engine.h	/^struct sml_engine {$/;"	s
+sml_engine_erase_knowledge	common/include/sml_engine.h	/^typedef bool (*sml_engine_erase_knowledge)(struct sml_engine *engine);$/;"	t
+sml_engine_free	common/include/sml_engine.h	/^typedef void (*sml_engine_free)(struct sml_engine *engine);$/;"	t
+sml_engine_get_input	common/include/sml_engine.h	/^typedef struct sml_variable *(*sml_engine_get_input)(struct sml_engine *engine, const char *name);$/;"	t	typeref:struct:sml_engine_get_input
+sml_engine_get_input_list	common/include/sml_engine.h	/^typedef struct sml_variables_list *(*sml_engine_get_input_list)(struct sml_engine *engine);$/;"	t	typeref:struct:sml_engine_get_input_list
+sml_engine_get_output	common/include/sml_engine.h	/^typedef struct sml_variable *(*sml_engine_get_output)(struct sml_engine *engine, const char *name);$/;"	t	typeref:struct:sml_engine_get_output
+sml_engine_get_output_list	common/include/sml_engine.h	/^typedef struct sml_variables_list *(*sml_engine_get_output_list)(struct sml_engine *engine);$/;"	t	typeref:struct:sml_engine_get_output_list
+sml_engine_load	common/include/sml_engine.h	/^typedef bool (*sml_engine_load)(struct sml_engine *engine, const char *path);$/;"	t
+sml_engine_load_file	common/include/sml_engine.h	/^typedef bool (*sml_engine_load_file)(struct sml_engine *engine, const char *filename);$/;"	t
+sml_engine_new_input	common/include/sml_engine.h	/^typedef struct sml_variable *(*sml_engine_new_input)(struct sml_engine *engine, const char *name);$/;"	t	typeref:struct:sml_engine_new_input
+sml_engine_new_output	common/include/sml_engine.h	/^typedef struct sml_variable *(*sml_engine_new_output)(struct sml_engine *engine, const char *name);$/;"	t	typeref:struct:sml_engine_new_output
+sml_engine_predict	common/include/sml_engine.h	/^typedef bool (*sml_engine_predict)(struct sml_engine *engine);$/;"	t
+sml_engine_print_debug	common/include/sml_engine.h	/^typedef void (*sml_engine_print_debug)(struct sml_engine *engine, bool full);$/;"	t
+sml_engine_process	common/include/sml_engine.h	/^typedef int (*sml_engine_process)(struct sml_engine *engine);$/;"	t
+sml_engine_remove_variable	common/include/sml_engine.h	/^typedef bool (*sml_engine_remove_variable)(struct sml_engine *engine, struct sml_variable *variable);$/;"	t
+sml_engine_save	common/include/sml_engine.h	/^typedef bool (*sml_engine_save)(struct sml_engine *engine, const char *path);$/;"	t
+sml_engine_variable_get_name	common/include/sml_engine.h	/^typedef int (*sml_engine_variable_get_name)(struct sml_variable *sml_variable, char *var_name, size_t var_name_size);$/;"	t
+sml_engine_variable_get_range	common/include/sml_engine.h	/^typedef bool (*sml_engine_variable_get_range)(struct sml_variable *sml_variable, float *min, float *max);$/;"	t
+sml_engine_variable_get_value	common/include/sml_engine.h	/^typedef float (*sml_engine_variable_get_value)(struct sml_variable *sml_variable);$/;"	t
+sml_engine_variable_is_enabled	common/include/sml_engine.h	/^typedef bool (*sml_engine_variable_is_enabled)(struct sml_variable *variable);$/;"	t
+sml_engine_variable_set_enabled	common/include/sml_engine.h	/^typedef int (*sml_engine_variable_set_enabled)(struct sml_engine *engine, struct sml_variable *variable, bool enabled);$/;"	t
+sml_engine_variable_set_range	common/include/sml_engine.h	/^typedef bool (*sml_engine_variable_set_range)(struct sml_engine *engine, struct sml_variable *sml_variable, float min, float max);$/;"	t
+sml_engine_variable_set_value	common/include/sml_engine.h	/^typedef bool (*sml_engine_variable_set_value)(struct sml_variable *sml_variable, float value);$/;"	t
+sml_engine_variables_list_get_length	common/include/sml_engine.h	/^typedef uint16_t (*sml_engine_variables_list_get_length)(struct sml_variables_list *list);$/;"	t
+sml_engine_variables_list_index	common/include/sml_engine.h	/^typedef struct sml_variable *(*sml_engine_variables_list_index)(struct sml_variables_list *list, unsigned int index);$/;"	t	typeref:struct:sml_engine_variables_list_index
+sml_erase_knowledge	common/src/sml_engine.c	/^sml_erase_knowledge(struct sml_object *sml)$/;"	f
+sml_error	include/sml_log.h	119;"	d
+sml_free	common/src/sml_engine.c	/^sml_free(struct sml_object *sml)$/;"	f
+sml_fuzzy	sml_fuzzy/src/sml_fuzzy_bridge.h	/^struct sml_fuzzy {$/;"	s
+sml_fuzzy_bridge_conjunction_set	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^sml_fuzzy_bridge_conjunction_set(struct sml_fuzzy *fuzzy, enum sml_fuzzy_tnorm norm)$/;"	f
+sml_fuzzy_bridge_new	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^sml_fuzzy_bridge_new(void)$/;"	f
+sml_fuzzy_bridge_output_set_accumulation	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^sml_fuzzy_bridge_output_set_accumulation(struct sml_variable *variable,$/;"	f
+sml_fuzzy_bridge_output_set_defuzzifier	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^sml_fuzzy_bridge_output_set_defuzzifier(struct sml_variable *variable,$/;"	f
+sml_fuzzy_bridge_variable_add_term_cosine	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^sml_fuzzy_bridge_variable_add_term_cosine(struct sml_fuzzy *fuzzy,$/;"	f
+sml_fuzzy_bridge_variable_add_term_gaussian	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^sml_fuzzy_bridge_variable_add_term_gaussian(struct sml_fuzzy *fuzzy,$/;"	f
+sml_fuzzy_bridge_variable_add_term_ramp	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^sml_fuzzy_bridge_variable_add_term_ramp(struct sml_fuzzy *fuzzy,$/;"	f
+sml_fuzzy_bridge_variable_add_term_rectangle	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^sml_fuzzy_bridge_variable_add_term_rectangle(struct sml_fuzzy *fuzzy,$/;"	f
+sml_fuzzy_bridge_variable_add_term_triangle	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^sml_fuzzy_bridge_variable_add_term_triangle(struct sml_fuzzy *fuzzy,$/;"	f
+sml_fuzzy_bridge_variable_get_default_term_width	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^sml_fuzzy_bridge_variable_get_default_term_width(struct sml_fuzzy *fuzzy,$/;"	f
+sml_fuzzy_bridge_variable_get_is_id	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^sml_fuzzy_bridge_variable_get_is_id(struct sml_fuzzy *fuzzy,$/;"	f
+sml_fuzzy_bridge_variable_remove_term	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^sml_fuzzy_bridge_variable_remove_term(struct sml_variable *variable,$/;"	f
+sml_fuzzy_bridge_variable_set_default_term_width	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^sml_fuzzy_bridge_variable_set_default_term_width(struct sml_fuzzy *fuzzy,$/;"	f
+sml_fuzzy_bridge_variable_set_is_id	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^sml_fuzzy_bridge_variable_set_is_id(struct sml_fuzzy *fuzzy,$/;"	f
+sml_fuzzy_bridge_variable_set_range	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^sml_fuzzy_bridge_variable_set_range(struct sml_variable *variable, float min,$/;"	f
+sml_fuzzy_bridge_variable_term_triangle_update	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^sml_fuzzy_bridge_variable_term_triangle_update(struct sml_fuzzy_term *term,$/;"	f
+sml_fuzzy_conjunction_set	sml_fuzzy/src/sml_fuzzy.c	/^sml_fuzzy_conjunction_set(struct sml_object *sml, enum sml_fuzzy_tnorm norm)$/;"	f
+sml_fuzzy_conjunction_set	sml_fuzzy/src/sml_fuzzy_support.c	/^sml_fuzzy_conjunction_set(struct sml_object *sml, enum sml_fuzzy_tnorm norm)$/;"	f
+sml_fuzzy_debug	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^sml_fuzzy_debug(struct sml_fuzzy *fuzzy)$/;"	f
+sml_fuzzy_defuzzifier	include/sml_fuzzy.h	/^enum sml_fuzzy_defuzzifier {$/;"	g
+sml_fuzzy_destroy	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^sml_fuzzy_destroy(struct sml_fuzzy *fuzzy)$/;"	f
+sml_fuzzy_disjunction_set	sml_fuzzy/src/sml_fuzzy_support.c	/^sml_fuzzy_disjunction_set(struct sml_object *sml, enum sml_fuzzy_snorm norm)$/;"	f
+sml_fuzzy_engine	sml_fuzzy/src/sml_fuzzy.c	/^struct sml_fuzzy_engine {$/;"	s	file:
+sml_fuzzy_erase_rules	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^sml_fuzzy_erase_rules(struct sml_fuzzy *fuzzy)$/;"	f
+sml_fuzzy_find_variable	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^sml_fuzzy_find_variable(struct sml_variables_list *list, struct sml_variable *var,$/;"	f
+sml_fuzzy_get_input	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^sml_fuzzy_get_input(struct sml_fuzzy *fuzzy, const char *name)$/;"	f
+sml_fuzzy_get_membership_values	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^sml_fuzzy_get_membership_values(struct sml_fuzzy *fuzzy)$/;"	f
+sml_fuzzy_get_membership_values_output	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^sml_fuzzy_get_membership_values_output(struct sml_fuzzy *fuzzy,$/;"	f
+sml_fuzzy_get_output	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^sml_fuzzy_get_output(struct sml_fuzzy *fuzzy, const char *name)$/;"	f
+sml_fuzzy_is_input	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^sml_fuzzy_is_input(struct sml_fuzzy *fuzzy, struct sml_variable *variable,$/;"	f
+sml_fuzzy_is_output	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^sml_fuzzy_is_output(struct sml_fuzzy *fuzzy, struct sml_variable *variable,$/;"	f
+sml_fuzzy_is_rule_block_empty	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^sml_fuzzy_is_rule_block_empty(struct sml_fuzzy *fuzzy)$/;"	f
+sml_fuzzy_load_file	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^sml_fuzzy_load_file(struct sml_fuzzy *fuzzy, const char *filename)$/;"	f
+sml_fuzzy_new	sml_fuzzy/src/sml_fuzzy.c	/^sml_fuzzy_new(void)$/;"	f
+sml_fuzzy_new	sml_fuzzy/src/sml_fuzzy_support.c	/^sml_fuzzy_new(void)$/;"	f
+sml_fuzzy_new_input	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^sml_fuzzy_new_input(struct sml_fuzzy *fuzzy, const char *name)$/;"	f
+sml_fuzzy_new_output	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^sml_fuzzy_new_output(struct sml_fuzzy *fuzzy, const char *name)$/;"	f
+sml_fuzzy_output_set_accumulation	sml_fuzzy/src/sml_fuzzy.c	/^sml_fuzzy_output_set_accumulation(struct sml_object *sml,$/;"	f
+sml_fuzzy_output_set_accumulation	sml_fuzzy/src/sml_fuzzy_support.c	/^sml_fuzzy_output_set_accumulation(struct sml_object *sml, struct$/;"	f
+sml_fuzzy_output_set_default_value	sml_fuzzy/src/sml_fuzzy_support.c	/^sml_fuzzy_output_set_default_value(struct sml_object *sml, struct$/;"	f
+sml_fuzzy_output_set_defuzzifier	sml_fuzzy/src/sml_fuzzy.c	/^sml_fuzzy_output_set_defuzzifier(struct sml_object *sml,$/;"	f
+sml_fuzzy_output_set_defuzzifier	sml_fuzzy/src/sml_fuzzy_support.c	/^sml_fuzzy_output_set_defuzzifier(struct sml_object *sml, struct$/;"	f
+sml_fuzzy_process_output	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^sml_fuzzy_process_output(struct sml_fuzzy *fuzzy)$/;"	f
+sml_fuzzy_remove_variable	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^sml_fuzzy_remove_variable(struct sml_fuzzy *fuzzy, struct sml_variable *variable)$/;"	f
+sml_fuzzy_rule_add	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^sml_fuzzy_rule_add(struct sml_fuzzy *fuzzy, const char *rule)$/;"	f
+sml_fuzzy_rule_free	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^sml_fuzzy_rule_free(struct sml_fuzzy *fuzzy, struct sml_fuzzy_rule *rule)$/;"	f
+sml_fuzzy_save_file	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^sml_fuzzy_save_file(struct sml_fuzzy *fuzzy, const char *filename)$/;"	f
+sml_fuzzy_set_read_values	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^sml_fuzzy_set_read_values(struct sml_fuzzy *fuzzy, struct sml_variables_list *outputs) {$/;"	f
+sml_fuzzy_set_rule_weight_threshold	sml_fuzzy/src/sml_fuzzy.c	/^sml_fuzzy_set_rule_weight_threshold(struct sml_object *sml,$/;"	f
+sml_fuzzy_set_rule_weight_threshold	sml_fuzzy/src/sml_fuzzy_support.c	/^sml_fuzzy_set_rule_weight_threshold(struct sml_object *sml, float$/;"	f
+sml_fuzzy_set_simplification_disabled	sml_fuzzy/src/sml_fuzzy.c	/^sml_fuzzy_set_simplification_disabled(struct sml_object *sml, bool disabled)$/;"	f
+sml_fuzzy_set_simplification_disabled	sml_fuzzy/src/sml_fuzzy_support.c	/^sml_fuzzy_set_simplification_disabled(struct sml_object *sml, bool disabled)$/;"	f
+sml_fuzzy_set_variable_terms_auto_balance	sml_fuzzy/src/sml_fuzzy.c	/^sml_fuzzy_set_variable_terms_auto_balance(struct sml_object *sml,$/;"	f
+sml_fuzzy_set_variable_terms_auto_balance	sml_fuzzy/src/sml_fuzzy_support.c	/^sml_fuzzy_set_variable_terms_auto_balance(struct sml_object *sml,$/;"	f
+sml_fuzzy_snorm	include/sml_fuzzy.h	/^enum sml_fuzzy_snorm {$/;"	g
+sml_fuzzy_supported	sml_fuzzy/src/sml_fuzzy.c	/^sml_fuzzy_supported(void)$/;"	f
+sml_fuzzy_supported	sml_fuzzy/src/sml_fuzzy_support.c	/^sml_fuzzy_supported(void)$/;"	f
+sml_fuzzy_term_get_name	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^sml_fuzzy_term_get_name(struct sml_fuzzy_term *term, char *term_name, size_t term_name_size)$/;"	f
+sml_fuzzy_term_get_range	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^sml_fuzzy_term_get_range(struct sml_fuzzy_term *term, float *min, float *max) {$/;"	f
+sml_fuzzy_term_set_range	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^sml_fuzzy_term_set_range(struct sml_fuzzy_term *term, float min, float max) {$/;"	f
+sml_fuzzy_tnorm	include/sml_fuzzy.h	/^enum sml_fuzzy_tnorm {$/;"	g
+sml_fuzzy_variable_add_term_cosine	sml_fuzzy/src/sml_fuzzy.c	/^sml_fuzzy_variable_add_term_cosine(struct sml_object *sml,$/;"	f
+sml_fuzzy_variable_add_term_cosine	sml_fuzzy/src/sml_fuzzy_support.c	/^sml_fuzzy_variable_add_term_cosine(struct sml_object *sml, struct$/;"	f
+sml_fuzzy_variable_add_term_gaussian	sml_fuzzy/src/sml_fuzzy.c	/^sml_fuzzy_variable_add_term_gaussian(struct sml_object *sml,$/;"	f
+sml_fuzzy_variable_add_term_gaussian	sml_fuzzy/src/sml_fuzzy_support.c	/^sml_fuzzy_variable_add_term_gaussian(struct sml_object *sml, struct$/;"	f
+sml_fuzzy_variable_add_term_ramp	sml_fuzzy/src/sml_fuzzy.c	/^sml_fuzzy_variable_add_term_ramp(struct sml_object *sml,$/;"	f
+sml_fuzzy_variable_add_term_ramp	sml_fuzzy/src/sml_fuzzy_support.c	/^sml_fuzzy_variable_add_term_ramp(struct sml_object *sml, struct$/;"	f
+sml_fuzzy_variable_add_term_rectangle	sml_fuzzy/src/sml_fuzzy.c	/^sml_fuzzy_variable_add_term_rectangle(struct sml_object *sml,$/;"	f
+sml_fuzzy_variable_add_term_rectangle	sml_fuzzy/src/sml_fuzzy_support.c	/^sml_fuzzy_variable_add_term_rectangle(struct sml_object *sml, struct$/;"	f
+sml_fuzzy_variable_add_term_triangle	sml_fuzzy/src/sml_fuzzy.c	/^sml_fuzzy_variable_add_term_triangle(struct sml_object *sml,$/;"	f
+sml_fuzzy_variable_add_term_triangle	sml_fuzzy/src/sml_fuzzy_support.c	/^sml_fuzzy_variable_add_term_triangle(struct sml_object *sml, struct$/;"	f
+sml_fuzzy_variable_find_term	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^sml_fuzzy_variable_find_term(struct sml_variable *var, struct sml_fuzzy_term *term,$/;"	f
+sml_fuzzy_variable_get_default_term_width	sml_fuzzy/src/sml_fuzzy.c	/^sml_fuzzy_variable_get_default_term_width(struct sml_object *sml,$/;"	f
+sml_fuzzy_variable_get_is_id	sml_fuzzy/src/sml_fuzzy.c	/^sml_fuzzy_variable_get_is_id(struct sml_object *sml,$/;"	f
+sml_fuzzy_variable_get_name	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^sml_fuzzy_variable_get_name(struct sml_variable *variable, char *var_name, size_t var_name_size)$/;"	f
+sml_fuzzy_variable_get_range	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^sml_fuzzy_variable_get_range(struct sml_variable *variable, float *min, float *max) {$/;"	f
+sml_fuzzy_variable_get_term	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^sml_fuzzy_variable_get_term(struct sml_variable *variable, uint16_t index)$/;"	f
+sml_fuzzy_variable_get_value	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^sml_fuzzy_variable_get_value(struct sml_variable *variable)$/;"	f
+sml_fuzzy_variable_is_enabled	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^sml_fuzzy_variable_is_enabled(struct sml_variable *variable)$/;"	f
+sml_fuzzy_variable_remove_term	sml_fuzzy/src/sml_fuzzy.c	/^sml_fuzzy_variable_remove_term(struct sml_object *sml, struct sml_variable *var,$/;"	f
+sml_fuzzy_variable_remove_term	sml_fuzzy/src/sml_fuzzy_support.c	/^sml_fuzzy_variable_remove_term(struct sml_object *sml, struct sml_variable *var,$/;"	f
+sml_fuzzy_variable_set_default_term_width	sml_fuzzy/src/sml_fuzzy.c	/^sml_fuzzy_variable_set_default_term_width(struct sml_object *sml,$/;"	f
+sml_fuzzy_variable_set_enabled	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^sml_fuzzy_variable_set_enabled(struct sml_variable *variable, bool enabled)$/;"	f
+sml_fuzzy_variable_set_is_id	sml_fuzzy/src/sml_fuzzy.c	/^sml_fuzzy_variable_set_is_id(struct sml_object *sml,$/;"	f
+sml_fuzzy_variable_set_value	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^sml_fuzzy_variable_set_value(struct sml_variable *variable, float value)$/;"	f
+sml_fuzzy_variable_terms_count	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^sml_fuzzy_variable_terms_count(struct sml_variable *variable)$/;"	f
+sml_fuzzy_variables_list_free	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^sml_fuzzy_variables_list_free(struct sml_variables_list *list) {$/;"	f
+sml_fuzzy_variables_list_get_length	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^sml_fuzzy_variables_list_get_length(struct sml_variables_list *list)$/;"	f
+sml_fuzzy_variables_list_index	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^sml_fuzzy_variables_list_index(struct sml_variables_list *list, uint16_t index)$/;"	f
+sml_fuzzy_variables_list_new	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^sml_fuzzy_variables_list_new(struct sml_fuzzy *fuzzy, struct sol_vector *indexes)$/;"	f
+sml_get_fuzzy	sml_fuzzy/src/sml_fuzzy.c	/^sml_get_fuzzy(struct sml_engine *engine)$/;"	f
+sml_get_input	common/src/sml_engine.c	/^sml_get_input(struct sml_object *sml, const char *name)$/;"	f
+sml_get_input_list	common/src/sml_engine.c	/^sml_get_input_list(struct sml_object *sml)$/;"	f
+sml_get_output	common/src/sml_engine.c	/^sml_get_output(struct sml_object *sml, const char *name)$/;"	f
+sml_get_output_list	common/src/sml_engine.c	/^sml_get_output_list(struct sml_object *sml)$/;"	f
+sml_info	include/sml_log.h	101;"	d
+sml_is_ann	sml_ann/src/sml_ann.c	/^sml_is_ann(struct sml_object *sml)$/;"	f
+sml_is_ann	sml_ann/src/sml_ann_support.c	/^sml_is_ann(struct sml_object *sml)$/;"	f
+sml_is_fuzzy	sml_fuzzy/src/sml_fuzzy.c	/^sml_is_fuzzy(struct sml_object *sml)$/;"	f
+sml_is_fuzzy	sml_fuzzy/src/sml_fuzzy_support.c	/^sml_is_fuzzy(struct sml_object *sml)$/;"	f
+sml_is_naive	sml_naive/src/sml_naive.c	/^sml_is_naive(struct sml_object *sml)$/;"	f
+sml_is_naive	sml_naive/src/sml_naive_support.c	/^sml_is_naive(struct sml_object *sml)$/;"	f
+sml_load	common/src/sml_engine.c	/^sml_load(struct sml_object *sml, const char *path)$/;"	f
+sml_load_debug_log_file	common/src/sml_engine.c	/^sml_load_debug_log_file(struct sml_object *sml, const char *str)$/;"	f
+sml_load_fll_file	common/src/sml_engine.c	/^sml_load_fll_file(struct sml_object *sml, const char *filename)$/;"	f
+sml_log_debug_data_list	common/src/sml_engine.c	/^sml_log_debug_data_list(struct sml_engine *engine, const char *prefix,$/;"	f
+sml_log_debug_data_var	common/src/sml_engine.c	/^sml_log_debug_data_var(struct sml_engine *engine, const char *prefix,$/;"	f
+sml_log_handler_cb	include/sml_log.h	/^typedef void (*sml_log_handler_cb)(enum sml_log_level level, const char *msg, void *data);$/;"	t
+sml_log_level	include/sml_log.h	/^enum sml_log_level {$/;"	g
+sml_log_print	common/src/sml_log.c	/^sml_log_print(enum sml_log_level level, const char *format, ...)$/;"	f
+sml_log_set_log_handler	common/src/sml_log.c	/^sml_log_set_log_handler(enum sml_log_level levels, sml_log_handler_cb cb,$/;"	f
+sml_main_loop_init	common/src/sml_main_loop.c	/^sml_main_loop_init(void)$/;"	f
+sml_main_loop_quit	common/src/sml_main_loop.c	/^sml_main_loop_quit(void)$/;"	f
+sml_main_loop_run	common/src/sml_main_loop.c	/^sml_main_loop_run(void)$/;"	f
+sml_main_loop_schedule_sml_process	common/src/sml_main_loop.c	/^sml_main_loop_schedule_sml_process(struct sml_object *sml, unsigned int timeout)$/;"	f
+sml_main_loop_shutdown	common/src/sml_main_loop.c	/^sml_main_loop_shutdown(void)$/;"	f
+sml_main_loop_unschedule_sml_process	common/src/sml_main_loop.c	/^sml_main_loop_unschedule_sml_process(int sml_timeout_id)$/;"	f
+sml_matrix	common/include/sml_matrix.h	/^struct sml_matrix {$/;"	s
+sml_matrix_cast_get	common/include/sml_matrix.h	47;"	d
+sml_matrix_clear	common/src/sml_matrix.c	/^sml_matrix_clear(struct sml_matrix *m)$/;"	f
+sml_matrix_cols	common/src/sml_matrix.c	/^sml_matrix_cols(struct sml_matrix *m, uint16_t i)$/;"	f
+sml_matrix_convert_cb	common/include/sml_matrix.h	/^typedef void (*sml_matrix_convert_cb) (char *buf, uint16_t buf_len, void *val);$/;"	t
+sml_matrix_debug	common/src/sml_matrix.c	/^sml_matrix_debug(struct sml_matrix *m, sml_matrix_convert_cb convert)$/;"	f
+sml_matrix_equals	common/src/sml_matrix.c	/^sml_matrix_equals(struct sml_matrix *m1, struct sml_matrix *m2, struct$/;"	f
+sml_matrix_get	common/src/sml_matrix.c	/^sml_matrix_get(struct sml_matrix *m, uint16_t i, uint16_t j)$/;"	f
+sml_matrix_init	common/src/sml_matrix.c	/^sml_matrix_init(struct sml_matrix *m, uint16_t elem_size)$/;"	f
+sml_matrix_insert	common/src/sml_matrix.c	/^sml_matrix_insert(struct sml_matrix *m, uint16_t i, uint16_t j)$/;"	f
+sml_matrix_lines	common/src/sml_matrix.c	/^sml_matrix_lines(struct sml_matrix *m)$/;"	f
+sml_matrix_remove_col	common/src/sml_matrix.c	/^sml_matrix_remove_col(struct sml_matrix *m, uint16_t line_num, uint16_t col_num)$/;"	f
+sml_matrix_remove_line	common/src/sml_matrix.c	/^sml_matrix_remove_line(struct sml_matrix *m, uint16_t line_num)$/;"	f
+sml_measure	sml_fuzzy/src/sml_measure.h	/^struct sml_measure {$/;"	s
+sml_measure_clear	sml_fuzzy/src/sml_measure.c	/^sml_measure_clear(struct sml_measure *measure)$/;"	f
+sml_measure_debug	sml_fuzzy/src/sml_measure.c	/^sml_measure_debug(struct sml_measure *measure, sml_matrix_convert_cb convert)$/;"	f
+sml_measure_free	sml_fuzzy/src/sml_measure.c	/^sml_measure_free(struct sml_measure *measure)$/;"	f
+sml_measure_init	sml_fuzzy/src/sml_measure.c	/^sml_measure_init(struct sml_measure *measure, uint16_t input_elem_size,$/;"	f
+sml_measure_new	sml_fuzzy/src/sml_measure.c	/^sml_measure_new(uint16_t input_elem_size, uint16_t output_elem_size)$/;"	f
+sml_measure_remove_input_variable	sml_fuzzy/src/sml_measure.c	/^sml_measure_remove_input_variable(struct sml_measure *measure, uint16_t pos)$/;"	f
+sml_measure_remove_output_variable	sml_fuzzy/src/sml_measure.c	/^sml_measure_remove_output_variable(struct sml_measure *measure, uint16_t pos)$/;"	f
+sml_naive_engine	sml_naive/src/sml_naive.c	/^struct sml_naive_engine {$/;"	s	file:
+sml_naive_new	sml_naive/src/sml_naive.c	/^sml_naive_new(void)$/;"	f
+sml_naive_new	sml_naive/src/sml_naive_support.c	/^sml_naive_new(void)$/;"	f
+sml_naive_supported	sml_naive/src/sml_naive.c	/^sml_naive_supported(void)$/;"	f
+sml_naive_supported	sml_naive/src/sml_naive_support.c	/^sml_naive_supported(void)$/;"	f
+sml_new_input	common/src/sml_engine.c	/^sml_new_input(struct sml_object *sml, const char *name)$/;"	f
+sml_new_output	common/src/sml_engine.c	/^sml_new_output(struct sml_object *sml, const char *name)$/;"	f
+sml_observation	sml_fuzzy/src/sml_observation.c	/^struct sml_observation {$/;"	s	file:
+sml_observation_controller	sml_fuzzy/src/sml_observation_controller.c	/^struct sml_observation_controller {$/;"	s	file:
+sml_observation_controller_clear	sml_fuzzy/src/sml_observation_controller.c	/^sml_observation_controller_clear($/;"	f
+sml_observation_controller_debug	sml_fuzzy/src/sml_observation_controller.c	/^sml_observation_controller_debug($/;"	f
+sml_observation_controller_free	sml_fuzzy/src/sml_observation_controller.c	/^sml_observation_controller_free($/;"	f
+sml_observation_controller_load_state	sml_fuzzy/src/sml_observation_controller.c	/^sml_observation_controller_load_state(struct sml_observation_controller$/;"	f
+sml_observation_controller_merge_terms	sml_fuzzy/src/sml_observation_controller.c	/^sml_observation_controller_merge_terms(struct sml_observation_controller$/;"	f
+sml_observation_controller_new	sml_fuzzy/src/sml_observation_controller.c	/^sml_observation_controller_new(struct sml_fuzzy *fuzzy)$/;"	f
+sml_observation_controller_observation_hit	sml_fuzzy/src/sml_observation_controller.c	/^sml_observation_controller_observation_hit(struct sml_observation_controller *$/;"	f
+sml_observation_controller_post_remove_variables	sml_fuzzy/src/sml_observation_controller.c	/^sml_observation_controller_post_remove_variables($/;"	f
+sml_observation_controller_remove_term	sml_fuzzy/src/sml_observation_controller.c	/^sml_observation_controller_remove_term(struct sml_observation_controller$/;"	f
+sml_observation_controller_remove_variables	sml_fuzzy/src/sml_observation_controller.c	/^sml_observation_controller_remove_variables(struct sml_observation_controller$/;"	f
+sml_observation_controller_rule_generate	sml_fuzzy/src/sml_observation_controller.c	/^sml_observation_controller_rule_generate(struct sml_observation_controller$/;"	f
+sml_observation_controller_rules_rebuild	sml_fuzzy/src/sml_observation_controller.c	/^sml_observation_controller_rules_rebuild(struct sml_observation_controller$/;"	f
+sml_observation_controller_save_state	sml_fuzzy/src/sml_observation_controller.c	/^sml_observation_controller_save_state(struct sml_observation_controller$/;"	f
+sml_observation_controller_set_simplification_disabled	sml_fuzzy/src/sml_observation_controller.c	/^sml_observation_controller_set_simplification_disabled($/;"	f
+sml_observation_controller_set_weight_threshold	sml_fuzzy/src/sml_observation_controller.c	/^sml_observation_controller_set_weight_threshold($/;"	f
+sml_observation_controller_split_terms	sml_fuzzy/src/sml_observation_controller.c	/^sml_observation_controller_split_terms(struct sml_fuzzy *fuzzy,$/;"	f
+sml_observation_controller_update_cache_size	sml_fuzzy/src/sml_observation_controller.c	/^sml_observation_controller_update_cache_size(struct sml_observation_controller$/;"	f
+sml_observation_controller_variable_set_enabled	sml_fuzzy/src/sml_observation_controller.c	/^sml_observation_controller_variable_set_enabled($/;"	f
+sml_observation_debug	sml_fuzzy/src/sml_observation.c	/^sml_observation_debug(struct sml_observation *observation)$/;"	f
+sml_observation_enabled_input_equals	sml_fuzzy/src/sml_observation.c	/^sml_observation_enabled_input_equals(struct sml_fuzzy *fuzzy,$/;"	f
+sml_observation_enabled_input_values_equals	sml_fuzzy/src/sml_observation.c	/^sml_observation_enabled_input_values_equals(struct sml_fuzzy *fuzzy,$/;"	f
+sml_observation_estimate_size	sml_fuzzy/src/sml_observation.c	/^sml_observation_estimate_size(struct sml_fuzzy *fuzzy)$/;"	f
+sml_observation_fill_output_weights	sml_fuzzy/src/sml_observation.c	/^sml_observation_fill_output_weights(struct sml_fuzzy *fuzzy,$/;"	f
+sml_observation_free	sml_fuzzy/src/sml_observation.c	/^sml_observation_free(struct sml_observation *observation)$/;"	f
+sml_observation_group_debug	sml_fuzzy/src/sml_observation_group.c	/^sml_observation_group_debug(struct sml_observation_group *obs_group)$/;"	f
+sml_observation_group_enabled_input_equals	sml_fuzzy/src/sml_observation_group.c	/^sml_observation_group_enabled_input_equals(struct sml_fuzzy *fuzzy,$/;"	f
+sml_observation_group_fill_output_weights	sml_fuzzy/src/sml_observation_group.c	/^sml_observation_group_fill_output_weights(struct sml_fuzzy *fuzzy,$/;"	f
+sml_observation_group_free	sml_fuzzy/src/sml_observation_group.c	/^sml_observation_group_free(struct sml_observation_group *obs_group)$/;"	f
+sml_observation_group_get_first_observation	sml_fuzzy/src/sml_observation_group.c	/^sml_observation_group_get_first_observation($/;"	f
+sml_observation_group_is_empty	sml_fuzzy/src/sml_observation_group.c	/^sml_observation_group_is_empty(struct sml_observation_group *obs_group)$/;"	f
+sml_observation_group_merge	sml_fuzzy/src/sml_observation_group.c	/^sml_observation_group_merge(struct sml_fuzzy *fuzzy,$/;"	f
+sml_observation_group_merge_terms	sml_fuzzy/src/sml_observation_group.c	/^sml_observation_group_merge_terms(struct sml_observation_group *obs_group,$/;"	f
+sml_observation_group_new	sml_fuzzy/src/sml_observation_group.c	/^sml_observation_group_new()$/;"	f
+sml_observation_group_observation_append	sml_fuzzy/src/sml_observation_group.c	/^sml_observation_group_observation_append(struct sml_fuzzy *fuzzy,$/;"	f
+sml_observation_group_observation_hit	sml_fuzzy/src/sml_observation_group.c	/^sml_observation_group_observation_hit(struct sml_fuzzy *fuzzy,$/;"	f
+sml_observation_group_remove_terms	sml_fuzzy/src/sml_observation_group.c	/^sml_observation_group_remove_terms(struct sml_observation_group *obs_group,$/;"	f
+sml_observation_group_remove_variables	sml_fuzzy/src/sml_observation_group.c	/^sml_observation_group_remove_variables(struct sml_observation_group *obs_group,$/;"	f
+sml_observation_group_rule_generate	sml_fuzzy/src/sml_observation_group.c	/^sml_observation_group_rule_generate(struct sml_fuzzy *fuzzy,$/;"	f
+sml_observation_group_split	sml_fuzzy/src/sml_observation_group.c	/^sml_observation_group_split(struct sml_fuzzy *fuzzy,$/;"	f
+sml_observation_group_split_terms	sml_fuzzy/src/sml_observation_group.c	/^sml_observation_group_split_terms(struct sml_fuzzy *fuzzy,$/;"	f
+sml_observation_hit	sml_fuzzy/src/sml_observation.c	/^sml_observation_hit(struct sml_fuzzy *fuzzy,$/;"	f
+sml_observation_input_equals	sml_fuzzy/src/sml_observation.c	/^sml_observation_input_equals(struct sml_fuzzy *fuzzy,$/;"	f
+sml_observation_input_term_get	sml_fuzzy/src/sml_observation.c	/^sml_observation_input_term_get(struct sml_observation *obs, uint16_t input,$/;"	f
+sml_observation_is_base	sml_fuzzy/src/sml_observation.c	/^sml_observation_is_base(struct sml_fuzzy *fuzzy,$/;"	f
+sml_observation_is_empty	sml_fuzzy/src/sml_observation.c	/^sml_observation_is_empty(struct sml_observation *observation)$/;"	f
+sml_observation_load	sml_fuzzy/src/sml_observation.c	/^sml_observation_load(FILE *f)$/;"	f
+sml_observation_merge_output	sml_fuzzy/src/sml_observation.c	/^sml_observation_merge_output(struct sml_fuzzy *fuzzy,$/;"	f
+sml_observation_merge_terms	sml_fuzzy/src/sml_observation.c	/^sml_observation_merge_terms(struct sml_observation *obs, uint16_t var_num,$/;"	f
+sml_observation_new	sml_fuzzy/src/sml_observation.c	/^sml_observation_new(struct sml_fuzzy *fuzzy, struct sml_measure *measure,$/;"	f
+sml_observation_output_equals	sml_fuzzy/src/sml_observation.c	/^sml_observation_output_equals(struct sml_fuzzy *fuzzy,$/;"	f
+sml_observation_remove_term	sml_fuzzy/src/sml_observation.c	/^sml_observation_remove_term(struct sml_observation *obs, uint16_t var_num,$/;"	f
+sml_observation_remove_variables	sml_fuzzy/src/sml_observation.c	/^sml_observation_remove_variables(struct sml_observation *observation,$/;"	f
+sml_observation_rule_generate	sml_fuzzy/src/sml_observation.c	/^sml_observation_rule_generate(struct sml_fuzzy *fuzzy,$/;"	f
+sml_observation_save	sml_fuzzy/src/sml_observation.c	/^sml_observation_save(struct sml_observation *obs, FILE *f)$/;"	f
+sml_observation_split_terms	sml_fuzzy/src/sml_observation.c	/^sml_observation_split_terms(struct sml_fuzzy *fuzzy,$/;"	f
+sml_predict	common/src/sml_engine.c	/^sml_predict(struct sml_object *sml)$/;"	f
+sml_print_debug	common/src/sml_engine.c	/^sml_print_debug(struct sml_object *sml, bool full)$/;"	f
+sml_process	common/src/sml_engine.c	/^sml_process(struct sml_object *sml)$/;"	f
+sml_process_str_cb	sml_fuzzy/src/sml_observation.h	/^typedef void (*sml_process_str_cb) (const char *str, void *data);$/;"	t
+sml_read_state_cb	include/sml.h	/^typedef bool (*sml_read_state_cb) (struct sml_object *sml, void *data);$/;"	t
+sml_remove_variable	common/src/sml_engine.c	/^sml_remove_variable(struct sml_object *sml, struct sml_variable *sml_variable)$/;"	f
+sml_rule_group	sml_fuzzy/src/sml_rule_group.c	/^struct sml_rule_group {$/;"	s	file:
+sml_rule_group_free	sml_fuzzy/src/sml_rule_group.c	/^sml_rule_group_free(struct sml_fuzzy *fuzzy, struct sml_rule_group *rule_group)$/;"	f
+sml_rule_group_list_observation_append	sml_fuzzy/src/sml_rule_group.c	/^sml_rule_group_list_observation_append(struct sml_fuzzy *fuzzy,$/;"	f
+sml_rule_group_list_observation_remove	sml_fuzzy/src/sml_rule_group.c	/^sml_rule_group_list_observation_remove(struct sml_fuzzy *fuzzy,$/;"	f
+sml_rule_group_list_rebalance	sml_fuzzy/src/sml_rule_group.c	/^sml_rule_group_list_rebalance(struct sml_fuzzy *fuzzy,$/;"	f
+sml_rule_group_list_rebuild	sml_fuzzy/src/sml_rule_group.c	/^sml_rule_group_list_rebuild(struct sml_fuzzy *fuzzy,$/;"	f
+sml_rule_group_new	sml_fuzzy/src/sml_rule_group.c	/^sml_rule_group_new()$/;"	f
+sml_rule_group_rule_generate	sml_fuzzy/src/sml_rule_group.c	/^sml_rule_group_rule_generate(struct sml_fuzzy *fuzzy,$/;"	f
+sml_save	common/src/sml_engine.c	/^sml_save(struct sml_object *sml, const char *path)$/;"	f
+sml_set_debug_log_file	common/src/sml_engine.c	/^sml_set_debug_log_file(struct sml_object *sml, const char *str)$/;"	f
+sml_set_learn_disabled	common/src/sml_engine.c	/^sml_set_learn_disabled(struct sml_object *sml, bool disable)$/;"	f
+sml_set_max_memory_for_observations	common/src/sml_engine.c	/^sml_set_max_memory_for_observations(struct sml_object *sml,$/;"	f
+sml_set_output_state_changed_callback	common/src/sml_engine.c	/^sml_set_output_state_changed_callback(struct sml_object *sml,$/;"	f
+sml_set_read_state_callback	common/src/sml_engine.c	/^sml_set_read_state_callback(struct sml_object *sml,$/;"	f
+sml_set_stabilization_hits	common/src/sml_engine.c	/^sml_set_stabilization_hits(struct sml_object *sml, uint16_t hits)$/;"	f
+sml_string	common/src/sml_string.c	/^struct sml_string {$/;"	s	file:
+sml_string_append	common/src/sml_string.c	/^sml_string_append(struct sml_string *sml_string, const char *str)$/;"	f
+sml_string_append_printf	common/src/sml_string.c	/^sml_string_append_printf(struct sml_string *sml_string, const char *format, ...)$/;"	f
+sml_string_append_vprintf	common/src/sml_string.c	/^sml_string_append_vprintf(struct sml_string *sml_string, const char *format,$/;"	f
+sml_string_free	common/src/sml_string.c	/^sml_string_free(struct sml_string *sml_string)$/;"	f
+sml_string_get_string	common/src/sml_string.c	/^sml_string_get_string(struct sml_string *sml_string)$/;"	f
+sml_string_length	common/src/sml_string.c	/^sml_string_length(struct sml_string *sml_string)$/;"	f
+sml_string_new	common/src/sml_string.c	/^sml_string_new(const char *str)$/;"	f
+sml_term_to_remove	sml_fuzzy/src/sml_fuzzy.c	/^struct sml_term_to_remove {$/;"	s	file:
+sml_terms_manager	sml_fuzzy/src/sml_terms_manager.h	/^struct sml_terms_manager {$/;"	s
+sml_terms_manager_clear	sml_fuzzy/src/sml_terms_manager.c	/^sml_terms_manager_clear(struct sml_terms_manager *terms_manager)$/;"	f
+sml_terms_manager_debug	sml_fuzzy/src/sml_terms_manager.c	/^sml_terms_manager_debug(struct sml_terms_manager *terms_manager)$/;"	f
+sml_terms_manager_hit	sml_fuzzy/src/sml_terms_manager.c	/^sml_terms_manager_hit(struct sml_terms_manager *terms_manager,$/;"	f
+sml_terms_manager_init	sml_fuzzy/src/sml_terms_manager.c	/^sml_terms_manager_init(struct sml_terms_manager *terms_manager)$/;"	f
+sml_terms_manager_initialize_variable	sml_fuzzy/src/sml_terms_manager.c	/^sml_terms_manager_initialize_variable(struct sml_fuzzy *fuzzy,$/;"	f
+sml_terms_manager_remove_term	sml_fuzzy/src/sml_terms_manager.c	/^sml_terms_manager_remove_term(struct sml_terms_manager *terms_manager,$/;"	f
+sml_terms_manager_remove_variables	sml_fuzzy/src/sml_terms_manager.c	/^sml_terms_manager_remove_variables(struct sml_terms_manager *terms_manager,$/;"	f
+sml_variable_get_name	common/src/sml_engine.c	/^sml_variable_get_name(struct sml_object *sml, struct sml_variable *sml_variable, char *var_name, size_t var_name_size)$/;"	f
+sml_variable_get_range	common/src/sml_engine.c	/^sml_variable_get_range(struct sml_object *sml,$/;"	f
+sml_variable_get_value	common/src/sml_engine.c	/^sml_variable_get_value(struct sml_object *sml,$/;"	f
+sml_variable_impl	sml_ann/src/sml_ann_variable_list.c	/^struct sml_variable_impl {$/;"	s	file:
+sml_variable_is_enabled	common/src/sml_engine.c	/^sml_variable_is_enabled(struct sml_object *sml,$/;"	f
+sml_variable_set_enabled	common/src/sml_engine.c	/^sml_variable_set_enabled(struct sml_object *sml,$/;"	f
+sml_variable_set_range	common/src/sml_engine.c	/^sml_variable_set_range(struct sml_object *sml,$/;"	f
+sml_variable_set_value	common/src/sml_engine.c	/^sml_variable_set_value(struct sml_object *sml,$/;"	f
+sml_variables_list_contains	common/src/sml_engine.c	/^sml_variables_list_contains(struct sml_object *sml,$/;"	f
+sml_variables_list_get_length	common/src/sml_engine.c	/^sml_variables_list_get_length(struct sml_object *sml,$/;"	f
+sml_variables_list_impl	sml_ann/src/sml_ann_variable_list.c	/^struct sml_variables_list_impl {$/;"	s	file:
+sml_variables_list_index	common/src/sml_engine.c	/^sml_variables_list_index(struct sml_object *sml, struct sml_variables_list *list, uint16_t index)$/;"	f
+sml_warning	include/sml_log.h	110;"	d
+stabilization_hits	common/include/sml_engine.h	/^    uint16_t stabilization_hits;$/;"	m	struct:sml_engine
+str	common/src/sml_string.c	/^    char *str;$/;"	m	struct:sml_string	file:
+term	sml_fuzzy/src/sml_fuzzy.c	/^    struct sml_fuzzy_term *term;$/;"	m	struct:sml_term_to_remove	typeref:struct:sml_term_to_remove::sml_fuzzy_term	file:
+terms_manager	sml_fuzzy/src/sml_fuzzy.c	/^    struct sml_terms_manager terms_manager;$/;"	m	struct:sml_fuzzy_engine	typeref:struct:sml_fuzzy_engine::sml_terms_manager	file:
+terms_to_be_removed	sml_fuzzy/src/sml_fuzzy.c	/^    struct sol_vector terms_to_be_removed;$/;"	m	struct:sml_fuzzy_engine	typeref:struct:sml_fuzzy_engine::sol_vector	file:
+terms_width	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^struct terms_width {$/;"	s	file:
+total	common/src/sml_cache.c	/^    unsigned int total;$/;"	m	struct:sml_cache	file:
+total	sml_fuzzy/src/sml_terms_manager.h	/^    uint16_t total;$/;"	m	struct:sml_terms_manager
+train_algorithm	sml_ann/src/sml_ann.c	/^    enum sml_ann_training_algorithm train_algorithm;$/;"	m	struct:sml_ann_engine	typeref:enum:sml_ann_engine::sml_ann_training_algorithm	file:
+train_epochs	sml_ann/src/sml_ann.c	/^    unsigned int train_epochs;$/;"	m	struct:sml_ann_engine	file:
+train_error	sml_ann/src/sml_ann.c	/^    float train_error;$/;"	m	struct:sml_ann_engine	file:
+trained	sml_ann/src/sml_ann_bridge.c	/^    bool trained;$/;"	m	struct:sml_ann_bridge	file:
+upper_limit	sml_ann/src/sml_ann_bridge.c	/^    float upper_limit;$/;"	m	struct:_Confidence_Interval	file:
+use_pseudorehearsal	sml_ann/src/sml_ann.c	/^    bool use_pseudorehearsal;$/;"	m	struct:sml_ann_engine	file:
+val	sml_naive/src/sml_naive.c	/^    float min, max, val;$/;"	m	struct:_Variable	file:
+value	sml_fuzzy/src/sml_fuzzy_bridge.cpp	/^    float value;$/;"	m	struct:terms_width	file:
+var	sml_fuzzy/src/sml_fuzzy.c	/^    struct sml_variable *var;$/;"	m	struct:sml_term_to_remove	typeref:struct:sml_term_to_remove::sml_variable	file:
+variable_find_by_name	common/src/sml_engine.c	/^variable_find_by_name(struct sml_object *sml, const char *name)$/;"	f
+variable_get_range	common/include/sml_engine.h	/^    sml_engine_variable_get_range variable_get_range;$/;"	m	struct:sml_engine
+variable_is_enabled	common/include/sml_engine.h	/^    sml_engine_variable_is_enabled variable_is_enabled;$/;"	m	struct:sml_engine
+variable_set_enabled	common/include/sml_engine.h	/^    sml_engine_variable_set_enabled variable_set_enabled;$/;"	m	struct:sml_engine
+variable_set_range	common/include/sml_engine.h	/^    sml_engine_variable_set_range variable_set_range;$/;"	m	struct:sml_engine
+variable_terms_auto_balance	sml_fuzzy/src/sml_fuzzy.c	/^    bool variable_terms_auto_balance;$/;"	m	struct:sml_fuzzy_engine	file:
+variables	sml_ann/src/sml_ann_variable_list.c	/^    struct sol_ptr_vector variables;$/;"	m	struct:sml_variables_list_impl	typeref:struct:sml_variables_list_impl::sol_ptr_vector	file:
+variables_list_get_length	common/include/sml_engine.h	/^    sml_engine_variables_list_get_length variables_list_get_length;$/;"	m	struct:sml_engine
+variables_list_index	common/include/sml_engine.h	/^    sml_engine_variables_list_index variables_list_index;$/;"	m	struct:sml_engine
+weight_threshold	sml_fuzzy/src/sml_observation_controller.c	/^    float weight_threshold;$/;"	m	struct:sml_observation_controller	file:

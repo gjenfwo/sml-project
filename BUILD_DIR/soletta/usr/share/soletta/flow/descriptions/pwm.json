@@ -1,0 +1,95 @@
+{
+ "pwm": [
+  {
+   "author": "Intel Corporation",
+   "category": "io/hw",
+   "description": "PWM",
+   "header_file": "sol-flow/pwm.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "boolean",
+     "description": "True enables PWM, False disables it",
+     "name": "ENABLED",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "int",
+     "description": "PWM period, in ns",
+     "name": "PERIOD",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 2,
+     "data_type": "int",
+     "description": "Duty cycle, in ns",
+     "name": "DUTY_CYCLE",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 3,
+     "data_type": "int",
+     "description": "Duty cycle. Value is calculated by mapping the value, its maximum and minimum values, to the range [0, period].",
+     "name": "DUTY_CYCLE_PERCENT",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "pwm",
+   "options": {
+    "members": [
+     {
+      "data_type": "string",
+      "description": "Label of the desired pin on the board. If raw is set to true, this should be \"<device> <channel>\" pair, e.g. \"0 3\".",
+      "name": "pin",
+      "required": true
+     },
+     {
+      "data_type": "boolean",
+      "default": false,
+      "description": "Change 'pin' meaning to be the system parameters needed to address the desired pin. Use it if you know what you are doing.",
+      "name": "raw",
+      "required": false
+     },
+     {
+      "data_type": "boolean",
+      "default": false,
+      "description": "Initial enabled state",
+      "name": "enabled",
+      "required": false
+     },
+     {
+      "data_type": "boolean",
+      "default": false,
+      "description": "PWM polarity (normal or inversed)",
+      "name": "inversed_polarity",
+      "required": false
+     },
+     {
+      "data_type": "int",
+      "description": "Initial period",
+      "name": "period",
+      "required": true
+     },
+     {
+      "data_type": "int",
+      "default": 0,
+      "description": "Initial duty cycle",
+      "name": "duty_cycle",
+      "required": false
+     }
+    ],
+    "required": true,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_pwm_options",
+   "symbol": "SOL_FLOW_NODE_TYPE_PWM",
+   "url": "http://solettaproject.org/doc/latest/components/pwm.html"
+  }
+ ]
+}

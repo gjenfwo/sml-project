@@ -1,0 +1,32 @@
+# This file is part of the Soletta (TM) Project
+#
+# Copyright (C) 2015 Intel Corporation. All rights reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+DECLARE=ComposedCreator:composed-new:STRING_VALUE(string)|INT_VALUE(int)|FLOAT_VALUE(float)
+DECLARE=ComposedSplitter:composed-split:STRING_VALUE(string)|INT_VALUE(int)|FLOAT_VALUE(float)
+
+Creator(ComposedCreator) OUT -> IN Splitter(ComposedSplitter)
+
+StrValue(constant/string:value="My Key") OUT -> STRING_VALUE Creator
+IntValue(constant/int:value=999) OUT -> INT_VALUE Creator
+FloatValue(constant/float:value=2.5) OUT -> FLOAT_VALUE Creator
+
+StrValue OUT -> IN[0] StrCmp(string/compare) EQUAL -> RESULT TestString(test/result)
+IntValue OUT -> IN[0] IntCmp(int/equal) OUT -> RESULT TestInt(test/result)
+FloatValue OUT -> IN[0] FloatCmp(float/equal) OUT -> RESULT TestFloat(test/result)
+
+Splitter FLOAT_VALUE -> IN[1] FloatCmp
+Splitter INT_VALUE -> IN[1] IntCmp
+Splitter STRING_VALUE -> IN[1] StrCmp

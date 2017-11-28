@@ -1,0 +1,11 @@
+{
+   <g_unix_signal_add_full>
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:calloc
+   ...
+   fun:g_thread_new
+   ...
+   fun:g_unix_signal_add_full
+   fun:sol_mainloop_impl_init
+}

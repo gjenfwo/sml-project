@@ -1,0 +1,39 @@
+# This file is part of the Soletta (TM) Project
+#
+# Copyright (C) 2015 Intel Corporation. All rights reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+_(http-server/boolean:port=8080, path="/boolean_get_only", value=true, allowed_methods="GET")
+
+_(constant/boolean:value=false) OUT -> POST boolean_client(http-client/boolean:url="http://localhost:8080/boolean_get_only")
+
+boolean_client ERROR -> IN _(converter/empty-to-boolean:output_value=true) OUT -> RESULT _(test/result:timeout=6000)
+
+_(constant/empty) OUT -> GET boolean_client OUT -> RESULT _(test/result:timeout=6000)
+
+_(http-server/string:port=8080, path="/string_post_only", value="I Like http", allowed_methods="POST") OUT -> IN _(test/string-validator:sequence="my string") OUT -> RESULT _(test/result:timeout=6000)
+
+_(constant/string:value="my string") OUT -> POST string_client(http-client/string:url="http://localhost:8080/string_post_only")
+
+_(constant/empty) OUT -> GET string_client ERROR -> IN _(converter/empty-to-boolean:output_value=true) OUT -> RESULT _(test/result:timeout=6000)
+
+_(http-server/int:port=8080, path="/int_post_get", value=200, allowed_methods="POST|GET") OUT -> IN _(test/int-validator:sequence="256") OUT -> RESULT _(test/result:timeout=6000)
+
+_(constant/empty) OUT -> GET int_client(http-client/int:url="http://localhost:8080/int_post_get")
+
+int_client OUT -> IN[0] switcher(switcher/int) OUT[0] -> IN _(test/int-validator:sequence="200") OUT -> RESULT _(test/result:timeout=6000)
+
+switcher OUT[0] -> IN _(converter/empty-to-int:output_value=256) OUT -> POST int_client
+
+switcher OUT[0] -> IN _(converter/empty-to-int:output_value=2) OUT -> OUT_PORT switcher

@@ -1,0 +1,583 @@
+{
+  "$schema": "http://solettaproject.github.io/soletta/schemas/node-type-genspec.schema",
+  "name": "gtk",
+  "meta": {
+    "author": "Intel Corporation",
+    "license": "Apache-2.0",
+    "version": "1"
+  },
+  "types": [
+    {
+      "category": "output/sw",
+      "description": "A byte's individual bits editor that outputs int packets with the resulting value.",
+      "methods": {
+        "close": "gtk_byte_editor_close",
+        "open": "gtk_byte_editor_open"
+      },
+      "name": "gtk/byte-editor",
+      "out_ports": [
+        {
+          "data_type": "byte",
+          "description": "The current reading for the editor, after a change",
+          "name": "OUT"
+        }
+      ],
+      "private_data_type": "gtk_common_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/gtk/byte-editor.html"
+    },
+    {
+      "category": "output/sw",
+      "description": "Text output for boolean/int packets.",
+      "in_ports": [
+        {
+          "data_type": "any",
+          "description": "Prints the packet's value to a label widget",
+          "methods": {
+            "process": "gtk_label_in_process"
+          },
+          "name": "IN"
+        }
+      ],
+      "methods": {
+        "close": "gtk_label_close",
+        "open": "gtk_label_open"
+      },
+      "name": "gtk/label",
+      "private_data_type": "gtk_label_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/gtk/label.html"
+    },
+    {
+      "category": "output/sw",
+      "description": "Widget used to represent led 7 segments.",
+      "in_ports": [
+        {
+          "data_type": "int",
+          "description": "Set value to be displayed.",
+          "methods": {
+            "process": "gtk_led_7seg_value_process"
+          },
+          "name": "VALUE"
+        },
+        {
+          "data_type": "byte",
+          "description": "Define segments to be on and off. The order expected by the display for each bit is 'abcdefgX', where X is the DP, as described in http://en.wikipedia.org/wiki/Seven-segment_display_character_representations.",
+          "methods": {
+            "process": "gtk_led_7seg_segments_process"
+          },
+          "name": "SEGMENTS"
+        }
+      ],
+      "methods": {
+        "close": "gtk_led_7seg_close",
+        "open": "gtk_led_7seg_open"
+      },
+      "name": "gtk/led-7seg",
+      "options": {
+        "members": [
+          {
+            "data_type": "boolean",
+            "default": true,
+            "description": "Set this option to true if type of led is common cathode or set it to false if it's common anode (it'll invert gpio low and high states). It's a dummy option used for compatibility with 'led-7seg/led'.",
+            "name": "common_cathode"
+          },
+          {
+            "data_type": "int",
+            "default": 0,
+            "description": "Pin used to set segment 'A' state. It's a dummy option used for compatibility with 'led-7seg/led'.",
+            "name": "pin_a"
+          },
+          {
+            "data_type": "int",
+            "default": 0,
+            "description": "Pin used to set segment 'B' state. It's a dummy option used for compatibility with 'led-7seg/led'.",
+            "name": "pin_b"
+          },
+          {
+            "data_type": "int",
+            "default": 0,
+            "description": "Pin used to set segment 'C' state. It's a dummy option used for compatibility with 'led-7seg/led'.",
+            "name": "pin_c"
+          },
+          {
+            "data_type": "int",
+            "default": 0,
+            "description": "Pin used to set segment 'D' state. It's a dummy option used for compatibility with 'led-7seg/led'.",
+            "name": "pin_d"
+          },
+          {
+            "data_type": "int",
+            "default": 0,
+            "description": "Pin used to set segment 'E' state. It's a dummy option used for compatibility with 'led-7seg/led'.",
+            "name": "pin_e"
+          },
+          {
+            "data_type": "int",
+            "default": 0,
+            "description": "Pin used to set segment 'F' state. It's a dummy option used for compatibility with 'led-7seg/led'.",
+            "name": "pin_f"
+          },
+          {
+            "data_type": "int",
+            "default": 0,
+            "description": "Pin used to set segment 'G' state. It's a dummy option used for compatibility with 'led-7seg/led'.",
+            "name": "pin_g"
+          },
+          {
+            "data_type": "int",
+            "default": 0,
+            "description": "Pin used to set segment 'DP' state. It's a dummy option used for compatibility with 'led-7seg/led'.",
+            "name": "pin_dp"
+          }
+        ],
+        "version": 1
+      },
+      "private_data_type": "gtk_common_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/gtk/led-7seg.html"
+    },
+    {
+      "category": "output/sw",
+      "description": "Gtk widget that immitates a led. It can receive a rgb or int (1 byte per channel) packet to set its color and turn it on. Or it can receive a boolean packet to turn it on or off. Led's turned off are drawn as black.",
+      "in_ports": [
+        {
+          "data_type": "any",
+          "description": "Controls whether the led is on or off",
+          "methods": {
+            "process": "gtk_led_in_process"
+          },
+          "name": "IN"
+        }
+      ],
+      "methods": {
+        "close": "gtk_led_close",
+        "open": "gtk_led_open"
+      },
+      "name": "gtk/led",
+      "options": {
+        "members": [
+          {
+            "data_type": "rgb",
+            "description": "The led's RGB color components",
+            "name": "rgb",
+            "default": {
+              "red": 0,
+              "green": 0,
+              "blue": 0
+            }
+          },
+          {
+            "data_type": "int",
+            "default": 0,
+            "description": "Pin number. It's a dummy option used for compatibility with 'gpio/writer'.",
+            "name": "pin"
+          }
+        ],
+        "version": 1
+      },
+      "private_data_type": "gtk_led_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/gtk/led.html"
+    },
+    {
+      "category": "input/sw",
+      "description": "Emulates a pushbutton that automatically goes up when released",
+      "methods": {
+        "close": "gtk_pushbutton_close",
+        "open": "gtk_pushbutton_open"
+      },
+      "name": "gtk/pushbutton",
+      "options": {
+        "members": [
+          {
+            "data_type": "int",
+            "default": 0,
+            "description": "Pin number. It's a dummy option used for compatibility with 'gpio/reader'.",
+            "name": "pin"
+          }
+        ],
+        "version": 1
+      },
+      "out_ports": [
+        {
+          "data_type": "boolean",
+          "description": "TRUE when pushed and FALSE when released.",
+          "name": "OUT"
+        },
+        {
+          "data_type": "empty",
+          "description": "Send an empty packet when the button is pushed.",
+          "name": "PRESSED"
+        },
+        {
+          "data_type": "empty",
+          "description": "Send an empty packet when the button is released.",
+          "name": "RELEASED"
+        }
+      ],
+      "private_data_type": "gtk_common_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/gtk/pushbutton.html"
+    },
+    {
+      "category": "input/sw",
+      "description": "Gtk widget that a provides (int and boolean) pwm packets to other nodes.",
+      "methods": {
+        "close": "gtk_pwm_editor_close",
+        "open": "gtk_pwm_editor_open"
+      },
+      "name": "gtk/pwm-editor",
+      "options": {
+        "members": [
+          {
+            "data_type": "irange-spec",
+            "default": {
+              "max": 100,
+              "min": 0
+            },
+            "description": "PWM editor range",
+            "name": "range"
+          }
+        ],
+        "version": 1
+      },
+      "out_ports": [
+        {
+          "data_type": "boolean",
+          "description": "The current reading for enabled (after an input change)",
+          "name": "ENABLED"
+        },
+        {
+          "data_type": "int",
+          "description": "The current reading for duty cycle (after an input change)",
+          "name": "DUTY_CYCLE"
+        },
+        {
+          "data_type": "int",
+          "description": "The current reading for period (after an input change)",
+          "name": "PERIOD"
+        }
+      ],
+      "private_data_type": "gtk_common_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/gtk/pwm-editor.html"
+    },
+    {
+      "category": "output/sw",
+      "description": "Gtk widget that provides a graphical visualization of PWM.",
+      "in_ports": [
+        {
+          "data_type": "boolean",
+          "description": "Controls whether PWM is enabled or disabled.",
+          "methods": {
+            "process": "gtk_pwm_viewer_enable_process"
+          },
+          "name": "ENABLED"
+        },
+        {
+          "data_type": "int",
+          "description": "Set duty cycle value.",
+          "methods": {
+            "process": "gtk_pwm_viewer_duty_cycle_process"
+          },
+          "name": "DUTY_CYCLE"
+        },
+        {
+          "data_type": "int",
+          "description": "Set period.",
+          "methods": {
+            "process": "gtk_pwm_viewer_period_process"
+          },
+          "name": "PERIOD"
+        }
+      ],
+      "methods": {
+        "close": "gtk_pwm_viewer_close",
+        "open": "gtk_pwm_viewer_open"
+      },
+      "name": "gtk/pwm-viewer",
+      "options": {
+       "members": [
+        {
+         "data_type": "int",
+         "default": 0,
+         "description": "PWM chip. It's a dummy option used for compatibility with 'pwm'.",
+         "name": "chip"
+        },
+        {
+         "data_type": "int",
+         "default": 0,
+         "description": "PWM pin channel. It's a dummy option used for compatibility with 'pwm'.",
+         "name": "pin"
+        },
+        {
+         "data_type": "boolean",
+         "default": false,
+         "description": "PWM polarity (normal or inversed). It's a dummy option used for compatibility with 'pwm'.",
+         "name": "inversed_polarity"
+        },
+        {
+         "data_type": "boolean",
+         "default": false,
+         "description": "Initial enabled state",
+         "name": "enabled"
+        },
+        {
+         "data_type": "int",
+         "default": 0,
+         "description": "Initial period",
+         "name": "period"
+        },
+        {
+         "data_type": "int",
+         "default": 0,
+         "description": "Initial duty cycle",
+         "name": "duty_cycle"
+        }
+       ],
+       "version": 1
+      },
+      "private_data_type": "gtk_pwm_viewer_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/gtk/pwm-viewer.html"
+    },
+    {
+      "category": "output/sw",
+      "description": "A color chooser widget that outputs int packets with RGB color space encoded in the int value.",
+      "methods": {
+        "close": "gtk_rgb_editor_close",
+        "open": "gtk_rgb_editor_open"
+      },
+      "name": "gtk/rgb-editor",
+      "out_ports": [
+        {
+          "data_type": "rgb",
+          "description": "The current reading for the editor, after a change",
+          "name": "OUT"
+        }
+      ],
+      "private_data_type": "gtk_common_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/gtk/rgb-editor.html"
+    },
+    {
+      "category": "output/sw",
+      "description": "A direction vector editor chooser widget that outputs a direction vector packet.",
+      "methods": {
+        "close": "gtk_float_editor_close",
+        "open": "gtk_float_editor_open"
+      },
+      "node_type": {
+        "access": [
+          "base"
+        ],
+        "data_type": "struct float_editor_note_type",
+        "extra_methods": {
+          "setup_widget": "direction_vector_setup",
+          "send_output_packet": "send_direction_vector_output"
+        }
+      },
+      "name": "gtk/direction-vector-editor",
+      "out_ports": [
+        {
+          "data_type": "direction-vector",
+          "description": "The current reading for the editor, after a change",
+          "name": "OUT"
+        }
+      ],
+      "private_data_type": "gtk_common_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/gtk/direction-vector-editor.html"
+    },
+    {
+      "category": "output/sw",
+      "description": "A location editor widget that outputs a location packet.",
+      "methods": {
+        "close": "gtk_float_editor_close",
+        "open": "gtk_float_editor_open"
+      },
+      "node_type": {
+        "access": [
+          "base"
+        ],
+        "data_type": "struct float_editor_note_type",
+        "extra_methods": {
+          "setup_widget": "location_setup",
+          "send_output_packet": "send_location_output"
+        }
+      },
+      "name": "gtk/location-editor",
+      "out_ports": [
+        {
+          "data_type": "location",
+          "description": "The current reading for the editor, after a change",
+          "name": "OUT"
+        }
+      ],
+      "private_data_type": "gtk_common_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/gtk/location-editor.html"
+    },
+    {
+      "category": "output/sw",
+      "description": "A timestamp editor widget that outputs a timestamp packet.",
+      "methods": {
+        "close": "gtk_timestamp_editor_close",
+        "open": "gtk_timestamp_editor_open"
+      },
+      "name": "gtk/timestamp-editor",
+      "out_ports": [
+        {
+          "data_type": "timestamp",
+          "description": "The current reading for the editor, after a change",
+          "name": "OUT"
+        }
+      ],
+      "private_data_type": "gtk_common_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/gtk/timestamp-editor.html"
+    },
+    {
+      "category": "output/sw",
+      "description": "A float editor widget that outputs a float packet.",
+      "methods": {
+        "close": "gtk_float_editor_close",
+        "open": "gtk_float_editor_open"
+      },
+      "node_type": {
+        "access": [
+          "base"
+        ],
+        "data_type": "struct float_editor_note_type",
+        "extra_methods": {
+          "setup_widget": "float_setup",
+          "send_output_packet": "send_float_output"
+        }
+      },
+      "name": "gtk/float-editor",
+      "out_ports": [
+        {
+          "data_type": "float",
+          "description": "The current reading for the editor, after a change",
+          "name": "OUT"
+        }
+      ],
+      "private_data_type": "gtk_common_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/gtk/float-editor.html"
+    },
+    {
+      "category": "input/sw",
+      "description": "Slider that provides (int) input packets to other nodes",
+      "methods": {
+        "close": "gtk_slider_close",
+        "open": "gtk_slider_open"
+      },
+      "name": "gtk/slider",
+      "options": {
+        "members": [
+          {
+            "data_type": "irange-spec",
+            "default": {
+              "max": 100,
+              "min": 0
+            },
+            "description": "Slider's range",
+            "name": "range"
+          },
+          {
+            "data_type": "int",
+            "default": 0,
+            "description": "Device number on platform. It's a dummy option used for compatibility with 'aio/reader'.",
+            "name": "device"
+          },
+          {
+            "data_type": "int",
+            "default": 0,
+            "description": "Pin number. It's a dummy option used for compatibility with 'aio/reader'.",
+            "name": "pin"
+          }
+        ],
+        "version": 1
+      },
+      "out_ports": [
+        {
+          "data_type": "int",
+          "description": "The current reading for the slider (after an input change)",
+          "name": "OUT"
+        }
+      ],
+      "private_data_type": "gtk_common_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/gtk/slider.html"
+    },
+    {
+      "category": "input/sw",
+      "description": "Spinbutton that provides (int) input packets to other nodes",
+      "methods": {
+        "close": "gtk_spinbutton_close",
+        "open": "gtk_spinbutton_open"
+      },
+      "name": "gtk/spinbutton",
+      "options": {
+        "members": [
+          {
+            "data_type": "irange-spec",
+            "default": {
+              "max": "INT32_MAX",
+              "min": "INT32_MIN",
+              "step": 1
+            },
+            "description": "Spinbutton's range (min / max / step).",
+            "name": "range"
+          },
+          {
+            "data_type": "int",
+            "default": 0,
+            "description": "Spinbutton's initial value.",
+            "name": "value"
+          },
+          {
+            "data_type": "int",
+            "default": 0,
+            "description": "Device number on platform. It's a dummy option used for compatibility with 'aio/reader'.",
+            "name": "device"
+          },
+          {
+            "data_type": "int",
+            "default": 0,
+            "description": "Pin number. It's a dummy option used for compatibility with 'aio/reader'.",
+            "name": "pin"
+          }
+        ],
+        "version": 1
+      },
+      "out_ports": [
+        {
+          "data_type": "int",
+          "description": "The current reading for the spinbutton (after an input change)",
+          "name": "OUT"
+        }
+      ],
+      "private_data_type": "gtk_common_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/gtk/spinbutton.html"
+    },
+    {
+      "category": "input/sw",
+      "description": "Toggle that provides boolean input packets to other nodes",
+      "methods": {
+        "close": "gtk_toggle_close",
+        "open": "gtk_toggle_open"
+      },
+      "name": "gtk/toggle",
+      "options": {
+        "members": [
+          {
+            "data_type": "int",
+            "default": 0,
+            "description": "Pin number. It's a dummy option used for compatibility with 'gpio/reader'.",
+            "name": "pin"
+          }
+        ],
+        "version": 1
+      },
+      "out_ports": [
+        {
+          "data_type": "boolean",
+          "description": "The current reading for the toggle (after an input change)",
+          "name": "OUT"
+        }
+      ],
+      "private_data_type": "gtk_common_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/gtk/toggle.html"
+    }
+  ]
+}

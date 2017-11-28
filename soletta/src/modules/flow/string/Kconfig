@@ -1,0 +1,30 @@
+config FLOW_NODE_TYPE_STRING
+	tristate "Node type: string"
+	default y
+	help
+		The string family of nodes provide string facilities
+		on your flow, acting on the strings contained in
+		string packets:
+
+		 - generate UUID strings
+		 - split a string in others
+		 - get a slice from a string
+		 - check if a string is empty
+		 - compare/concatenate two strings
+		 - replace a substring in a string
+		 - measure the length of the string
+		 - change a string to lower/uppercase
+		 - check whether a string stards/ends with another
+
+		For most of string nodes, there may be two
+		implementations (depending on the presence of the ICU
+		library or not). We strongly recommend that you build
+		Soletta with ICU, so that the full UTF-8 set of
+		characters is properly handled by the string nodes.
+
+# This is the sole user of ICU. If it gets wider use, move it up in the
+# hierarchy.
+config USE_ICU
+	bool "Use ICU library"
+	depends on HAVE_ICU && FLOW_NODE_TYPE_STRING
+	default y

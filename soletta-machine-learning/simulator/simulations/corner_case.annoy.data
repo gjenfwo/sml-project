@@ -1,0 +1,45 @@
+# This file is part of the Soletta Project
+#
+# Copyright (C) 2015 Intel Corporation. All rights reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+#Test created to check how annoying is sml when user decides to have an output
+#with a value different from the value learned for a short time
+#
+#Initial Scenario
+#Day 0, 1, 2 learn basic rules
+0 0:00 in i0
+0 0:00 out o0
+0 0:00 EXP_out o0
+
+1 0:00 in i1
+1 0:00 out o1
+1 0:00 EXP_out o1
+
+#Day 3 Annoy user?
+2 0:00 in i0
+2 0:00 out o0
+2 0:00 EXP_out o0
+
+2 1:00 BEGIN_EXPECTATIONS
+2 1:00 in i1        #User gets into a room
+2 1:00 out o0       #The user don't turn the lights on
+2 1:00 EXP_out o1   #It is expected that sml turns the lights on
+2 1:00 END_EXPECTATIONS
+
+2 1:01 BEGIN_EXPECTATIONS
+2 1:01 out o0       #User turns the light off
+2 1:01 EXP_out o0   #Don't fight with user for the next minutes
+2 1:10 END_EXPECTATIONS
+

@@ -1,0 +1,37 @@
+#!/usr/bin/env sol-fbp-runner
+
+# This file is part of the Soletta (TM) Project
+#
+# Copyright (C) 2015 Intel Corporation. All rights reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# sol-fbp-runner lcd/grove-lcd-display.fbp
+
+# This is a translation of
+# Grove_RGB_BackLight_LCD/Display/Display.ino, from
+# https://github.com/Seeed-Studio/Sketchbook_Starter_Kit_for_Arduino.git
+
+lcd(LCDChar)
+
+true(constant/boolean:value=true)
+state_switch(boolean/toggle:initial_state=false)
+
+initial_string(constant/string:value="hello, world!")
+initial_string OUT -> PUT_STRING lcd
+
+state_switch OUT -> DISPLAY_ON lcd
+
+timer(timer:interval=500)
+
+timer OUT -> IN state_switch

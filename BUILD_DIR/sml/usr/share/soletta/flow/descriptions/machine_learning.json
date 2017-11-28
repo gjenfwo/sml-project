@@ -1,0 +1,658 @@
+{
+ "machine-learning": [
+  {
+   "author": "Intel Corporation",
+   "category": "machine-learning",
+   "description": "Tag output variables.",
+   "header_file": "machine_learning_gen.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "float",
+     "description": "Output variable value to be tagged.",
+     "name": "IN",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "machine-learning/tagger",
+   "options": {
+    "members": [
+     {
+      "data_type": "string",
+      "description": "Tag to be applied to all packets passing through this node.",
+      "name": "tag",
+      "required": true
+     }
+    ],
+    "required": true,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_machine_learning_tagger_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "custom:PACKET_TYPE_TAGGED_FLOAT",
+     "description": "Tagged float.",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_MACHINE_LEARNING_TAGGER",
+   "url": "http://soletta.org/doc/latest/node_types/machine_learning/tagger.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "machine-learning",
+   "description": "Filter output variables.",
+   "header_file": "machine_learning_gen.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "custom:PACKET_TYPE_TAGGED_FLOAT",
+     "description": "Output variable value to be filtered.",
+     "name": "IN",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "machine-learning/filter",
+   "options": {
+    "members": [
+     {
+      "data_type": "string",
+      "description": "Tag to be used to filter packets passing through this node. If the packet's tag doesn't match this option, no packet will be sent in 'OUT' port. Otherwise a packet with only the float value will be sent.",
+      "name": "tag",
+      "required": true
+     }
+    ],
+    "required": true,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_machine_learning_filter_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "float",
+     "description": "Only the float value for packets that match the tag.",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_MACHINE_LEARNING_FILTER",
+   "url": "http://soletta.org/doc/latest/node_types/machine_learning/filter.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "machine-learning",
+   "description": "Learn output values based on input and output observation. Uses a fuzzy logic algorithm.",
+   "header_file": "machine_learning_gen.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "float",
+     "description": "Port for inputs sending float packets.",
+     "name": "IN_VAR",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "float",
+     "description": "Port for id inputs sending float packets.",
+     "name": "IN_ID_VAR",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 2,
+     "data_type": "custom:PACKET_TYPE_TAGGED_FLOAT",
+     "description": "Port for outputs sending tagged float packets.",
+     "name": "OUT_VAR",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 3,
+     "data_type": "custom:PACKET_TYPE_TAGGED_FLOAT",
+     "description": "Port for id outputs sending tagged float packets.",
+     "name": "OUT_ID_VAR",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 4,
+     "data_type": "any",
+     "description": "Port used to trigger machine learning prediction.",
+     "name": "PREDICTION_TRIGGER",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 5,
+     "data_type": "any",
+     "description": "Port used to trigger machine learning processing.",
+     "name": "TRIGGER",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 6,
+     "data_type": "any",
+     "description": "Port used to save fuzzy data",
+     "name": "SAVE",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 7,
+     "data_type": "boolean",
+     "description": "Port used to disable the learning process",
+     "name": "LEARN_DISABLED",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 8,
+     "data_type": "string",
+     "description": "File to log sml read data and predicted outputs.",
+     "name": "DEBUG_FILE",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 9,
+     "data_type": "any",
+     "description": "Reset the machine-learning node to its initial state. All the previous learned scenario will be erased.",
+     "name": "ERASE_KNOWLEDGE",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "machine-learning/fuzzy",
+   "options": {
+    "members": [
+     {
+      "data_type": "int",
+      "default": 5,
+      "description": "Amount of reads without input changes to consider input stable. If zero, it's always considered stable.",
+      "name": "stabilization_hits",
+      "required": false
+     },
+     {
+      "data_type": "int",
+      "default": 15,
+      "description": "Number of fuzzy terms to be created for each variable.",
+      "name": "number_of_terms",
+      "required": false
+     },
+     {
+      "data_type": "string",
+      "default": null,
+      "description": "The directory that the neural network data files will be saved/loaded",
+      "name": "data_dir",
+      "required": false
+     }
+    ],
+    "required": false,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_machine_learning_fuzzy_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "custom:PACKET_TYPE_TAGGED_FLOAT",
+     "description": "Prediction values for output variables.",
+     "name": "OUT",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "empty",
+     "description": "Process has finished.",
+     "name": "PROCESS_FINISHED",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_MACHINE_LEARNING_FUZZY",
+   "url": "http://soletta.org/doc/latest/node_types/machine_learning/fuzzy.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "machine-learning",
+   "description": "Learn output values based on input and output observation. Uses neural network algorithm.",
+   "header_file": "machine_learning_gen.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "float",
+     "description": "Port for inputs sending float packets.",
+     "name": "IN_VAR",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "float",
+     "description": "Port for inputs sending float packets.",
+     "name": "IN_ID_VAR",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 2,
+     "data_type": "custom:PACKET_TYPE_TAGGED_FLOAT",
+     "description": "Port for outputs sending tagged float packets.",
+     "name": "OUT_VAR",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 3,
+     "data_type": "custom:PACKET_TYPE_TAGGED_FLOAT",
+     "description": "Port for id outputs sending tagged float packets.",
+     "name": "OUT_ID_VAR",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 4,
+     "data_type": "any",
+     "description": "Port used to trigger machine learning prediction.",
+     "name": "PREDICTION_TRIGGER",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 5,
+     "data_type": "any",
+     "description": "Port used to trigger machine learning processing.",
+     "name": "TRIGGER",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 6,
+     "data_type": "any",
+     "description": "Port used to save neural network data",
+     "name": "SAVE",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 7,
+     "data_type": "boolean",
+     "description": "Port used to disable the learning process",
+     "name": "LEARN_DISABLED",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 8,
+     "data_type": "string",
+     "description": "File to log sml read data and predicted outputs.",
+     "name": "DEBUG_FILE",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 9,
+     "data_type": "any",
+     "description": "Reset the machine-learning node to its initial state. All the previous learned scenario will be erased.",
+     "name": "ERASE_KNOWLEDGE",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "machine-learning/neural-network",
+   "options": {
+    "members": [
+     {
+      "data_type": "int",
+      "default": 5,
+      "description": "Amount of reads without input changes to consider input stable. If zero, it's always considered stable.",
+      "name": "stabilization_hits",
+      "required": false
+     },
+     {
+      "data_type": "int",
+      "default": 0,
+      "description": "Amound of initial observations necessary to first neural network training. If zero or negative, the default initial observation value will be used.",
+      "name": "initial_required_observations",
+      "required": false
+     },
+     {
+      "data_type": "float",
+      "default": 0.1,
+      "description": "Desired mean squared error. It's the difference between the estimator and what is estimated. The neural network will try to reach this value. Higher values can be reached easily, requiring less time and processing on training phase. Also, it won't try to guess the output if the desired mse wasn't reached.",
+      "name": "mse",
+      "required": false
+     },
+     {
+      "data_type": "string",
+      "default": "rprop",
+      "description": "Training algorithm to be used by the neural network. Supported algorithms are: 'rprop' - resilient backpropagation, and 'quickprop' - discrete pseudo-Newton method.",
+      "name": "training_algorithm",
+      "required": false
+     },
+     {
+      "data_type": "string",
+      "default": "sigmoid sigmoid_symmetric gaussian gaussian_symmetric elliot elliot_symmetric cos cos_symmetric sin sin_symmetric",
+      "description": "Activation functions that may be used for neural network. It'll try to use all of these functions to get the best one for its observations. Supported activation functions are: sigmoid sigmoid_symmetric gaussian gaussian_symmetric elliot elliot_symmetric cos cos_symmetric sin sin_symmetric. It's possible to set more than one, separeted by space. By default all of them are considered candidates. Reducing this set will reduce processing on training phase.",
+      "name": "activation_functions",
+      "required": false
+     },
+     {
+      "data_type": "string",
+      "default": null,
+      "description": "The directory that the neural network data files will be saved/loaded",
+      "name": "data_dir",
+      "required": false
+     }
+    ],
+    "required": false,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_machine_learning_neural_network_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "custom:PACKET_TYPE_TAGGED_FLOAT",
+     "description": "Prediction values for output variables.",
+     "name": "OUT",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "empty",
+     "description": "Process has finished.",
+     "name": "PROCESS_FINISHED",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_MACHINE_LEARNING_NEURAL_NETWORK",
+   "url": "http://soletta.org/doc/latest/node_types/machine_learning/neural_network.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "machine-learning",
+   "description": "Learn output values based on input and output observation. Uses a fuzzy logic algorithm.",
+   "header_file": "machine_learning_gen.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "custom:PACKET_TYPE_SML_DATA",
+     "description": "Port to receive SML data packets.",
+     "name": "IN",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "custom:PACKET_TYPE_SML_DATA",
+     "description": "Port to receive SML data packets to run sml in prediction mode.",
+     "name": "IN_PREDICT",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 2,
+     "data_type": "string",
+     "description": "File to log sml read data and predicted outputs.",
+     "name": "DEBUG_FILE",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 3,
+     "data_type": "any",
+     "description": "Reset the machine-learning node to its initial state. All the previous learned scenario will be erased.",
+     "name": "ERASE_KNOWLEDGE",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 4,
+     "data_type": "any",
+     "description": "Port used to save fuzzy data",
+     "name": "SAVE",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 5,
+     "data_type": "boolean",
+     "description": "Port used to disable the learning process",
+     "name": "LEARN_DISABLED",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "machine-learning/fuzzy-sync",
+   "options": {
+    "members": [
+     {
+      "data_type": "int",
+      "default": 5,
+      "description": "Amount of reads without input changes to consider input stable. If zero, it's always considered stable.",
+      "name": "stabilization_hits",
+      "required": false
+     },
+     {
+      "data_type": "int",
+      "default": 15,
+      "description": "Number of fuzzy terms to be created for each variable.",
+      "name": "number_of_terms",
+      "required": false
+     },
+     {
+      "data_type": "string",
+      "default": null,
+      "description": "The directory that the fuzzy data files will be saved/loaded",
+      "name": "data_dir",
+      "required": false
+     }
+    ],
+    "required": false,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_machine_learning_fuzzy_sync_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "custom:PACKET_TYPE_SML_OUTPUT_DATA",
+     "description": "Prediction values for output variables.",
+     "name": "OUT",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "custom:PACKET_TYPE_SML_OUTPUT_DATA",
+     "description": "Prediction values for output variables when prediction is called.",
+     "name": "OUT_PREDICT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_MACHINE_LEARNING_FUZZY_SYNC",
+   "url": "http://soletta.org/doc/latest/node_types/machine_learning/fuzzy_sync.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "machine-learning",
+   "description": "Learn output values based on input and output observation. Uses neural network algorithm.",
+   "header_file": "machine_learning_gen.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "custom:PACKET_TYPE_SML_DATA",
+     "description": "Port to receive SML data packets.",
+     "name": "IN",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "custom:PACKET_TYPE_SML_DATA",
+     "description": "Port to receive SML data packets to run sml in prediction mode.",
+     "name": "IN_PREDICT",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 2,
+     "data_type": "string",
+     "description": "File to log sml read data and predicted outputs.",
+     "name": "DEBUG_FILE",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 3,
+     "data_type": "any",
+     "description": "Reset the machine-learning node to its initial state. All the previous learned scenario will be erased.",
+     "name": "ERASE_KNOWLEDGE",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 4,
+     "data_type": "any",
+     "description": "Port used to save neural network data",
+     "name": "SAVE",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 5,
+     "data_type": "boolean",
+     "description": "Port used to disable the learning process",
+     "name": "LEARN_DISABLED",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "machine-learning/neural-network-sync",
+   "options": {
+    "members": [
+     {
+      "data_type": "int",
+      "default": 5,
+      "description": "Amount of reads without input changes to consider input stable. If zero, it's always considered stable.",
+      "name": "stabilization_hits",
+      "required": false
+     },
+     {
+      "data_type": "int",
+      "default": 0,
+      "description": "Amound of initial observations necessary to first neural network training. If zero or negative, the default initial observation value will be used.",
+      "name": "initial_required_observations",
+      "required": false
+     },
+     {
+      "data_type": "float",
+      "default": 0.1,
+      "description": "Desired mean squared error. It's the difference between the estimator and what is estimated. The neural network will try to reach this value. Higher values can be reached easily, requiring less time and processing on training phase. Also, it won't try to guess the output if the desired mse wasn't reached.",
+      "name": "mse",
+      "required": false
+     },
+     {
+      "data_type": "string",
+      "default": "rprop",
+      "description": "Training algorithm to be used by the neural network. Supported algorithms are: 'rprop' - resilient backpropagation, and 'quickprop' - discrete pseudo-Newton method.",
+      "name": "training_algorithm",
+      "required": false
+     },
+     {
+      "data_type": "string",
+      "default": "sigmoid sigmoid_symmetric gaussian gaussian_symmetric elliot elliot_symmetric cos cos_symmetric sin sin_symmetric",
+      "description": "Activation functions that may be used for neural network. It'll try to use all of these functions to get the best one for its observations. Supported activation functions are: sigmoid sigmoid_symmetric gaussian gaussian_symmetric elliot elliot_symmetric cos cos_symmetric sin sin_symmetric. It's possible to set more than one, separeted by space. By default all of them are considered candidates. Reducing this set will reduce processing on training phase.",
+      "name": "activation_functions",
+      "required": false
+     },
+     {
+      "data_type": "string",
+      "default": null,
+      "description": "The directory that the neural network data files will be saved/loaded",
+      "name": "data_dir",
+      "required": false
+     }
+    ],
+    "required": false,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_machine_learning_neural_network_sync_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "custom:PACKET_TYPE_SML_OUTPUT_DATA",
+     "description": "Prediction values for output variables.",
+     "name": "OUT",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "custom:PACKET_TYPE_SML_OUTPUT_DATA",
+     "description": "Prediction values for output variables when prediction is called.",
+     "name": "OUT_PREDICT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_MACHINE_LEARNING_NEURAL_NETWORK_SYNC",
+   "url": "http://soletta.org/doc/latest/node_types/machine_learning/neural_network_sync.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "machine-learning",
+   "description": "Filter output variables.",
+   "header_file": "machine_learning_gen.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "custom:PACKET_TYPE_SML_OUTPUT_DATA",
+     "description": "Output variable value to be filtered.",
+     "name": "IN",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "machine-learning/filter-sync",
+   "options_symbol": "sol_flow_node_type_machine_learning_filter_sync_options",
+   "out_ports": [
+    {
+     "array_size": 32,
+     "base_port_idx": 0,
+     "data_type": "float",
+     "description": "Array of output values. Index in array matches output position in sml",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_MACHINE_LEARNING_FILTER_SYNC",
+   "url": "http://soletta.org/doc/latest/node_types/machine_learning/filter.html",
+   "version": "1"
+  }
+ ]
+}

@@ -1,0 +1,29 @@
+# This file is part of the Soletta Project
+#
+# Copyright (C) 2015 Intel Corporation. All rights reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+INPORT=acc.IN[0]:IN
+OUTPORT=acc.OUT[0]:OUT
+
+acc(switcher/float) OUT[0] -> OUTPUT_VALUE acc_flush
+_(constant/float:value=0,value_spec=min:0|max:100|step:1) OUT -> IN[0] acc
+acc OUT[0] -> IN _(converter/float-to-string) OUT -> IN value(Label)
+sum(float/addition) OUT -> IN _(float/filter:min=0,max=100,range_override=true) OUT -> IN[0] acc
+
+inc(PushButton) OUT -> PULSE_IF_TRUE _(converter/boolean-to-empty) OUT -> IN _(converter/empty-to-float:output_value=5,output_value_spec=min:0|max:100|step:1) OUT -> OPERAND[0] sum
+inc OUT -> PULSE_IF_TRUE _(converter/boolean-to-empty) OUT -> IN acc_flush(converter/empty-to-float) OUT -> OPERAND[1] sum
+
+dec(PushButton) OUT -> PULSE_IF_TRUE _(converter/boolean-to-empty) OUT -> IN _(converter/empty-to-float:output_value=-5,output_value_spec=min:0|max:100|step:1) OUT -> OPERAND[0] sum
+dec OUT -> PULSE_IF_TRUE _(converter/boolean-to-empty) OUT -> IN acc_flush

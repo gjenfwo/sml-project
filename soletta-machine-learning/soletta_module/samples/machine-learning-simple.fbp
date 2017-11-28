@@ -1,0 +1,57 @@
+#!/usr/bin/env sol-fbp-runner
+
+# This file is part of the Soletta Project
+#
+# Copyright (C) 2015 Intel Corporation. All rights reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+Timer(timer:interval=200) OUT -> IN Random1(random/float:seed=666)
+Random1 OUT -> IN Input1(float/map:use_input_range=true,output_range=-0.5|5.5|1)
+Input1 OUT -> IN Input1Value(console)
+
+Timer OUT -> IN Random2(random/float)
+Random2 OUT -> IN Input2(float/map:use_input_range=true,output_range=0.5|6.5|1)
+Input2 OUT -> IN Input2Value(console)
+
+Input1 OUT -> OPERAND[0] Output(float/multiplication)
+Input2 OUT -> OPERAND[1] Output
+Output OUT -> IN OutputValue(console)
+
+# add a random error to check if machine learning will correct this
+TimerError(timer:interval=2020) OUT -> IN RandomError(random/float)
+RandomError OUT -> IN OutputError(float/map:use_input_range=true,output_range=0|30|1)
+OutputError OUT -> IN Error(console)
+
+Output OUT -> IN Tagger(machine-learning/tagger:tag=Result)
+OutputError OUT -> IN Tagger
+
+# guess using fuzzy
+Input1 OUT -> IN_VAR Fuzzy(machine-learning/fuzzy:stabilization_hits=2)
+Input2 OUT -> IN_VAR Fuzzy
+Tagger OUT -> OUT_VAR Fuzzy
+
+TimerTrigger(timer:interval=20) OUT -> TRIGGER Fuzzy
+
+Fuzzy OUT -> IN FilterFuzzy(machine-learning/filter:tag=Result)
+FilterFuzzy OUT -> IN OutputGuessFuzzy(console)
+
+# guess using neural network
+Input1 OUT -> IN_VAR NN(machine-learning/neural-network)
+Input2 OUT -> IN_VAR NN
+Tagger OUT -> OUT_VAR NN
+
+TimerTrigger OUT -> TRIGGER NN
+
+NN OUT -> IN FilterNN(machine-learning/filter:tag=Result)
+FilterNN OUT -> IN OutputGuessNN(console)

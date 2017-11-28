@@ -1,0 +1,26 @@
+# This file is part of the Soletta (TM) Project
+#
+# Copyright (C) 2015 Intel Corporation. All rights reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+float_to_empty(converter/float-to-empty:range=min:0|max:20)
+match_ten(constant/float:value=10)
+
+match_ten OUT -> IN float_to_empty OUT -> IN _(converter/empty-to-boolean) OUT -> RESULT empty_received(test/result)
+
+empty_to_float(converter/empty-to-float:output_value=10,output_value_spec=min:5|max:15|step:1)
+empty(constant/empty)
+
+empty OUT -> IN empty_to_float OUT -> IN[0] equal(float/equal)
+match_ten OUT -> IN[1] equal OUT -> RESULT r_ten_received(test/result)

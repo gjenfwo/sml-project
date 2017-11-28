@@ -1,0 +1,87 @@
+{
+ "temperature": [
+  {
+   "aliases": [
+    "converter/temperature"
+   ],
+   "author": "Intel Corporation",
+   "category": "temperature",
+   "description": "Convert temperatures between Kelvin, Celsius, Farenheit and Rankine.",
+   "header_file": "sol-flow/temperature.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "float",
+     "description": "Temperature in Celsius.",
+     "name": "CELSIUS",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "float",
+     "description": "Temperature in Fahrenheit.",
+     "name": "FAHRENHEIT",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 2,
+     "data_type": "float",
+     "description": "Temperature in Kelvin.",
+     "name": "KELVIN",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 3,
+     "data_type": "float",
+     "description": "Temperature in Rankine.",
+     "name": "RANKINE",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "temperature/converter",
+   "options_symbol": "sol_flow_node_type_temperature_converter_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "float",
+     "description": "Temperature in Celsius.",
+     "name": "CELSIUS",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "float",
+     "description": "Temperature in Fahrenheit.",
+     "name": "FAHRENHEIT",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 2,
+     "data_type": "float",
+     "description": "Temperature in Kelvin.",
+     "name": "KELVIN",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 3,
+     "data_type": "float",
+     "description": "Temperature in Rankine.",
+     "name": "RANKINE",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_TEMPERATURE_CONVERTER",
+   "url": "http://solettaproject.org/doc/latest/node_types/temperature/converter.html",
+   "version": "1"
+  }
+ ]
+}

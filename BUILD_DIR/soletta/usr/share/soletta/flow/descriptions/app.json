@@ -1,0 +1,254 @@
+{
+ "app": [
+  {
+   "author": "Intel Corporation",
+   "category": "app",
+   "description": "Send command line arguments.",
+   "header_file": "sol-flow/app.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "int",
+     "description": "Argument index.",
+     "name": "IN",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "app/argc-argv",
+   "options_symbol": "sol_flow_node_type_app_argc_argv_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "Argument at position defined by packet received on port 'IN'.",
+     "name": "OUT",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "int",
+     "description": "Number of arguments.",
+     "name": "ARGC",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_APP_ARGC_ARGV",
+   "url": "http://solettaproject.org/doc/latest/node_types/app/argc-argv.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "app",
+   "description": "Send command line argument at specific position.",
+   "header_file": "sol-flow/app.h",
+   "license": "Apache-2.0",
+   "name": "app/argv",
+   "options": {
+    "members": [
+     {
+      "data_type": "int",
+      "description": "Argument position.",
+      "name": "index",
+      "required": true
+     }
+    ],
+    "required": true,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_app_argv_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "Command line argument at position defined by option 'index'.",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_APP_ARGV",
+   "url": "http://solettaproject.org/doc/latest/node_types/app/argv.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "app",
+   "description": "Quit the app.",
+   "header_file": "sol-flow/app.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "any",
+     "description": "Just quit with success code (0).",
+     "name": "QUIT",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "int",
+     "description": "Quit with code received by packet.",
+     "name": "CODE",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 2,
+     "data_type": "error",
+     "description": "Quit with error received by packet.",
+     "name": "ERROR",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "app/quit",
+   "options_symbol": "sol_flow_node_type_app_quit_options",
+   "symbol": "SOL_FLOW_NODE_TYPE_APP_QUIT",
+   "url": "http://solettaproject.org/doc/latest/node_types/app/quit.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "app",
+   "description": "Get an environment variable",
+   "header_file": "sol-flow/app.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "Environment variable name.",
+     "name": "NAME",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "app/getenv",
+   "options": {
+    "members": [
+     {
+      "data_type": "string",
+      "default": null,
+      "description": "Environment variable name to be searched for in the environment list. The corresponding value will be sent on 'VALUE' port. By default no name is set, so it waits until a name is received on 'NAME' port.",
+      "name": "variable_name",
+      "required": false
+     }
+    ],
+    "required": false,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_app_getenv_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "Value corresponding to environment variable defined by name via options or input port.",
+     "name": "VALUE",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "boolean",
+     "description": "Packet sent if a environment variable with the specified name was found or not. If it isn't found, no packet is sent on 'VALUE' port.",
+     "name": "FOUND",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_APP_GETENV",
+   "url": "http://solettaproject.org/doc/latest/node_types/app/getenv.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "app",
+   "description": "Set an environment variable",
+   "header_file": "sol-flow/app.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "Environment variable name.",
+     "name": "NAME",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "string",
+     "description": "Environment variable value.",
+     "name": "VALUE",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "app/setenv",
+   "options": {
+    "members": [
+     {
+      "data_type": "string",
+      "default": null,
+      "description": "Name for variable to be added to environment when 'VALUE' packet is received. May be overwritten by packets received on port 'NAME'. If variable already exists on environement, behavior depends on 'overwrite' option.",
+      "name": "variable_name",
+      "required": false
+     },
+     {
+      "data_type": "boolean",
+      "default": true,
+      "description": "If variable name does exist in the environment, then its value is changed to value if overwrite is 'true'; if overwrite is zero, then the value of name is not changed.",
+      "name": "overwrite",
+      "required": false
+     }
+    ],
+    "required": false,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_app_setenv_options",
+   "symbol": "SOL_FLOW_NODE_TYPE_APP_SETENV",
+   "url": "http://solettaproject.org/doc/latest/node_types/app/setenv.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "app",
+   "description": "Remove a variable from environment",
+   "header_file": "sol-flow/app.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "Environment variable name.",
+     "name": "NAME",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "app/unsetenv",
+   "options": {
+    "members": [
+     {
+      "data_type": "string",
+      "default": null,
+      "description": "Name of variable to be removed from to environment when flow is run.",
+      "name": "variable_name",
+      "required": false
+     }
+    ],
+    "required": false,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_app_unsetenv_options",
+   "symbol": "SOL_FLOW_NODE_TYPE_APP_UNSETENV",
+   "url": "http://solettaproject.org/doc/latest/node_types/app/unsetenv.html",
+   "version": "1"
+  }
+ ]
+}

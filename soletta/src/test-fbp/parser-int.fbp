@@ -1,0 +1,29 @@
+# This file is part of the Soletta (TM) Project
+#
+# Copyright (C) 2015 Intel Corporation. All rights reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+Equal(int/equal)
+Constrain(int/constrain:range=min:20,use_input_range=false)
+Value(constant/int:value=1024)
+# Default max constrain value is 1023.
+# There was an issue on options parser that override maximum with
+# datatype defaults instead of node types default.
+ConstrainedValue(constant/int:value=1023)
+
+Value OUT -> IN Constrain
+Constrain OUT -> IN[0] Equal
+ConstrainedValue OUT -> IN[1] Equal
+
+Equal OUT -> RESULT test_int_parser(test/result)

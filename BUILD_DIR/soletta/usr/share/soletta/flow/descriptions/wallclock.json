@@ -1,0 +1,370 @@
+{
+ "wallclock": [
+  {
+   "author": "Intel Corporation",
+   "category": "timer",
+   "description": "Provides int packets on a timely manner (after each system clock hour changes)",
+   "header_file": "sol-flow/wallclock.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "boolean",
+     "description": "Enables or disables the wallclock, based on the value of the packet received. When stopped, the wallclock will cease to emit packets from the OUT port.",
+     "name": "ENABLED",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "wallclock/hour",
+   "options": {
+    "members": [
+     {
+      "data_type": "boolean",
+      "default": false,
+      "description": "If true, a packet containing the current hour will be sent during initialization",
+      "name": "send_initial_packet",
+      "required": false
+     }
+    ],
+    "required": false,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_wallclock_hour_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "int",
+     "description": "An int range packet when wallclock hour ticks.",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_WALLCLOCK_HOUR",
+   "url": "http://solettaproject.org/doc/latest/node_types/wallclock_hour.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "timer",
+   "description": "Provides int packets on a timely manner (after each system clock minute changes)",
+   "header_file": "sol-flow/wallclock.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "boolean",
+     "description": "Enables or disables the wallclock, based on the value of the packet received. When stopped, the wallclock will cease to emit packets from the OUT port.",
+     "name": "ENABLED",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "wallclock/minute",
+   "options": {
+    "members": [
+     {
+      "data_type": "boolean",
+      "default": false,
+      "description": "If true, a packet containing the current minute will be sent during initialization",
+      "name": "send_initial_packet",
+      "required": false
+     }
+    ],
+    "required": false,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_wallclock_minute_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "int",
+     "description": "An int range packet when wallclock minute ticks.",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_WALLCLOCK_MINUTE",
+   "url": "http://solettaproject.org/doc/latest/node_types/wallclock_minute.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "timer",
+   "description": "Provides int packets on a timely manner (after each system clock month changes)",
+   "header_file": "sol-flow/wallclock.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "boolean",
+     "description": "Enables or disables the wallclock, based on the value of the packet received. When stopped, the wallclock will cease to emit packets from the OUT port.",
+     "name": "ENABLED",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "wallclock/month",
+   "options": {
+    "members": [
+     {
+      "data_type": "boolean",
+      "default": false,
+      "description": "If true, a packet containing the current month will be sent during initialization",
+      "name": "send_initial_packet",
+      "required": false
+     }
+    ],
+    "required": false,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_wallclock_month_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "int",
+     "description": "An int range packet when wallclock month ticks.",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_WALLCLOCK_MONTH",
+   "url": "http://solettaproject.org/doc/latest/node_types/wallclock_month.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "timer",
+   "description": "Provides int packets on a timely manner (after each system clock month day changes)",
+   "header_file": "sol-flow/wallclock.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "boolean",
+     "description": "Enables or disables the wallclock, based on the value of the packet received. When stopped, the wallclock will cease to emit packets from the OUT port.",
+     "name": "ENABLED",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "wallclock/monthday",
+   "options": {
+    "members": [
+     {
+      "data_type": "boolean",
+      "default": false,
+      "description": "If true, a packet containing the current monthday will be sent during initialization",
+      "name": "send_initial_packet",
+      "required": false
+     }
+    ],
+    "required": false,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_wallclock_monthday_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "int",
+     "description": "An int range packet when wallclock month day ticks.",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_WALLCLOCK_MONTHDAY",
+   "url": "http://solettaproject.org/doc/latest/node_types/wallclock_monthday.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "timer",
+   "description": "Provides int packets on a timely manner (after each system clock second changes)",
+   "header_file": "sol-flow/wallclock.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "boolean",
+     "description": "Enables or disables the wallclock, based on the value of the packet received. When stopped, the wallclock will cease to emit packets from the OUT port.",
+     "name": "ENABLED",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "wallclock/second",
+   "options": {
+    "members": [
+     {
+      "data_type": "boolean",
+      "default": false,
+      "description": "If true, a packet containing the current second will be sent during initialization",
+      "name": "send_initial_packet",
+      "required": false
+     }
+    ],
+    "required": false,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_wallclock_second_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "int",
+     "description": "An int range packet when wallclock second ticks.",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_WALLCLOCK_SECOND",
+   "url": "http://solettaproject.org/doc/latest/node_types/wallclock_second.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "timer",
+   "description": "Provides int packets on a timely manner (after each system clock week day changes)",
+   "header_file": "sol-flow/wallclock.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "boolean",
+     "description": "Enables or disables the wallclock, based on the value of the packet received. When stopped, the wallclock will cease to emit packets from the OUT port.",
+     "name": "ENABLED",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "wallclock/weekday",
+   "options": {
+    "members": [
+     {
+      "data_type": "boolean",
+      "default": false,
+      "description": "If true, a packet containing the current weekday will be sent durinng initialization",
+      "name": "send_initial_packet",
+      "required": false
+     }
+    ],
+    "required": false,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_wallclock_weekday_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "int",
+     "description": "An int range packet when wallclock week day ticks.",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_WALLCLOCK_WEEKDAY",
+   "url": "http://solettaproject.org/doc/latest/node_types/wallclock_weekday.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "timer",
+   "description": "Provides int packets on a timely manner (at each day's time block). A day is split in blocks of minutes defined by options. Last block may be smaller than others.",
+   "header_file": "sol-flow/wallclock.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "boolean",
+     "description": "Enables or disables the wallclock, based on the value of the packet received. When stopped, the wallclock will cease to emit packets from the OUT port.",
+     "name": "ENABLED",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "wallclock/timeblock",
+   "options": {
+    "members": [
+     {
+      "data_type": "int",
+      "description": "Time block interval. Defines the length of a frame in minutes. Last block may be smaller than others. For example, if interval is set to 50 minutes, it would tick 29 times a day, but interval for last one is just 48 minutes.",
+      "name": "interval",
+      "required": true
+     },
+     {
+      "data_type": "boolean",
+      "default": false,
+      "description": "If true, a packet containing the current timeblock will be sent durinng initialization",
+      "name": "send_initial_packet",
+      "required": false
+     }
+    ],
+    "required": true,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_wallclock_timeblock_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "int",
+     "description": "An int range packet when wallclock time block changes. An initial packet is sent informing current time block.",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_WALLCLOCK_TIMEBLOCK",
+   "url": "http://solettaproject.org/doc/latest/node_types/wallclock_timeblock.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "timer",
+   "description": "Provides int packets on a timely manner (after each system clock year changes)",
+   "header_file": "sol-flow/wallclock.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "boolean",
+     "description": "Enables or disables the wallclock, based on the value of the packet received. When stopped, the wallclock will cease to emit packets from the OUT port.",
+     "name": "ENABLED",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "wallclock/year",
+   "options": {
+    "members": [
+     {
+      "data_type": "boolean",
+      "default": false,
+      "description": "If true, a packet containing the current year will be sent during initialization",
+      "name": "send_initial_packet",
+      "required": false
+     }
+    ],
+    "required": false,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_wallclock_year_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "int",
+     "description": "An int range packet when wallclock year ticks.",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_WALLCLOCK_YEAR",
+   "url": "http://solettaproject.org/doc/latest/node_types/wallclock_year.html",
+   "version": "1"
+  }
+ ]
+}

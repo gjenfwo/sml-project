@@ -1,0 +1,34 @@
+config HTTP_SAMPLES
+	depends on SAMPLES
+	bool "HTTP samples"
+	default y
+
+config DOWNLOAD_SAMPLE
+	bool "Download sample"
+	depends on HTTP_SAMPLES && HTTP_CLIENT
+	default y
+
+config CLIENT_SAMPLE
+	bool "Client sample"
+	depends on HTTP_SAMPLES && HTTP_CLIENT
+	default y
+
+config STATIC_FILES_SAMPLE
+	bool "Serve static files sample"
+	depends on HTTP_SAMPLES && HTTP_SERVER && USE_FILESYSTEM
+	default y
+
+config SERVER_SAMPLE
+	bool "Server sample"
+	depends on HTTP_SAMPLES && HTTP_SERVER
+	default y
+
+config SERVER_SSE_SAMPLE
+	bool "Server sent events sample"
+	depends on HTTP_SAMPLES && HTTP_SERVER
+	default y
+
+config SERVER_HTTPS_SAMPLE
+	bool "HTTPS server sample"
+	depends on HTTP_SAMPLES && HTTP_SERVER
+	default y

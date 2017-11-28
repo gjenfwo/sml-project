@@ -1,0 +1,239 @@
+{
+ "grove": [
+  {
+   "aliases": [
+    "thermometer/grove"
+   ],
+   "author": "Intel Corporation",
+   "category": "input/hw",
+   "description": "Gets sensor temperature in Kelvin. Conversion to Kelvin is done using: 1/(log(((i-r)*Rc/r)/Rt)/B + 1/T - where i is input range, r is raw sensor value, Rc is potential divider resistor resitance, Rt is thermistor resistance, B is thermistor constant and T is thermistor reference temperature.",
+   "header_file": "sol-flow/grove.h",
+   "license": "Apache-2.0",
+   "name": "grove/thermometer",
+   "options": {
+    "members": [
+     {
+      "data_type": "string",
+      "description": "Label of the desired pin on the board. If raw is set to true, this should be \"<device> <pin>\" pair, e.g. \"0 3\".",
+      "name": "pin",
+      "required": true
+     },
+     {
+      "data_type": "boolean",
+      "default": false,
+      "description": "Change 'pin' meaning to be the system parameters needed to address the desired pin. Use it if you know what you are doing.",
+      "name": "raw",
+      "required": false
+     },
+     {
+      "data_type": "int",
+      "default": 12,
+      "description": "Valid bits mask. This mask is used to filter the valid bits from the data received from hardware (which is manufacturer dependent), therefore should not be used as a way to change the output range because the mask is applied to the least significant bits.",
+      "name": "mask",
+      "required": false
+     },
+     {
+      "data_type": "int",
+      "default": 1000,
+      "description": "Polling time in milliseconds. This option will take no effect if hardware interruptions for GPIO is supported by the underlying system. Use it if you know that you don't have those interruptions available.",
+      "name": "poll_timeout",
+      "required": false
+     },
+     {
+      "data_type": "int",
+      "default": 3975,
+      "description": "Thermistor constant",
+      "name": "thermistor_constant",
+      "required": false
+     },
+     {
+      "data_type": "int",
+      "default": 10000,
+      "description": "Potential divider resistance",
+      "name": "resistance",
+      "required": false
+     },
+     {
+      "data_type": "float",
+      "default": 298.15,
+      "description": "Thermistor reference temperature",
+      "name": "reference_temperature",
+      "required": false
+     },
+     {
+      "data_type": "int",
+      "default": 10000,
+      "description": "Thermistor reference resistance",
+      "name": "thermistor_resistance",
+      "required": false
+     }
+    ],
+    "required": true,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_grove_thermometer_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "float",
+     "description": "Measured temperature in Kelvin.",
+     "name": "KELVIN",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "int",
+     "description": "Raw measured temperature.",
+     "name": "RAW",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_GROVE_THERMOMETER",
+   "version": "1"
+  },
+  {
+   "aliases": [
+    "light-sensor/grove"
+   ],
+   "author": "Intel Corporation",
+   "category": "input/hw",
+   "description": "Get light sensor readings in Lux. However, it should be noted that this sensor is not precise, so the Lux readings are a rough estimation based on Grove Starter Kit booklet table, which relates raw sensor readings to Lux.",
+   "header_file": "sol-flow/grove.h",
+   "license": "Apache-2.0",
+   "name": "grove/light-sensor",
+   "options": {
+    "members": [
+     {
+      "data_type": "string",
+      "description": "Label of the desired pin on the board. If raw is set to true, this should be \"<device> <pin>\" pair, e.g. \"0 3\".",
+      "name": "pin",
+      "required": true
+     },
+     {
+      "data_type": "boolean",
+      "default": false,
+      "description": "Change 'pin' meaning to be the system parameters needed to address the desired pin. Use it if you know what you are doing.",
+      "name": "raw",
+      "required": false
+     },
+     {
+      "data_type": "int",
+      "default": 12,
+      "description": "Valid bits mask. This mask is used to filter the valid bits from the data received from hardware (which is manufacturer dependent), therefore should not be used as a way to change the output range because the mask is applied to the least significant bits.",
+      "name": "mask",
+      "required": false
+     },
+     {
+      "data_type": "int",
+      "default": 1000,
+      "description": "Polling time in milliseconds. This option will take no effect if hardware interruptions for GPIO is supported by the underlying system. Use it if you know that you don't have those interruptions available.",
+      "name": "poll_timeout",
+      "required": false
+     }
+    ],
+    "required": true,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_grove_light_sensor_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "float",
+     "description": "Measured illuminance in Lux (approximately).",
+     "name": "LUX",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "int",
+     "description": "Raw measured illuminance.",
+     "name": "RAW",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_GROVE_LIGHT_SENSOR",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "input/hw",
+   "description": "Get rotary sensor reading in degrees and radians.",
+   "header_file": "sol-flow/grove.h",
+   "license": "Apache-2.0",
+   "name": "grove/rotary-sensor",
+   "options": {
+    "members": [
+     {
+      "data_type": "string",
+      "description": "Label of the desired pin on the board. If raw is set to true, this should be \"<device> <pin>\" pair, e.g. \"0 3\".",
+      "name": "pin",
+      "required": true
+     },
+     {
+      "data_type": "boolean",
+      "default": false,
+      "description": "Change 'pin' meaning to be the system parameters needed to address the desired pin. Use it if you know what you are doing.",
+      "name": "raw",
+      "required": false
+     },
+     {
+      "data_type": "int",
+      "default": 12,
+      "description": "Valid bits mask. This mask is used to filter the valid bits from the data received from hardware (which is manufacturer dependent), therefore should not be used as a way to change the output range because the mask is applied to the least significant bits.",
+      "name": "mask",
+      "required": false
+     },
+     {
+      "data_type": "int",
+      "default": 1000,
+      "description": "Polling time in milliseconds. This option will take no effect if hardware interruptions for GPIO is supported by the underlying system. Use it if you know that you don't have those interruptions available.",
+      "name": "poll_timeout",
+      "required": false
+     },
+     {
+      "data_type": "int",
+      "default": 300,
+      "description": "Angular range",
+      "name": "angular_range",
+      "required": false
+     }
+    ],
+    "required": true,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_grove_rotary_sensor_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "float",
+     "description": "Measured rotation in degrees.",
+     "name": "DEG",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "float",
+     "description": "Measured rotation in radians.",
+     "name": "RAD",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 2,
+     "data_type": "int",
+     "description": "Raw measured rotation.",
+     "name": "RAW",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_GROVE_ROTARY_SENSOR",
+   "version": "1"
+  }
+ ]
+}

@@ -1,0 +1,704 @@
+{
+  "pre-dependencies": [
+    {
+      "dependency": "gnu_source",
+      "type": "ccode",
+      "headers": [
+        "<string.h>"
+      ],
+      "fragment": "strdupa(0);",
+      "cflags": {
+        "comment": "append to COMMON_CFLAGS so it's used for further checks",
+        "append_to": "COMMON_CFLAGS",
+        "value": "-D_GNU_SOURCE=1"
+      }
+    },
+    {
+      "dependency": "ldl",
+      "type": "ccode",
+      "headers": [
+        "<dlfcn.h>"
+      ],
+      "fragment": "dlopen(0,0);",
+      "ldflags": {
+        "comment": "append to COMMON_LDFLAGS so it's used for further checks, and else where in the build system",
+        "append_to": "COMMON_LDFLAGS",
+        "value": "-ldl"
+      }
+    },
+    {
+      "dependency": "lib_math",
+      "type": "ccode",
+      "headers": [
+        "<math.h>"
+      ],
+      "fragment": "isinf(0);",
+      "ldflags": {
+        "append_to": "COMMON_LDFLAGS",
+        "value": "-lm"
+      }
+    },
+    {
+      "dependency": "check_cflag_float_store",
+      "type": "cflags",
+      "cflags": [
+        "-ffloat-store"
+      ],
+      "append_to": "CFLAG_FLOAT_STORE"
+    },
+    {
+      "dependency": "check_cflags",
+      "type": "cflags",
+      "cflags": [
+        "-pipe",
+        "-Wall",
+        "-W",
+        "-Wextra",
+        "-Wundef",
+        "-Wformat=2",
+        "-Wlogical-op",
+        "-Wsign-compare",
+        "-Wformat-security",
+        "-Wmissing-include-dirs",
+        "-Wformat-nonliteral",
+        "-Wold-style-definition",
+        "-Wpointer-arith",
+        "-Winit-self",
+        "-Wdeclaration-after-statement",
+        "-Wfloat-equal",
+        "-Wmissing-prototypes",
+        "-Wstrict-prototypes",
+        "-Wredundant-decls",
+        "-Wmissing-declarations",
+        "-Wmissing-noreturn",
+        "-Wno-unused-parameter",
+        "-Wshadow",
+        "-Wendif-labels",
+        "-Wstrict-aliasing=3",
+        "-Wwrite-strings",
+        "-Wno-long-long",
+        "-Wno-missing-field-initializers",
+        "-Wno-override-init",
+        "-Wnested-externs",
+        "-Wchar-subscripts",
+        "-Wtype-limits",
+        "-Wuninitialized",
+        "-fno-common",
+        "-fdiagnostics-show-option",
+        "-fvisibility=hidden",
+        "-ffunction-sections",
+        "-fdata-sections",
+        "-fno-asynchronous-unwind-tables"
+      ],
+      "comment": "append to COMMON_CFLAGS so it's used for further checks",
+      "append_to": "COMMON_CFLAGS"
+    },
+    {
+      "dependency": "check_cflag_new_stack_protector",
+      "type": "cflags",
+      "cflags": [
+        "-fstack-protector-strong"
+      ],
+      "comment": "Stack-based buffer overrun detection, gcc 4.9 or newer",
+      "append_to": "COMMON_CFLAGS"
+    },
+    {
+      "dependency": "check_cflag_stack_protector",
+      "type": "cflags",
+      "cflags": [
+        "-fstack-protector"
+      ],
+      "comment": "Stack-based buffer overrun detection",
+      "append_to": "COMMON_CFLAGS"
+    },
+    {
+      "dependency": "check_cflag_fortify",
+      "type": "cflags",
+      "cflags": [
+        "-O2 -D_FORTIFY_SOURCE=2"
+      ],
+      "comment": "Add some more security checks",
+      "append_to": "RELEASE_COMMON_CFLAGS"
+    },
+    {
+      "dependency": "check_cflag_pie",
+      "type": "cflags",
+      "cflags": [
+        "-fPIE"
+      ],
+      "comment": "Position Independent Execution",
+      "append_to": "BIN_COMMON_CFLAGS"
+    },
+    {
+      "dependency": "check_no_undefined_flag",
+      "type": "ldflags",
+      "ldflags": [
+        "-Wl,--no-undefined"
+      ],
+      "append_to": "LDFLAG_UNDEFINED"
+    },
+    {
+      "dependency": "check_ldflags",
+      "type": "ldflags",
+      "ldflags": [
+        "-Wl,--gc-sections"
+      ],
+      "append_to": "COMMON_LDFLAGS"
+    },
+    {
+      "dependency": "check_ldflag_stack",
+      "type": "ldflags",
+      "ldflags": [
+        "-z noexecstack"
+      ],
+      "comment": "Stack execution protection",
+      "append_to": "COMMON_LDFLAGS"
+    },
+    {
+      "dependency": "check_ldflag_relro",
+      "type": "ldflags",
+      "ldflags": [
+        "-z relro -z now"
+      ],
+      "comment": "Data relocation and protection",
+      "append_to": "COMMON_LDFLAGS"
+    },
+    {
+      "dependency": "check_ldflag_pie",
+      "type": "ldflags",
+      "ldflags": [
+        "-pie"
+      ],
+      "comment": "Position Independent Execution",
+      "append_to": "BIN_COMMON_LDFLAGS"
+    },
+    {
+      "dependency": "check_soname_flag",
+      "type": "ldflags",
+      "ldflags": [
+        "-shared -Wl,-soname,foo"
+      ],
+      "append_to": "LDFLAG_SONAME"
+    }
+  ],
+  "dependencies": [
+    {
+      "dependency": "connman",
+      "type": "pkg-config",
+      "pkgname": "connman"
+    },
+    {
+      "dependency": "check",
+      "type": "pkg-config",
+      "pkgname": "check"
+    },
+    {
+      "dependency": "glib",
+      "type": "pkg-config",
+      "pkgname": "glib-2.0"
+    },
+    {
+      "dependency": "gtk",
+      "type": "pkg-config",
+      "pkgname": "gtk+-3.0"
+    },
+    {
+      "dependency": "mosquitto",
+      "type": "ccode",
+      "headers": [
+        "<mosquitto.h>"
+      ],
+      "fragment": "#if LIBMOSQUITTO_VERSION_NUMBER < 1004002\n#error \"Unsupported LIBMOSQUITTO version\"\n#endif",
+      "ldflags": {
+        "value": "-lmosquitto"
+      }
+    },
+    {
+      "dependency": "systemd",
+      "type": "pkg-config",
+      "pkgname": "libsystemd",
+      "atleast-version": "221"
+    },
+    {
+      "dependency": "udev",
+      "type": "pkg-config",
+      "pkgname": "libudev",
+      "atleast-version": "204"
+    },
+    {
+      "dependency": "sd_dbus",
+      "type": "ccode",
+      "headers": [
+        "<systemd/sd-bus.h>"
+      ]
+    },
+    {
+      "dependency": "sys_auxv_h",
+      "type": "ccode",
+      "headers": [
+        "<sys/auxv.h>"
+      ],
+      "fragment": "getauxval(AT_EXECFN);"
+    },
+    {
+      "dependency": "decl_dladdr",
+      "type": "ccode",
+      "headers": [
+        "<dlfcn.h>"
+      ],
+      "fragment": "dladdr(0, 0);"
+    },
+    {
+      "dependency": "pthread_h",
+      "type": "ccode",
+      "headers": [
+        "<pthread.h>"
+      ],
+      "ldflags": {
+        "value": "-lpthread"
+      }
+    },
+    {
+      "dependency": "linux",
+      "type": "ccode",
+      "headers": [
+        "<linux/ioctl.h>"
+      ]
+    },
+    {
+      "dependency": "riotos",
+      "type": "ccode",
+      "fragment": "#ifndef RIOT_CPU\n#error \"No RIOT_CPU defined\"\n#endif\n"
+    },
+    {
+      "dependency": "contiki",
+      "type": "ccode",
+      "headers": [
+        "<contiki.h>"
+      ]
+    },
+    {
+      "dependency": "qmsi",
+      "type": "ccode",
+      "headers": [
+        "<qm_version.h>"
+      ],
+      "fragment": "#if QM_VER_API_UINT < 10001\n#error \"Unsupported QMSI version\"\n#endif"
+    },
+    {
+      "dependency": "zephyr_micro",
+      "type": "ccode",
+      "fragment": "#ifndef CONFIG_MICROKERNEL\n#error \"Microkernel not supported\"\n#endif\n"
+    },
+    {
+      "dependency": "zephyr",
+      "type": "ccode",
+      "headers": [
+        "<nanokernel.h>"
+      ],
+      "fragment": "#if !defined(CONFIG_MICROKERNEL) && !defined(CONFIG_NANO_TIMEOUTS)\n#error \"Nanokernel build requires CONFIG_NANO_TIMEOUTS to be enabled\"\n#endif\n"
+    },
+    {
+      "dependency": "dlfcn_h",
+      "type": "ccode",
+      "headers": [
+        "<dlfcn.h>"
+      ]
+    },
+    {
+      "dependency": "socket",
+      "type": "ccode",
+      "headers": [
+        "<sys/socket.h>"
+      ]
+    },
+    {
+      "dependency": "pipe",
+      "type": "ccode",
+      "headers": [
+        "<unistd.h>"
+      ],
+      "fragment": "int fds[2]; pipe(fds);"
+    },
+    {
+      "dependency": "pipe2",
+      "type": "ccode",
+      "headers": [
+        "<unistd.h>"
+      ],
+      "fragment": "int fds[2]; pipe2(fds, 0);"
+    },
+    {
+      "dependency": "accept4",
+      "type": "ccode",
+      "headers": [
+        "<sys/socket.h>"
+      ],
+      "fragment": "accept4(0, 0, 0, 0);"
+    },
+    {
+      "dependency": "locale",
+      "type": "ccode",
+      "headers": [
+        "<locale.h>"
+      ],
+      "fragment": "setlocale(LC_ALL, NULL);"
+    },
+    {
+      "dependency": "newlocale",
+      "type": "ccode",
+      "headers": [
+        "<locale.h>"
+      ],
+      "fragment": "newlocale(LC_ALL_MASK, NULL, NULL);"
+    },
+    {
+      "dependency": "icu",
+      "type": "pkg-config",
+      "pkgname": "icu-uc icu-i18n",
+      "atleast-version": "52.1"
+    },
+    {
+      "dependency": "libpcre",
+      "type": "pkg-config",
+      "pkgname": "libpcre",
+      "atleast-version": "8.12"
+    },
+    {
+      "dependency": "isatty",
+      "type": "ccode",
+      "headers": [
+        "<unistd.h>"
+      ],
+      "fragment": "isatty(0);"
+    },
+    {
+      "dependency": "ppoll",
+      "type": "ccode",
+      "headers": [
+        "<poll.h>"
+      ],
+      "fragment": "ppoll(0, 0, 0, 0);"
+    },
+    {
+      "dependency": "pollts",
+      "type": "ccode",
+      "headers": [
+        "<poll.h>"
+      ],
+      "fragment": "pollts(0, 0, 0, 0);"
+    },
+    {
+      "dependency": "decl_strndupa",
+      "type": "ccode",
+      "headers": [
+        "<string.h>"
+      ],
+      "fragment": "strndupa(0, 0);"
+    },
+    {
+      "dependency": "decl_strdupa",
+      "type": "ccode",
+      "comment": "Detect GNU extension strdupa()",
+      "headers": [
+        "<string.h>"
+      ],
+      "fragment": "strdupa((void *)0);"
+    },
+    {
+      "dependency": "random_r",
+      "type": "ccode",
+      "headers": [
+        "<stdlib.h>"
+      ],
+      "fragment": "random_r(NULL, NULL);"
+    },
+    {
+      "dependency": "xsi_strerror_r",
+      "type": "ccode",
+      "headers": [
+        "<string.h>"
+      ],
+      "fragment": "char *p; p[strerror_r(0, p, 0)];"
+    },
+    {
+      "dependency": "builtin_mul_overflow",
+      "type": "ccode",
+      "fragment": "__builtin_mul_overflow(0ULL, 0ULL, (unsigned long long *)0);"
+    },
+    {
+      "dependency": "builtin_add_overflow",
+      "type": "ccode",
+      "fragment": "__builtin_add_overflow(0ULL, 0ULL, (unsigned long long *)0);"
+    },
+    {
+      "dependency": "decl_memmem",
+      "type": "ccode",
+      "headers": [
+        "<string.h>"
+      ],
+      "fragment": "memmem(0, 0, 0, 0);"
+    },
+    {
+      "dependency": "decl_memrchr",
+      "type": "ccode",
+      "comment": "Detect GNU extension memrchr()",
+      "headers": [
+        "<string.h>"
+      ],
+      "fragment": "memrchr((void *)0, 0, 0);"
+    },
+    {
+      "dependency": "getrandom",
+      "type": "ccode",
+      "headers": [
+        "<linux/random.h>",
+        "<unistd.h>",
+        "<sys/syscall.h>"
+      ],
+      "fragment": "char p; syscall(SYS_getrandom, &p, sizeof(p), GRND_NONBLOCK);"
+    },
+    {
+      "dependency": "decl_ifla_inet6_addr_gen_mode",
+      "type": "ccode",
+      "headers": [
+        "<netinet/in.h>",
+        "<netinet/ether.h>",
+        "<linux/rtnetlink.h>",
+        "<net/if.h>",
+        "<linux/if_link.h>",
+        "<linux/if_addr.h>"
+      ],
+      "fragment": "int v = IFLA_INET6_ADDR_GEN_MODE;"
+    },
+    {
+      "dependency": "decl_ifla_inet6_max",
+      "type": "ccode",
+      "headers": [
+        "<netinet/in.h>",
+        "<netinet/ether.h>",
+        "<linux/rtnetlink.h>",
+        "<net/if.h>",
+        "<linux/if_link.h>",
+        "<linux/if_addr.h>"
+      ],
+      "fragment": "int v = IFLA_INET6_MAX;"
+    },
+    {
+      "dependency": "strtod_l",
+      "type": "ccode",
+      "headers": [
+        "<stdlib.h>"
+      ],
+      "fragment": "strtod_l(0, 0, 0);"
+    },
+    {
+      "dependency": "strftime_l",
+      "type": "ccode",
+      "headers": [
+        "<time.h>"
+      ],
+      "fragment": "strftime_l(0, 0, 0, 0, 0);"
+    },
+    {
+      "dependency": "get_current_dir_name",
+      "type": "ccode",
+      "headers": [
+        "<unistd.h>"
+      ],
+      "fragment": "get_current_dir_name();"
+    },
+    {
+      "dependency": "valgrind",
+      "type": "exec",
+      "exec": "valgrind"
+    },
+    {
+      "dependency": "doxygen",
+      "type": "exec",
+      "exec": "doxygen"
+    },
+    {
+      "dependency": "bzip2",
+      "type": "exec",
+      "exec": "bzip2"
+    },
+    {
+      "dependency": "tar",
+      "type": "exec",
+      "exec": "tar"
+    },
+    {
+      "dependency": "lcov",
+      "type": "exec",
+      "exec": "lcov"
+    },
+    {
+      "dependency": "genhtml",
+      "type": "exec",
+      "exec": "genhtml"
+    },
+    {
+      "dependency": "chrpath",
+      "type": "exec",
+      "exec": "chrpath"
+    },
+    {
+      "dependency": "jsonschema",
+      "type": "python",
+      "pkgname": "jsonschema",
+      "required": true
+    },
+    {
+      "dependency": "graphviz",
+      "type": "exec",
+      "exec": "dot"
+    },
+    {
+      "dependency": "imagemagick",
+      "type": "exec",
+      "exec": "convert"
+    },
+    {
+      "dependency": "libcurl",
+      "type": "pkg-config",
+      "pkgname": "libcurl",
+      "atleast-version": "7.32.0"
+    },
+    {
+      "dependency": "dynamic_sanitize_undefined",
+      "type": "ccode",
+      "cflags": {
+        "value": "-fsanitize=undefined"
+      },
+      "ldflags": {
+        "value": "-fsanitize=undefined"
+      }
+    },
+    {
+      "dependency": "static_sanitize_undefined",
+      "type": "ccode",
+      "cflags": {
+        "value": "-fsanitize=undefined"
+      },
+      "ldflags": {
+        "value": "-fsanitize=undefined -static-libubsan"
+      }
+    },
+    {
+      "dependency": "no_sanitize",
+      "type": "ccode",
+      "cflags": {
+        "value": "-fno-sanitize=all"
+      }
+    },
+    {
+      "dependency": "dynamic_sanitize_address",
+      "type": "ccode",
+      "cflags": {
+        "value": "-fsanitize=address"
+      },
+      "ldflags": {
+        "value": "-fsanitize=address -lasan"
+      }
+    },
+    {
+      "dependency": "static_sanitize_address",
+      "type": "ccode",
+      "cflags": {
+        "value": "-fsanitize=address"
+      },
+      "ldflags": {
+        "value": "-fsanitize=address -static-libasan"
+      }
+    },
+    {
+      "dependency": "flto",
+      "type": "ccode",
+      "cflags": {
+        "value": "-flto -ffat-lto-objects"
+      }
+    },
+    {
+      "dependency": "duktape_src",
+      "type": "filesystem",
+      "files": [
+        "duktape.c",
+        "duktape.h"
+      ],
+      "path": {
+        "in-tree": "{TOP_SRCDIR}/src/thirdparty/duktape/src",
+        "out-of-tree": "{DUKTAPE_SRC}"
+      }
+    },
+    {
+      "dependency": "libmicrohttpd",
+      "type": "pkg-config",
+      "pkgname": "libmicrohttpd",
+      "atleast-version": "0.9.47"
+    },
+    {
+      "dependency": "tinycbor_src",
+      "type": "filesystem",
+      "files": [
+        "cbor.h"
+      ],
+      "path": {
+        "in-tree": "{TOP_SRCDIR}/src/thirdparty/tinycbor/src",
+        "out-of-tree": "{TINYCBOR_SRC}"
+      }
+    },
+    {
+      "dependency": "openssl",
+      "type": "pkg-config",
+      "pkgname": "openssl"
+    },
+    {
+      "dependency": "tinydtls_src",
+      "type": "filesystem",
+      "files": [
+        "dtls.h"
+      ],
+      "path": {
+        "in-tree": "{TOP_SRCDIR}/src/thirdparty/tinydtls",
+        "out-of-tree": "{TINYDTLS_SRC}"
+      }
+    },
+    {
+      "dependency": "libkmod",
+      "type": "pkg-config",
+      "pkgname": "libkmod"
+    },
+    {
+      "dependency": "libmagic",
+      "type": "ccode",
+      "headers": [
+        "<magic.h>"
+      ],
+      "ldflags": {
+        "value": "-lmagic"
+      }
+    },
+    {
+      "dependency": "stdout",
+      "type": "ccode",
+      "headers": [
+        "<stdio.h>"
+      ],
+      "fragment": "stdout;"
+    },
+    {
+      "dependency": "mavlink_src",
+      "type": "filesystem",
+      "files": [
+        "mavlink_types.h",
+        "protocol.h",
+        "checksum.h"
+      ],
+      "path": {
+        "in-tree": "{TOP_SRCDIR}/src/thirdparty/mavlink",
+        "out-of-tree": "{MAVLINK_SRC}"
+      }
+    }
+  ]
+}

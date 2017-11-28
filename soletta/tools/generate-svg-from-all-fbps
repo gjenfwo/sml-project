@@ -1,0 +1,80 @@
+#!/bin/bash
+
+# This file is part of the Soletta™ Project
+#
+# Copyright (C) 2015 Intel Corporation. All rights reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Generate SVG representations of all FBP files in the repository.
+# ./generate-svg-from-all-fbps path/to/sol-fbp-to-dot path/to/output_dir
+
+set -euo pipefail
+
+# Default paths
+OUTPUT=$PWD/doc/node-types-html/svg
+FBP_TO_DOT=$PWD/build/soletta_sysroot/usr/bin/sol-fbp-to-dot
+
+THUMB_SIZE=89
+
+if [[ ! -z "$1" ]]; then
+    FBP_TO_DOT=$1
+fi
+
+if [[ ! -z "$2" ]]; then
+    OUTPUT=$2
+fi
+
+function die() {
+    echo "ERROR: $1"
+    exit 1
+}
+
+[ -e ./Kconfig ] || die "Call from the root directory."
+[ -e $FBP_TO_DOT ] || die "Couldn't find sol-fbp-to-dot."
+
+for f in $(find src/ -name \*.fbp); do
+    # skip error tests
+    if grep "TEST-EXPECTS-ERROR" ${f} > /dev/null; then
+       continue
+    fi
+
+    dir=$(dirname $f)
+    mkdir -p $OUTPUT/$dir
+
+    f_dot=$OUTPUT/${f/.fbp/.dot}
+    f_svg=$OUTPUT/${f/.fbp/.svg}
+    f_thumb=$OUTPUT/${f/.fbp/_thumb.jpg}
+
+    # Copy fbp used to generate svg removing license.
+    # It's going to be used to display code snippets, having 30 lines
+    # of license is annyoing.
+    awk -v filter=0 -e '{if ($0 ~ "This file is part of the Soletta") filter=1; if (filter==0) print; if ($0 ~ "limitations under the License") filter=0;}' < $f > $OUTPUT/$f
+
+    # Create svg from fbp
+    if $FBP_TO_DOT --fbp=$f --dot=$f_dot; then
+        echo "     GEN   $f_svg"
+        dot -Tsvg $f_dot > $f_svg
+        rm $f_dot
+
+        # Create jgp thumbnail
+        min=`convert $f_svg -format "%[fx:min(w,h)]" info:`
+        convert $f_svg -background black -gravity center -extent ${min}x${min} $f_thumb
+        convert $f_thumb -thumbnail $THUMB_SIZE $f_thumb
+    # It may fail if any module wasn't built
+    else
+        echo "Failed to convert $f"
+        continue
+    fi
+
+done

@@ -1,0 +1,38 @@
+#!/usr/bin/env sol-fbp-runner
+
+# This file is part of the Soletta (TM) Project
+#
+# Copyright (C) 2015 Intel Corporation. All rights reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# On this sample two server instances, binded to ports 8040 for
+# /irange and 8050 for /drange
+
+# Post:
+# curl --data "value=10&min=3&max=100&step=1" http://localhost:8040/irange -v
+#
+# JSON response:
+# curl -H "Accept:application/json"  http://localhost:8040/irange -v
+
+irange(http-server/int:path=/irange,port=8040,value=1,value_spec=min:0|max:100|step:1)
+irange OUT -> IN Int(console)
+
+# Post:
+# curl --data "value=10.2&min=3.4&max=100.000&step=1.1" http://localhost:8050/drange -v
+#
+# JSON response:
+# curl -H "Accept:application/json"  http://localhost:8050/drange -v
+
+drange(http-server/float:path=/drange,port=8050,value=1.0,value_spec=min:0|max:100.2|step:1.2)
+drange OUT -> IN Float(console)

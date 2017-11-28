@@ -1,0 +1,33 @@
+#!/usr/bin/env sol-fbp-runner
+
+# This file is part of the Soletta (TM) Project
+#
+# Copyright (C) 2015 Intel Corporation. All rights reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# This example controls a servo and sets its angle, adjusting every 3
+# seconds. The node type is resolved using the
+# sol-flow-intel-edison-rev-c.json. If running in a different board,
+# please adjust to your needs and:
+#
+#    $ export SOL_FLOW_MODULE_RESOLVER_CONFFILE=<your-config>.json
+#    $ ./servo-motor.fbp
+#
+# or save it as sol-flow.json
+
+inc(int/accumulator:setup_value=min:0|max:170|step:10)
+
+timer(timer:interval=2000) OUT -> INC inc OUT -> IN converter(converter/int-to-float)
+converter OUT -> ANGLE servo(Servo)
+converter OUT -> IN _(console)

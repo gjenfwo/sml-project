@@ -1,0 +1,776 @@
+{
+ "switcher": [
+  {
+   "author": "Intel Corporation",
+   "category": "switcher",
+   "description": "Forward blob packets on to output port set by index.",
+   "header_file": "sol-flow/switcher.h",
+   "in_ports": [
+    {
+     "array_size": 256,
+     "base_port_idx": 0,
+     "data_type": "blob",
+     "description": "Where to receive the blob packet to be forwarded.",
+     "name": "IN",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 256,
+     "data_type": "int",
+     "description": "Index of input port to be used to forward input packet.",
+     "name": "IN_PORT",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 257,
+     "data_type": "int",
+     "description": "Index of output port to be used to forward input packet.",
+     "name": "OUT_PORT",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "switcher/blob",
+   "options": {
+    "members": [
+     {
+      "data_type": "int",
+      "default": 0,
+      "description": "Initial input port index used to forward packets. Value must be greater or equal to 0 and less than 256.",
+      "name": "in_port",
+      "required": false
+     },
+     {
+      "data_type": "int",
+      "default": 0,
+      "description": "Initial output port index used to forward packets. Value must be greater or equal to 0 and less than 256.",
+      "name": "out_port",
+      "required": false
+     },
+     {
+      "data_type": "boolean",
+      "default": false,
+      "description": "When enabled last packet received on each input port will be saved, so when index are changed, it'll send last received value, instead of only forward the next packet. If no packet was received at certain index, no packet will be sent.",
+      "name": "keep_state",
+      "required": false
+     }
+    ],
+    "required": false,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_switcher_blob_options",
+   "out_ports": [
+    {
+     "array_size": 256,
+     "base_port_idx": 0,
+     "data_type": "blob",
+     "description": "Forwarded blob packets.",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_SWITCHER_BLOB",
+   "url": "http://solettaproject.org/doc/latest/node_types/switcher/blob.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "switcher",
+   "description": "Forward boolean packets on to output port set by index.",
+   "header_file": "sol-flow/switcher.h",
+   "in_ports": [
+    {
+     "array_size": 256,
+     "base_port_idx": 0,
+     "data_type": "boolean",
+     "description": "Where to receive the boolean packet to be forwarded.",
+     "name": "IN",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 256,
+     "data_type": "int",
+     "description": "Index of input port to be used to forward input packet.",
+     "name": "IN_PORT",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 257,
+     "data_type": "int",
+     "description": "Index of output port to be used to forward input packet.",
+     "name": "OUT_PORT",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "switcher/boolean",
+   "options": {
+    "members": [
+     {
+      "data_type": "int",
+      "default": 0,
+      "description": "Initial input port index used to forward packets. Value must be greater or equal to 0 and less than 256.",
+      "name": "in_port",
+      "required": false
+     },
+     {
+      "data_type": "int",
+      "default": 0,
+      "description": "Initial output port index used to forward packets. Value must be greater or equal to 0 and less than 256.",
+      "name": "out_port",
+      "required": false
+     },
+     {
+      "data_type": "boolean",
+      "default": false,
+      "description": "When enabled last packet received on each input port will be saved, so when index are changed, it'll send last received value, instead of only forward the next packet. If no packet was received at certain index, no packet will be sent.",
+      "name": "keep_state",
+      "required": false
+     }
+    ],
+    "required": false,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_switcher_boolean_options",
+   "out_ports": [
+    {
+     "array_size": 256,
+     "base_port_idx": 0,
+     "data_type": "boolean",
+     "description": "Forwarded boolean packets.",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_SWITCHER_BOOLEAN",
+   "url": "http://solettaproject.org/doc/latest/node_types/switcher/boolean.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "switcher",
+   "description": "Forward byte packets on to output port set by index.",
+   "header_file": "sol-flow/switcher.h",
+   "in_ports": [
+    {
+     "array_size": 256,
+     "base_port_idx": 0,
+     "data_type": "byte",
+     "description": "Where to receive the byte packet to be forwarded.",
+     "name": "IN",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 256,
+     "data_type": "int",
+     "description": "Index of input port to be used to forward input packet.",
+     "name": "IN_PORT",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 257,
+     "data_type": "int",
+     "description": "Index of output port to be used to forward input packet.",
+     "name": "OUT_PORT",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "switcher/byte",
+   "options": {
+    "members": [
+     {
+      "data_type": "int",
+      "default": 0,
+      "description": "Initial input port index used to forward packets. Value must be greater or equal to 0 and less than 256.",
+      "name": "in_port",
+      "required": false
+     },
+     {
+      "data_type": "int",
+      "default": 0,
+      "description": "Initial output port index used to forward packets. Value must be greater or equal to 0 and less than 256.",
+      "name": "out_port",
+      "required": false
+     },
+     {
+      "data_type": "boolean",
+      "default": false,
+      "description": "When enabled last packet received on each input port will be saved, so when index are changed, it'll send last received value, instead of only forward the next packet. If no packet was received at certain index, no packet will be sent.",
+      "name": "keep_state",
+      "required": false
+     }
+    ],
+    "required": false,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_switcher_byte_options",
+   "out_ports": [
+    {
+     "array_size": 256,
+     "base_port_idx": 0,
+     "data_type": "byte",
+     "description": "Forwarded byte packets.",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_SWITCHER_BYTE",
+   "url": "http://solettaproject.org/doc/latest/node_types/switcher/byte.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "switcher",
+   "description": "Forward empty packets on to output port set by index.",
+   "header_file": "sol-flow/switcher.h",
+   "in_ports": [
+    {
+     "array_size": 256,
+     "base_port_idx": 0,
+     "data_type": "any",
+     "description": "Where to receive the packet to be forwarded. Any packet can be received, but they'll be forwarded as empty packets.",
+     "name": "IN",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 256,
+     "data_type": "int",
+     "description": "Index of input port to be used to forward input packet.",
+     "name": "IN_PORT",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 257,
+     "data_type": "int",
+     "description": "Index of output port to be used to forward input packet.",
+     "name": "OUT_PORT",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "switcher/empty",
+   "options": {
+    "members": [
+     {
+      "data_type": "int",
+      "default": 0,
+      "description": "Initial input port index used to forward packets. Value must be greater or equal to 0 and less than 256.",
+      "name": "in_port",
+      "required": false
+     },
+     {
+      "data_type": "int",
+      "default": 0,
+      "description": "Initial output port index used to forward packets. Value must be greater or equal to 0 and less than 256.",
+      "name": "out_port",
+      "required": false
+     },
+     {
+      "data_type": "boolean",
+      "default": false,
+      "description": "When enabled last packet received on each input port will be saved, so when index are changed, it'll send last received value, instead of only forward the next packet. If no packet was received at certain index, no packet will be sent.",
+      "name": "keep_state",
+      "required": false
+     }
+    ],
+    "required": false,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_switcher_empty_options",
+   "out_ports": [
+    {
+     "array_size": 256,
+     "base_port_idx": 0,
+     "data_type": "empty",
+     "description": "Forwarded empty packets.",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_SWITCHER_EMPTY",
+   "url": "http://solettaproject.org/doc/latest/node_types/switcher/empty.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "switcher",
+   "description": "Forward error packets.",
+   "header_file": "sol-flow/switcher.h",
+   "in_ports": [
+    {
+     "array_size": 256,
+     "base_port_idx": 0,
+     "data_type": "error",
+     "description": "Where to receive the error packet to be forwarded. They're forwared via 'ERROR' port.",
+     "name": "IN",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "switcher/error",
+   "options_symbol": "sol_flow_node_type_switcher_error_options",
+   "symbol": "SOL_FLOW_NODE_TYPE_SWITCHER_ERROR",
+   "url": "http://solettaproject.org/doc/latest/node_types/switcher/error.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "switcher",
+   "description": "Forward float packets on to output port set by index.",
+   "header_file": "sol-flow/switcher.h",
+   "in_ports": [
+    {
+     "array_size": 256,
+     "base_port_idx": 0,
+     "data_type": "float",
+     "description": "Where to receive the float packet to be forwarded.",
+     "name": "IN",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 256,
+     "data_type": "int",
+     "description": "Index of input port to be used to forward input packet.",
+     "name": "IN_PORT",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 257,
+     "data_type": "int",
+     "description": "Index of output port to be used to forward input packet.",
+     "name": "OUT_PORT",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "switcher/float",
+   "options": {
+    "members": [
+     {
+      "data_type": "int",
+      "default": 0,
+      "description": "Initial input port index used to forward packets. Value must be greater or equal to 0 and less than 256.",
+      "name": "in_port",
+      "required": false
+     },
+     {
+      "data_type": "int",
+      "default": 0,
+      "description": "Initial output port index used to forward packets. Value must be greater or equal to 0 and less than 256.",
+      "name": "out_port",
+      "required": false
+     },
+     {
+      "data_type": "boolean",
+      "default": false,
+      "description": "When enabled last packet received on each input port will be saved, so when index are changed, it'll send last received value, instead of only forward the next packet. If no packet was received at certain index, no packet will be sent.",
+      "name": "keep_state",
+      "required": false
+     }
+    ],
+    "required": false,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_switcher_float_options",
+   "out_ports": [
+    {
+     "array_size": 256,
+     "base_port_idx": 0,
+     "data_type": "float",
+     "description": "Forwarded float packets.",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_SWITCHER_FLOAT",
+   "url": "http://solettaproject.org/doc/latest/node_types/switcher/float.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "switcher",
+   "description": "Forward int packets on to output port set by index.",
+   "header_file": "sol-flow/switcher.h",
+   "in_ports": [
+    {
+     "array_size": 256,
+     "base_port_idx": 0,
+     "data_type": "int",
+     "description": "Where to receive the int packet to be forwarded.",
+     "name": "IN",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 256,
+     "data_type": "int",
+     "description": "Index of input port to be used to forward input packet.",
+     "name": "IN_PORT",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 257,
+     "data_type": "int",
+     "description": "Index of output port to be used to forward input packet.",
+     "name": "OUT_PORT",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "switcher/int",
+   "options": {
+    "members": [
+     {
+      "data_type": "int",
+      "default": 0,
+      "description": "Initial input port index used to forward packets. Value must be greater or equal to 0 and less than 256.",
+      "name": "in_port",
+      "required": false
+     },
+     {
+      "data_type": "int",
+      "default": 0,
+      "description": "Initial output port index used to forward packets. Value must be greater or equal to 0 and less than 256.",
+      "name": "out_port",
+      "required": false
+     },
+     {
+      "data_type": "boolean",
+      "default": false,
+      "description": "When enabled last packet received on each input port will be saved, so when index are changed, it'll send last received value, instead of only forward the next packet. If no packet was received at certain index, no packet will be sent.",
+      "name": "keep_state",
+      "required": false
+     }
+    ],
+    "required": false,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_switcher_int_options",
+   "out_ports": [
+    {
+     "array_size": 256,
+     "base_port_idx": 0,
+     "data_type": "int",
+     "description": "Forwarded int packets.",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_SWITCHER_INT",
+   "url": "http://solettaproject.org/doc/latest/node_types/switcher/int.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "switcher",
+   "description": "Forward rgb packets on to output port set by index.",
+   "header_file": "sol-flow/switcher.h",
+   "in_ports": [
+    {
+     "array_size": 256,
+     "base_port_idx": 0,
+     "data_type": "rgb",
+     "description": "Where to receive the rgb packet to be forwarded.",
+     "name": "IN",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 256,
+     "data_type": "int",
+     "description": "Index of input port to be used to forward input packet.",
+     "name": "IN_PORT",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 257,
+     "data_type": "int",
+     "description": "Index of output port to be used to forward input packet.",
+     "name": "OUT_PORT",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "switcher/rgb",
+   "options": {
+    "members": [
+     {
+      "data_type": "int",
+      "default": 0,
+      "description": "Initial input port index used to forward packets. Value must be greater or equal to 0 and less than 256.",
+      "name": "in_port",
+      "required": false
+     },
+     {
+      "data_type": "int",
+      "default": 0,
+      "description": "Initial output port index used to forward packets. Value must be greater or equal to 0 and less than 256.",
+      "name": "out_port",
+      "required": false
+     },
+     {
+      "data_type": "boolean",
+      "default": false,
+      "description": "When enabled last packet received on each input port will be saved, so when index are changed, it'll send last received value, instead of only forward the next packet. If no packet was received at certain index, no packet will be sent.",
+      "name": "keep_state",
+      "required": false
+     }
+    ],
+    "required": false,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_switcher_rgb_options",
+   "out_ports": [
+    {
+     "array_size": 256,
+     "base_port_idx": 0,
+     "data_type": "rgb",
+     "description": "Forwarded rgb packets.",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_SWITCHER_RGB",
+   "url": "http://solettaproject.org/doc/latest/node_types/switcher/rgb.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "switcher",
+   "description": "Forward direction vector packets on to output port set by index.",
+   "header_file": "sol-flow/switcher.h",
+   "in_ports": [
+    {
+     "array_size": 256,
+     "base_port_idx": 0,
+     "data_type": "direction-vector",
+     "description": "Where to receive the direction vector packet to be forwarded.",
+     "name": "IN",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 256,
+     "data_type": "int",
+     "description": "Index of input port to be used to forward input packet.",
+     "name": "IN_PORT",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 257,
+     "data_type": "int",
+     "description": "Index of output port to be used to forward input packet.",
+     "name": "OUT_PORT",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "switcher/direction-vector",
+   "options": {
+    "members": [
+     {
+      "data_type": "int",
+      "default": 0,
+      "description": "Initial input port index used to forward packets. Value must be greater or equal to 0 and less than 256.",
+      "name": "in_port",
+      "required": false
+     },
+     {
+      "data_type": "int",
+      "default": 0,
+      "description": "Initial output port index used to forward packets. Value must be greater or equal to 0 and less than 256.",
+      "name": "out_port",
+      "required": false
+     },
+     {
+      "data_type": "boolean",
+      "default": false,
+      "description": "When enabled last packet received on each input port will be saved, so when index are changed, it'll send last received value, instead of only forward the next packet. If no packet was received at certain index, no packet will be sent.",
+      "name": "keep_state",
+      "required": false
+     }
+    ],
+    "required": false,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_switcher_direction_vector_options",
+   "out_ports": [
+    {
+     "array_size": 256,
+     "base_port_idx": 0,
+     "data_type": "direction-vector",
+     "description": "Forwarded direction_vector packets.",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_SWITCHER_DIRECTION_VECTOR",
+   "url": "http://solettaproject.org/doc/latest/node_types/switcher/direction-vector.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "switcher",
+   "description": "Forward string packets on to output port set by index.",
+   "header_file": "sol-flow/switcher.h",
+   "in_ports": [
+    {
+     "array_size": 256,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "Where to receive the string packet to be forwarded.",
+     "name": "IN",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 256,
+     "data_type": "int",
+     "description": "Index of input port to be used to forward input packet.",
+     "name": "IN_PORT",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 257,
+     "data_type": "int",
+     "description": "Index of output port to be used to forward input packet.",
+     "name": "OUT_PORT",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "switcher/string",
+   "options": {
+    "members": [
+     {
+      "data_type": "int",
+      "default": 0,
+      "description": "Initial input port index used to forward packets. Value must be greater or equal to 0 and less than 256.",
+      "name": "in_port",
+      "required": false
+     },
+     {
+      "data_type": "int",
+      "default": 0,
+      "description": "Initial output port index used to forward packets. Value must be greater or equal to 0 and less than 256.",
+      "name": "out_port",
+      "required": false
+     },
+     {
+      "data_type": "boolean",
+      "default": false,
+      "description": "When enabled last packet received on each input port will be saved, so when index are changed, it'll send last received value, instead of only forward the next packet. If no packet was received at certain index, no packet will be sent.",
+      "name": "keep_state",
+      "required": false
+     }
+    ],
+    "required": false,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_switcher_string_options",
+   "out_ports": [
+    {
+     "array_size": 256,
+     "base_port_idx": 0,
+     "data_type": "string",
+     "description": "Forwarded string packets.",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_SWITCHER_STRING",
+   "url": "http://solettaproject.org/doc/latest/node_types/switcher/string.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "switcher",
+   "description": "Forward timestamp packets on to output port set by index.",
+   "header_file": "sol-flow/switcher.h",
+   "in_ports": [
+    {
+     "array_size": 256,
+     "base_port_idx": 0,
+     "data_type": "timestamp",
+     "description": "Where to receive the timestamp packet to be forwarded.",
+     "name": "IN",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 256,
+     "data_type": "int",
+     "description": "Index of input port to be used to forward input packet.",
+     "name": "IN_PORT",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 257,
+     "data_type": "int",
+     "description": "Index of output port to be used to forward input packet.",
+     "name": "OUT_PORT",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "switcher/timestamp",
+   "options": {
+    "members": [
+     {
+      "data_type": "int",
+      "default": 0,
+      "description": "Initial input port index used to forward packets. Value must be greater or equal to 0 and less than 256.",
+      "name": "in_port",
+      "required": false
+     },
+     {
+      "data_type": "int",
+      "default": 0,
+      "description": "Initial output port index used to forward packets. Value must be greater or equal to 0 and less than 256.",
+      "name": "out_port",
+      "required": false
+     },
+     {
+      "data_type": "boolean",
+      "default": false,
+      "description": "When enabled last packet received on each input port will be saved, so when index are changed, it'll send last received value, instead of only forward the next packet. If no packet was received at certain index, no packet will be sent.",
+      "name": "keep_state",
+      "required": false
+     }
+    ],
+    "required": false,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_switcher_timestamp_options",
+   "out_ports": [
+    {
+     "array_size": 256,
+     "base_port_idx": 0,
+     "data_type": "timestamp",
+     "description": "Forwarded timestamp packets.",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_SWITCHER_TIMESTAMP",
+   "url": "http://solettaproject.org/doc/latest/node_types/switcher/timestamp.html",
+   "version": "1"
+  }
+ ]
+}

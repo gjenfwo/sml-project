@@ -1,0 +1,328 @@
+{
+  "$schema": "http://solettaproject.github.io/soletta/schemas/node-type-genspec.schema",
+  "name": "wallclock",
+  "meta": {
+    "author": "Intel Corporation",
+    "license": "Apache-2.0",
+    "version": "1"
+  },
+  "types": [
+    {
+      "category": "timer",
+      "description": "Provides int packets on a timely manner (after each system clock hour changes)",
+      "methods": {
+        "close": "wallclock_close",
+        "open": "wallclock_hour_open"
+      },
+      "name": "wallclock/hour",
+      "options": {
+        "members": [
+          {
+            "data_type": "boolean",
+            "default": false,
+            "description": "If true, a packet containing the current hour will be sent during initialization",
+            "name": "send_initial_packet"
+          }
+        ],
+        "version": 1
+      },
+      "out_ports": [
+        {
+          "data_type": "int",
+          "description": "An int range packet when wallclock hour ticks.",
+          "name": "OUT"
+        }
+      ],
+      "in_ports": [
+        {
+          "data_type": "boolean",
+          "description": "Enables or disables the wallclock, based on the value of the packet received. When stopped, the wallclock will cease to emit packets from the OUT port.",
+          "name": "ENABLED",
+          "methods": {
+            "process": "wallclock_enabled_process"
+          }
+        }
+      ],
+      "private_data_type": "wallclock_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/wallclock_hour.html"
+    },
+    {
+      "category": "timer",
+      "description": "Provides int packets on a timely manner (after each system clock minute changes)",
+      "methods": {
+        "close": "wallclock_close",
+        "open": "wallclock_minute_open"
+      },
+      "name": "wallclock/minute",
+      "options": {
+        "members": [
+          {
+            "data_type": "boolean",
+            "default": false,
+            "description": "If true, a packet containing the current minute will be sent during initialization",
+            "name": "send_initial_packet"
+          }
+        ],
+        "version": 1
+      },
+      "out_ports": [
+        {
+          "data_type": "int",
+          "description": "An int range packet when wallclock minute ticks.",
+          "name": "OUT"
+        }
+      ],
+      "in_ports": [
+        {
+          "data_type": "boolean",
+          "description": "Enables or disables the wallclock, based on the value of the packet received. When stopped, the wallclock will cease to emit packets from the OUT port.",
+          "name": "ENABLED",
+          "methods": {
+            "process": "wallclock_enabled_process"
+          }
+        }
+      ],
+      "private_data_type": "wallclock_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/wallclock_minute.html"
+    },
+    {
+      "category": "timer",
+      "description": "Provides int packets on a timely manner (after each system clock month changes)",
+      "methods": {
+        "close": "wallclock_close",
+        "open": "wallclock_month_open"
+      },
+      "name": "wallclock/month",
+      "options": {
+        "members": [
+          {
+            "data_type": "boolean",
+            "default": false,
+            "description": "If true, a packet containing the current month will be sent during initialization",
+            "name": "send_initial_packet"
+          }
+        ],
+        "version": 1
+      },
+      "out_ports": [
+        {
+          "data_type": "int",
+          "description": "An int range packet when wallclock month ticks.",
+          "name": "OUT"
+        }
+      ],
+      "in_ports": [
+        {
+          "data_type": "boolean",
+          "description": "Enables or disables the wallclock, based on the value of the packet received. When stopped, the wallclock will cease to emit packets from the OUT port.",
+          "name": "ENABLED",
+          "methods": {
+            "process": "wallclock_enabled_process"
+          }
+        }
+      ],
+      "private_data_type": "wallclock_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/wallclock_month.html"
+    },
+    {
+      "category": "timer",
+      "description": "Provides int packets on a timely manner (after each system clock month day changes)",
+      "methods": {
+        "close": "wallclock_close",
+        "open": "wallclock_monthday_open"
+      },
+      "name": "wallclock/monthday",
+      "options": {
+          "members": [
+          {
+            "data_type": "boolean",
+            "default": false,
+            "description": "If true, a packet containing the current monthday will be sent during initialization",
+            "name": "send_initial_packet"
+          }
+        ],
+        "version": 1
+      },
+      "out_ports": [
+        {
+          "data_type": "int",
+          "description": "An int range packet when wallclock month day ticks.",
+          "name": "OUT"
+        }
+      ],
+      "in_ports": [
+        {
+          "data_type": "boolean",
+          "description": "Enables or disables the wallclock, based on the value of the packet received. When stopped, the wallclock will cease to emit packets from the OUT port.",
+          "name": "ENABLED",
+          "methods": {
+            "process": "wallclock_enabled_process"
+          }
+        }
+      ],
+      "private_data_type": "wallclock_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/wallclock_monthday.html"
+    },
+    {
+      "category": "timer",
+      "description": "Provides int packets on a timely manner (after each system clock second changes)",
+      "methods": {
+        "close": "wallclock_close",
+        "open": "wallclock_second_open"
+      },
+      "name": "wallclock/second",
+      "options": {
+        "members": [
+          {
+            "data_type": "boolean",
+            "default": false,
+            "description": "If true, a packet containing the current second will be sent during initialization",
+            "name": "send_initial_packet"
+          }
+        ],
+        "version": 1
+      },
+      "out_ports": [
+        {
+          "data_type": "int",
+          "description": "An int range packet when wallclock second ticks.",
+          "name": "OUT"
+        }
+      ],
+      "in_ports": [
+        {
+          "data_type": "boolean",
+          "description": "Enables or disables the wallclock, based on the value of the packet received. When stopped, the wallclock will cease to emit packets from the OUT port.",
+          "name": "ENABLED",
+          "methods": {
+            "process": "wallclock_enabled_process"
+          }
+        }
+      ],
+      "private_data_type": "wallclock_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/wallclock_second.html"
+    },
+    {
+      "category": "timer",
+      "description": "Provides int packets on a timely manner (after each system clock week day changes)",
+      "methods": {
+        "close": "wallclock_close",
+        "open": "wallclock_weekday_open"
+      },
+      "name": "wallclock/weekday",
+      "options": {
+        "members": [
+          {
+            "data_type": "boolean",
+            "default": false,
+            "description": "If true, a packet containing the current weekday will be sent durinng initialization",
+            "name": "send_initial_packet"
+          }
+        ],
+        "version": 1
+      },
+      "out_ports": [
+        {
+          "data_type": "int",
+          "description": "An int range packet when wallclock week day ticks.",
+          "name": "OUT"
+        }
+      ],
+      "in_ports": [
+        {
+          "data_type": "boolean",
+          "description": "Enables or disables the wallclock, based on the value of the packet received. When stopped, the wallclock will cease to emit packets from the OUT port.",
+          "name": "ENABLED",
+          "methods": {
+            "process": "wallclock_enabled_process"
+          }
+        }
+      ],
+      "private_data_type": "wallclock_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/wallclock_weekday.html"
+    },
+    {
+      "category": "timer",
+      "description": "Provides int packets on a timely manner (at each day's time block). A day is split in blocks of minutes defined by options. Last block may be smaller than others.",
+      "methods": {
+        "close": "wallclock_timeblock_close",
+        "open": "wallclock_timeblock_open"
+      },
+      "name": "wallclock/timeblock",
+      "options": {
+        "members": [
+          {
+            "data_type": "int",
+            "description": "Time block interval. Defines the length of a frame in minutes. Last block may be smaller than others. For example, if interval is set to 50 minutes, it would tick 29 times a day, but interval for last one is just 48 minutes.",
+            "name": "interval"
+          },
+          {
+            "data_type": "boolean",
+            "default": false,
+            "description": "If true, a packet containing the current timeblock will be sent durinng initialization",
+            "name": "send_initial_packet"
+          }
+        ],
+        "version": 1
+      },
+      "out_ports": [
+        {
+          "data_type": "int",
+          "description": "An int range packet when wallclock time block changes. An initial packet is sent informing current time block.",
+          "name": "OUT"
+        }
+      ],
+      "in_ports": [
+        {
+          "data_type": "boolean",
+          "description": "Enables or disables the wallclock, based on the value of the packet received. When stopped, the wallclock will cease to emit packets from the OUT port.",
+          "name": "ENABLED",
+          "methods": {
+            "process": "wallclock_timeblock_enabled_process"
+          }
+        }
+      ],
+      "private_data_type": "wallclock_timeblock_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/wallclock_timeblock.html"
+    },
+    {
+      "category": "timer",
+      "description": "Provides int packets on a timely manner (after each system clock year changes)",
+      "methods": {
+        "close": "wallclock_close",
+        "open": "wallclock_year_open"
+      },
+      "name": "wallclock/year",
+      "options": {
+        "members": [
+          {
+            "data_type": "boolean",
+            "default": false,
+            "description": "If true, a packet containing the current year will be sent during initialization",
+            "name": "send_initial_packet"
+          }
+        ],
+        "version": 1
+      },
+      "out_ports": [
+        {
+          "data_type": "int",
+          "description": "An int range packet when wallclock year ticks.",
+          "name": "OUT"
+        }
+      ],
+      "in_ports": [
+        {
+          "data_type": "boolean",
+          "description": "Enables or disables the wallclock, based on the value of the packet received. When stopped, the wallclock will cease to emit packets from the OUT port.",
+          "name": "ENABLED",
+          "methods": {
+            "process": "wallclock_enabled_process"
+          }
+        }
+      ],
+      "private_data_type": "wallclock_data",
+      "url": "http://solettaproject.org/doc/latest/node_types/wallclock_year.html"
+    }
+  ]
+}

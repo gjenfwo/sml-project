@@ -1,0 +1,121 @@
+config USE_AIO
+    bool "Analog I/O (AIO) Support"
+    depends on FEATURE_HW_AIO
+    default y
+
+config USE_PWM
+    bool "PWM Support"
+    depends on FEATURE_HW_PWM
+    default y
+
+config USE_SPI
+    bool "SPI Support"
+    depends on FEATURE_HW_SPI
+    default y
+
+config USE_UART
+    bool "UART Support"
+    depends on FEATURE_HW_UART
+    default y
+
+config USE_I2C
+    bool "I2C Support"
+    depends on FEATURE_HW_I2C
+    default y
+
+config USE_GPIO
+    bool "GPIO Support"
+    depends on FEATURE_HW_GPIO
+    default y
+
+config USE_IIO
+    bool "Linux Industrial I/O Support"
+    depends on LINUX
+    default y
+
+menuconfig USE_PIN_MUX
+    bool "Pin Multiplexer"
+    depends on FEATURE_PIN_MUX
+    default y
+    help
+          Pin Multiplexer is a feature that helps to setup
+          physical pins shared by more than one feature in
+          some platforms.
+
+          This switch enables the logic to handle pin multiplexers,
+          but the multiplexer logic is to be defined in separate
+          pin-mux modules that can be built-in libsoletta or installed
+          as dynamically loadable modules at
+          $PREFIX/lib/soletta/modules/pin-mux/<module>.so
+
+          Pin mux modules are selected based on the board-detect
+          infrastructure or statically defined by BOARD_NAME.
+
+          If unsure, say Y.
+
+if LINUX && USE_GPIO
+source "src/modules/pin-mux/intel-galileo-rev-d/Kconfig"
+source "src/modules/pin-mux/intel-galileo-rev-g/Kconfig"
+source "src/modules/pin-mux/intel-edison-rev-c/Kconfig"
+endif
+if PLATFORM_CONTIKI_QMSI
+source "src/modules/pin-mux/contiki-qmsi/Kconfig"
+endif
+
+menuconfig USE_STORAGE
+    bool "Persistence Storage Support"
+    depends on FEATURE_FILESYSTEM || FEATURE_EFI || FEATURE_FLASH_MEM
+    default y
+
+config USE_FILESYSTEM
+    bool "File system persistence storage"
+    depends on USE_STORAGE && FEATURE_FILESYSTEM
+    default y
+
+config USE_EFIVARS
+    bool "EFI vars persistence storage"
+    depends on USE_STORAGE && FEATURE_EFI
+    default y
+
+config USE_MEMMAP
+    bool "Memory map persistence storage"
+    depends on USE_STORAGE && (FEATURE_FILESYSTEM || FEATURE_FLASH_MEM)
+    default y
+    help
+        Provide persistence storage based on memory maps. Users must
+        provide a mapping - for instance, using a JSON file - that
+        will be used to define where on memory entries will be saved.
+        Examples of memory are NVRAM or EEPROM or even a file.
+
+config FLASH_MEM_REGION_OFFSET
+    hex "Flash memory region offset"
+    depends on FEATURE_FLASH_MEM
+    default 0x0
+    help
+        Offset, from the beginning of the addressable memory of the
+        flash memory, where to do memory mappings.
+
+config USE_IPM
+    bool "Inter-processor messaging"
+    depends on FEATURE_HW_IPM
+    default y
+    help
+        Provide API to Inter-processor messaging. Some platforms
+        have more than one processor - this API provides communication
+        among them.
+
+config IPM_CHANNEL_X86_TO_ARC
+    int "IPM Channel x86 -> ARC"
+    depends on USE_IPM
+    default 0
+    help
+        Which IPM channel should be used to communication from x86 core
+        to ARC one.
+
+config IPM_CHANNEL_ARC_TO_X86
+    int "IPM Channel ARC -> x86"
+    depends on USE_IPM
+    default 1
+    help
+        Which IPM channel should be used to communication from ARC core
+        to x86 one.

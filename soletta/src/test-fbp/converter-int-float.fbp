@@ -1,0 +1,28 @@
+# This file is part of the Soletta (TM) Project
+#
+# Copyright (C) 2015 Intel Corporation. All rights reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+two_four_eight_int(constant/int:value=248)
+ten(constant/int:value=10)
+two_four_eight_float(constant/float:value=248.00)
+ten_point_eight(constant/float:value=10.8)
+int_to_float(converter/int-to-float)
+float_to_int(converter/float-to-int)
+
+two_four_eight_int OUT -> IN int_to_float OUT -> IN[0] cmp_floats(float/equal)
+two_four_eight_float OUT -> IN[1] cmp_floats OUT -> RESULT result_floats_cmp(test/result)
+
+ten_point_eight OUT -> IN float_to_int OUT -> IN[0] cmp_ints(int/equal)
+ten OUT -> IN[1] cmp_ints OUT -> RESULT result_ints_cmp(test/result)

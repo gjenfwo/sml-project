@@ -1,0 +1,50 @@
+{
+  "$schema": "http://solettaproject.github.io/soletta/schemas/node-type-genspec.schema",
+  "name": "network",
+  "meta": {
+    "author": "Intel Corporation",
+    "license": "Apache-2.0",
+    "version": "1"
+  },
+  "types": [
+    {
+      "category": "output/sw",
+      "description": "Provides boolean packets after connect or disconnect from network",
+      "methods": {
+        "close": "network_close",
+        "open": "network_open"
+      },
+      "name": "network/boolean",
+      "options": {
+        "members": [
+          {
+            "data_type": "string",
+            "default": null,
+            "description": "Which interface should be monitored (it MUST be a regexp - so if you want a exact match with a name, use '^name$')",
+            "name": "address"
+          }
+        ],
+        "version": 1
+      },
+      "in_ports": [
+        {
+          "data_type": "string",
+          "description": "Which interface should be monitored (it MUST be a regexp - so if you want a exact match with a name, use '^name$')",
+          "methods": {
+            "process": "network_address_process"
+          },
+          "name": "ADDRESS"
+        }
+      ],
+      "out_ports": [
+        {
+          "data_type": "boolean",
+          "description": "A boolean packet when network changes. If it's connect true, otherwise false.",
+          "name": "OUT"
+        }
+      ],
+      "private_data_type": "network_data",
+      "url": "http://solettaproject.org/doc/latest/components/network.html"
+    }
+  ]
+}

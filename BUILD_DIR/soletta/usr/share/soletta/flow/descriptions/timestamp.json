@@ -1,0 +1,465 @@
+{
+ "timestamp": [
+  {
+   "author": "Intel Corporation",
+   "category": "timestamp",
+   "description": "Provides timestamp packets with current time",
+   "header_file": "sol-flow/timestamp.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "any",
+     "description": "Triggers emission of packet with current time.",
+     "name": "TRIGGER",
+     "required": true
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "timestamp/time",
+   "options": {
+    "members": [
+     {
+      "data_type": "boolean",
+      "default": true,
+      "description": "Whether to create an initial packet and send it upon connection to the port OUT or not (wait for packets in the TRIGGER port).",
+      "name": "initial_packet",
+      "required": false
+     }
+    ],
+    "required": false,
+    "version": 1
+   },
+   "options_symbol": "sol_flow_node_type_timestamp_time_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "timestamp",
+     "description": "Packet with current time.",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_TIMESTAMP_TIME",
+   "url": "http://solettaproject.org/doc/latest/node_types/timestamp/time.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "timestamp",
+   "description": "Make timestamp packets with time provided on ports (year, month, day, hour, minute, seconds).",
+   "header_file": "sol-flow/timestamp.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "int",
+     "description": "Receive year of the timestamp counting from year 0, but can't be less than 1970.",
+     "name": "YEAR",
+     "required": true
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "int",
+     "description": "Receive month of the timestamp (1-12).",
+     "name": "MONTH",
+     "required": true
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 2,
+     "data_type": "int",
+     "description": "Receive day of the timestamp in the range 1 to 31.",
+     "name": "MONTH_DAY",
+     "required": true
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 3,
+     "data_type": "int",
+     "description": "Receive hour of the timestamp (0-23).",
+     "name": "HOUR",
+     "required": true
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 4,
+     "data_type": "int",
+     "description": "Receive minute of the timestamp (0-59).",
+     "name": "MINUTE",
+     "required": true
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 5,
+     "data_type": "int",
+     "description": "Receive second of the timestamp (0-59).",
+     "name": "SECOND",
+     "required": true
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 6,
+     "data_type": "int",
+     "description": "Receive nano second of the timestamp (0-999999999).",
+     "name": "NANO_SECOND",
+     "required": true
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "timestamp/make-time",
+   "options_symbol": "sol_flow_node_type_timestamp_make_time_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "timestamp",
+     "description": "Packet with time converted from broken-down time provided via ports. First packet is sent only after values are received in all ports.",
+     "name": "OUT",
+     "required": true
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_TIMESTAMP_MAKE_TIME",
+   "url": "http://solettaproject.org/doc/latest/node_types/timestamp/make_time.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "timestamp",
+   "description": "Split timestamp packets into broken-down time (year, month, day, hour, minute, seconds).",
+   "header_file": "sol-flow/timestamp.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "timestamp",
+     "description": "Packet with time to be converted into broken-down time.",
+     "name": "IN",
+     "required": true
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "timestamp/split-time",
+   "options_symbol": "sol_flow_node_type_timestamp_split_time_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "int",
+     "description": "Number of years since year 0.",
+     "name": "YEAR",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "int",
+     "description": "Month of the timestamp in the range 1 to 12.",
+     "name": "MONTH",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 2,
+     "data_type": "int",
+     "description": "The day of the month in timestamp. Range 1 to 31.",
+     "name": "MONTH_DAY",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 3,
+     "data_type": "int",
+     "description": "Hour of the timestamp from 0 to 23.",
+     "name": "HOUR",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 4,
+     "data_type": "int",
+     "description": "Minute of the timestamp in the range 0 to 59.",
+     "name": "MINUTE",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 5,
+     "data_type": "int",
+     "description": "Second of the timestamp, from 0 to 59. Eventually it can be up to 60 to allow for leap seconds.",
+     "name": "SECOND",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 6,
+     "data_type": "int",
+     "description": "Nano second of the timestamp, from 0 to 999999999.",
+     "name": "NANO_SECOND",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 7,
+     "data_type": "int",
+     "description": "Day of the week starting on Sunday, in the range 0 to 6. So Sunday is 0, Monday is 1, ....",
+     "name": "WEEK_DAY",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 8,
+     "data_type": "int",
+     "description": "The number of days since January 1, in the range 0 to 365.",
+     "name": "YEAR_DAY",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 9,
+     "data_type": "boolean",
+     "description": "Indicates whether daylight saving time is in effect at the time converted. TRUE if daylight saving is in effect or FALSE if it is not. This packet may not be sent if information is not available.",
+     "name": "DAYLIGHT_SAVING_TIME",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_TIMESTAMP_SPLIT_TIME",
+   "url": "http://solettaproject.org/doc/latest/node_types/timestamp/split_time.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "comparison/timestamp",
+   "description": "Check if an timestamp is equal to other.",
+   "header_file": "sol-flow/timestamp.h",
+   "in_ports": [
+    {
+     "array_size": 2,
+     "base_port_idx": 0,
+     "data_type": "timestamp",
+     "description": "Two ports for equal comparison operation. Indexed from 0 to 1.",
+     "name": "IN",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "timestamp/equal",
+   "options_symbol": "sol_flow_node_type_timestamp_equal_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "boolean",
+     "description": "True if value received on port IN[0] is equal to value received on port IN[1].",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_TIMESTAMP_EQUAL",
+   "url": "http://solettaproject.org/doc/latest/node_types/comparison/timestamp/equal.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "comparison/timestamp",
+   "description": "Check if an timestamp is greater than other.",
+   "header_file": "sol-flow/timestamp.h",
+   "in_ports": [
+    {
+     "array_size": 2,
+     "base_port_idx": 0,
+     "data_type": "timestamp",
+     "description": "Two ports for greater comparison operation. Indexed from 0 to 1, and IN[0] being the left operand.",
+     "name": "IN",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "timestamp/greater",
+   "options_symbol": "sol_flow_node_type_timestamp_greater_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "boolean",
+     "description": "True if value received on port IN[0] is greater than value received on port IN[1].",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_TIMESTAMP_GREATER",
+   "url": "http://solettaproject.org/doc/latest/node_types/comparison/timestamp/greater.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "comparison/timestamp",
+   "description": "Check if an timestamp is greater than or equal to other.",
+   "header_file": "sol-flow/timestamp.h",
+   "in_ports": [
+    {
+     "array_size": 2,
+     "base_port_idx": 0,
+     "data_type": "timestamp",
+     "description": "Two ports for greater-or-equal comparison operation. Indexed from 0 to 1, and IN[0] being the left operand.",
+     "name": "IN",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "timestamp/greater-or-equal",
+   "options_symbol": "sol_flow_node_type_timestamp_greater_or_equal_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "boolean",
+     "description": "True if value received on port IN[0] is greater than or equal to value received on port IN[1].",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_TIMESTAMP_GREATER_OR_EQUAL",
+   "url": "http://solettaproject.org/doc/latest/node_types/comparison/timestamp/greater-or-equal.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "comparison/timestamp",
+   "description": "Check if an timestamp is less than other.",
+   "header_file": "sol-flow/timestamp.h",
+   "in_ports": [
+    {
+     "array_size": 2,
+     "base_port_idx": 0,
+     "data_type": "timestamp",
+     "description": "Two ports for less comparison operation. Indexed from 0 to 1, and IN[0] being the left operand.",
+     "name": "IN",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "timestamp/less",
+   "options_symbol": "sol_flow_node_type_timestamp_less_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "boolean",
+     "description": "True if value received on port IN[0] is less than value received on port IN[1].",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_TIMESTAMP_LESS",
+   "url": "http://solettaproject.org/doc/latest/node_types/comparison/timestamp/less.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "comparison/timestamp",
+   "description": "Check if an timestamp is less than or equal to other.",
+   "header_file": "sol-flow/timestamp.h",
+   "in_ports": [
+    {
+     "array_size": 2,
+     "base_port_idx": 0,
+     "data_type": "timestamp",
+     "description": "Two ports for less-or-equal comparison operation. Indexed from 0 to 1, and IN[0] being the left operand.",
+     "name": "IN",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "timestamp/less-or-equal",
+   "options_symbol": "sol_flow_node_type_timestamp_less_or_equal_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "boolean",
+     "description": "True if value received on port IN[0] is less than or equal to value received on port IN[1].",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_TIMESTAMP_LESS_OR_EQUAL",
+   "url": "http://solettaproject.org/doc/latest/node_types/comparison/timestamp/less-or-equal.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "comparison/timestamp",
+   "description": "Check if an timestamp is different from other.",
+   "header_file": "sol-flow/timestamp.h",
+   "in_ports": [
+    {
+     "array_size": 2,
+     "base_port_idx": 0,
+     "data_type": "timestamp",
+     "description": "Two ports for not-equal comparison operation. Indexed from 0 to 1",
+     "name": "IN",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "timestamp/not-equal",
+   "options_symbol": "sol_flow_node_type_timestamp_not_equal_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "boolean",
+     "description": "True if value received on port IN[0] is different from value received on port IN[1].",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_TIMESTAMP_NOT_EQUAL",
+   "url": "http://solettaproject.org/doc/latest/node_types/comparison/timestamp/not-equal.html",
+   "version": "1"
+  },
+  {
+   "author": "Intel Corporation",
+   "category": "timestamp",
+   "description": "Calculate delta between two timestamps.",
+   "header_file": "sol-flow/timestamp.h",
+   "in_ports": [
+    {
+     "array_size": 2,
+     "base_port_idx": 0,
+     "data_type": "timestamp",
+     "description": "Two ports for delta calculation. Indexed from 0 to 1",
+     "name": "IN",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "timestamp/delta",
+   "options_symbol": "sol_flow_node_type_timestamp_delta_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "int",
+     "description": "Delta in seconds between timestamp received on port IN[0] and in port IN[1]. It may be a negative value if in[0] is less, positive if is greater, or zero if both timestamps are equal.",
+     "name": "SECONDS",
+     "required": false
+    },
+    {
+     "array_size": 0,
+     "base_port_idx": 1,
+     "data_type": "int",
+     "description": "Delta in nano seconds between timestamp received on port IN[0] and in port IN[1]. It may be a negative value if in[0] is less, positive if is greater, or zero if both timestamps are equal.",
+     "name": "NANO_SECONDS",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_TIMESTAMP_DELTA",
+   "url": "http://solettaproject.org/doc/latest/node_types/timestamp/delta.html",
+   "version": "1"
+  }
+ ]
+}

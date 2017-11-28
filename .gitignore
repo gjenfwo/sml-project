@@ -1,0 +1,7 @@
+ctags
+cscope.out
+*.o
+build/
+CMakeCache.txt
+cmake_install.cmake
+CMakeFiles

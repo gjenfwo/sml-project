@@ -1,0 +1,35 @@
+{
+ "arctangent": [
+  {
+   "author": "Intel Corporation",
+   "category": "logic",
+   "description": "Calculate arctangent from float input",
+   "header_file": "sol-flow/arctan-spec.h",
+   "in_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "float",
+     "description": "Float input",
+     "name": "IN",
+     "required": false
+    }
+   ],
+   "license": "Apache-2.0",
+   "name": "arctangent/logic",
+   "options_symbol": "sol_flow_node_type_arctangent_logic_options",
+   "out_ports": [
+    {
+     "array_size": 0,
+     "base_port_idx": 0,
+     "data_type": "float",
+     "description": "Arctangent output",
+     "name": "OUT",
+     "required": false
+    }
+   ],
+   "symbol": "SOL_FLOW_NODE_TYPE_ARCTANGENT_LOGIC",
+   "version": "1"
+  }
+ ]
+}

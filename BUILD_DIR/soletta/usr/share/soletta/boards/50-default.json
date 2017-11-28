@@ -1,0 +1,94 @@
+{
+  "$schema": "http://solettaproject.github.io/soletta/schemas/board-detect.schema",
+  "boards": [
+    {
+     "name": "intel-galileo-rev-d",
+     "validation": [
+      {
+       "file_path": "/sys/devices/virtual/dmi/id/board_name",
+       "match": [ "Galileo$" ]
+      }
+     ]
+    },
+    {
+     "name": "intel-galileo-rev-g",
+     "validation": [
+      {
+       "file_path": "/sys/devices/virtual/dmi/id/board_name",
+       "match": [ "GalileoGen2" ]
+      }
+     ]
+    },
+    {
+     "name": "intel-edison-rev-c",
+     "validation": [
+      {
+       "file_path": "/sys/devices/virtual/dmi/id/board_name",
+       "match": [ "BODEGA BAY" ]
+      }
+     ]
+    },
+    {
+     "name": "intel-edison-rev-c",
+     "validation": [
+      {
+       "file_path": "/sys/devices/virtual/dmi/id/board_name",
+       "match": [ "SALT BAY" ]
+      }
+     ]
+    },
+    {
+     "name": "intel-minnow-max-linux_gt_3_17",
+     "validation": [
+      {
+       "file_path": "/sys/devices/virtual/dmi/id/bios_version",
+       "match": [ "^MNW2CRB1" ]
+      },
+      {
+       "file_path": "/proc/sys/kernel/osrelease",
+       "dont_match": [ "^[0-2][.]", "^3[.][0-9][.]", "^3[.][0-1][0-7]" ]
+      }
+     ]
+    },
+    {
+     "name": "intel-minnow-max",
+     "validation": [
+      {
+       "file_path": "/sys/devices/virtual/dmi/id/bios_version",
+       "match": [ "^MNW2CRB1" ]
+      }
+     ]
+    },
+    {
+     "name": "intel-minnow-max-linux_gt_3_17",
+     "validation": [
+      {
+       "file_path": "/sys/devices/virtual/dmi/id/board_name",
+       "match": [ "MinnowBoard MAX" ]
+      },
+      {
+       "file_path": "/proc/sys/kernel/osrelease",
+       "dont_match": [ "^[0-2][.]", "^3[.][0-9][.]", "^3[.][0-1][0-7]" ]
+      }
+     ]
+    },
+    {
+     "name": "intel-minnow-max",
+     "validation": [
+      {
+       "file_path": "/sys/devices/virtual/dmi/id/board_name",
+       "match": [ "MinnowBoard MAX" ]
+      }
+     ]
+    },
+    {
+     "name": "broadcom-bcm2708",
+     "validation": [
+      {
+       "file_path": "/proc/cpuinfo",
+       "match": [ "BCM2708" ]
+      }
+     ]
+    }
+  ]
+}

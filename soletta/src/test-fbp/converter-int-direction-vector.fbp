@@ -1,0 +1,39 @@
+# This file is part of the Soletta (TM) Project
+#
+# Copyright (C) 2015 Intel Corporation. All rights reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+XInt(constant/int:value=20,value_spec=0|100|1)
+YInt(constant/int:value=40,value_spec=0|100|1)
+ZInt(constant/int:value=70,value_spec=0|100|1)
+int_to_direction_vector(converter/int-to-direction-vector:out_range=0|200|1)
+
+XInt OUT -> X int_to_direction_vector
+YInt OUT -> Y int_to_direction_vector
+ZInt OUT -> Z int_to_direction_vector
+
+forty(constant/int:value=40)
+eighty(constant/int:value=80)
+one_hundred_and_fourty(constant/int:value=140)
+
+int_to_direction_vector OUT -> IN direction_vector_to_int(converter/direction-vector-to-int)
+
+direction_vector_to_int X -> IN[0] eq_fourty(int/equal)
+forty OUT -> IN[1] eq_fourty OUT -> RESULT x(test/result)
+
+direction_vector_to_int Y -> IN[0] eq_eighty(int/equal)
+eighty OUT -> IN[1] eq_eighty OUT -> RESULT y(test/result)
+
+direction_vector_to_int Z -> IN[0] eq_one_hundred_and_fourty(int/equal)
+one_hundred_and_fourty OUT -> IN[1] eq_one_hundred_and_fourty OUT -> RESULT z(test/result)

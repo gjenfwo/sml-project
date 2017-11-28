@@ -1,0 +1,62 @@
+# This file is part of the Soletta (TM) Project
+#
+# Copyright (C) 2015 Intel Corporation. All rights reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+constant-server(constant/boolean:value=true)
+response-count(int/accumulator:setup_value=0|2)
+constant-client(converter/empty-to-boolean:output_value=false)
+string(constant/string:value="true")
+
+blob-to-str(converter/blob-to-string)
+
+# start with value=false instead of default true so our first packet will actually change something
+server(http-server/boolean:path=/test,port=8080,value=false)
+
+get-blob(http-client/blob:url="http://localhost:8080/test")
+get-string(http-client/string:url="http://localhost:8080/test")
+get-json(http-client/json:url="http://localhost:8080/test")
+post(http-client/boolean:url="http://localhost:8080/test")
+
+server-validator(test/boolean-validator:sequence="TF")
+string-compare(string/compare)
+blob-compare(string/compare)
+json-compare(boolean/and)
+
+constant-server OUT -> IN server
+constant-server OUT -> GET get-string
+constant-server OUT -> GET get-json
+constant-server OUT -> GET get-blob
+
+server OUT -> IN server-validator
+
+string OUT -> IN[0] string-compare
+get-string OUT -> IN[1] string-compare
+
+string OUT -> IN[0] blob-compare
+get-blob OUT -> IN blob-to-str OUT -> IN[1] blob-compare
+
+_(constant/boolean:value=true) OUT -> IN[0] json-compare
+get-json BOOLEAN -> IN[1] json-compare
+
+get-blob OUT -> INC response-count
+get-string OUT -> INC response-count
+get-json BOOLEAN -> INC response-count
+response-count OVERFLOW -> IN constant-client
+constant-client OUT -> POST post
+
+server-validator OUT -> RESULT test_server_output(test/result:timeout=6000)
+string-compare EQUAL -> RESULT test_string_output(test/result:timeout=6000)
+blob-compare EQUAL -> RESULT test_blob_output(test/result:timeout=6000)
+json-compare OUT -> RESULT test_json_output(test/result:timeout=6000)
